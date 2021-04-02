@@ -23,7 +23,7 @@ object CityModel
 	 * @return A model matching that data
 	 */
 	def apply(data: CityData): CityModel = apply(None, Some(data.name), Some(data.countryId), data.marketId,
-		data.stateId, data.worldAreaCode, data.timeZone)
+		data.stateId, data.worldAreaCode, data.timeZone, data.timeZoneName, data.daylightSavingZoneCode)
 	
 	/**
 	 * Inserts a new city to the database
@@ -41,7 +41,8 @@ object CityModel
  */
 case class CityModel(id: Option[Int] = None, name: Option[String] = None, countryId: Option[Int] = None,
                      marketId: Option[Int] = None, stateId: Option[Int] = None, worldAreaCode: Option[Int] = None,
-                     timeZone: Option[Duration] = None)
+                     timeZone: Option[Duration] = None, timeZoneName: Option[String] = None,
+                     daylightSavingZoneCode: Option[Char] = None)
 	extends StorableWithFactory[City]
 {
 	// IMPLEMENTED  ------------------------
@@ -50,7 +51,8 @@ case class CityModel(id: Option[Int] = None, name: Option[String] = None, countr
 	
 	override def valueProperties = Vector("id" -> id, "name" -> name, "countryId" -> countryId,
 		"marketId" -> marketId, "stateId" -> stateId, "worldAreaCode" -> worldAreaCode,
-		"timeZone" -> timeZone.map { _.toPreciseHours })
+		"timeZone" -> timeZone.map { _.toPreciseHours }, "timeZoneName" -> timeZoneName,
+		"daylightSavingZoneCode" -> daylightSavingZoneCode.map { _.toString })
 	
 	
 	// OTHER    ----------------------------
@@ -66,7 +68,6 @@ case class CityModel(id: Option[Int] = None, name: Option[String] = None, countr
 	 * @return A copy of this model with that world area code
 	 */
 	def withWorldAreaCode(code: Int) = copy(worldAreaCode = Some(code))
-	
 	/**
 	 * @param stateId State id
 	 * @return A copy of this model with that state id
@@ -78,4 +79,14 @@ case class CityModel(id: Option[Int] = None, name: Option[String] = None, countr
 	 * @return A copy of this model with that time zone information
 	 */
 	def withTimeZone(timeZone: Option[Duration]) = copy(timeZone = timeZone)
+	/**
+	 * @param timeZoneName Time zone name
+	 * @return A copy of this model with that time zone name
+	 */
+	def withTimeZoneName(timeZoneName: Option[String]) = copy(timeZoneName = timeZoneName)
+	/**
+	 * @param code A daylight saving zone code
+	 * @return Copy of this model with that code
+	 */
+	def withDaylightSavingZoneCode(code: Option[Char]) = copy(daylightSavingZoneCode = code)
 }

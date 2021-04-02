@@ -5,6 +5,39 @@
 -- Hard-Coded   -----------------------------------------
 
 -- SOURCE: OpenFlights
+-- E.g.
+-- Code: E
+-- Name: Europe
+-- Start Month: 3
+-- Start Sunday Index: -1
+-- End Month: 10
+-- End Sunday Index: -1
+-- Sunday index may be negative, where -1 means the last sunday, -2 the second last and so on
+-- 0 means the first, 1 means the second and so on
+-- Please note that code is the primary key in this context
+CREATE TABLE daylight_saving_zone
+(
+	code CHAR NOT NULL PRIMARY KEY,
+	name VARCHAR(32) NOT NULL,
+	start_month INT NOT NULL,
+	start_sunday_index INT NOT NULL,
+	end_month INT NOT NULL,
+	end_sunday_index INT NOT NULL
+
+)Engine=InnoDB DEFAULT CHARSET=latin1;
+-- Europe (E): Last sunday of March to last sunday of October
+-- US/Canada (A): Second sunday of March to first sunday of November
+-- South Africa (S): Third sunday of October to third sunday of March
+-- Australia (O): First sunday of October to first sunday of April
+-- New Zealand (Z): Last sunday of September to first sunday of April
+INSERT INTO daylight_saving_zone (code, name, start_month, start_sunday_index, end_month, end_sunday_index) VALUES
+	('E', 'Europe', 3, -1, 10, -1),
+	('A', 'US/Canada', 3, 1, 11, 0),
+	('S', 'South America', 10, 2, 3, 2),
+	('O', 'Australia', 10, 0, 4, 0),
+	('Z', 'New Zealand', 9, -1, 4, 0);
+
+-- SOURCE: OpenFlights
 -- Applicable in: airports.dat (extended)
 CREATE TABLE station_type(
 	id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
@@ -34,6 +67,7 @@ CREATE TABLE world_region
 -- SOURCES: WAC_COUNTRY_STATE, countries.dat (OpenFlight), MASTER_CORD
 -- Represents a single country (E.g. Finland, Germany or USA)
 -- Capital id refers to the capital city in the city table (below)
+-- TODO: If there are more name-based country searches, consider making country name an index also
 CREATE TABLE country(
 	id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
 	name VARCHAR(64) NOT NULL,
@@ -106,6 +140,8 @@ CREATE TABLE city(
 	state_id INT,
 	world_area_code INT,
 	time_zone DOUBLE,
+	time_zone_name VARCHAR(16),
+	daylight_saving_zone_code CHAR,
 
 	CONSTRAINT c_c_country_link_fk FOREIGN KEY c_c_country_link_idx (country_id)
 	    REFERENCES country(id) ON DELETE CASCADE,
@@ -114,7 +150,10 @@ CREATE TABLE city(
 	    REFERENCES `state`(id) ON DELETE SET NULL,
 
 	CONSTRAINT c_wa_world_area_link_fk FOREIGN KEY c_wa_world_area_link_idx (world_area_code)
-	    REFERENCES world_area(code) On DELETE SET NULL
+	    REFERENCES world_area(code) On DELETE SET NULL,
+
+	CONSTRAINT c_dsz_daylight_saving_zone_link_fk FOREIGN KEY c_dsz_daylight_saving_zone_link_idx (daylight_saving_zone_code)
+	    REFERENCES daylight_saving_zone(code) ON DELETE SET NULL
 
 )Engine=InnoDB DEFAULT CHARSET=latin1;
 

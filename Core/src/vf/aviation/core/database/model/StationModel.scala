@@ -6,9 +6,12 @@ import utopia.genesis.util.Distance
 import utopia.vault.database.Connection
 import utopia.vault.model.immutable.StorableWithFactory
 import utopia.vault.sql.Insert
-import vf.aviation.core.database.factory.StationFactory
-import vf.aviation.core.model.partial.StationData
-import vf.aviation.core.model.stored.Station
+import vf.aviation.core.database.factory.station.StationFactory
+import vf.aviation.core.model.enumeration.StandardStationType
+import vf.aviation.core.model.enumeration.StandardStationType.Airport
+import vf.aviation.core.model.partial.station.StationData
+import vf.aviation.core.model.stored.station
+import vf.aviation.core.model.stored.station.Station
 
 import java.time.LocalDate
 
@@ -25,7 +28,36 @@ object StationModel
 	 */
 	def table = factory.table
 	
+	/**
+	 * @return A model that has been marked as an airport
+	 */
+	def airport = withType(Airport)
+	
+	
 	// OTHER    ------------------------
+	
+	/**
+	 * @param stationId A station id
+	 * @return A model with that id
+	 */
+	def withId(stationId: Int) = apply(Some(stationId))
+	
+	/**
+	 * @param stationType A station type
+	 * @return A model with that station type
+	 */
+	def withType(stationType: StandardStationType) = withTypeId(stationType.id)
+	/**
+	 * @param stationTypeId Station type id
+	 * @return A model with type id set
+	 */
+	def withTypeId(stationTypeId: Int) = apply(typeId = Some(stationTypeId))
+	
+	/**
+	 * @param iataCode Airport / station iata code
+	 * @return A model with that iata code
+	 */
+	def withIataCode(iataCode: String) = apply(iataCode = Some(iataCode))
 	
 	/**
 	 * @param data Station data
@@ -41,7 +73,7 @@ object StationModel
 	 * @param connection DB Connection (implicit)
 	 * @return Newly inserted station
 	 */
-	def insert(data: StationData)(implicit connection: Connection) = Station(apply(data).insert().getInt, data)
+	def insert(data: StationData)(implicit connection: Connection) = station.Station(apply(data).insert().getInt, data)
 	/**
 	 * Inserts multiple new stations to the DB
 	 * @param data Data to insert
@@ -51,7 +83,7 @@ object StationModel
 	def insert(data: Seq[StationData])(implicit connection: Connection) =
 	{
 		val ids = Insert(table, data.map { apply(_).toModel }).generatedIntKeys
-		ids.zip(data).map { case (id, data) => Station(id, data) }
+		ids.zip(data).map { case (id, data) => station.Station(id, data) }
 	}
 }
 
@@ -68,10 +100,33 @@ case class StationModel(id: Option[Int] = None, name: Option[String] = None, lat
                         isClosed: Option[Boolean] = None)
 	extends StorableWithFactory[Station]
 {
+	// IMPLEMENTED  ---------------------------
+	
 	override def factory = StationModel.factory
 	
 	override def valueProperties = Vector("id" -> id, "name" -> name, "latitudeNorth" -> latitudeNorth.map { _.degrees },
 		"longitudeEast" -> longitudeEast.map { _.degrees }, "altitudeFeet" -> altitude.map { _.toFeet },
 		"typeId" -> typeId, "dotId" -> dotId, "openFlightsId" -> openFlightsId, "iataCode" -> iataCode,
 		"icaoCode" -> icaoCode, "cityId" -> cityId, "started" -> started, "closed" -> closed, "isClosed" -> isClosed)
+	
+	
+	// OTHER    -------------------------------
+	
+	/**
+	 * @param id Id in the open flights system
+	 * @return A copy of this model with that id
+	 */
+	def withOpenFlightsId(id: Int) = copy(openFlightsId = Some(id))
+	
+	/**
+	 * @param icaoCode Icao standard code
+	 * @return A copy of this model with that icao code
+	 */
+	def withIcaoCode(icaoCode: Option[String]) = copy(icaoCode = icaoCode)
+	
+	/**
+	 * @param altitude Station altitude / elevation
+	 * @return A copy of this model with that altitude
+	 */
+	def withAltitude(altitude: Option[Distance]) = copy(altitude = altitude)
 }

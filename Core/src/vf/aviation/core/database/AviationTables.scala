@@ -11,6 +11,8 @@ import vf.aviation.core.util.Globals._
  */
 object AviationTables extends Tables(ConnectionPool)
 {
+	def daylightSavingZone = apply("daylight_saving_zone")
+	
 	/**
 	 * @return Table that records all world regions
 	 */
@@ -32,6 +34,10 @@ object AviationTables extends Tables(ConnectionPool)
 	 */
 	def city = apply("city")
 	
+	/**
+	 * @return Table that contains station type enumeration values
+	 */
+	def stationType = apply("station_type")
 	/**
 	 * @return Table that records airports and other stations
 	 */

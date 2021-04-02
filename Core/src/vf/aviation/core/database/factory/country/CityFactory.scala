@@ -19,5 +19,6 @@ object CityFactory extends FromValidatedRowModelFactory[City]
 	
 	override protected def fromValidatedModel(model: Model[Constant]) = City(model("id"),
 		CityData(model("name"), model("countryId"), model("marketId"), model("stateId"), model("worldAreaCode"),
-			model("timeZone").double.map { _.hours }))
+			model("timeZone").double.map { _.hours }, model("timeZoneName"),
+			model("daylightSavingZoneCode").string.flatMap { _.headOption }))
 }

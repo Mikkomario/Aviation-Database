@@ -1,7 +1,7 @@
-package vf.aviation.core.model.stored
+package vf.aviation.core.model.stored.station
 
 import utopia.vault.model.template.Stored
-import vf.aviation.core.model.partial.StationData
+import vf.aviation.core.model.partial.station.StationData
 
 /**
  * Represents an airport or another station that has been recorded to the database

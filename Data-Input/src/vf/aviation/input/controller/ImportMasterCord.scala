@@ -15,8 +15,9 @@ import vf.aviation.core.database.model.StationModel
 import vf.aviation.core.database.model.country.{CityModel, CountryModel, StateModel, WorldAreaModel}
 import vf.aviation.core.model.cached.Coordinates
 import vf.aviation.core.model.enumeration.StandardStationType.Airport
-import vf.aviation.core.model.partial.StationData
 import vf.aviation.core.model.partial.country.{CityData, CountryData, StateData}
+import vf.aviation.core.model.partial.station
+import vf.aviation.core.model.partial.station.StationData
 import vf.aviation.core.model.stored.country.WorldArea
 
 import java.nio.file.Path
@@ -134,7 +135,7 @@ object ImportMasterCord
 					})
 					
 					// Prepares an airport to be inserted
-					StationData(row.airportName, row.airportCoordinates, None, Some(Airport.id),
+					station.StationData(row.airportName, row.airportCoordinates, None, Some(Airport.id),
 						iataCode = row.airportIataCode, cityId = Some(cityId), started = Some(row.startDate),
 						closed = row.closeDate, isClosed = row.isClosed)
 				}
