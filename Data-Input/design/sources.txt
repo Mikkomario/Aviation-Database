@@ -1,0 +1,90 @@
+Publicly available data
+	- OpenFlights
+		- https://openflights.org/data.html
+		- https://openflights.org/help/time.html
+	- Bureau of Transportation Statistics
+		- https://www.bts.dot.gov/topics/airlines-and-airports/airline-information-download
+		- https://www.transtats.bts.gov/DatabaseInfo.asp?DB_ID=111
+		- https://transtats.bts.gov/ONTIME/
+		- https://www.bts.gov/topics/airlines-and-airports/airline-codes
+		- https://www.transtats.bts.gov/Tables.asp?DB_ID=595
+	- Aviation Intelligence
+		- https://ansperformance.eu/data/
+	- Eurostat
+		- https://ec.europa.eu/eurostat/data/database
+	- EASA
+		- https://www.easa.europa.eu/eaer/appendix
+		- https://www.easa.europa.eu/domains/environment/icao-aircraft-engine-emissions-databank
+	- Aircraft performance database
+		- https://contentzone.eurocontrol.int/aircraftperformance/default.aspx?
+	- Federal Aviation Administration
+		- https://www.faa.gov/airports/engineering/aircraft_char_database/
+		- https://www.faa.gov/licenses_certificates/aircraft_certification/aircraft_registry/releasable_aircraft_download/
+	- Aircraft Types
+		- https://opensky-network.org/datasets/metadata/
+	- Aviation codes central
+		- http://www.avcodes.co.uk/acrtypes.asp
+	- Aircraft types by ICAO code
+		- https://www.caa.co.uk/uploadedFiles/CAA/Content/Standard_Content/Data_and_analysis/AvStats_project/Files/AircraftTypesByIcaoCode.pdf
+
+Commercial API's
+	- OpenSky
+		- https://opensky-network.org/
+		- https://opensky-network.org/data/impala
+	- Snowflake
+		- https://www.snowflake.com/datasets/oag-global-flight-schedules/
+	- AviationEdge
+		- https://aviation-edge.com/airline-routes-database-and-api/
+		- https://aviation-edge.com/aviation-database/
+		- https://aviation-edge.com/developers/
+		- https://aviation-edge.com/get.php
+		- https://aviation-edge.com/premium-api/
+	- Cirium
+		- https://developer.flightstats.com/
+		- https://developer.flightstats.com/getting-started
+		- https://developer.flightstats.com/api-docs/aircraft/v1
+	- RapidAPI (multiple options)
+		- https://rapidapi.com/collection/flight-data-apis
+	- Great Circle Mapper (API)
+		- https://rapidapi.com/marcusgoede/api/great-circle-mapper/endpoints
+	- FlightAware
+		- https://flightaware.com/commercial/premium/
+	- Aviapages (API)
+		- https://aviapages.com/aviapages_api/
+	- ICAO
+		- https://data.icao.int/newdataplus/
+		
+Tools
+	- FlightsFrom.com
+		- https://www.flightsfrom.com/HEL
+		- https://www.flightsfrom.com/en/about-us
+	- Great Circle Mappper
+		- https://www.greatcirclemapper.net/
+		- https://www.greatcirclemapper.net/en/airports.html
+		- https://www.greatcirclemapper.net/en/aircrafts.html
+		- https://www.greatcirclemapper.net/en/airlines.html
+		- https://www.greatcirclemapper.net/en/api.html
+	- FlightsStats (Cirium)
+		- https://www.flightstats.com/v2/flight-tracker/departures/HEL?year=2021&month=1&date=9&hour=6
+	- FlightConnections
+		- https://www.flightconnections.com/airlines
+	- Aviapages
+		- https://aviapages.com/flight_route_calculator/
+	- Noise DB
+		- http://noisedb.stac.aviation-civile.gouv.fr/bdd
+	- Aircraft performance database
+		- https://contentzone.eurocontrol.int/aircraftperformance/details.aspx?ICAO=A320
+		
+Other
+	- ICAO maps
+		- http://gis.icao.int/gallery/
+	- Aircraft photos
+		- https://www.risingup.com/pictures/
+	- About FABs
+		- https://www.skybrary.aero/index.php/Functional_Airspace_Block_(FAB)
+	- Aircraft categories (eurostat /scl)
+		- https://ec.europa.eu/eurostat/ramon/nomenclatures/index.cfm?TargetUrl=LST_NOM_DTL&StrNom=CL_AIRC_CAT
+	- Aircraft design groups
+		- https://www.skybrary.aero/index.php/Airplane_Design_Group_(ADG)
+	- About aircraft classes
+		- https://www.faa.gov/documentLibrary/media/Order/Order_7360.1D_Aircraft_Type_Designators_FINAL.pdf

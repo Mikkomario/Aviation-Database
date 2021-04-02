@@ -1,0 +1,817 @@
+Additional notes
+	- nm = nautical mile = 1852 m
+	- knot = 1 nm/h
+	- ASMA = arrival sequencing and metering area
+		- Cylinder-like area around the airport
+	- ASMA time = aircraft's time within ASMA
+	- ATFM = air traffic flow management
+	- ICAO descriptions, like A1P or L2J are to be interpreted as follows:
+		- 1: Letter describing A/C type (Amphibian (A), Landplane (L), Helicopter (H), ...)
+		- 2: Number of engines
+		- 3: Type of engines (Piston (P), Jet (J), Turboprop (T))
+
+Route usage
+	-> Route
+	- Month
+	- Scheduled number of departures (opt)
+		- For foreign carriers, this is not applicable and 0 in the document
+	- Actual number of departures
+	- Passengers transported: Int
+		- Again, total, I think
+	- Freight transported: Int (pounds?)
+	- Mail transported: Int (pounds?)
+	- Ramp time: Int (minutes)
+		- Towing, catering, fueling etc. ground handling operations
+		- Computed from the moment the aircraft moves under its own power until 
+		it comes to rest at the next point of landing
+	- Airborne time: Int (minutes)
+		- From the moment aircraft leaves ground to the point it touches down at next destination
+
+Route
+	- Aircraft group code (?)
+		- This value is listed in db28, but I can't find a list to check these against.
+	- Aircraft type id (?)
+		- Same thing here
+	- Available capacity payload (pounds): Int
+		- I think this is total for all trips
+	- Number of seats available: Int
+		- I think this is also a total number (since some routes have like 4 000 seats)
+		- Does not count those blocked for safety or operational reasons
+	- Distance (?)
+		- Great circle distance in statute miles is specified in db28 documents
+	- is codeshare: Boolean (opt)
+		- Present in routes.dat
+		- Determines whether this route is operated by a non-airline carrier
+	-> Origin airport
+	-> Target airport
+	-> Airline (iata/icao/id)
+	-> Service Class
+	-> A/C Configuration
+	-> A/C Types (many)
+		- Linked from routes.dat, based on 3 letter codes
+	- NB: Data available in db28
+		- Some of the information may need to be moved to Route Usage if there are multiple values 
+		for a single route
+			- Alternatively there may be a third table: route configuration which contains
+				- A/C (specific) information
+				- Number of scheduled flights
+	
+Service Class (from USA bureau of transportation statistics)
+	- Code: 1 Char
+		- F = Scheduled passenger/cargo service
+		- G = Scheduled all cargo service
+		- L = Non-scheduled civilian passenger service
+		- P = Non-scheduled civilian all cargo service
+		
+Aircraft configuration
+	- ID: Int
+		- 1 = Passenger (with cargo in the belly)
+		- 2 = ALL cargo
+		- 3 = Combi - Passenger / cargo (where part of the upper deck is configured to hold a cargo pod)
+		- 4 = Amphibious / Float - Passenger / Cargo
+
+A/C
+	- Unique ID: String (opt)
+		- E.g. 00350110
+		- In MASTER.txt, referring to certification?
+		- Not sure whether this is important
+	- N-Number: String (opt)
+		- Present in MASTER.txt
+	- Serial Number: String (opt)
+		- Also present in MASTER.txt
+	- Transponder icao24 code (unique?)
+		- There is also one transponder code column present in MASTER.txt (E.g. 50002263)
+			- Which is also available in hexadecimal format: E.g. A00714
+	- Registration (not always unique)
+	- Tail sign (not unique, except within a certain system?)
+	- Registered: date (opt)
+	- Registered until: date (opt)
+		- Usually only one of the dates is provided, sometimes neither
+	- Built: year (opt)
+		- In document as date but month and day are always both 1
+	- Certificate issued: Date (opt)
+	-> Model (name / code)
+	-> Operator (airline) (icao code) (opt)
+	-> Owner (name) (opt)
+		- Document may list "private"
+
+A/C Model
+	- Code: String (7)
+		- From ACREF.txt
+		- Where first 3 characters show the manufacturer, next 2 the model and next two the series
+	- TypeID: Int (opt)
+		- This is from bureau of transportation statistics data (Aircraft Types) and 
+		matches the numeric code used in db28 documents
+	- GroupID: Int (opt)
+		- Also from BTS data. See whether this should be a reference to another table
+		(depends on what information the groups have)
+	- Name
+		- May have variations in style?
+			- At least in FAA-Aircraft-Char-database document there are alternatives in 
+			parenthesis (or two variations with / or ,)
+			- In BTS data, there are 3 variations for name:
+				- name
+				- long name
+				- short name
+		- May be shared between manufacturers?
+			- At least between different name variations
+			- Doesn't seem to be duplicates other than that (at least not immediately)
+			- In AircraftTypes there are duplicates between different manufacturers (E.g. "Hornet")
+	-> Manufacturer
+		- Usually linked with icao code (E.g. CESSNA), sometimes by name
+			- Try to avoid links by name by first importing documents that provide codes
+	- Series (opt)
+		- In AircraftTypesByIcaoCode
+		- "NO MASTER SERIES ASSIGNED" if unknown
+		- Unique only within manufacturer
+	- Engine count (opt)
+		- Specified in FAA-Aircraft-Char-database, for example
+	- MTOW (opt)
+		- Max weight for take-off
+	- Max ramp / max taxi weight (opt)
+		- Maximum weight allowed for taxiing
+		- Often slightly more than MTOW
+	- Average cruising speed: Int (opt) (miles per hour in ACREF)
+	- Approach speed (knots?) (opt)
+		- Max speed during take-off from which A/C can stop at certain point
+	- Wingspan (feet) (opt)
+		- Length between the tips of the wings
+	- Length (feet) (opt)
+	- Tail height (feet) (opt)
+	- Wheelbase (feet) (distance between front and back wheels) (opt)
+	- main (landing?) gear width (feet) (MGW, outer to outer) (opt)
+	- Max number of seats: Int (opt)
+		- Specified in ACREF
+	- Manufacture start / end (opt)
+		- Specified for some aircrafts in FAA Aircraft char database
+	- Certificate data sheet: String (opt)
+		- Specified in ACREF for some A/C
+	- Certificate data holder: String (opt)
+		- Specified in ACREF for some A/C
+	-> Typecode (opt, iata?)
+		- Which may be shared between manufacturers and models
+		- Specified in, for example: Order_7360.1D_Aircraft_Type_Designators_FINAL.pdf
+	-> Icao A/C type code (opt)
+		- Not unique and shared between manufacturers and models alike
+	-> Category (description) (optional)
+		- "No ADS-B Emitter Category Information" or empty if unknown
+	-> WTC (wake type category) (opt)
+		- L / M / H
+		- present in 2 (ICAO) documents
+	-> A/C overall type (opt)
+		- Specified in one of the documents, but always "Landplane"
+		- E.g. Landplane
+		- In AircraftTypesByIcaoCode, there are more options
+		- There are also more options in AircraftTypes.csv
+		- TODO: Consider moving to a separate document
+	-> Aircraft design group (ADG) (opt)
+		- Specified in aircraft characteristics excel
+	-> Engine type (opt)
+		- Jet / Turboprop / Piston
+		- Specified in one of the documents
+	-> Engines (opt)
+		- May also include count (e.g. 1x or 2x)
+		- May be multiple different
+		- May also list "NONE NONE"
+	- NB: We also have AAC and TDG values but I don't know what they're for
+		- Wingtip configuration (enumeration) is also available
+		- AAC = Airworthines advisory circular
+		- CMG?
+		- Main gear config
+	
+A/C Manufacturer (listed in Manufacturers.csv)
+	- Code: String (3)
+		- From From ACREF
+	- Icao code: Text (<32?) (opt?)
+		- Not always provided in source document, even if should be.
+			- E.g. CESSNA
+		- May be two different codes with same name
+			- E.g. SHIJIAZHUANG / ANTONOV - Antonov
+	- Name (may vary, Eg. Robinson / Robinson Helicopter / Robinson Helicopter Company)
+	-> Country (opt)
+		- Specified in manufacturers.csv (by name)
+			- Within () at the end of the name, but not always present
+	
+NB: About A/C codes: In AircraftTypes, one set of codes is always 3 characters while the other is varying in length (usually 4)
+	- They are simply named description and designator
+		- Not sure if they match with codes but they look familiar
+	
+A/C Typecode (iata?)
+	- Code
+		- Nb. May be strange / generic like "BALL" or "DISC"
+			- May also be more specific like AT43 (which would match with iata code?)
+				- Or is it icao?
+			- These are described in Order_7360.1D_Aircraft_Type_Designators_FINAL.pdf
+		- NB: In Order_7360.1D_Aircraft_Type_Designators_FINAL.pdf, some codes end with *
+			- E.g. A7*
+	- Engine number
+	- Model name(s): String (opt)
+		- In equipment.dat, there are listed iata (3 letter) codes + their model names (which usually contain manufacturer name)
+			- It is unclear whether this information should be used / where the name should be applied
+			(since an iata code may be associated with multiple models)
+			- It is probably best to read this document last and just make sure the specified iata codes are stored in database 
+			and have some name associated with them. Other documents should be preferred.
+	-> Engine type code / category (P, J, ...)
+	-> Class (opt)
+		- Which is from Fixed-wing, Helicopter, Gyrocopter, @Fixed-wing
+		- In Order_7360.1D_Aircraft_Type_Designators_FINAL.pdf
+	-> FAA Weight Class (S, S+, H, L, NOWGT)
+		- Where NOWGT is same as undetermined (null)
+	-> WTC (ICAO) (Light, Medium, Heavy)
+	-> Wake Category (RECAT 1.5) (F, B, D, NOWGT, ...)
+	-> SRS (I, II, III, ...)
+	-> LAHSO group (opt)
+	
+A/C Icao Code (up to 4 chars)
+	- Code
+		- Shared between manufacturers and models
+	-> Vehicle category (opt)
+		- Found in AircraftTypesByIcaoCode
+		- Possibly at model (?)
+
+A/C Owner
+	- Name: String
+	-> Type (Code) (opt)
+		- Specified in MASTER.txt
+	-> Street addresses (many)
+		
+A/C Owner Type
+	- Code: Int
+		- 1 - Individual
+		- 2 - Partnership
+		- 3 - Corporation
+		- 4 - Co-Owned
+		- 5 – Government
+		- 7 - LLC
+		- 8 - Non Citizen Corporation
+		- 9 - Non Citizen Co-Owned
+
+Airline Alliance
+	- Name: String
+	-> Airlines (by iata code) (many)
+	- NB: These are listed in alliances.dat
+
+Operator / airline
+	- Icao code: 3 letter string
+		- Unsure whether airlines.dat contains this for all rows
+		- BTS carrier decode list provides either 2 or 3 letter codes. Some of these may be ICAO codes, 
+		although documentation says that they are from IATA. Research more into this.
+	- Iata code: 2 letter string (opt)
+		- See above note about BTS data
+		- According to BTS data, these are not unique
+			- In these cases (1), (2) etc. is added at the end of repeating ids in some documents / columns
+	- Bureau of Transportation Statistics ID: Int (5)
+		- Unique numeric code for the aircraft referred to in BTS data (e.g. db28)
+	- Bureau of Transportation Statistics code: String (opt)
+		- Specified in https://www.bts.gov/topics/airlines-and-airports/airline-codes
+	- BTS Carrier Entity: String (5)
+		- Not sure what this is for
+	- OpenFlights id: Int (opt)
+		- Specified by airlines.dat, but not in other sources
+	- Numeric code: Int (3) (opt)
+		- from major airline numeric codes
+		- Not sure whether this is important
+	- Name (opt)
+		- Again, there may be variations in how the airlines are named in different systems
+			- In BTS listing, there may be multiple rows for the same name, where they have different 
+			(iata) codes
+				- The deprecation time of these rows is provided in THRU_DATE_SOURCE column. The various 
+				identical / matching rows must be combined and only the latest (end time = empty?) taken
+		- Possibly one has to add multiple names per airline - see whether this is necessary
+	- Callsign (opt)
+	- Alias (opt)
+	- Active: Boolean (opt)
+		- Present in airlines.dat, but unreliable (towards positive)
+	-> Airline Group (code)
+		- From BTS document, connects to True Airline Group Codes (I think)
+	-> T100 Alternative Group Code (USA) (opt)
+		- Specified in db28 documents
+	-> Region (opt)
+		- Present in BTS listing. Domestic perhaps means that they operate in the states.
+			- Other values include Pacific, Atlantic, International
+		- Not sure whether this value is useful
+	-> Country (opt)
+		- Specified in airlines.dat
+	-> WAC (world area code)
+		- from db28 document / BTS airline list
+
+T100 Alternative Airline Group Code (USA)
+	- Code number (1-9)
+		- Where
+			- 0 = International (where true group code may be 7)
+			- 1 = Regional Carriers (which is a combination of true group codes 1, 4, 5 and 6)
+			- 2 = National Carriers
+			- 3 = Major Carriers
+			- 8 = Domestic Only All Cargo Carriers
+			- 9 = Essential Air Taxi (not reported?)
+True Airline Group Codes (not sure if used, but here for reference)
+	- Code Number (1-9)
+		- 1 = Large regional carrier - 20 m to 100 m revenue
+		- 2 = National carrier - 100 m to 1 b in revenue
+		- 3 = Major carrier - > 1 b revenue
+		- 4 = Medium regional carrier - < 20 m revenue
+		- 5 = Small certificated carrier
+		- 6 = Commuter carrier
+		- 7 = Foreign carrier
+		- 8 = All cargo carrier (Domestic only)
+		- 9 = Essential air service - air taxi
+
+Engine Model
+	- Code: String (5)
+		- From ENGINE.txt
+		- Of which 2 last characters note the model and 3 first the manufacturer
+	- Name
+		- Nb. In document these are in text format, may be separated with &nbsp; or &amp; and
+		may be wrapped in ( ), may have <br> at the end
+		- There are manufacturer names in common, but not separated in columns
+		- Syntax seems to be:
+			- 1) "1 x " / "2 x " / "" (engine count, opt)
+			- 2) Manufacturer name (1-3 words)
+				- E.g. "CONT MOTOR", "P&W", "ROTAX" or "CONTINENTAL MOTORS CORP"
+					- Last of which is same as "CONT MOTOR", so there may be spelling differences 
+					as well
+			- 3) Make / makes
+				- E.g. "IO-320", "0-320" or "PT6A-60A"
+				- Or: "MTV-12-B-C/C183-17E"
+				- May also be missing completely
+			- 4) "SER" or "SERIES" (optional)
+		- Also present in ENGINE.txt
+	- Horsepower: Int (opt)
+		- For engines where applicable
+	- Thrust: Int (opt)
+		- For engines where applicable
+	-> Type (code)
+		- Same types as listed in ACREF / ENGINE files
+	- NB: Many engine manufacturer/engine combinations are listed in emissions data
+
+Engine Manufacturer
+	- Code: String (3)
+		- from ENGINE.txt first 3 chars of engine code
+	- Name: String
+
+Engine Type / Category
+	- Code: 1 char
+		- E = Electric
+		- P = Piston
+		- T = Turboprop/Turboshaft
+		- J = Jet
+		- R = Rocket
+		- C (extra?) = Fixed wing aircraft with two engines coupled to drive a single propeller system
+	- NB: In ACREF there are these options:
+		- 0 - None
+		- 1 - Reciprocating
+		- 2 - Turbo-prop
+		- 3 - Turbo-shaft
+		- 4 - Turbo-jet
+		- 5 - Turbo-fan
+		- 6 - Ramjet
+		- 7 - 2 Cycle
+		- 8 - 4 Cycle
+		- 9 – Unknown
+		- 10 – Electric
+		- 11 - Rotary
+	- TODO: Add these here or use a separate table
+
+A/C category (enumeration)
+	- Name
+		- Alternatives may be seprated with /
+			- E.g. Ultralight / hang-glider / paraglider
+		- Not too many options in the document
+			- Light, ultralight, small, heavy, large, lighter-than-air
+	- Weight min & max (opt)
+		- In lbs
+		- One or both may be specified, means a range
+	-> WTC
+		- Can probably be matched with WTC options
+
+TODO: Connect these weight and measurement classes to aircrafts
+	- Either based on documents or based on calculations based on measurements
+
+ADG (Airplane Design Group)
+	- ID (1-6)
+	- Wingspan min
+	- Wingspan max
+	- Tail Height min
+	- Tail height max
+	- NB: Links to this table may need to be deducted based on aircraft measurements, 
+	unless some document specifies these
+		- Same document which specifies measurements also provides the link
+
+Aircraft Weight Class
+	- Code (1 char)
+		- J = Super
+		- H = Heavy
+			- Max takeoff weight >= 300 000 pounds
+		- L = Large
+			- Max takeoff weight > 41 000 pounds and < 300 000 pounds
+		- S = Small
+			- Max takeoff weight <= 41 000 pounds
+		- S+ = Large, turbine-engine-powered aircraft
+			- Max takeoff weight >= 12 500 pounds and < 41 000 pounds
+	- Min max takeoff weight (opt)
+	- Max max takeoff weight (opt)
+	- NB: See Order_7360.1D_Aircraft_Type_Designators_FINAL.pdf
+
+WTC (Wake Turbulence Category)
+	- Code
+		- H = Heavy
+			- Max takeoff weight >= 300 000 pounds
+		- M = Medium
+			- Max takeoff weight > 15 500 pounds and < 300 000 pounds
+		- L = Light
+			- Max takeoff weight <= 15 500 pounds
+	- Min max takeoff weight (opt)
+	- Max max takeoff weight (opt)
+	- NB: See Order_7360.1D_Aircraft_Type_Designators_FINAL.pdf
+	- NB: Single aircraft type may have multiple different weight classes (E.g. L/M, M/H)
+		- Singular models then have only one weight class
+	- Also, these are not documented in ICAO documents
+		- (1)Micro-/ultra-light are those aircraft types with a maximum certified take-off weight of 1,000 pounds or less 
+		and a stall speed not greater than 35 knots.
+		- (2)Micro-/ultra-light helicopters and gyrocopters are those helicopters or gyrocopters with a 
+		maximum certified take-off weight of 1,000 pounds or less.
+		
+Alt A/C Weight Category (from ACREF)
+	- ID: Int (1)
+		- 1: < 12 500 pounds
+		- 2: >= 12 500 pounds and < 20 000 pounds
+		- 3: >= 20 000 pounds
+		- 4: UAV up to 55 (???)
+			- UAV = Unmanned Aerial Vehicle, 55 probably refers to pounds
+	
+Wake Category
+	- Code (1 char)
+		- A
+			- MTOW >= 300 000 pounds
+			- Wingspan > 245 feet
+		- B
+			- MTOW >= 300 000 pounds
+			- Wingspan > 175 feet and <= 245 feet
+		- C
+			- MTOW >= 300 000 pounds
+			- Wingspan > 125 feet and <= 175 feet
+		- D
+			- 1)
+				- MTOW < 300 000 pounds
+				- Wingspan > 125 feet and <= 175 feet
+			- 2)
+				- MTOW > 41 000 pounds
+				- Wingspan > 90 feet and <= 125 feet
+		- E
+			- MTOW > 41 000 pounds
+			- Wingspan > 65 feet and <= 90 feet
+		- F
+			- 1)
+				- MTOW < 41 000 pounds
+				- Wingspan <= 125 feet
+			- 2)
+				- MTOW < 15 500 pounds
+			- 3)
+				- Powered sailplane
+				
+LAHSO group landing zone length requirement
+	- Altitude min & max: Int (feet?)
+		- Not sure if of the airport or of the aircraft
+			- Starting from sea level, so maybe airport?
+	-> LAHSO group
+	- Required landing zone distance: Int (feet)
+		- For group 10, this is only specified as "greater than 8000 feet"
+			- In other words, "coordinate yourself"
+				
+LAHSO (Land and Hold Short Operations) Aircraft Group
+	- Number (1-10)
+	
+A/C vehicle category
+	- Name
+		- In one document, this is always "Landplane"
+			- in document aircraftTypes there are also other options, including Amphibian, 
+			which isn't found from the other document
+				-> Airplane may have subcategories (landplane & amphibian)
+				- We also have gyrocopter (same as gyroplane?)
+				- And tilt-wing
+				- All options in aircraftTypes:
+					- LandPlane
+					- Helicopter
+					- Amphibian
+					- Gyrocopter
+					- Tilt-wing
+					- SeaPlane
+		- In AircraftTypesByIcaoCode, options are
+			- FIXED WING - AIRPLANE
+			- ROTORCRAFT - HELICOPTER
+			- LIGHTER-THAN-AIR - AIRSHIP
+			- FIXED WING - POWERED GLIDER
+			- ROTORCRAFT - GYROPLANE
+			- HYBRID LIFT - NOT APPLICABLE
+			- FIXED WING - NON-POWERED GLIDER
+		- In AircraftTypesByIcaoCode, these are assigned for each icao code
+		- In ACREF file, there are following options:
+			- 1 - Glider
+			- 2 - Balloon
+			- 3 - Blimp/Dirigible
+			- 4 - Fixed wing single engine
+			- 5 - Fixed wing multi engine
+			- 6 - Rotorcraft
+			- 7 - Weight-shift-control
+			- 8 - Powered Parachute
+			- 9 - Gyroplane
+			- H - Hybrid Lift
+			- O - Other
+		- And also in ACREF (A/C Category column):
+			- 1 - Land
+			- 2 - Sea
+			- 3 - Amphibian
+		- ICAO Description Options
+			- A => Amphibian
+			- G => Gyrocopter
+			- H => Helicopter
+			- L => Landplane
+			- S => Seaplane
+			- T => Tilt-wing
+	- Should be divided to supertype & subtype (opt)
+	- TODO: Possibly use multiple category types
+	- Definitions
+		- Sorting 1
+			- LandPlane = plane with wheels
+			- Helicopter = Type of rotorcraft that has horizontally spinning rotors
+			- Amphibian / amphibious aircraft = plane that can land in both land and water
+			- SeaPlane = Fixed-wing amphibious aircraft that can land in water
+				- Are usually divided in floatplanes and flying boats
+				- Seaplanes which can also take off from land are amphibians
+			- Gyrocopter = Has a non-powered horizontal rotor for lift and a powered 
+			vertical rotor for thrust
+			- Tilt-wing = an aircraft that tilts its whole wing 90 degrees to propel upwards when needed
+			- Extra: Tiltrotor = Tilt-wing which doesn't rotate the wing, only the engines at the wing tips
+		Sorting 2
+			- Winged Aircraft
+				- Fixed-wing = has wings that don't flip or rotate
+					- Airplane = A powered fixed wing aircraft with forward thrust movement
+						- Powered Glider = A powered version of a parachute, hang glider, 
+						or a sail plane with additional motor (motor glider)
+					- Non-powered glider = Heavier than air fixed wing aircraft
+				- Rotary-wing = Wings form a rotor that is mounted on a mast or a spinning shaft
+					- Helicopter (see above)
+					- Gyroplane (see above)
+				- Orhithopter = Wings flap, like those of a bird
+			- Lighter-than-air
+				- Airship = Gains lift through lighter-than-air gasses and has a powered thrust
+					- non-rigid (blimp) = No rigid structures around the "balloon"
+					- semi-rigid = Some rigid structures around the "balloon"
+					- rigid (zeppelin) = No balloon, but instead rigid form
+			- Hybrid Lift (Hybrid airship) = An airship that combines lighter than air elements with 
+			aerodynamic lift (E.g. fixed wings)
+				- Dynastat = Hybrid ship with fixed wings
+				- Rotastat = Hybrid ship with rotary wings
+		Other
+			- Weight-shift-control = Aircraft control where the polot uses their weight to control the craft
+				- E.g. In hang gliders, powered hang gliders and ultralight trikes
+				- Also related to ultralight aircrafts
+			- Balloons are non-powered lighter-than-air aircrafts
+		Synopsis
+			- Land/Sea distiction (mostly for fixed wings)
+				- LandPlane
+				- Amphibian
+				- SeaPlane
+			- Weight distinction
+				- Lighter-than-air
+				- Heavier-than-air
+				- Hybrid lift
+			- Wing type distinction (applicable to heavier-than-air and hybrid aircrafts)
+				- Fixed-wing
+					- Airplane (requires motor to maneuver)
+					- Glider (doesn't require a motor to maneuver)
+				- Rotary-wing
+					- Helicopter
+					- Gyroplane/Gyrocopter
+				- Tilt-wing
+				- Ornithopter (not present in data)
+			- Powered / non-powered distinction
+				- Powered
+				- Non-powered
+		
+
+Daily arrival delay distribution
+	-> Airport usage
+	- Delay code
+	- Minutes of delay
+	
+Daily departure delay information
+	-> Airport usage
+	- Number of departures with data from operator
+	- Number of departures with data from airline
+	- Minutes of iata 89 delay reported by operators
+	- Minutes of iata 89 delay reported by airlines
+	
+Daily ATFM delay
+	-> Airport usage
+	- Type (?)
+		- There are some options here: ANSP, AREA, FAB
+	- Minutes of delay
+	- Number of delayed flights
+	- Number of +15 min delayed flights
+	
+AFTM delay distribution
+	-> AFTM delay
+	- Delay code
+	- Minutes of delay
+
+Daily Airport usage (combined from multiple sources)
+	-> Airport
+	- Date
+	- Number of IFR arrivals (network manager)
+	- Number of IFR departures (network manager)
+	- Number of IFR departures based on activated flight plans (network manager)
+		- Check whether duplicate with one above
+		- From slot adherence document (EU)
+		- Not sure if this is useful
+	- Number of regulated departures (network manager) (opt)
+		- Subset of total departures
+	- Number of departures regulated and early (< -5 minutes)
+	- Number of departures regulated on time (-5 - +10 mins)
+	- Number of departures regulated late (> 10 mins)
+	- Number of IFR arrivals (operator) (opt)
+	- Number of IFR departures (operator) (opt)
+	- Arrival delay minutes in total (opt)
+	- Number of delayed arrivals (opt)
+	- Number of arrivals delayed by over 15 mins (opt)
+
+Monthly Airport usage (deducted from daily usage)
+	-> Airport
+	- Year
+	- Month
+	- ...
+
+Yearly Airport usage (deducted from monthly usage)
+	-> Airport
+	- year
+	- ...
+	
+Monthly airport asma time
+	-> Airport
+	- Year
+	- Month
+	- unimpeded flights count
+	- total asma minutes
+	- total additional asma minutes
+	
+Yearly airport asma time (deducted from monthly reports)
+	- ...
+	
+Monthly airport taxi-out time
+	-> Airport
+	- Year: Int
+	- Month: Int
+	- Unimpeded flights count: Int
+	- Total unimpeded taxi-out time minutes: Int
+	- Total additional taxi-out time minutes: Int
+
+Yearly transport of goods (country)
+	-> Country
+	- Year
+	- Tons of goods transported: Int
+	
+Yearly transport of passengers (country)
+	-> Country
+	- Year
+	- Number of passengers transported: Int
+	- Of which international: Int (opt)
+	- Of which national: Int (opt)
+	- Of which inside EU: Int (opt)
+	- Of which outside EU: Int (opt)
+
+Airport
+	- US DOT Id: Int (opt)
+		- From master coordinates document
+		- Unlike iata and icao codes, which may be changed / reused, this one is unique
+	- Icao Code: 4 letter string (opt?)
+		- Not all airports at airports.dat have this? (test)
+	- Iata Code: 3 letter string (opt)
+	- OpenFlights id: Int (opt)
+		- Specified in airports.dat, but not in other sources
+	- Name
+		- Different names in different sources?
+		- May need to support multiple different names - see more about this
+	- Latitude: Double (opt?)
+		- Specified in airports.dat (-=S, +=N)
+	- Longitude: Double (opt?)
+		- Specified in airports.dat (-=W, +=E)
+	- Altitude: Double (opt?)
+		- airports.dat provides this in feet (convert)
+	- Timezone: Double (opt?)
+		- hour offset from utc (in airports.dat / master coordinates)
+	- Timezone name: String (opt?)
+		- Specified in airports.dat
+	- Asma radius: Int (metres or nm?) (default = 40 nm)
+	- Closed after: Date (opt)
+	-> City (name)
+	-> Daylight savings time (zone) (opt)
+		- Specified in airports.dat, but may be none (U)
+	-> FAB (opt)
+		- Specified in Delay post ops document
+	-> WAC (opt)
+		- Specified in db28 WAC variation documents
+		- Please note that this code is not unique to an airport
+	-> State (code / name) (opt)
+		- In master coordinates document
+	-> Country (name / ISO)
+		- NB: Country also matches the first 2 letters of the icao code
+	-> Type (opt)
+		- specified in airports.dat (complete version)
+		- In other documents, airport is expected
+
+Station type (from OpenFlights)
+	- Code (matching OpenFlights value)
+		- airport = airport
+		- station = train station
+		- port = ferry terminal
+		- unknown = ???
+	- Name
+
+Street Address
+	- Name: String
+	- Zip code: String
+	- County: String (opt)
+	-> City (name)
+
+World area (used for grouping airports in USA documents)
+	- World area code: Int/String (always 3 digits, initial zeros matter (10 = 010))
+		- The first digit specifies the major geographic area (E.g. United States (0) or Europe (4))
+	- Unique version code: Int
+	- Name
+	- Started: Year month
+	- Deprecated: Date (opt)
+	- Notes: String (opt)
+	-> Region
+	-> Country
+	-> State (opt)
+
+City
+	- Market ID
+		- From master coordinates file
+	- Name
+		- There likely are variations in city names
+	-> State (opt)
+		- In db28 documents, for countries with states, at least USA
+			- The structure is as follows: "<city name>,<state (opt)>,<country>"
+				- All names are in UPPERCASE letters
+		- These references are also present in some other files (E.g. MASTER A/C file)
+	-> Country
+		- Technically this may change over time
+	-> WAC (opt)
+		- See master coordinates file
+
+State
+	- Name
+		- Found in db28 documents for USA states
+	- Code
+		- Found in WAC document
+	- FIPS Code: Int
+		- Also found in WAC document
+	-> Country
+
+Country
+	- Name
+	- ISO 3166-1 code: 2 letter string (opt)
+		- Not all countries in WAC document have this
+			- Not sure whether those cases should be recorded, however
+	- Dafif-code (opt)
+		- present in countries.dat, historical
+	- Icao code beginning (opt?)
+		- Can be determined from airport-country connections
+			- E.g. from Airport arrival ATFM delay document
+	- Independent: Boolean (opt)
+		- Specified in WAC document
+	-> Capital (opt)
+		- Refers to a city
+	-> Sovereignty (opt)
+		- Under which country this dependent country operates
+	-> WAC region
+	- Until: Date (opt)
+	- Comment: String (opt)
+			
+Functional Airspace Block (FAB) (used in Europe)
+	- Code
+	-> Countries
+		- Can be deducted based on registered airport connections
+		
+Region (in WAC system)
+	- World Area Code -code: Int (1)
+		- The first digit in WAC. E.g. 0 for USA and 4 for Europe
+	- Name
+		
+Daylight saving zone
+	- Code (from OpenFlights)
+		- One of: E (Europe), A (US/Canada), S (South America), O (Australia), Z (New Zealand)
+	- Name
+	- Start month & sunday index
+		- E = last sunday of march
+		- A = second sunday of march
+		- S = Third sunday of october
+		- O = first sunday of october
+		- Z = last sunday of september
+	- End month & sunday index
+		- E = last sunday of october
+		- A = first sunday of november
+		- S = Third sunday of march
+		- O = first sunday of april
+		- Z = first sunday of april

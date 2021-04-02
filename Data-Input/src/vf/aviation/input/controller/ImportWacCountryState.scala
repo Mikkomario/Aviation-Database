@@ -18,6 +18,7 @@ import vf.aviation.core.util.StringFormatExtensions._
 
 import java.nio.file.Path
 import java.time.LocalDate
+import scala.io.Codec
 
 /**
  * Used for importing WAC_COUNTRY_STATE file information as world area codes and country + state.
@@ -27,6 +28,11 @@ import java.time.LocalDate
  */
 object ImportWacCountryState
 {
+	// ATTRIBUTES   ---------------------------------
+	
+	private implicit val codec: Codec = Codec.UTF8
+	
+	
 	// OTHER    -------------------------------------
 	
 	/**
@@ -38,7 +44,7 @@ object ImportWacCountryState
 	 */
 	def apply(path: Path, separator: String = ",")(implicit connection: Connection) =
 	{
-		CsvReader.iterateLinesIn(path, separator) { modelsIterator =>
+		CsvReader.iterateLinesIn(path, separator, ignoreEmptyStringValues = true) { modelsIterator =>
 			modelsIterator.mapCatching { WacRow(_) } { _.printStackTrace() }
 				// Groups the rows based on the first world area code character
 				.groupBy { _.worldRegionCode }
@@ -46,16 +52,35 @@ object ImportWacCountryState
 					// Inserts a new world region (ignores parenthesis content in region name)
 					val region = WorldRegion(regionCode, rows.head.worldRegionName.withoutParenthesisContent)
 					WorldRegionModel.insert(region)
+					println(s"Handling world region $regionCode ${region.name} (${rows.size} rows)")
 					
+					// Checks for duplicate world area codes
+					/*
+					val (duplicateWacRows, uniqueRows) = rows.groupBy { _.worldAreaCode }
+						.dividedWith { case (wac, rows) =>
+							// Case: Duplicates
+							if (rows.size > 1)
+								Left(wac -> rows)
+							// Case: Unique
+							else
+								Right(rows.head)
+						}*/
+					
+					// Handles unique rows first
 					// Handles one country at a time.
 					// Rows without country iso code are each treated as an individual country
-					val rowsByCountry = rows.groupBy { _.countryIsoCode }
 					// Collects country + country WAC + sovereignty + state WACs
-					rowsByCountry.flatMap { case (countryIsoCode, rows) =>
+					rows.groupBy { _.countryIsoCode }.flatMap { case (countryIsoCode, rows) =>
 						if (countryIsoCode.isDefined)
+						{
+							println(s"Handling country $countryIsoCode (${rows.size} rows)")
 							Vector(handleCountryRows(regionCode, countryIsoCode, rows))
+						}
 						else
+						{
+							println(s"Handling ${rows.size} countries without ISO code")
 							rows.map { row => handleCountryRows(regionCode, None, Vector(row)) }
+						}
 					}.toVector
 				}.toVector
 		}.map { collectedCountryData =>
@@ -72,6 +97,8 @@ object ImportWacCountryState
 					c => c.name.toLowerCase.contains(lowerName))).minByOption { _.name.length }
 					.map { countryName -> _ }
 			}.toMap
+			println(s"Inserted ${countries.size} countries")
+			println(s"${sovereigntyNames.size} sovereignties were listed, ${sovereignties.size} found")
 			collectedCountryData.foreach { case (country, sovereigntyName) =>
 				sovereigntyName.flatMap(sovereignties.get).foreach { sovereignty =>
 					DbCountry(country.id).sovereigntyId = sovereignty.id
@@ -88,35 +115,53 @@ object ImportWacCountryState
 		val mainRow = rows.bestMatch(Vector(r => r.stateIsoCode.isEmpty, r => r.isLatestVersion)).head
 		// Inserts a new country to the database
 		val country = CountryModel.insert(CountryData(mainRow.countryName, Some(worldRegionId), countryIsoCode,
-			ended = mainRow.ended, comment = mainRow.comment, independent = mainRow.independent))
-		// Inserts a new city as the capital, if possible
-		mainRow.capitalName.foreach { capitalName =>
-			val capital = CityModel.insert(CityData(capitalName.withoutParenthesisContent.untilFirst(","),
-				country.id))
-			// Updates the country to include link to the capital
-			DbCountry(country.id).capitalId = capital.id
-		}
+			ended = mainRow.ended, comment = if (mainRow.isCountryRow) mainRow.comment else None,
+			independent = mainRow.independent))
+		println(s"Inserts country: ${country.name} with ${rows.size - 1} other rows")
 		
-		// Inserts the country world area code (if present)
-		if (mainRow.stateIsoCode.isEmpty)
-			WorldAreaModel.insert(WorldArea(mainRow.worldAreaCode, mainRow.worldAreaName, country.id,
-				mainRow.started.yearMonth, deprecatedAfter = mainRow.ended))
+		// Inserts the country world area code & capital (if present and latest)
+		if (mainRow.isLatestVersion)
+		{
+			val countryWorldArea =
+			{
+				if (mainRow.isCountryRow)
+					Some(WorldAreaModel.insert(WorldArea(mainRow.worldAreaCode, mainRow.worldAreaName, country.id,
+						mainRow.started.yearMonth, deprecatedAfter = mainRow.ended)))
+				else
+					None
+			}
+			// Inserts a new city as the capital, if possible
+			mainRow.capitalName.foreach { capitalName =>
+				val capital = CityModel.insert(CityData(capitalName.withoutParenthesisContent.untilFirst(","),
+					country.id, worldAreaCode = countryWorldArea.map { _.code }))
+				// Updates the country to include link to the capital
+				DbCountry(country.id).capitalId = capital.id
+			}
+		}
 		
 		// Inserts the states and associated world area codes
 		val stateData = rows.flatMap { row =>
 			row.stateIsoCode.flatMap { stateIsoCode =>
 				row.stateName.map { stateName =>
 					val stateData = StateData(stateName, country.id, stateIsoCode, row.stateFipsCode, row.comment)
-					val wacData = WorldArea(row.worldAreaCode, row.worldAreaName, country.id, row.started.yearMonth,
-						deprecatedAfter = row.ended)
-					stateData -> wacData
+					// World area codes are not inserted if they aren't the latest version of that code
+					if (row.isLatestVersion)
+					{
+						val wacData = WorldArea(row.worldAreaCode, row.worldAreaName, country.id, row.started.yearMonth,
+							deprecatedAfter = row.ended)
+						stateData -> Some(wacData)
+					}
+					else
+						stateData -> None
 				}
 			}
 		}
 		val states = StateModel.insert(stateData.map { _._1 })
 		// Inserts the world area codes also
 		WorldAreaModel.insert(states.zip(stateData.map { _._2 })
-			.map { case (state, area) => area.copy(stateId = Some(state.id)) })
+			.flatMap { case (state, area) => area.map { _.copy(stateId = Some(state.id)) } })
+		if (states.nonEmpty)
+			println(s"Inserted ${states.size} states for ${country.name}")
 		
 		// Returns generated country and possible sovereignty
 		country -> mainRow.sovereignty
@@ -152,9 +197,8 @@ object ImportWacCountryState
 			// IS_LATEST is an integer in the source data, but represents a boolean value (0/1)
 			WacRow(model("WAC"), model("WORLD_AREA_NAME"), model("WAC_NAME"), model("COUNTRY_SHORT_NAME"),
 				model("START_DATE"), model("COUNTRY_CODE_ISO"), model("STATE_CODE"), model("STATE_FIPS"),
-				model("STATE_NAME"), model("CAPITAL").string.filterNot { _.isEmpty },
-				model("SOVEREIGNTY").string.filterNot { _.isEmpty }, model("THRU_DATE"),
-				model("COMMENTS").string.filterNot { _.isEmpty }, independence, model("IS_LATEST").getInt > 0)
+				model("STATE_NAME"), model("CAPITAL"), model("SOVEREIGNTY"), model("THRU_DATE"),
+				model("COMMENTS"), independence, model("IS_LATEST").getInt > 0)
 		}
 	}
 	
@@ -167,5 +211,8 @@ object ImportWacCountryState
 	                          isLatestVersion: Boolean = false)
 	{
 		def worldRegionCode = worldAreaCode / 100
+		
+		def isStateRow = stateIsoCode.isDefined
+		def isCountryRow = !isStateRow
 	}
 }

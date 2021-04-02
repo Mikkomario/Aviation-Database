@@ -1,0 +1,933 @@
+Order of Document reading
+Version 1, which contains only critical data
+
+Please Note
+	- Delay information is not processed in this version
+
+Hard Coded:
+	- Daylight saving zones
+	- Station Types
+	- Carrier Types
+	- Engine Types
+	- Aircraft Categories
+
+Wac Regions, countries, states and Wacs
+	- WAC_COUNTRY_STATE
+		- 1: Group all rows by first char in WAC (if less than 3 chars, assume 0)
+		- 2: For each group:
+			- 2.1: Insert a new region
+				- Code = Group WAC char
+				- Name = WORLD_AREA_NAME
+					- Remove parenthesis content
+			- 2.2: Group rows by COUNTRY_CODE_ISO
+			- 2.3: For each non-null ISO-code (row group) and then for each null ISO-code row separately
+				- 2.3.1 Group rows by STATE_CODE
+				- 2.3.2 For null state code rows OR, if there are none, the non-null state code rows
+					- 2.3.2.1 Find row where IS_LATEST == 1
+					- 2.3.2.2 Insert new country for this row and collect generated Id
+						- Iso code = COUNTRY_CODE_ISO
+						- Wac Region Id (ref) = first char in WAC
+						- Name = COUNTRY_SHORT_NAME
+						- Independent = COUNTRY_TYPE starts with 'I'
+						- Ended = THRU_DATE
+						- Comment = COMMENTS (only if STATE_CODE is null)
+					- 2.3.2.3 If CAPITAL is non-null, insert new city row
+						- Name = CAPITAL
+						- Country Id (ref) = Previously captured generated country id
+					- 2.3.2.4 If a new city row was created, update previously created country
+						- Capital Id = new city id
+					- 2.3.2.5 If STATE_CODE is null, record country id / WAC pair
+					- 2.3.2.6 If SOVEREIGNTY is non-null, record SOVEREIGNTY / generated country id -link for later use
+				- 2.3.3 For each non-null state code (row)
+					- 2.3.3.1 Insert a new state and remember generated row id
+						- Country Id (ref) = Previously generated country id
+						- Code = STATE_CODE
+						- Fips Code = STATE_FIPS
+						- Name = STATE_NAME
+						- Comment = COMMENTS
+					- 2.3.3.2 Record country id + state id / WAC pair
+		- 3: For each captured sovereignty name
+			- 3.1 Find country id for sovereignty name
+			- 3.2 For the sovereignty country id, if found
+				- 3.2.1 For each linked dependent country id
+					- 3.2.1.1 Update country row based on primary id
+						- Sovereignty Country Id = sovereignty country id
+		- 4: For each row (again)
+			- 4.1 If WAC exists in country / WAC pairs
+				- 4.1.1 insert a new world area
+					- Code = WAC
+					- Country Id (ref) = country id
+					- Name = WAC_NAME
+					- Start Year & Month = START_DATE
+					- Deprecated After = THRU_DATE
+			- 4.2 Else if WAC exists in state / WAC pairs
+				- 4.2.1 Insert a new world area
+					- Code = WAC
+					- Country Id (ref) = country id
+					- State Id (ref) = state id
+					- Name = WAC_NAME
+					- Start Year & Month = START_DATE
+					- Deprecated After = THRU_DATE
+	- countries.dat
+		- 1: For each row
+			- 1.1 If iso code (index 1) is \N (null)
+				- 1.1.1 Split country name (index 0) to individual words
+				- 1.1.2 Search for an existing country row which contain all of the words (case-insensitive)
+				- 1.1.3 If such a row was found
+					- 1.1.3.1 Update that row
+						- Dafif Code = dafif code (index 2)
+				- 1.1.4 Else
+					- 1.1.4.1 Insert a new country
+						- Name = country name (index 0)
+						- Dafif Code = dafif code (index 2)
+			- 1.2 Else
+				- 1.2.1 Search for an existing country with same iso code (index 1)
+				- 1.2.2 If a mathing row was found
+					- 1.2.2.1 if dafif code (index 2) is not \N (null)
+						- 1.2.2.1.1 Update row
+							- Dafif Code = dafif code (index 2)
+				- 1.2.3 Else
+					- 1.2.3.1 Split country name (index 0) to individual words
+					- 1.2.3.2 Search for an existing country row which contains all of the words 
+					(case-insensitive) and where iso code is null
+					- 1.2.3.3 If such a row was found
+						- Update row
+							- Iso Code = iso code (index 1)
+							- Dafif Code = dafif code (index 2)
+					- 1.2.3.4 Else
+						- Insert a new country
+							- Name = country name (index 0)
+							- Iso Code = iso code (index 1)
+							- Dafif Code = dafif code (index 2)
+							
+Airports and Cities
+	- MASTER_CORD
+		- 1: Collect existing city names (with ids) from DB
+		- 2: Take only rows where AIRPORT_IS_LATEST == 1
+		- 3: For each remaining row
+			- 3.1 If CITY_MARKET_ID was inserted or updated already (city id available)
+				- 3.1.1 Use matching city id in future operations for this row
+			- 3.2 Else
+				- 3.2.1 If AIRPORT_STATE_CODE is null
+					- 3.2.1.1 If AIRPORT_COUNTRY_CODE_ISO is null
+						- 3.2.1.1.1 Find world area with code of CITY_MARKET_WAC and collect it's country id and state id
+					- 3.2.1.2 Else
+						- 3.2.1.2.1 Find country id matching the AIRPORT_COUNTRY_CODE_ISO
+						- 3.2.1.2.2 If country id was found
+							- 3.2.1.2.2.1 Use that country id in future operations for this row
+						- 3.2.1.2.3 Else
+							- 3.2.1.2.3.1 Insert a new country and use the newly generated id in future operations
+								- Region Id = First of 3 chars of CITY_MARKET_WAC (0 if shorter than 3 chars)
+								- Iso Code = AIRPORT_COUNTRY_CODE_ISO
+								- Name = AIRPORT_COUNTRY_NAME
+				- 3.2.2 Else
+					- 3.2.2.1 Find a state based on AIRPORT_STATE_CODE
+					- 3.2.2.2 If a state was found
+						- 3.2.2.2.1 Use that state's id and country id in future operations for this row
+					- 3.2.2.3 Else
+						- 3.2.2.3.1 Find country id as in 3.2.1.2
+						- 3.2.2.3.2 Insert a new state and collect generated id
+							- Iso Code = AIRPORT_STATE_CODE
+							- Fips Code = AIRPORT_STATE_FIPS
+							- Name = AIRPORT_STATE_NAME
+							- Country Id = found country id
+						- 3.2.2.3.3 Use newly generated state id and found country id in future operations for this row
+				- 3.2.3 Take the first portion (until ,) of DISPLAY_AIRPORT_CITY_NAME
+				- 3.2.4 If all words of that city name exist in the prefetched set of city names
+					- 3.2.4.1 Update matching city
+						- Market Id = CITY_MARKET_ID
+						- World Area Code (ref) = CITY_MARKET_WAC
+						- State Id (ref) = state id
+						- Time Zone = UTC_LOCAL_TIME_VARIATION
+							- Time variation is in format -500 or 930 etc. 
+							where last 2 digits show amount of minutes and those previous to the last show amount of hours (and sign)
+					- 3.2.4.1 Remember city id and updated CITY_MARKET_ID
+				- 3.2.5 Else
+					- 3.2.5.1 Insert a new city and collect the generated id
+						- Market Id = CITY_MARKET_ID
+						- World Area Code = CITY_MARKET_WAC
+						- Country Id (ref) = country id
+						- State Id (ref) = state id
+						- Name = parsed DISPLAY_AIRPORT_CITY_NAME
+						- Time Zone = UTC_LOCAL_TIME_VARIATION
+							- See parsing above
+					- 3.2.5.2 Remember new city id against the CITY_MARKET_ID and use it for remaining operations for this row
+			- 3.3 Insert a new airport
+				- Dot Id = AIRPORT_ID
+				- Iata Code = AIRPORT
+				- City id = city id
+				- Name = DISPLAY_AIRPORT_NAME
+				- Type Id = 0 (Airport)
+				- Latitude North = LATITUDE
+				- Longitude East = LONGITUDE
+				- Start Year & Month = AIRPORT_START_DATE
+				- Closed Date = AIRPROT_THRU_DATE
+				- Closed = AIRPORT_IS_CLOSED
+	- airports.dat (OpenFlights, extended)
+		- 1: For each row
+			- 1.1: If type is not null or 'unknown', find the DB match
+			- 1.2: If iata code (index 4) is not null, search for a match in DB
+			- 1.3: If a match was found
+				- 1.3.1 Update the associated airport row
+					- Openflights Id = airport id (index 0)
+					- Icao Code = icao code (index 5)
+					- Altitude Feet = altitude (index 6)
+					- Type = parsed type (only if not null)
+				- 1.3.2 Update the associated city row
+					- Daylight Saving Zone = dst (index 7)
+					- Time Zone Name = database time zone (index 8)
+			- 1.4: Else
+				- 1.4.1 Split the country name (index 3) to individual words
+				- 1.4.2 Find a country in the DB that contains all of the words
+				- 1.4.3 If such a country was found
+					- 1.4.3.1 Split the city name (index 2) to individual words
+					- 1.4.3.2 Find a city in the DB that contains all the words and belongs to the specified country
+					- 1.4.3.3 If such a city was found
+						- 1.4.3.3.1 Update that city
+							- Daylight Saving Zone = dst (index 7)
+							- Time Zone Name = database time zone (index 8)
+						- 1.4.3.3.2 Use that city id later
+					- 1.4.3.4 Else
+						- 1.4.3.4.1 Insert a new city and use its id later
+							- Country Id = country id
+							- Name = city name (index 2)
+							- Daylight Saving Zone = dst (index 7)
+							- Time Zone Name = database time zone (index 8)
+					- 1.4.3.5 Insert a new airport
+						- Openflights Id = airport id (index 0)
+						- Icao Code = icao code (index 5)
+						- Altitude Feet = altitude (index 6)
+						- Type = parsed type (only if not null)
+				- 1.4.4 Else
+					- 1.4.4.1 Log as an error
+	- airports.dat (RouteMapper)
+		- 1: For each row
+			- 1.1: Check whether airport-id (iata code) already exists in the DB
+			- 1.2: If not
+				- Insert a new airport
+					- Iata Code = airport-id
+					- Name = airport-name
+					- Latitude North = latitude
+					- Longitude East = longitude
+					- type = 0 (airport)
+					
+Carriers (Airlines)
+	- CARRIER_DECODE (BTS)
+		- 1: Group rows based in CARRIER
+		- 2: For each CARRIER row group
+			- 2.1: Find the row in group with latest THRU_DATE_SOURCE, use that row for the rest of this group's operations
+			- 2.2: Find world area code matching WAC
+			- 2.3: Insert a new carrier
+				- Dot Id = AIRLINE_ID
+				- Iata Code = CARRIER (if CARRIER is of 2 characters length)
+				- Icao Code = CARRIER (if CARRIER is of 3 characters length)
+				- Name = CARRIER_NAME
+				- Country Id = world_area.countryId
+				- World Area Code = world_area.code
+				- Size Category Id = based on CARRIER_GROUP_NEW
+					- 4 => 1
+					- 1 => 2
+					- 2 => 3
+					- 3 => 4
+					- Other => null
+				- Type Category Id = based on CARRIER_GROUP_NEW
+					- 6|9 => 1
+					- 7 => 2
+					- 5 => 3
+					- Other => null
+				- Start Year & Month = START_DATE_SOURCE
+				- Ended = THRU_DATE_SOURCE
+				- Is Closed = THRU_DATE_SOURCE != null
+	- airlines.dat (OpenFlights)
+		- 1: For each row
+			- 1.1: Check whether there exists a carrier row with same ICAO (index 4) or IATA (index 3)
+			- 1.2: If such a row was found
+				- 1.2.1: If that row has no Country Id
+					- 1.2.2: Find a matching country based on country name and Country (index 6), if possible
+				- 1.2.2: Update that row
+					- Openflights Id = Airline ID (index 0)
+					- Iata Code = IATA (index 3) (unless \N)
+					- Icao Code = ICAO (index 4) (unless \N)
+					- Alias = Alias (index 2) (unless \N)
+					- Callsign = Callsign (index 5) (unless \N)
+					- Country Id = country id (except if it was already specified)
+					- Is Closed = true (if Active (index 7) == 0, otherwise don't update)
+			- 1.3: Else
+				- 1.3.1: Find country based on country name and Country (index 6), if possible
+				- 1.3.2: Insert a new carrier
+					- Openflights Id = Airline ID (index 0)
+					- Iata Code = IATA (index 3) (unless \N)
+					- Icao Code = ICAO (index 4) (unless \N)
+					- Name = Name (index 1)
+					- Alias = Alias (index 2) (unless \N)
+					- Callsign = Callsign (index 5) (unless \N)
+					- Country Id = country id
+					- Is Closed = Active (index 7) == 0
+	- airlines.dat (RouteMapper)
+		- 1: For each row
+			- 1.1: Check whether a row exists where Iata Code = airline-id
+			- 1.2: If such a row didn't exist
+				- 1.2.1: Insert a new carrier
+					- Iata Code = airline-id
+					- Name = airline-name
+					
+Aircraft Manufacturers
+	- Manufacturers.csv (BST)
+		- 1: For each row
+			- 1.1: Take the contents of the last parenthesis and split them by /
+			- 1.2: Find first country matching one of the split results and remember it
+			- 1.1: Insert a new aircraft manufacturer and remember the id
+				- Icao Code = Code
+				- Country Id = country.id
+			- 1.2: Insert a new aircraft manufacturer name
+				- Manufacturer Id = manufacturer id
+				- Name = Name (without parenthesis)
+	- Order_3660.1D_Aircraft_Type_Designators (manufacturer part)
+		- 1: For each manufacturer row group
+			- 1.1: Find existing manufacturer id and name(s) from DB, based on Manufacturer Code (Icao Code), if possible
+			- 1.2: If an existing version was found
+				- 1.2.1: Insert new names to aircraft manufacturer name (those not already present)
+					- Manufacturer Id = existing manufacturer id
+					- Name = Manufacturer Full Name(s) (without parenthesis)
+				- 1.2.2 If country id of existing version is null
+					- 1.2.2.1 Parse country name / names from full names (in parenthesis, separated by /)
+					- 1.2.2.2 Finds first country id match with one of the names
+					- 1.2.2.3 If such a country id was found
+						- 1.2.2.3.1: Update manufacturer row
+							- Country Id = country id
+							
+Aircraft Models, Variants and Manufacturers
+	- ACFTREF
+		- 1: Fetch existing manufacturer names (with manufacturer ids) from DB
+		- 2: View group rows by first 3 characters of CODE (this will be referred to as manufacturer code)
+		- 3: For each row group
+			- 3.1: Collect all MFR (manufacturer) values
+			- 3.2: Find existing manufacturer(s) matching the available names
+			- 3.3: If exactly one manufacturer was found
+				- 3.3.1: Update manufacturer row
+					- Alt Code = manufacturer code
+				- 3.3.2: Insert new names for the manufacturer, if necessary
+					- Manufacturer Id = manufacturer id
+					- Name = MFR
+				- 3.3.3: Use this manufacturer id in all the targeted rows
+			- 3.4: Else if more than one manufacturer was found
+				- 3.4.1: Update manufacturer rows
+					- Alt Code = manufacturer code
+				- 3.4.2: Distribute non-assigned names to those existing based on highest resemblance
+				(If no resemblance is found, assign to the more prominent manufacturer)
+				- 3.4.3: Insert new names for the manufacturers, if necessary
+					- Manufacturer Id = manufacturer id
+					- Name = MFR
+				- 3.4.4: Use linked manufacturer id for rows
+			- 3.5: Else
+				- 3.5.1: Insert a new manufacturer and collect generated id
+					- Alt Code = manufacturer code
+				- 3.5.2: Insert new names for the new manufacturer
+					- Manufacturer Id = manufacturer id
+					- Name = MRF
+				- 3.5.3: Use newly generated manufacturer id for all targeted rows
+			- 3.6: Group rows based on 4th and 5th characters of CODE (this will be referred to as model code)
+			- 3.7: For each model code row group
+				- 3.7.1: Group rows based on TYPE-ACFT, TYPE-ENG, AC-CAT, NO-ENG and AC-WEIGHT
+				- 3.7.2: For each row group
+					- 3.7.2.1: Insert a new model class and remember generated id
+						- Manufacturer Code = manufacturer code
+						- Model Code = model code
+						- Wing Type Id = TYPE-ACFT (see notes)
+							- 1|4|5|7|8|H => 1
+							- 6|9 => 2
+							- 2|3 => 3
+							- O => null
+						- Category Id = TYPE-ACFT (see notes)
+							- 1 => 2 if NO-ENG > 0, 3 otherwise
+							- 2 => 9
+							- 3 => 8
+							- 4 => 1
+							- 5 => 1
+							- 6 => 4
+							- 7 => 2 if NO-ENG > 0, 3 otherwise
+							- 8 => 2
+							- 9 => 5
+							- H => 10
+							- O => null
+						- Environment Id = AC-CAT
+						- Number of Engines = NO-ENG
+						- Engine Category Id = TYPE-ENG (see notes)
+							- 1 => 3
+							- 2 => 1
+							- 3 => 1
+							- 4 => 2
+							- 5 => 2
+							- 6 => 2
+							- 7 => 3
+							- 8 => 3
+							- 9 => null
+							- 10 => 4
+							- 11 => 4
+						- Engine Type Id = TYPE-ENG (see notes)
+							- 1|9 => null
+							- 2 => 1
+							- 3 => 2
+							- 4 => 3
+							- 5 => 4
+							- 6 => 5
+							- 7 => 6
+							- 8 => 7
+							- 10 => 8
+							- 11 => 9
+						- Min Weight Category Id = AC-WEIGHT (see notes)
+							- Class 1 => 1
+							- Class 2 => 2
+							- Class 3 => 4
+						- Max Weight Category Id = AC-WEIGHT (see notes)
+							- Class 1 => 1
+							- Class 2 => 3
+							- Class 3 => 7
+					- 3.7.2.2: For each row
+						- 3.7.2.2.1: Parse the last 2 characters of CODE (this will be referred to as series code)
+						- 3.7.2.2.1: Insert a new aircraft model variant
+							- Model Id = model id
+							- Manufacturer Id = manufacturer id
+							- Manufacturer Code = manufacturer code
+							- Model Code = model code
+							- Series Code = series code
+							- Name = MODEL
+							- Number of Seats = NO-SEATS
+							- Cruising Speed Knots = SPEED (convert to knots), if > 0
+	- Order_7360.1D_Aircraft_Type_Designators
+		- 1: For each icao code row group
+			- 1.1: Make sure all variants of MANUFACTURER (based on Icao code) are present in DB, insert if necessary
+				- Icao Code = MANUFACTURER
+			- 1.2: Find a possible model variant match for each row, based on manufacturer id and model name 
+			(test with and without parenthesis)
+			- 1.3: Check which of the models match the information in this icao code 
+			(Class, Engine Number, Engine Type, FAA Weight Class, ICAO WTC)
+				- See value interpretation below, null values match with everything
+					- Wing Type Id must match
+					- Category Id must match, if specified
+					- Environment Id must match, if specified
+					- Engine Number must match
+					- Min Weight Class Id must be smaller or equal to would be max weight class id
+					- Max Weight Class Id must be larger or equan to would be min weight class id
+			- 1.4: If there were no models found
+				- 1.4.1: Insert a new aircraft model and remember the generated id
+					- Icao Code = Aircraft Type Designator
+					- Wing Type Id = Class
+						- Fixed-wing|@Fixed-wing|$Fixed-wing|Tiltrotor => 1
+						- Gyrocopter|Helicopter => 2
+						- Remotely Piloted Aircraft => null
+					- Category Id = Class
+						- Helicopter => 4
+						- Gyrocopter => 5
+						- Tiltrotor => 6
+						- other options => null
+					- Environment Id = Class
+						- Fixed-wing => 1
+						- $Fixed-wing => 2
+						- @Fixed-wing => 3
+						- other options => null
+					- Number of Engines = Engine Number
+					- Engine Category Id = Engine Type
+						- E => 4
+						- P => 3
+						- T => 1
+						- J => 2
+						- R => 5
+						- C => null
+					- Engine Type Id = Engine Type
+						- E => 8
+						- R => 10
+						- other options => null
+					- Min Weight Category Id = ICAO WTC / FAA Weight Class
+						- Super => 7
+						- Heavy => 6
+						- Medium/Heavy
+							- H => 6
+							- L => 5
+							- S+ => 3
+							- Other options => 3
+						- Medium
+							- L => 5
+							- S+ => 3
+							- Other options => 3
+						- Light/Medium
+							- L => 5
+							- S+ => 2
+							- S => 1
+							- Other options => 1
+						- Light
+							- S+ => 2
+							- S => 1
+							- Other options => 1
+					- Max Weight Category Id = ICAO WTC / FAA Weight Class
+						- Super => 7
+						- Heavy => 6
+						- Medium/Heavy
+							- H => 6
+							- L => 5
+							- S+ => 4
+							- Other options => 6
+						- Medium
+							- L => 5
+							- S+ => 4
+							- Other options => 5
+						- Light/Medium
+							- L => 5
+							- S+ => 4
+							- S => 1
+							- Other options => 5
+						- Light
+							- S+ => 2
+							- S => 1
+							- Other options => 2
+					- Wing Span Category Id = RECAT 1.5 Wake Category
+						- F => 1
+						- E => 2
+						- D => 3
+						- C => 4
+						- B => 5
+						- A => 6
+				- 1.4.2: For each variant row
+					- 1.4.2.1: Insert a new aircraft model variant
+						- Model Id = model id
+						- Manufacturer Id = manufacturer id
+						- Name = Model
+			- 1.5: Else
+				- 1.5.1: For all models which contained conflicting data
+					- 1.5.1: Update / specify non-conflicting data (see insert above)
+				- 1.5.2: If there are non-conflicting model rows
+					- 1.5.2.1: Assign listed model variants to those rows based on manufacturer.
+					If manufacturer is not present in any of the models, assign it to the one with most variants
+					- 1.5.2.2: For each non-conflicting model row
+						- 1.5.2.2.1: Update row
+							- Icao Code, Number of Engines and Wing Span Category Id as in insert above
+							- Wing Type Id as in insert above, but only if null in existing version
+							- Category Id as in insert above, but only if null in existing version
+							- Environment Class Id as in insert above, but only if null in existing version
+							- Engine Category Id as in insert above, but only if null in existing version
+							- Engine Type Id as in insert above, but only if null in existing version
+							- Min Weight Category Id only if larger than in the existing version
+							- Max Weight Category Id only if smaller than in the existing version
+						- 1.5.2.2.2: Insert model variants which weren't present in existing data
+							- Model Id = model id
+							- Manufacturer Id = manufacturer id
+							- Name = Model
+				- 1.5.3: Else if there were model variants listed which couldn't be found from existing data
+					- 1.5.3.1: Insert a new aircraft model as in 1.4.1 and remember generated id
+					- 1.5.3.2: Insert an aircraft model variant for each model variant which didn't yet exist in the data
+						- Model Id = model id
+						- Manufacturer Id = manufacturer id
+						- Name = Model
+	-  By Type Designator(Decode)
+		- 1: For each DESIGNATOR (Icao Code) -based model row group
+			- 1.1: Find stored models matchign DESIGNATOR - This is group A
+			- 1.2: Find manufacturer ids for listed MANUFACTURER values for rows not present in group A (based on Icao Code). 
+			Insert new manufacturer rows if needed
+				- Icao Code = MANUFACTURER
+			- 1.3: Find matches for listed model variants (based on Name == MODEL and Manufacturer Id = manufacturer id), 
+			which couldn't be found under already read models - This is group B
+			- 1.4: Create a sub-group of models in groups A and B by taking only those which don't have conflicting data 
+			(see below about conflict areas) - This is group C
+			- 1.5: For all model rows in group A and B
+				- 1.5.1: Update rows (only update non-conflicting data if not in group C)
+					- Icao Code = DESIGNATOR
+					- Wing Type Id = DESCRIPTION (1st char)
+						- G|H => 2
+						- L|S => 1
+						- T => 3
+						- Other options => no update
+					- Category Id = DESCRIPTION (1st char)
+						- G => 5
+						- H => 4
+						- T => 7
+						- Other options => no update
+					- Environment Id = DESCRIPTION (1st char)
+						- L => 1
+						- S => 2
+						- A => 3
+						- Other options => no update
+					- Number of Engines = DESCRIPTION (2nd char)
+					- Engine Category Id = DESCRIPTION (3rd char)
+						- E => 4
+						- P => 3
+						- T => 1
+						- J => 2
+						- R => 5
+						- C => no update
+					- Engine Type Id = DESCRIPTION (3rd char)
+						- E => 8
+						- R => 10
+						- other options => no update
+					- Min Weight Category Id = WTC (update only if it would increase)
+						- J => 7
+						- H => 6
+						- M => 3
+						- L => 1
+					- Max Weight Category Id = WTC (update only if it would decrease)
+						- J => 7
+						- H => 6
+						- M => 5
+						- L => 2
+			- 1.6: Find out all listed model variants, which couln't be found from groups A or B - This will be group V1
+			- 1.7: If V1 is empty
+				- 1.7.1: If group C doesn't contain all models of groups A and B
+					- 1.7.1.1: Log a warning about those models
+			- 1.8: Else
+				- 1.8.1: If group C is empty
+					- 1.8.1.1: Insert a new aircraft model, following structure listed in 1.5.1. Remember generated id
+					- 1.8.1.2: For each model variant in group V1
+						- 1.8.1.2.1: Insert a new model variant
+							- Model Id = model id
+							- Manufacturer Id = manufacturer id
+							- Name = MODEL
+				- 1.8.2: Else
+					- 1.8.2.1: Distribute group V1 model variants to group C models based on manufacturer 
+					(preferring models with more variants)
+					- 1.8.2.2: For each model variant in group V1
+						- 1.8.2.2.1: Insert a new model variant
+							- Model Id = model id (based on distribution)
+							- Manufacturer id = manufacturer id
+							- Name = MODEL
+	- AircraftTypes.csv
+		- 1: For each row
+			- 1.1: Find existing aircraft models matching the specified Designator (icao code)
+			- 1.2: Find the manufacturer row id matching ManufacturerCode. Insert a new row if necessary
+			- 1.3: Wheck whether ModelFullName appears under one of the existing models under matching manufacturer
+			- 1.4: If there wasn't a match, search from all models and not just those under this icao code
+			- 1.5: If there was a matching model variant row
+				- 1.5.1: Update the associated model row (See By Type Designator(Decode) 1.5.1 for details)
+					- Used columns: Designator, Description, WTC
+			- 1.6: Else if there existed a non-conflicting aircraft model row for the Designator icao code
+				- 1.6.1: Update that model row (similarly as in 1.5.1)
+				- 1.6.2: Insert a new model variant row
+					- Model Id = model id
+					- Manufacturer Id = manufacturer id
+					- Name = ModelFullName
+			- 1.7: Else
+				- 1.7.1: Insert a new aircraft model row and capture the generated id 
+				(See 1.5.1 update for details about inserted elements)
+				- 1.7.2: Insert a new model variant row (see 1.6.2 for details)
+	- Master emissions calculator
+		- Handle identically to AircraftTypes.csv, except
+			- Read icao code from Aircraft code (Type designator)
+			- Read manufacturer icao code from Manufacturer
+			- Read model variant name from Model
+			- All rows have type L (Landplane)
+			- Engine types are read from Engine Type and interpreted as follows:
+				- Jet = J
+				- Turboprop = T
+				- Piston = P
+			- Number of engines is read from Engine count
+			- ICAO WTC is read from WTC
+	- AicraftTypesByIcaoCode
+		- 1: For each row
+			- 1.1: Find a manufacturer match for AircraftMake (manufacturer icao code), insert a row if necessary
+			- 1.2: Find model rows with matching AircraftTypeICAOCode
+			- 1.3: Parse AircraftSeries value (NO MASTER SERIES ASSIGNED / UNDESIGNATED MASTER SERIES => null)
+			- 1.4: Combine a model name from AircraftModel and the processed series value (model-series)
+			- 1.5: Find model variants from under the previously matched model rows which contain the 
+			AircraftModel and parses series (if present) (also checking manufacturer id)
+			- 1.6: If no model variant matches were made
+				- 1.6.1: Extend search to model variants outside these models
+				- 1.6.2: If a match was found
+					- 1.6.2.1: Update associated model row, but only in non-conflicting areas
+						- Icao Code = AircraftTypeICAOCode
+						- Wing Type Id = AircraftClass (see notes)
+							- FIXED WING - * => 1
+							- RORORCRAFT - * => 2
+							- HYBRID LIFT - NOT APPLICABLE => 1
+							- LIGHTER-THAN-AIR - AIRSHIP => 4
+						- Category Id = AircraftClass (see notes)
+							- FIXED WING - AIRPLANE => 1
+							- ROTORCRAFT - HELICOPTER => 4
+							- LIGHTER-THAN-AIR - AIRSHIP => 8
+							- FIXED WING - POWERED GLIDER => 2
+							- ROTORCRAFT - GYROPLANE => 5
+							- HYBRID LIFT - NOT APPLICABLE => 10
+							- FIXED WING - NON-POWERED GLIDER => 3
+				- 1.6.3: Else if a model row with matching icao code was found earlier
+					- 1.6.3.1: Update that row on non-conflicting areas (see 1.6.2.1)
+					- 1.6.3.2: Insert a new model variant row under that model
+						- Model Id = model id
+						- Manufacturer Id = manufacturer id
+						- Name = parsed model and series value
+				- 1.6.4: Else
+					- 1.6.4.1: Insert a new aircraft model row (see 1.6.2.1 for inserted values) and capture generated id
+					- 1.6.4.2: Insert a new model variant row
+						- Model Id = model id
+						- Manufacturer Id = manufacturer id
+						- Name = parsed model and series value
+			- 1.7: Else
+				- 1.7.1: Update the model row in non-conflicting areas (see 1.6.2.1)
+	- FAA-Aircraft-Char-Database
+		- 1: Group rows by Manufacturer (manufacturer name)
+		- 2: For each row group
+			- 2.1: Group rows based on ICAO Code
+			- 2.2: Find all manufacturer ids, icao codes and names associated with those icao codes
+			- 2.3: Attempt to match the specified manufacturer name with collected data
+				- In matching, take extra care to handle the contents of parenthesis, if present
+			- 2.4: If a match was found
+				- 2.4.1: Insert specified name / names for the manufacturer, if not already present
+					- Manufacturer Id = manufacturer id
+					- Name = Manufacturer
+				- 2.4.2: Use that manufacturer id in future operations for this row group
+			- 2.5: Else
+				- 2.5.1: Search for matches in all manufacturer data
+				- 2.5.2: If a match was found
+					- 2.5.2.1: Insert specified name / names for the manufacturer, if not already present (see 2.4.1)
+					- 2.5.2.2: Use that manufacrurer id for future operations for this row group
+				- 2.5.3: Else
+					- 2.5.3.1: Insert a new manufacrurer and use generated id in future operations for this row group
+					- 2.5.3.2: Insert specified name / names for the manufacturer (see 2.4.1)
+			- 2.6: For each icao code row group
+				- 2.6.1: Find model rows associated with that icao code (except if code is tbd) - this is now group A
+				- 2.6.2: Process model names (Model) by separating parenthesis content
+				- 2.6.3: Find variant matches for manufacturer + model name within group A - This is now group VA
+				- 2.6.4: Find variant matches outside group A for variants which were not included in group VA- This is now group VB
+				- 2.6.5: Take the model rows from group VB - This is now group B
+				- 2.6.6: Find those model rows (of groups A and B) which are non-conflicting - this is now group C
+				- 2.6.7: If groups A and B are empty
+					- 2.6.7.1: Insert a new aicraft model row and remember generated id
+						- Icao Code = icao code
+						- Engine Category Id = Physical Class (Engine)
+							- Electric => 4
+							- Helicopter, Turbine|Helo Turbine|Turboprop => 1
+							- Jet => 2
+							- Piston => 3
+							- Other options => null
+						- Engine Type Id = Physical Class (Engine)
+							- Electric => 8
+							- Helicopter, Turbine|Helo Turbine => 2
+							- Turboprop => 1
+							- Other options => null
+						- Number of Engines = # Engines
+						- Airworthines = AAC (Except if No Value or tbd)
+						- TDG = TDG (if not tbd and < 3 characters)
+						- Min & Max Weight Category Id = Wake Category (see handling of H, M and L from above files, tbd = null)
+					- 2.6.7.2: For each model variant row
+						- 2.6.7.2.1: Insert a new model variant row
+							- Model Id = model id
+							- Manufacturer Id = manufacrurer id
+							- Design Group Id = ADG (if I, II, III, IV, V or VI, see code matching from DB structure)
+							- Approach Speed Knots = Approach Speed (Vref)
+							- Max Take Off Weight Pounds = MTOW (tbd = null)
+							- Max Taxi Weight Pounds = Max Ramp Max Taxi (tbd = null, same* = MTOW)
+							- Wing Span Feet = Wingspan, ft
+							- Length Feet = Length, ft
+							- Tail Height = Tail Height, ft (@ OEW)
+							- Wheel Base Feet = Wheelbase, ft
+							- Main Gear Width Feet = MGW (Outer to Outer)
+							- Manufacture Started Year = Years Manufactured (parsed)
+								- First number available before - or , or to or any other letter
+							- Manufacture Ended Year = Years Manufactured (parsed)
+								- Last (but not first) number available after a non-numeric section
+				- 2.6.8: Else
+					- 2.6.8.1: Update non-conflicting data in groups A and B (see 2.6.7.1)
+					- 2.6.8.2: Update model variant rows in groups VA and VB (see 2.6.7.2)
+					- 2.6.8.3: If there were model variants which weren't included in groups VA or VB - 
+					(this new sub-group is now referred to as VC)
+						- 2.6.8.4: Associate each model variant in group VC with a model row, preferrably from group C
+						- 2.6.8.5: Insert a new model variant row for each variant in group VC (see 2.6.7.2 for details)
+	- iata-icao-ac-types-list (modified) (abbreviated instructions due to much repetition from previous files)
+		- 1: Group by manufacturer
+		- 2: For each manufacturer row group
+			- 2.1: Find manufacturer id same way as usually (based on ICAO (index 1) / IATA (index 0) codes & manufacturer name (index 2))
+			- 2.2: For each row
+				- 2.2.1: If a group identifier (index 5)
+					- 2.2.1.1: Insert a new aircraft class code
+						- Iata Code = iata (index 0) (if present)
+						- Icao Code = icao (index 1) (if present and not n/a)
+						- Manufacturer Id = manufacturer id
+						- Description = model (index 3)
+				- 2.2.2: Else
+					- 2.2.2.1: Find similar models + variants based on IATA and ICAO (group A)
+					- 2.2.2.2: Filter group A based on wake type category (index 4) and variant name (index 3), and the codes to form preferred group B
+					- 2.2.2.3: If group A / B was empty
+						- 2.2.2.3.1: Insert a new model & variant for that model
+					- 2.2.2.4: Else
+						- 2.2.2.4.1: Update non-conflicting data (iata code, wake category) for group B rows
+						- 2.2.2.4.2: Insert a new variant row if necessary for the best fitting group B model
+	- planes.dat (with manufacturers separated)
+		- 1: Group rows based on manufacturer (index 0)
+		- 2: For each row group
+			- 2.1: Collect all aircraft ICAO codes within group (index 3)
+			- 2.2: Find all manufacturers (with names and icao codes included) that are associated with any of those ICAO codes
+			- 2.3: Attempt to match the manufacturer name (index 0) to existing data
+			- 2.4: If a match was found
+				- 2.4.1: Use this manufacturer's id in future operations for this row group
+				- 2.4.2: Insert manufacturer name (index 0) as a new manufacturer name, if not present already
+					- Manufacturer Id = manufacturer id
+					- Name = manufacturer (index 0)
+			- 2.5: Else
+				- 2.5.1: Attempt to find the manufacturer from all manufacturer data
+				- 2.5.2: If a manufacturer was found
+					- 2.5.2.1: Use that manufacturer's id
+					- 2.5.2.2: Insert manufacturer name (index 0) as a new name, if not present already (see 2.4.2)
+				- 2.5.3: Else
+					- 2.5.3.1: Insert a new manufacturer and use the generated id for future operations for this group
+					- 2.5.3.2: Insert a new name for this new manufacturer (see 2.4.2)
+			- 2.6: For each row in this group
+				- 2.6.1: If Icao code (index 3) is \N or empty
+					- 2.6.1.1: Insert a new aircraft class code if not present already
+						- Iata Code = iata (index 2)
+						- Manufacturer Id = manufacturer id
+						- Description = model (index 1)
+				- 2.6.2: Else
+					- 2.6.2.1: Find existing models with same ICAO code and include the variants under them. This is now group A.
+					- 2.6.2.2: Find variants under group A that have same manufacturer. This is now group VA.
+					- 2.6.2.3: If group VA is empty
+						- 2.6.2.3.1: If group A is empty
+							- 2.6.2.3.1.1: Insert a new model row and remember the generated id
+								- Icao Code = Icao (index 3)
+								- Iata Code = Iata (index 2), if not \N
+							- 2.6.2.3.1.2: Insert a new model variant row
+								- Model Id = model id
+								- Manufacturer Id = manufacturer id
+								- Name = Model (index 1)
+						- 2.6.2.3.2: Else
+							- 2.6.2.3.2.1: If there are many models in group A
+								- 2.6.2.2.1.1: Find a model which contains a model variant which best matches the model name (index 1) and that model's id
+							- 2.6.2.3.2.2: Else
+								- 2.6.2.2.2.1: Use the only model id available
+							- 2.6.2.3.2.3: Update the model row
+								- Iata Code = iata (index 2)
+							- 2.6.2.3.2.4: Insert a new model variant row
+								- Model Id = model id
+								- Manufacturer Id = manufacrurer id
+								- Name = model (index 1)
+					- 2.6.2.4: Else
+						- 2.6.2.4.1: Find the parent models of VA group. This is now group B.
+						- 2.6.2.4.2: If there are multiple models in group B
+							- 2.6.2.4.2.1: Find the model that contains the best matching variant based on the variant name (index 1). Use that model's id.
+						- 2.6.2.4.3: Else
+							- 2.6.2.4.3.1: Use the only model id available
+						- 2.6.2.4.4: Update that model
+							- Iata Code = iata (index 2)
+	- equipment.dat (modified)
+		- 1: Group by manufacturer (index 1)
+		- 2: For each manufacturer row group, which contains a generic class row (index 3)
+			- 2.1: Collect the IATA codes (index 0) of the rows
+			- 2.2: If there doesn't exist already an aircraft class code with that generic iata code
+				- 2.2.1: Find all manufacturer data associated with those iata codes
+				- 2.2.2: Find or insert manufacturer, preferring those from 2.2
+				- 2.2.3: Insert aircraft class code
+					- Iata Code = iata (index 0)
+					- Manufacturer Id = manufacturer id
+					- Description = Model (index 2)
+	- TODO: If using BTS aircraft id or group id elsewhere, process AIRCRAFT TYPES (BTS)
+	
+Aircraft Engines & Manufacturers
+	- ENGINE.txt
+		- 1: As new manufacturer codes are encountered and inserted to DB, they need to be mapped (code -> id) to avoid unnecessary queries
+		- 2: For each row
+			- 2.1: Find already inserted manufacturer based on CODE (3 first chars) or insert a new aircraft engine manufacturer (save id)
+				- Code = CODE (3 first chars)
+				- Name = MFR
+			- 2.2: Insert a new aircraft engine model
+				- Manufacturer Id = manufacturer id
+				- Code = CODE (last 2 chars)
+				- Name = MODEL
+				- Generic Engine Type Id = TYPE
+					- 1 | 7| 8 => 3
+					- 2 | 3 => 1
+					- 3 | 4 | 5 => 2
+					- 10 | 11 => 4
+					- Other => null
+				- Specific Engine Type Id = TYPE
+					- 2 => 1
+					- 3 => 2
+					- 4 => 3
+					- 5 => 4
+					- 6 => 5
+					- 7 => 6
+					- 8 => 7
+					- 10 => 8
+					- 11 => 9
+					- Other => null
+				- Horsepower = HORSEPOWER (if > 0)
+				- Thrust Pounds = THRUST (if > 0)
+		
+Aircrafts & aircraft owners
+	- MASTER.txt
+		- 1: For each row
+			- 1.1: Find associated aircraft model variant id based on MFR MDL CODE
+				- 3 first chars match manufacturer code, next 2 model code and last 2 series code
+				- Find as specific as possible, but ignore series code if necessary
+			- 1.2: Find associated aircraft engine model id based on ENG MFR MDL
+				- 3 first chars match engine manufacturer code, next 2 engine model code
+			- 1.3: Insert a new aircraft
+				- Transponder Icao 24 = MODE S CODE HEX
+				- N Number = N-NUMBER
+				- Serial Number = SERIAL NUMBER
+				- Model Variant Id = mdoel variant id
+				- Engine Model Id = engine model id
+				- Built Year = YEAR MFR (only year portion, if present)
+				- Airworthiness Date = AIR WORTH DATE (if present, E.g. "19540430")
+			- 1.4: Determine registrant type based on TYPE REGISTRANT
+				- 1 | 2 => 1
+				- 3 | 8 => 2
+				- 5 => 4
+				- 7 => 3
+				- Other => null
+			- 1.5: If TYPE REGISTRANT is one of 2, 4 or 9
+				- 1.5.1: Handle NAME and OTHER NAMES(1-5) as individual registrants (primary registrant = NAME)
+				- 1.5.2: Find existing registrants based on type + name, insert if missing
+					- Type Id = registrant type
+					- Name = registrant name
+			- 1.6: Else
+				- 1.6.1: Find existing registrant based on NAME + type, insert if missing
+				- 1.6.2: If OTHER NAMES (1) is empty
+					- 1.6.2.1: Treat the NAME registrant as the primary registrant, but include others as additional registrants
+				- 1.6.3: Else
+					- 1.6.3.1: Insert all OTHER NAMES (X) registrants to DB , if not already present
+						- Parent Organization Id = previously handled registrant id (initally NAME registrant)
+						- Type Id = registrant type
+						- Name = registrant name
+					- 1.6.3.2: Treat the last registrant as the only and primary registrant
+				- 1.6.4: For targeted registrant(s)
+					- 1.6.4.1: Insert aircraft ownership
+						- Aircraft id = aircraft id
+						- Registrant id = registrant id
+				- 1.6.5: For country matching COUNTRY (iso code)
+					- 1.6.5.1: Find state matching STATE (iso code)
+					- 1.6.5.2: Find or insert city based on country + state + CITY (name)
+					- 1.6.5.3: Find or insert street address based on city + STREET (address) + STREET2 (address, if present) + ZIP CODE (if present)
+					- 1.6.5.4: Insert or update registrant address
+						- Registrant Id = primary registrant id
+						- Address Id = street address id
+						- Verified = CERT ISSUE DATE or LAST ACTION DATE if that is not present
+	- aircraftDatabase (TODO: Handle engines?)
+		- 1: For each row with registration
+			- 1.1: Attempt to find an existing aircraft with icao24
+			- 1.2: If an existing aircraft was found
+				- 1.2.1: Update aircraft row where information is still missing
+					- Registration = registration
+					- Registration Date = registered (if present)
+					- Built Year = built (only year, if present)
+				- 1.2.2: Update aircraft model row where information is still missing
+					- Icao Code = typecode (if present)
+					- A/C Category + Engine number + Engine type from icaoaircrafttype (E.g. L2J), if present
+				- 1.2.3: Update manufacturer icao with manufacturericao, if present and not know already
+				- 1.2.4: Insert a manufacturer name manufacturername, if not present already
+			- 1.3: Else
+				- 1.3.1: Find existing aircraft model rows based on typecode, if present (this is group A)
+					- Prefer models matching icaoaircrafttype information
+				- 1.3.2: Find or insert matching manufacturer, preferring icao code (manufacturericao) connection and group A links
+				- 1.3.3: Insert manufacturername for the manufacturer, if such is not present already
+				- 1.3.4: Insert of update aircraft model information based on group A + icaoaircrafttype and/or manufacturer + model (name)
+				- 1.3.5: Find or insert matching aircraft model based on manufacturer + model (name)
+				- 1.3.6: Insert new aircraft
+					- Transponder Icao 24 = icao24
+					- Serial Number = serialnumber
+					- Registration = registration
+					- Registration Date = registered (if present)
+					- Built Year = built (only year, if present)
+				- 1.3.7: If owner is present and not "Private"
+					- 1.3.7.1: Find or insert registrant based on owner
+			- 1.4: If operator, operatorcallsign or operatoricao is defined
+				- 1.4.1: Find & update existing carrier that matches specified information (mainly icao or callsign), or insert a new carrier
+					- Name = operator
+					- Callsign = operatorcallsign
+					- Icao Code = operatoricao
+				- 1.4.2: If registrant(s) were linked to aircraft, insert registrant carrier link(s) where not present already
+			

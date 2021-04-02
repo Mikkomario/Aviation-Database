@@ -1,0 +1,102 @@
+
+ICAO Engine Types (Order_7360)
+	- E = Electric
+	- P = Piston
+		- Creates rotational motion by using pistons (pressure)
+			- Whereas jet/turbine engines use combustion from fuel
+	- T = Turboprop/Turboshaft
+		- Power plant is a gas turbine
+		- Deliver shaft power as output
+	- J = Jet
+		- Jet engines are airbreathing engines which provide thrust by jet propulsion
+		- This definition includes turbo-jets and turbo-fans
+		- When contrasted to turboprop/turboshaft, this probably refers to turbojet/turbofan
+	- R = Rocket
+		- Difference to turbine/airbreathing jet is that this type of engine doesn't need air intake
+		- Are usually used for only short whiles
+	- C (extra?) = Fixed wing aircraft with two engines coupled to drive a single propeller system
+		- May be considered a turboprop (?)
+
+ACREF / ENGINE Engine Types
+	- 0 - None
+	- 1 - Reciprocating
+		- Same as piston
+	- 2 - Turbo-prop
+		- Output is utilized by a propeller
+	- 3 - Turbo-shaft
+		- Output is used to power a shaft to run a rotor or shaft
+		- Primarily used in helicopters
+	- 4 - Turbo-jet
+		- Base model
+	- 5 - Turbo-fan
+		- Incorporates a fan
+	- 6 - Ramjet
+		- An airbreathing jet engine that creates more speed when there is air intake
+		- Used in missiles, for example
+		- Can't be used from standstill
+	- 7 - 2 Cycle
+		- A piston-based engine
+	- 8 - 4 Cycle
+		- A piston-based engine
+	- 9 – Unknown
+	- 10 – Electric
+	- 11 - Rotary
+		- Old-school engine which rotates
+	
+AircraftTypes.csv
+	- Electric
+	- Jet
+	- Piston
+	- Rocket
+	- Turboprop/Turboshaft
+	
+Master emissions calculator
+	- Jet
+	- Piston
+	- Turboprop
+	
+FAA-Aircraft-Char-Database
+	- Electric
+	- Glider
+		- Meaning: No engines (?)
+	- Helicopter, Turbine
+	- Helo Turbine
+		- Same as helicopter turbine engine?
+	- Jet
+	- Piston
+	- Turboprop
+	
+Synopsis
+	- Powered
+		- Airbreathing Turbine Engine
+			- External propeller / shaft
+				- Turboprop
+				- Turboshaft
+			- No external elements
+				- Turbofan
+				- Turbojet
+		- Internal
+			- Rocket Engine
+			- Electric Motor Engine
+			- Piston Engine
+				- 2-Cycle
+				- 4-Cycle
+			- Rotary Engine
+	- Non-powered
+	
+Generic Groups & Specific groups
+	- Rotating Airbreathing
+		- Turboprop
+		- Turboshaft
+	- Non-rotating Airbreathing
+		- Turbofan
+		- Turbojet
+		- Ramjet
+	- Piston
+		- 2-Cycle
+		- 4-Cycle
+	- Other
+		- Rocket
+		- Electric
+		- Rotary
+		- None

@@ -24,18 +24,19 @@ CREATE TABLE country(
 	capital_id INT,
 	sovereignty_country_id INT,
 	ended DATE,
-	`comment` VARCHAR(255),
+	`comment` TEXT(510),
 	independent BOOLEAN,
 
+	INDEX c_country_iso_code_idx (iso_code),
+
     CONSTRAINT c_wr_region_link_fk FOREIGN KEY c_wr_region_link_idx (world_region_id)
-        REFERENCES world_region(id) ON DELETE SET NULL
+        REFERENCES world_region(id) ON DELETE SET NULL,
 
 	CONSTRAINT c_c_sovereignty_link_fk FOREIGN KEY c_c_sovereignty_link_idx (sovereignty_country_id)
 	    REFERENCES country(id) ON DELETE SET NULL
 
 )Engine=InnoDB DEFAULT CHARSET=latin1;
 -- TODO: Research whether world_region_id should be not null (only if countries.dat only contains duplicates)
--- TODO: Add capital foreign key after city table is created
 
 -- SOURCES: WAC_COUNTRY_STATE, MASTER_CORD
 -- Represents a state in the United States or Canada
@@ -46,7 +47,9 @@ CREATE TABLE `state`
 	country_id INT NOT NULL,
 	iso_code VARCHAR(2) NOT NULL,
 	fips_code INT,
-	`comment` VARCHAR(255),
+	`comment` TEXT(510),
+
+	INDEX s_state_iso_code_idx (iso_code),
 
 	CONSTRAINT s_c_country_link_fk FOREIGN KEY s_c_country_link_idx (country_id)
 	    REFERENCES country(id) ON DELETE CASCADE
@@ -71,7 +74,7 @@ CREATE TABLE world_area
 	    REFERENCES country(id) ON DELETE CASCADE,
 
 	CONSTRAINT wa_s_state_link_fk FOREIGN KEY wa_s_state_link_idx (state_id)
-	    REFERENCES state(id) ON DELETE SET NULL
+	    REFERENCES `state`(id) ON DELETE SET NULL
 
 )Engine=InnoDB DEFAULT CHARSET=latin1;
 
@@ -90,7 +93,7 @@ CREATE TABLE city(
 	    REFERENCES country(id) ON DELETE CASCADE,
 
 	CONSTRAINT c_s_state_link_fk FOREIGN KEY c_s_state_link_idx (state_id)
-	    REFERENCES state(id) ON DELETE SET NULL,
+	    REFERENCES `state`(id) ON DELETE SET NULL,
 
 	CONSTRAINT c_wa_world_area_link_fk FOREIGN KEY c_wa_world_area_link_idx (world_area_code)
 	    REFERENCES world_area(code) On DELETE SET NULL
