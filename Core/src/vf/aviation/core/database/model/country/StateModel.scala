@@ -25,6 +25,12 @@ object StateModel
 	// OTHER    ------------------------
 	
 	/**
+	 * @param isoCode State ISO-code
+	 * @return A model with that code
+	 */
+	def withIsoCode(isoCode: String) = apply(isoCode = Some(isoCode))
+	
+	/**
 	 * @param data State data
 	 * @return A model matching that data
 	 */

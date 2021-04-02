@@ -17,6 +17,6 @@ object WorldAreaFactory extends FromValidatedRowModelFactory[WorldArea]
 	override def table = AviationTables.worldArea
 	
 	override protected def fromValidatedModel(model: Model[Constant]) =
-		WorldArea(model("code"), model("name"), model("countryId"), model("started").getLocalDate.yearMonth,
-			model("stateId"), model("deprecatedAfter"))
+		WorldArea(model("code"), model("countryId"), model("stateId"), model("name"),
+			model("started").localDate.map { _.yearMonth }, model("deprecatedAfter"))
 }

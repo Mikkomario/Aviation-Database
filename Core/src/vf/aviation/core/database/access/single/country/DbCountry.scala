@@ -1,6 +1,7 @@
 package vf.aviation.core.database.access.single.country
 
 import utopia.flow.generic.ValueConversions._
+import utopia.flow.util.StringExtensions._
 import utopia.vault.database.Connection
 import utopia.vault.nosql.access.{SingleIdModelAccess, SingleRowModelAccess}
 import utopia.vault.sql.{Select, Where}
@@ -37,6 +38,56 @@ object DbCountry extends SingleRowModelAccess[Country]
 	 * @return An access point to that country
 	 */
 	def apply(countryId: Int) = DbCountryById(countryId)
+	
+	/**
+	 * @param isoCode Country ISO-code
+	 * @param connection DB Connection (implicit)
+	 * @return Country with a matching ISO-code
+	 */
+	def withIsoCode(isoCode: String)(implicit connection: Connection) =
+		find(model.withIsoCode(isoCode).toCondition)
+	
+	/**
+	 * Searches for a country with a name like the one presented (case-insensitive).
+	 * @param countryName Country name
+	 * @param ignoreCountriesWithIsoCode Whether countries with ISO-code should be ignored in this search
+	 *                                   (true when ISO-code -based search has already been performed)
+	 *                                   (default = false)
+	 * @param connection DB Connection (implicit)
+	 * @return Country that best matches that name. None if no such country could be found.
+	 */
+	def withName(countryName: String, ignoreCountriesWithIsoCode: Boolean = false)
+	            (implicit connection: Connection) =
+	{
+		val exactNameCondition = model.withName(countryName).toCondition
+		val noIsoCodeCondition = model.isoCodeColumn.isNull
+		// Attempts to find direct name matches first (prefers countries without ISO-code)
+		factory.getMany(exactNameCondition && noIsoCodeCondition)
+			.minByOption { _.name.length }
+			// If that didn't work, expands the search to countries with an ISO code (if allowed)
+			.orElse {
+				if (ignoreCountriesWithIsoCode)
+					None
+				else
+					factory.getMany(exactNameCondition && model.isoCodeColumn.isNotNull).minByOption { _.name.length }
+			}
+			// And if that didn't work either, searches with word containment
+			.orElse {
+				val nameWords = countryName.words
+				val wordConditions = nameWords.map { name => model.nameColumn.contains(name) }
+				val wordsCondition = wordConditions.head && wordConditions.tail
+				// Searches from countries without ISO-code first
+				factory.getMany(wordsCondition && noIsoCodeCondition).minByOption { _.name.length }
+					// And if that didn't work, includes those with ISO-code (if allowed)
+					.orElse {
+						if (ignoreCountriesWithIsoCode)
+							None
+						else
+							factory.getMany(wordsCondition && model.isoCodeColumn.isNotNull)
+								.minByOption { _.name.length }
+					}
+			}
+	}
 	
 	
 	// NESTED   -------------------------------

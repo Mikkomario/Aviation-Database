@@ -30,8 +30,8 @@ object WorldAreaModel
 	 * @param area A world area
 	 * @return A model matching that area
 	 */
-	def apply(area: WorldArea): WorldAreaModel = apply(Some(area.code), Some(area.name), Some(area.countryId),
-		Some(area.started.firstDay), area.stateId, area.deprecatedAfter)
+	def apply(area: WorldArea): WorldAreaModel = apply(Some(area.code), Some(area.countryId),
+		area.stateId, area.name, area.started.map { _.firstDay }, area.deprecatedAfter)
 	
 	/**
 	 * Inserts a new world area to the database
@@ -63,8 +63,8 @@ object WorldAreaModel
  * @author Mikko Hilpinen
  * @since 31.3.2021, v0.1
  */
-case class WorldAreaModel(code: Option[Int] = None, name: Option[String] = None, countryId: Option[Int] = None,
-                          started: Option[LocalDate] = None, stateId: Option[Int] = None,
+case class WorldAreaModel(code: Option[Int] = None, countryId: Option[Int] = None, stateId: Option[Int] = None,
+                          name: Option[String] = None, started: Option[LocalDate] = None,
                           deprecatedAfter: Option[LocalDate] = None)
 	extends StorableWithFactory[WorldArea]
 {

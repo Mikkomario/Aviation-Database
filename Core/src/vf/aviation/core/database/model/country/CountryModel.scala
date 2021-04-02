@@ -15,6 +15,14 @@ object CountryModel
 	// ATTRIBUTES   --------------------
 	
 	/**
+	 * Name of the attribute which contains country name
+	 */
+	val nameAttName = "name"
+	/**
+	 * Name of the attribute which contains country ISO standard code
+	 */
+	val isoCodeAttName = "isoCode"
+	/**
 	 * Name of the attribute which contains the dafif code of a country
 	 */
 	val dafifCodeAttName = "dafifCode"
@@ -39,6 +47,15 @@ object CountryModel
 	 */
 	def table = factory.table
 	
+	/**
+	 * @return Column which contains country name
+	 */
+	def nameColumn = table(nameAttName)
+	/**
+	 * @return Column that contains country ISO code
+	 */
+	def isoCodeColumn = table(isoCodeAttName)
+	
 	
 	// OTHER    ------------------------
 	
@@ -47,6 +64,18 @@ object CountryModel
 	 * @return A model with that id
 	 */
 	def withId(countryId: Int) = apply(Some(countryId))
+	
+	/**
+	 * @param isoCode Country ISO-code
+	 * @return A model with that code
+	 */
+	def withIsoCode(isoCode: String) = apply(isoCode = Some(isoCode))
+	
+	/**
+	 * @param countryName Country name
+	 * @return A model with that name
+	 */
+	def withName(countryName: String) = apply(name = Some(countryName))
 	
 	/**
 	 * @param data A country data model
@@ -92,8 +121,8 @@ case class CountryModel(id: Option[Int] = None, name: Option[String] = None, wor
 	
 	override def factory = CountryModel.factory
 	
-	override def valueProperties = Vector("id" -> id, "name" -> name, "worldRegionId" -> worldRegionId,
-		"isoCode" -> isoCode, dafifCodeAttName -> dafifCode, capitalIdAttName -> capitalId,
+	override def valueProperties = Vector("id" -> id, nameAttName -> name, "worldRegionId" -> worldRegionId,
+		isoCodeAttName -> isoCode, dafifCodeAttName -> dafifCode, capitalIdAttName -> capitalId,
 		"sovereigntyCountryId" -> sovereigntyCountryId, "ended" -> ended, "comment" -> comment,
 		"independent" -> independent)
 	

@@ -13,6 +13,12 @@ import scala.concurrent.duration.Duration
 object CityModel
 {
 	/**
+	 * @param cityId City id
+	 * @return A model with only id set
+	 */
+	def withId(cityId: Int) = apply(Some(cityId))
+	
+	/**
 	 * @param data City data
 	 * @return A model matching that data
 	 */
@@ -38,9 +44,38 @@ case class CityModel(id: Option[Int] = None, name: Option[String] = None, countr
                      timeZone: Option[Duration] = None)
 	extends StorableWithFactory[City]
 {
+	// IMPLEMENTED  ------------------------
+	
 	override def factory = CityFactory
 	
 	override def valueProperties = Vector("id" -> id, "name" -> name, "countryId" -> countryId,
 		"marketId" -> marketId, "stateId" -> stateId, "worldAreaCode" -> worldAreaCode,
 		"timeZone" -> timeZone.map { _.toPreciseHours })
+	
+	
+	// OTHER    ----------------------------
+	
+	/**
+	 * @param cityMarketId City market id
+	 * @return A copy of this model with that market id
+	 */
+	def withMarketId(cityMarketId: Int) = copy(marketId = Some(cityMarketId))
+	
+	/**
+	 * @param code World area code
+	 * @return A copy of this model with that world area code
+	 */
+	def withWorldAreaCode(code: Int) = copy(worldAreaCode = Some(code))
+	
+	/**
+	 * @param stateId State id
+	 * @return A copy of this model with that state id
+	 */
+	def withStateId(stateId: Option[Int]) = copy(stateId = stateId)
+	
+	/**
+	 * @param timeZone Time zone difference from UTC time
+	 * @return A copy of this model with that time zone information
+	 */
+	def withTimeZone(timeZone: Option[Duration]) = copy(timeZone = timeZone)
 }

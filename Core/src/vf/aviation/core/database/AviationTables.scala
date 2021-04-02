@@ -32,5 +32,10 @@ object AviationTables extends Tables(ConnectionPool)
 	 */
 	def city = apply("city")
 	
+	/**
+	 * @return Table that records airports and other stations
+	 */
+	def station = apply("station")
+	
 	private def apply(tableName: String): Table = apply("aviation_database", tableName)
 }

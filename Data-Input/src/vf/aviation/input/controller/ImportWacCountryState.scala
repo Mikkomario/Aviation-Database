@@ -22,7 +22,8 @@ import scala.io.Codec
 
 /**
  * Used for importing WAC_COUNTRY_STATE file information as world area codes and country + state.
- * Expects the input as .csv ordered (ascending) by WAC
+ * Expects the input as .csv ordered (ascending) by WAC. Expects no country, world region, world area or city
+ * information to be present in the database yet.
  * @author Mikko Hilpinen
  * @since 28.3.2021, v0.1
  */
@@ -72,10 +73,7 @@ object ImportWacCountryState
 					// Collects country + country WAC + sovereignty + state WACs
 					rows.groupBy { _.countryIsoCode }.flatMap { case (countryIsoCode, rows) =>
 						if (countryIsoCode.isDefined)
-						{
-							println(s"Handling country $countryIsoCode (${rows.size} rows)")
 							Vector(handleCountryRows(regionCode, countryIsoCode, rows))
-						}
 						else
 						{
 							println(s"Handling ${rows.size} countries without ISO code")
@@ -117,7 +115,6 @@ object ImportWacCountryState
 		val country = CountryModel.insert(CountryData(mainRow.countryName, Some(worldRegionId), countryIsoCode,
 			ended = mainRow.ended, comment = if (mainRow.isCountryRow) mainRow.comment else None,
 			independent = mainRow.independent))
-		println(s"Inserts country: ${country.name} with ${rows.size - 1} other rows")
 		
 		// Inserts the country world area code & capital (if present and latest)
 		if (mainRow.isLatestVersion)
@@ -125,8 +122,9 @@ object ImportWacCountryState
 			val countryWorldArea =
 			{
 				if (mainRow.isCountryRow)
-					Some(WorldAreaModel.insert(WorldArea(mainRow.worldAreaCode, mainRow.worldAreaName, country.id,
-						mainRow.started.yearMonth, deprecatedAfter = mainRow.ended)))
+					Some(WorldAreaModel.insert(WorldArea(mainRow.worldAreaCode, country.id,
+						name = Some(mainRow.worldAreaName), started = Some(mainRow.started.yearMonth),
+						deprecatedAfter = mainRow.ended)))
 				else
 					None
 			}
@@ -147,8 +145,8 @@ object ImportWacCountryState
 					// World area codes are not inserted if they aren't the latest version of that code
 					if (row.isLatestVersion)
 					{
-						val wacData = WorldArea(row.worldAreaCode, row.worldAreaName, country.id, row.started.yearMonth,
-							deprecatedAfter = row.ended)
+						val wacData = WorldArea(row.worldAreaCode, country.id, name = Some(row.worldAreaName),
+							started = Some(row.started.yearMonth), deprecatedAfter = row.ended)
 						stateData -> Some(wacData)
 					}
 					else
@@ -160,8 +158,6 @@ object ImportWacCountryState
 		// Inserts the world area codes also
 		WorldAreaModel.insert(states.zip(stateData.map { _._2 })
 			.flatMap { case (state, area) => area.map { _.copy(stateId = Some(state.id)) } })
-		if (states.nonEmpty)
-			println(s"Inserted ${states.size} states for ${country.name}")
 		
 		// Returns generated country and possible sovereignty
 		country -> mainRow.sovereignty
