@@ -46,6 +46,20 @@ object DbCountry extends SingleRowModelAccess[Country]
 		// COMPUTED ---------------------------
 		
 		/**
+		 * @param connection Implicit DB Connection
+		 * @return Dafif code of this country, if available
+		 */
+		def dafifCode(implicit connection: Connection) = pullAttribute(model.dafifCodeAttName).string
+		/**
+		 * Updates this country's dafif-code
+		 * @param newCode New dafif code
+		 * @param connection DB Connection (implicit)
+		 * @return Whether a row was updated
+		 */
+		def dafifCode_=(newCode: String)(implicit connection: Connection) =
+			putAttribute(model.dafifCodeAttName, newCode)
+		
+		/**
 		 * @param connection DB Connection (implicit)
 		 * @return Id of this country's capital city
 		 */
