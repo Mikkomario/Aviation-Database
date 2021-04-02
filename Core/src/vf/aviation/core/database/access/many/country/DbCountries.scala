@@ -1,6 +1,7 @@
 package vf.aviation.core.database.access.many.country
 
-import utopia.vault.nosql.access.ManyRowModelAccess
+import utopia.flow.generic.ValueConversions._
+import utopia.vault.nosql.access.{ManyModelAccessById, ManyRowModelAccess}
 import vf.aviation.core.database.factory.country.CountryFactory
 import vf.aviation.core.model.stored.country.Country
 
@@ -9,9 +10,9 @@ import vf.aviation.core.model.stored.country.Country
  * @author Mikko Hilpinen
  * @since 2.4.2021, v0.1
  */
-object DbCountries extends ManyRowModelAccess[Country]
+object DbCountries extends ManyRowModelAccess[Country] with ManyModelAccessById[Country, Int]
 {
 	override def factory = CountryFactory
 	
-	override def globalCondition = None
+	override def idToValue(id: Int) = id
 }

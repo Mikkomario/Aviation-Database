@@ -62,8 +62,7 @@ object DbCountry extends SingleRowModelAccess[Country]
 		val exactNameCondition = model.withName(countryName).toCondition
 		val noIsoCodeCondition = model.isoCodeColumn.isNull
 		// Attempts to find direct name matches first (prefers countries without ISO-code)
-		factory.getMany(exactNameCondition && noIsoCodeCondition)
-			.minByOption { _.name.length }
+		find(exactNameCondition && noIsoCodeCondition)
 			// If that didn't work, expands the search to countries with an ISO code (if allowed)
 			.orElse {
 				if (ignoreCountriesWithIsoCode)
@@ -95,6 +94,11 @@ object DbCountry extends SingleRowModelAccess[Country]
 	case class DbCountryById(countryId: Int) extends SingleIdModelAccess[Country](countryId, DbCountry.factory)
 	{
 		// COMPUTED ---------------------------
+		
+		/**
+		 * @return An access point to individual cities in this country
+		 */
+		def city = DbCity.inCountryWithId(countryId)
 		
 		/**
 		 * @param connection Implicit DB Connection

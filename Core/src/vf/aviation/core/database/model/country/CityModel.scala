@@ -12,11 +12,54 @@ import scala.concurrent.duration.Duration
 
 object CityModel
 {
+	// ATTRIBUTES   --------------------
+	
+	/**
+	 * Name of the attribute that contains the linked country's id
+	 */
+	val countryIdAttName = "countryId"
+	/**
+	 * Name of the attribute that contains city's name
+	 */
+	val nameAttName = "name"
+	
+	
+	// COMPUTED ------------------------
+	
+	/**
+	 * @return Factory used by this model
+	 */
+	def factory = CityFactory
+	/**
+	 * @return Table used by this model
+	 */
+	def table = factory.table
+	
+	/**
+	 * @return Column that contains the city name
+	 */
+	def nameColumn = table(nameAttName)
+	
+	
+	// OTHER    ------------------------
+	
 	/**
 	 * @param cityId City id
 	 * @return A model with only id set
 	 */
 	def withId(cityId: Int) = apply(Some(cityId))
+	
+	/**
+	 * @param countryId Country id
+	 * @return A model containing that country id
+	 */
+	def withCountryId(countryId: Int) = apply(countryId = Some(countryId))
+	
+	/**
+	 * @param cityName Name of a city
+	 * @return A model with that name
+	 */
+	def withName(cityName: String) = apply(name = Some(cityName))
 	
 	/**
 	 * @param data City data
@@ -45,11 +88,13 @@ case class CityModel(id: Option[Int] = None, name: Option[String] = None, countr
                      daylightSavingZoneCode: Option[Char] = None)
 	extends StorableWithFactory[City]
 {
+	import CityModel._
+	
 	// IMPLEMENTED  ------------------------
 	
-	override def factory = CityFactory
+	override def factory = CityModel.factory
 	
-	override def valueProperties = Vector("id" -> id, "name" -> name, "countryId" -> countryId,
+	override def valueProperties = Vector("id" -> id, nameAttName -> name, countryIdAttName -> countryId,
 		"marketId" -> marketId, "stateId" -> stateId, "worldAreaCode" -> worldAreaCode,
 		"timeZone" -> timeZone.map { _.toPreciseHours }, "timeZoneName" -> timeZoneName,
 		"daylightSavingZoneCode" -> daylightSavingZoneCode.map { _.toString })

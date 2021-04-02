@@ -5,7 +5,7 @@ import utopia.flow.util.FileExtensions._
 import utopia.vault.sql.Delete
 import vf.aviation.core.database.{AviationTables, ConnectionPool}
 import vf.aviation.core.util.Globals._
-import vf.aviation.input.controller.{ImportCountriesDat, ImportMasterCord, ImportWacCountryState}
+import vf.aviation.input.controller.{ImportAirportsDat, ImportCountriesDat, ImportMasterCord, ImportWacCountryState}
 
 import java.nio.file.Path
 import scala.util.{Failure, Success}
@@ -20,6 +20,15 @@ object AllDataImportTest extends App
 	DataType.setup()
 	
 	val inputDirectory: Path = "Data-Input/input"
+	
+	/* FIXME: Problems with non-standard city names
+	Caused by: org.mariadb.jdbc.internal.util.dao.QueryException:
+		Illegal mix of collations (latin1_swedish_ci,IMPLICIT) and (utf8_general_ci,COERCIBLE) for operation '<=>'
+	Query is: SELECT * FROM `city` WHERE (`city`.`country_id` <=> ? AND `city`.`name` <=> ?) LIMIT ?,
+		parameters [650,'Győr',1]
+	 */
+	// Possible fix: https://stackoverflow.com/questions/1008287/illegal-mix-of-collations-mysql-error
+	// TODO: Also, "No match could be found for country name 'West Bank'" - Actually Israel (Jerusalem)
 	
 	ConnectionPool { implicit connection =>
 		// Deletes pre-existing data
@@ -41,6 +50,10 @@ object AllDataImportTest extends App
 			// Imports MASTER_CORD document
 			println("Starting airport + city document processing")
 			ImportMasterCord(inputDirectory/"846163630_T_MASTER_CORD.csv")
+		}.flatMap { _ =>
+			// Imports airports.dat document
+			println("Starting airports.dat document processing")
+			ImportAirportsDat(inputDirectory/"airports.dat.txt")
 		} match
 		{
 			case Success(_) => println("Finished importing data")

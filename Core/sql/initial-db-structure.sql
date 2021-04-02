@@ -46,7 +46,7 @@ CREATE TABLE station_type(
 
 )Engine=InnoDB DEFAULT CHARSET=latin1;
 -- Inserts possible values
-INSERT INTO station_type (id, openflights_code, name) VALUES
+INSERT INTO station_type (id, open_flights_code, name) VALUES
 	(1, 'airport', 'Airport'),
 	(2, 'station', 'Train Station'),
 	(3, 'port', 'Ferry Terminal');
@@ -140,7 +140,7 @@ CREATE TABLE city(
 	state_id INT,
 	world_area_code INT,
 	time_zone DOUBLE,
-	time_zone_name VARCHAR(16),
+	time_zone_name VARCHAR(32),
 	daylight_saving_zone_code CHAR,
 
 	CONSTRAINT c_c_country_link_fk FOREIGN KEY c_c_country_link_idx (country_id)
@@ -163,6 +163,7 @@ ALTER TABLE country ADD CONSTRAINT c_c_capital_city_link_fk FOREIGN KEY c_c_capi
 
 -- SOURCES: MASTER_CORD, airports.dat (OpenFlights), airports.dat (RouteMapper)
 -- Represents an airport, train station, ferry port etc.
+-- TODO: Consider whether city id should be not null
 CREATE TABLE station(
 	id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
 	name VARCHAR(64) NOT NULL,
