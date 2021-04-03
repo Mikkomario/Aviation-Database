@@ -29,6 +29,9 @@ object AllDataImportTest extends App
 	South Georgia and South Sandwich Is. == South Georgia and the Islands
 	Full name is "South Georgia and the South Sandwich Islands"
 	Also, Grytviken (Correct spelling) == Grytvyken (Incorrect spelling)
+	
+	convert Airport, Airfield, Airstrip and Air Base, Air Force Base, Airpot (Gimpo International Airpot), Airpark,
+	Aerop*, Aeroclub, Aerodrom*, Aero Park
 	 */
 	
 	ConnectionPool { implicit connection =>

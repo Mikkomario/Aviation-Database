@@ -11,13 +11,13 @@ import utopia.genesis.util.Distance
 import utopia.vault.database.Connection
 import vf.aviation.core.database.access.id.many.DbDaylightSavingZoneCodes
 import vf.aviation.core.database.access.many.country.{DbCities, DbCountries}
-import vf.aviation.core.database.access.many.station.DbStationTypes
+import vf.aviation.core.database.access.many.station.{DbStationTypes, DbStations}
 import vf.aviation.core.database.access.single.country.{DbCity, DbCountry}
 import vf.aviation.core.database.access.single.station.DbStation.DbAirport
 import vf.aviation.core.database.model.StationModel
 import vf.aviation.core.database.model.country.{CityModel, CountryModel}
 import vf.aviation.core.model.cached.Coordinates
-import vf.aviation.core.model.enumeration.StandardStationType.Airport
+import vf.aviation.core.model.enumeration.StandardStationType.{Airport, FerryTerminal, TrainStation}
 import vf.aviation.core.model.partial.country.{CityData, CountryData}
 import vf.aviation.core.model.partial.station.StationData
 import vf.aviation.core.model.stored.country.City
@@ -206,6 +206,18 @@ object ImportAirportsDat
 					println(s"Inserting ${stationData.size} new stations")
 					StationModel.insert(stationData)
 				}
+			
+			// After all data has been imported, updates some unspecified type ids based on station name
+			println("Assigns types to unspecified stations based on station name")
+			val stationsAccess = DbStations.withoutType
+			val newTrainStationsCount = stationsAccess.updateTypeWithName(TrainStation.id,
+				Vector("Railway", "Train Station", "Train Depot"))
+			val newAirportsCount = stationsAccess.updateTypeWithName(Airport.id,
+				Vector("Airport", "Airfield", "Airstrip", "Air Base", "Air Force Base",
+				"Airpark", "Air Park", "Aerop", "Aeroclub", "Aerodrom", "Aero Park"))
+			val newFerryPortsCount = stationsAccess.updateTypeWithName(FerryTerminal.id, Vector("Ferry"))
+			
+			println(s"Assigned $newAirportsCount stations as airports, $newTrainStationsCount as railway stations and $newFerryPortsCount as ferry ports")
 		}
 	}
 	

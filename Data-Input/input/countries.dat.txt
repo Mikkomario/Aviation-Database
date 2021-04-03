@@ -218,7 +218,7 @@
 "Sudan","SD","SU"
 "Svalbard and Jan Mayen Islands","SJ","SV"
 "Sweden","SE","SW"
-"South Georgia and South Sandwich Is.","GS","SX"
+"South Georgia and the South Sandwich Islands","GS","SX"
 "Syria","SY","SY"
 "Switzerland","CH","SZ"
 "Trinidad and Tobago","TT","TD"

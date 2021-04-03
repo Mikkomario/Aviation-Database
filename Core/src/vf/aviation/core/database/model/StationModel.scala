@@ -17,6 +17,18 @@ import java.time.LocalDate
 
 object StationModel
 {
+	// ATTRIBUTES   ---------------------
+	
+	/**
+	 * Name of the attribute that contains station name
+	 */
+	val nameAttName = "name"
+	/**
+	 * Name of the attribute that contains station type id
+	 */
+	val typeIdAttName = "typeId"
+	
+	
 	// COMPUTED -------------------------
 	
 	/**
@@ -27,6 +39,15 @@ object StationModel
 	 * @return Table used by this model
 	 */
 	def table = factory.table
+	
+	/**
+	 * @return Column that contains airport name
+	 */
+	def nameColumn = table(nameAttName)
+	/**
+	 * @return Column that contains station type id
+	 */
+	def typeIdColumn = table(typeIdAttName)
 	
 	/**
 	 * @return A model that has been marked as an airport
@@ -100,14 +121,17 @@ case class StationModel(id: Option[Int] = None, name: Option[String] = None, lat
                         isClosed: Option[Boolean] = None)
 	extends StorableWithFactory[Station]
 {
+	import StationModel._
+	
 	// IMPLEMENTED  ---------------------------
 	
 	override def factory = StationModel.factory
 	
-	override def valueProperties = Vector("id" -> id, "name" -> name, "latitudeNorth" -> latitudeNorth.map { _.degrees },
-		"longitudeEast" -> longitudeEast.map { _.degrees }, "altitudeFeet" -> altitude.map { _.toFeet },
-		"typeId" -> typeId, "dotId" -> dotId, "openFlightsId" -> openFlightsId, "iataCode" -> iataCode,
-		"icaoCode" -> icaoCode, "cityId" -> cityId, "started" -> started, "closed" -> closed, "isClosed" -> isClosed)
+	override def valueProperties = Vector("id" -> id, nameAttName -> name,
+		"latitudeNorth" -> latitudeNorth.map { _.degrees }, "longitudeEast" -> longitudeEast.map { _.degrees },
+		"altitudeFeet" -> altitude.map { _.toFeet }, typeIdAttName -> typeId, "dotId" -> dotId,
+		"openFlightsId" -> openFlightsId, "iataCode" -> iataCode, "icaoCode" -> icaoCode, "cityId" -> cityId,
+		"started" -> started, "closed" -> closed, "isClosed" -> isClosed)
 	
 	
 	// OTHER    -------------------------------

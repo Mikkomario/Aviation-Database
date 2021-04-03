@@ -8305,8 +8305,7 @@
 13647,Brits Airport,Brits,South Africa,\N,FABS,-25.53230094909668,27.77589988708496,3756,2,U,\N,airport,OurAirports
 13753,Iganu Game Ranch,Marken - Limpopo,South Africa,\N,\N,-23.458333333333,28.3027778,700,2,N,\N,\N,\N
 13756,Arathusa Safari Lodge Airport,Arathusa,South Africa,ASS,FACC,-24.744165,31.522499,1200,2,U,\N,airport,OurAirports
-6436,Grytviken,Grytviken,South Georgia and the Islands,\N,\N,-54.16534,-36.30288,0,-2,N,Atlantic/South_Georgia,unknown,User
-7224,Grytvyken,Grytvyken,South Georgia and the Islands,\N,\N,-54.276667,-36.511667,538,-2,S,Atlantic/South_Georgia,unknown,User
+6436,Grytviken,Grytviken,South Georgia and the South Sandwich Islands,\N,\N,-54.16534,-36.30288,0,-2,N,Atlantic/South_Georgia,unknown,User
 2361,Gwangju Airport,Kwangju,South Korea,KWJ,RKJJ,35.123173,126.805444,39,9,U,Asia/Seoul,airport,OurAirports
 2364,Jeon Ju Airport (G-703),Jhunju,South Korea,CHN,RKJU,35.87808,127.119112,96,9,U,Asia/Seoul,airport,OurAirports
 2365,Yeosu Airport,Yeosu,South Korea,RSU,RKJY,34.84230041503906,127.61699676513672,53,9,U,Asia/Seoul,airport,OurAirports
@@ -8336,7 +8335,7 @@
 7952,Busan,Busan,South Korea,\N,\N,35.179444,129.075556,0,9,U,Asia/Seoul,unknown,User
 7953,Busan,Busan,South Korea,\N,\N,35.179444,129.075556,0,9,U,Asia/Seoul,unknown,User
 8003,Donghae,Donghae,South Korea,\N,\N,37.489,129.124,0,9,N,Asia/Seoul,unknown,User
-8346,Gimpo International Airpot,Seoul,South Korea,SEL,\N,37.558311,126.790586,58,9,N,Asia/Seoul,unknown,User
+8346,Gimpo International Airport,Seoul,South Korea,SEL,\N,37.558311,126.790586,58,9,N,Asia/Seoul,unknown,User
 8419,Jeongseok Airport,Seogwipo,South Korea,JDG,RKPD,33.3996009827,126.711997986,1171,9,U,Asia/Seoul,airport,OurAirports
 9939,Seosan Air Base,Seosan,South Korea,HMY,RKTP,36.703999,126.486,39,9,N,\N,airport,OurAirports
 10186,N 104 Helipad,Ulleung,South Korea,\N,RKDU,37.479166666699996,130.895555556,476,9,N,\N,airport,OurAirports
