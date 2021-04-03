@@ -34,6 +34,8 @@ object DbCity extends SingleRowModelAccess[City]
 	 */
 	def inCountryWithId(countryId: Int) = DbCityInCountry(countryId)
 	
+	private def cityNameCondition(name: String) = model.withName(name).toCondition
+	
 	
 	// NESTED   ------------------------------
 	
@@ -57,7 +59,7 @@ object DbCity extends SingleRowModelAccess[City]
 		def withName(cityName: String)(implicit connection: Connection) =
 		{
 			// Searches for direct name matches first and if that doesn't work, word containment
-			find(model.withName(cityName).toCondition).orElse {
+			find(cityNameCondition(cityName)).orElse {
 				val nameColumn = model.nameColumn
 				val wordConditions = cityName.words.map(nameColumn.contains)
 				val wordCondition = wordConditions.head && wordConditions.tail

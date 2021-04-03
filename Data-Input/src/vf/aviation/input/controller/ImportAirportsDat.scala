@@ -29,7 +29,8 @@ import scala.util.Failure
 
 /**
  * Imports airports.dat file contents to the database. Expects previous airport-related data to include proper city
- * links.
+ * links. "Myanmar" should be renamed to "Burma" in the original data to match properly. The process will work better
+ * if rows are ordered by country name (index 3).
  * @author Mikko Hilpinen
  * @since 2.4.2021, v0.1
  */
@@ -127,8 +128,32 @@ object ImportAirportsDat
 							// Case: No Iata match found => Country name search required
 							// TODO: Could pull only id instead
 							else
-								// TODO: Back up this query with city name search (to find Jerusalem / Israel)
-								DbCountry.withName(countryName).map { _.id }
+								DbCountry.withName(countryName).map { _.id }.orElse {
+									// If there weren't any results with country name search either,
+									// checks with city names (exact) as the last option
+									val existingCities = rows.map { _.cityName }.toSet[String]
+										.flatMap { DbCities.withExactName(_) }
+									if (existingCities.isEmpty)
+										None
+									else if (existingCities.size == 1)
+										Some(existingCities.head.countryId)
+									else
+									{
+										// In case there are competing options,
+										// selects the country with most matching cities
+										val availableCountryIds = existingCities.groupBy { _.countryId }
+											.view.mapValues { _.size }.toMap
+										val mostCitiesCount = availableCountryIds.valuesIterator.max
+										
+										val competingOptions = availableCountryIds.filter { _._2 == mostCitiesCount }
+										// Shows a warning if the options can't be distinguished at this time
+										if (competingOptions.size > 1)
+											println(s"Warning: Multiple country options (${
+												competingOptions.keys.mkString(", ")}) for cities: ${
+												rows.map { _.cityName }.mkString(", ") }")
+										competingOptions.keys.headOption
+									}
+								}
 						}
 						val remainingRowsView = nonMatchingAirportRows.view.map { Some(Airport.id) -> _ } ++
 							nonAirportRows.view.flatMap { case (typeId, rows) => rows.map { typeId -> _ } }
@@ -203,6 +228,7 @@ object ImportAirportsDat
 					- 11: Time Zone Name
 					- 12: Type Code
 				 */
+				// TODO: Ignore rows that contain [Duplicate]
 				def value(index: Int): Value = row(index).notEmpty.filter { _ != nullString }
 				value(6).double.toTry { new IllegalArgumentException(s"Latitude ${row(6)} is invalid") }
 					.flatMap { latitude =>
@@ -220,6 +246,7 @@ object ImportAirportsDat
 		}
 	}
 	
+	// FIXME: City name may be empty
 	private case class AirportRow(id: Int, name: String, cityName: String, countryName: String,
 	                              coordinates: Coordinates, altitude: Option[Distance] = None,
 	                              iataCode: Option[String] = None, icaoCode: Option[String] = None,

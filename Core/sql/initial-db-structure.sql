@@ -2,6 +2,12 @@
 -- Database Structure for the project (v0.1)
 --
 
+CREATE DATABASE aviation_database
+  DEFAULT CHARACTER SET utf8
+  DEFAULT COLLATE utf8_general_ci;
+
+USE aviation_database;
+
 -- Hard-Coded   -----------------------------------------
 
 -- SOURCE: OpenFlights
@@ -24,7 +30,8 @@ CREATE TABLE daylight_saving_zone
 	end_month INT NOT NULL,
 	end_sunday_index INT NOT NULL
 
-)Engine=InnoDB DEFAULT CHARSET=latin1;
+)Engine=InnoDB DEFAULT CHARACTER SET utf8
+               DEFAULT COLLATE utf8_general_ci;
 -- Europe (E): Last sunday of March to last sunday of October
 -- US/Canada (A): Second sunday of March to first sunday of November
 -- South Africa (S): Third sunday of October to third sunday of March
@@ -44,7 +51,8 @@ CREATE TABLE station_type(
 	open_flights_code VARCHAR(7) NOT NULL,
 	name VARCHAR(32) NOT NULL
 
-)Engine=InnoDB DEFAULT CHARSET=latin1;
+)Engine=InnoDB DEFAULT CHARACTER SET utf8
+               DEFAULT COLLATE utf8_general_ci;
 -- Inserts possible values
 INSERT INTO station_type (id, open_flights_code, name) VALUES
 	(1, 'airport', 'Airport'),
@@ -62,12 +70,12 @@ CREATE TABLE world_region
 	id INT NOT NULL PRIMARY KEY,
 	name VARCHAR(64) NOT NULL
 
-)Engine=InnoDB DEFAULT CHARSET=latin1;
+)Engine=InnoDB DEFAULT CHARACTER SET utf8
+               DEFAULT COLLATE utf8_general_ci;
 
 -- SOURCES: WAC_COUNTRY_STATE, countries.dat (OpenFlight), MASTER_CORD
 -- Represents a single country (E.g. Finland, Germany or USA)
 -- Capital id refers to the capital city in the city table (below)
--- TODO: If there are more name-based country searches, consider making country name an index also
 CREATE TABLE country(
 	id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
 	name VARCHAR(64) NOT NULL,
@@ -81,6 +89,7 @@ CREATE TABLE country(
 	independent BOOLEAN,
 
 	INDEX c_country_iso_code_idx (iso_code),
+	INDEX c_country_name_idx (name),
 
     CONSTRAINT c_wr_region_link_fk FOREIGN KEY c_wr_region_link_idx (world_region_id)
         REFERENCES world_region(id) ON DELETE SET NULL,
@@ -88,7 +97,8 @@ CREATE TABLE country(
 	CONSTRAINT c_c_sovereignty_link_fk FOREIGN KEY c_c_sovereignty_link_idx (sovereignty_country_id)
 	    REFERENCES country(id) ON DELETE SET NULL
 
-)Engine=InnoDB DEFAULT CHARSET=latin1;
+)Engine=InnoDB DEFAULT CHARACTER SET utf8
+               DEFAULT COLLATE utf8_general_ci;
 
 -- SOURCES: WAC_COUNTRY_STATE, MASTER_CORD
 -- Represents a state in the United States or Canada
@@ -106,7 +116,8 @@ CREATE TABLE `state`
 	CONSTRAINT s_c_country_link_fk FOREIGN KEY s_c_country_link_idx (country_id)
 	    REFERENCES country(id) ON DELETE CASCADE
 
-)Engine=InnoDB DEFAULT CHARSET=latin1;
+)Engine=InnoDB DEFAULT CHARACTER SET utf8
+               DEFAULT COLLATE utf8_general_ci;
 
 -- SOURCE: WAC_COUNTRY_STATE, MASTER_CORD
 -- A world area / WAC
@@ -128,7 +139,8 @@ CREATE TABLE world_area
 	CONSTRAINT wa_s_state_link_fk FOREIGN KEY wa_s_state_link_idx (state_id)
 	    REFERENCES `state`(id) ON DELETE SET NULL
 
-)Engine=InnoDB DEFAULT CHARSET=latin1;
+)Engine=InnoDB DEFAULT CHARACTER SET utf8
+               DEFAULT COLLATE utf8_general_ci;
 
 -- SOURCES: WAC_COUNTRY_STATE, MASTER_CORD, airports.dat (OpenFlights), MASTER.txt
 -- Time zone is difference from UTC time in hours, but may be unknown
@@ -155,7 +167,8 @@ CREATE TABLE city(
 	CONSTRAINT c_dsz_daylight_saving_zone_link_fk FOREIGN KEY c_dsz_daylight_saving_zone_link_idx (daylight_saving_zone_code)
 	    REFERENCES daylight_saving_zone(code) ON DELETE SET NULL
 
-)Engine=InnoDB DEFAULT CHARSET=latin1;
+)Engine=InnoDB DEFAULT CHARACTER SET utf8
+               DEFAULT COLLATE utf8_general_ci;
 
 -- Adds link from country to its capital city
 ALTER TABLE country ADD CONSTRAINT c_c_capital_city_link_fk FOREIGN KEY c_c_capital_city_link_idx (capital_id)
@@ -189,4 +202,5 @@ CREATE TABLE station(
 	CONSTRAINT s_c_station_city_link_fk FOREIGN KEY s_c_station_city_link_idx (city_id)
 	    REFERENCES city(id) ON DELETE SET NULL
 
-)Engine=InnoDB DEFAULT CHARSET=latin1;
+)Engine=InnoDB DEFAULT CHARACTER SET utf8
+               DEFAULT COLLATE utf8_general_ci;

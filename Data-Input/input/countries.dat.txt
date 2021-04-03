@@ -78,7 +78,7 @@
 "Fiji","FJ","FJ"
 "Falkland Islands","FK","FK"
 "Micronesia, Fed. Sts.","FM","FM"
-"Faeroe Islands","FO","FO"
+"Faroe Islands","FO","FO"
 "French Polynesia","PF","FP"
 "Baker Island",\N,"FQ"
 "France","FR","FR"

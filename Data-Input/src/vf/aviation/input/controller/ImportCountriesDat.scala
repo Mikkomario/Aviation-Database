@@ -15,7 +15,9 @@ import scala.io.Codec
 import scala.util.{Failure, Success}
 
 /**
- * Used for importing countries.dat file as country information
+ * Used for importing countries.dat file as country information.
+ * Please note that "Faeroe Islands" should be renamed to "Faroe Islands" in the original data
+ * in order to match properly.
  * @author Mikko Hilpinen
  * @since 2.4.2021, v0.1
  */

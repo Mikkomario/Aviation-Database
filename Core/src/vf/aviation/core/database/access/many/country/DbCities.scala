@@ -35,6 +35,17 @@ object DbCities extends ManyRowModelAccess[City]
 	 */
 	def withIds(cityIds: Set[Int]) = DbCitiesWithIds(cityIds)
 	
+	/**
+	 * Finds cities with the specified name (case-insensitive) from the database.
+	 * Will not use word containment search. Please note that this query is relatively slow and should not
+	 * be preferred.
+	 * @param cityName Targeted city name
+	 * @param connection DB Connection (implicit)
+	 * @return Cities with that name
+	 */
+	def withExactName(cityName: String)(implicit connection: Connection) =
+		find(model.withName(cityName).toCondition)
+	
 	
 	// NESTED   --------------------------
 	
