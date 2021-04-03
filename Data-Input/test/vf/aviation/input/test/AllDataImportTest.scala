@@ -6,7 +6,7 @@ import utopia.vault.database.Connection
 import utopia.vault.sql.Delete
 import vf.aviation.core.database.{AviationTables, ConnectionPool}
 import vf.aviation.core.util.Globals._
-import vf.aviation.input.controller.{ImportAirportsDat, ImportCountriesDat, ImportMasterCord, ImportWacCountryState}
+import vf.aviation.input.controller.{ImportAirportsDat, ImportCountriesDat, ImportMasterCord, ImportRouteMapperAirports, ImportWacCountryState}
 
 import java.nio.file.Path
 import scala.util.{Failure, Success}
@@ -24,16 +24,6 @@ object AllDataImportTest extends App
 	
 	val inputDirectory: Path = "Data-Input/input"
 	
-	/*
-	No match could be found for country name 'South Georgia and the Islands'
-	South Georgia and South Sandwich Is. == South Georgia and the Islands
-	Full name is "South Georgia and the South Sandwich Islands"
-	Also, Grytviken (Correct spelling) == Grytvyken (Incorrect spelling)
-	
-	convert Airport, Airfield, Airstrip and Air Base, Air Force Base, Airpot (Gimpo International Airpot), Airpark,
-	Aerop*, Aeroclub, Aerodrom*, Aero Park
-	 */
-	
 	ConnectionPool { implicit connection =>
 		// Deletes pre-existing data
 		println("Deleting old data")
@@ -42,7 +32,7 @@ object AllDataImportTest extends App
 		connection(Delete(AviationTables.station))
 		
 		// Imports WAC_COUNTRY_STATE document
-		println("Starting world area code document processing")
+		println("Starting WAC COUNTRY STATE document processing")
 		ImportWacCountryState(inputDirectory/"846163630_T_WAC_COUNTRY_STATE.csv").flatMap { _ =>
 			// Imports countries.dat document
 			println("Starting countries.dat document processing")
@@ -52,12 +42,15 @@ object AllDataImportTest extends App
 				println(s"Imported ${newCountries.size} new countries from countries.dat (id ${
 					newCountries.head.id}+)")
 			// Imports MASTER_CORD document
-			println("Starting airport + city document processing")
+			println("Starting MASTER CORD document processing")
 			ImportMasterCord(inputDirectory/"846163630_T_MASTER_CORD.csv")
 		}.flatMap { _ =>
 			// Imports airports.dat document
 			println("Starting airports.dat document processing")
 			ImportAirportsDat(inputDirectory/"airports-extended.dat.csv")
+		}.flatMap { _ =>
+			println("Starting route mapper airports.dat document processing")
+			ImportRouteMapperAirports(inputDirectory/"route-mapper-airports.csv")
 		} match
 		{
 			case Success(_) => println("Finished importing data")

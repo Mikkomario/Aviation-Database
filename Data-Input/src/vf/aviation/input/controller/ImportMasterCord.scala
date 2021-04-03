@@ -17,7 +17,6 @@ import vf.aviation.core.model.cached.Coordinates
 import vf.aviation.core.model.enumeration.StandardStationType.Airport
 import vf.aviation.core.model.partial.country.{CityData, CountryData, StateData}
 import vf.aviation.core.model.partial.station
-import vf.aviation.core.model.partial.station.StationData
 import vf.aviation.core.model.stored.country.WorldArea
 
 import java.nio.file.Path
@@ -198,7 +197,7 @@ object ImportMasterCord
 	
 	private object AirportRow extends FromModelFactoryWithSchema[AirportRow]
 	{
-		override def schema = ModelDeclaration("CITY_MARKET_ID" -> IntType, "CITY_MARKET_WAC" -> IntType,
+		override val schema = ModelDeclaration("CITY_MARKET_ID" -> IntType, "CITY_MARKET_WAC" -> IntType,
 			"DISPLAY_AIRPORT_CITY_NAME_FULL" -> StringType, "LATITUDE" -> DoubleType, "LONGITUDE" -> DoubleType,
 			"AIRPORT_START_DATE" -> LocalDateType)
 		

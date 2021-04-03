@@ -209,6 +209,7 @@ object ImportAirportsDat
 			
 			// After all data has been imported, updates some unspecified type ids based on station name
 			println("Assigns types to unspecified stations based on station name")
+			// TODO: UpdatedRowCount doesn't work properly
 			val stationsAccess = DbStations.withoutType
 			val newTrainStationsCount = stationsAccess.updateTypeWithName(TrainStation.id,
 				Vector("Railway", "Train Station", "Train Depot"))

@@ -27,6 +27,10 @@ object StationModel
 	 * Name of the attribute that contains station type id
 	 */
 	val typeIdAttName = "typeId"
+	/**
+	 * Name of the attribute that contains station iata code
+	 */
+	val iataCodeAttName = "iataCode"
 	
 	
 	// COMPUTED -------------------------
@@ -48,6 +52,10 @@ object StationModel
 	 * @return Column that contains station type id
 	 */
 	def typeIdColumn = table(typeIdAttName)
+	/**
+	 * @return Column that contains station iata code
+	 */
+	def iataCodeColumn = table(iataCodeAttName)
 	
 	/**
 	 * @return A model that has been marked as an airport
