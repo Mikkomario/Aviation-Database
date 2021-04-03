@@ -62,6 +62,8 @@ object ImportAirportsDat
 		
 		CsvReader.iterateRawRowsIn(path, separator) { rowsIterator =>
 			rowsIterator.mapCatching(AirportRow.fromRow) { _.printStackTrace() }
+				// Ignores airports that are marked as "[Duplicate]"
+				.filterNot { _.isDuplicate }
 				// Attempts to group rows based on country
 				.groupBy { _.countryName }
 				// Processes country & city data and prepares station data for bulk insert
@@ -131,7 +133,7 @@ object ImportAirportsDat
 								DbCountry.withName(countryName).map { _.id }.orElse {
 									// If there weren't any results with country name search either,
 									// checks with city names (exact) as the last option
-									val existingCities = rows.map { _.cityName }.toSet[String]
+									val existingCities = rows.flatMap { _.cityName }.toSet[String]
 										.flatMap { DbCities.withExactName(_) }
 									if (existingCities.isEmpty)
 										None
@@ -150,15 +152,15 @@ object ImportAirportsDat
 										if (competingOptions.size > 1)
 											println(s"Warning: Multiple country options (${
 												competingOptions.keys.mkString(", ")}) for cities: ${
-												rows.map { _.cityName }.mkString(", ") }")
+												rows.flatMap { _.cityName }.mkString(", ") }")
 										competingOptions.keys.headOption
 									}
 								}
 						}
 						val remainingRowsView = nonMatchingAirportRows.view.map { Some(Airport.id) -> _ } ++
 							nonAirportRows.view.flatMap { case (typeId, rows) => rows.map { typeId -> _ } }
-						def insertCity(row: AirportRow, countryId: Int) = CityModel.insert(
-							CityData(row.cityName, countryId, timeZone = row.timeZoneDifference,
+						def insertCity(cityName: String, row: AirportRow, countryId: Int) = CityModel.insert(
+							CityData(cityName, countryId, timeZone = row.timeZoneDifference,
 								timeZoneName = row.timeZoneName, daylightSavingZoneCode = row.daylightSavingsZone
 									.filter(daylightSavingZoneCodes.contains)))
 						existingCountryId match
@@ -167,28 +169,34 @@ object ImportAirportsDat
 							case Some(countryId) =>
 								// Each remaining row is handled individually
 								remainingRowsView.map { case (typeId, row) =>
-									// Attempts to find an existing city
-									val city = DbCity.inCountryWithId(countryId).withName(row.cityName).getOrElse {
-										// Inserts new city if necessary
-										insertCity(row, countryId)
+									// Attempts to find an existing city,
+									// except when there is no city name listed in the data
+									val city = row.cityName.map { cityName =>
+										DbCity.inCountryWithId(countryId).withName(cityName).getOrElse {
+											// Inserts new city if necessary
+											insertCity(cityName, row, countryId)
+										}
 									}
 									// Prepares a new station for insert
-									row.toStationData(city.id, typeId)
+									row.toStationData(city.map { _.id }, typeId)
 								}
-							// Case: No existing country found => Country and city are inserted
+							// Case: No existing country found => Country (and city) are inserted
 							case None =>
 								println(s"No match could be found for country name '$countryName'")
 								val countryId = CountryModel.insert(CountryData(countryName)).id
 								var insertedCities = Vector[City]()
 								remainingRowsView.map { case (typeId, row) =>
-									val city = insertedCities.find { _.name == row.cityName }
-										.getOrElse {
-											val newCity = insertCity(row, countryId)
+									// Attempts to reuse cities if they were already inserted.
+									// Only inserts city data for rows with city name
+									val city = row.cityName.map { cityName =>
+										insertedCities.find { _.name == cityName }.getOrElse {
+											val newCity = insertCity(cityName, row, countryId)
 											insertedCities :+= newCity
 											newCity
 										}
+									}
 									// Prepares station for insert
-									row.toStationData(city.id, typeId)
+									row.toStationData(city.map { _.id }, typeId)
 								}
 						}
 					}
@@ -228,15 +236,15 @@ object ImportAirportsDat
 					- 11: Time Zone Name
 					- 12: Type Code
 				 */
-				// TODO: Ignore rows that contain [Duplicate]
 				def value(index: Int): Value = row(index).notEmpty.filter { _ != nullString }
 				value(6).double.toTry { new IllegalArgumentException(s"Latitude ${row(6)} is invalid") }
 					.flatMap { latitude =>
 						value(7).double.toTry { new IllegalArgumentException(s"Longitude ${row(7)} is invalid") }
 							.map { longitude =>
-								AirportRow(value(0).getInt, row(1), row(2), row(3),
+								AirportRow(value(0).getInt, row(1), row(3),
 									Coordinates(Angle.ofDegrees(latitude), Angle.ofDegrees(longitude)),
-									value(8).double.map(Distance.ofFeet), value(4).string, value(5).string,
+									value(8).double.map(Distance.ofFeet),
+									value(4).string, value(5).string, value(2).string,
 									value(11).string, value(9).double.map { _.hours },
 									value(10).string.flatMap { _.toUpperCase.headOption },
 									value(12).string)
@@ -246,14 +254,18 @@ object ImportAirportsDat
 		}
 	}
 	
-	// FIXME: City name may be empty
-	private case class AirportRow(id: Int, name: String, cityName: String, countryName: String,
-	                              coordinates: Coordinates, altitude: Option[Distance] = None,
-	                              iataCode: Option[String] = None, icaoCode: Option[String] = None,
+	private case class AirportRow(id: Int, name: String, countryName: String, coordinates: Coordinates,
+	                              altitude: Option[Distance] = None, iataCode: Option[String] = None,
+	                              icaoCode: Option[String] = None, cityName: Option[String] = None,
 	                              timeZoneName: Option[String] = None, timeZoneDifference: Option[Duration] = None,
 	                              daylightSavingsZone: Option[Char] = None, typeCode: Option[String] = None)
 	{
-		def toStationData(cityId: Int, typeId: Option[Int]) = StationData(name, coordinates, altitude, typeId,
-			openFlightsId = Some(id), iataCode = iataCode, icaoCode = icaoCode, cityId = Some(cityId))
+		/**
+		 * @return Whether this row represents duplicate data and should be ignored
+		 */
+		def isDuplicate = name.contains("[Duplicate]")
+		
+		def toStationData(cityId: Option[Int], typeId: Option[Int]) = StationData(name, coordinates, altitude, typeId,
+			openFlightsId = Some(id), iataCode = iataCode, icaoCode = icaoCode, cityId = cityId)
 	}
 }

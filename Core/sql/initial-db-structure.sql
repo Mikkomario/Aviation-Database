@@ -176,10 +176,9 @@ ALTER TABLE country ADD CONSTRAINT c_c_capital_city_link_fk FOREIGN KEY c_c_capi
 
 -- SOURCES: MASTER_CORD, airports.dat (OpenFlights), airports.dat (RouteMapper)
 -- Represents an airport, train station, ferry port etc.
--- TODO: Consider whether city id should be not null
 CREATE TABLE station(
 	id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-	name VARCHAR(64) NOT NULL,
+	name VARCHAR(80) NOT NULL,
 	latitude_north DOUBLE NOT NULL,
     longitude_east DOUBLE NOT NULL,
     altitude_feet INT,

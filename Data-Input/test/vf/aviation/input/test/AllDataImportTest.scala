@@ -25,8 +25,10 @@ object AllDataImportTest extends App
 	val inputDirectory: Path = "Data-Input/input"
 	
 	/*
-	No match could be found for country name 'Myanmar' (Actually Burma)
-	No match could be found for country name 'Faroe Islands' (ISO-Code 'FO') - Pre-existing data as "Faeroe Islands"
+	No match could be found for country name 'South Georgia and the Islands'
+	South Georgia and South Sandwich Is. == South Georgia and the Islands
+	Full name is "South Georgia and the South Sandwich Islands"
+	Also, Grytviken (Correct spelling) == Grytvyken (Incorrect spelling)
 	 */
 	
 	ConnectionPool { implicit connection =>
@@ -52,7 +54,7 @@ object AllDataImportTest extends App
 		}.flatMap { _ =>
 			// Imports airports.dat document
 			println("Starting airports.dat document processing")
-			ImportAirportsDat(inputDirectory/"airports.dat.csv")
+			ImportAirportsDat(inputDirectory/"airports-extended.dat.csv")
 		} match
 		{
 			case Success(_) => println("Finished importing data")
