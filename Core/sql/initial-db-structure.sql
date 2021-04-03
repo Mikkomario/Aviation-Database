@@ -59,6 +59,46 @@ INSERT INTO station_type (id, open_flights_code, name) VALUES
 	(2, 'station', 'Train Station'),
 	(3, 'port', 'Ferry Terminal');
 
+-- SOURCE: L_CARRIER_GROUP_NEW (BTS)
+-- Overall airline / carrier categories
+-- A set of categories based on annual revenue
+CREATE TABLE carrier_size_category
+(
+	id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	name VARCHAR(32) NOT NULL,
+	min_annual_revenue_million_dollars INT,
+	max_annual_revenue_million_dollars INT
+
+)Engine=InnoDB DEFAULT CHARACTER SET utf8
+               DEFAULT COLLATE utf8_general_ci;
+-- Values are based on L_CARRIER_GROUP_NEW (BTS) document and go as follows
+-- 1 = Small = 4 = Medium Regional Carriers
+-- 2 = Medium = 1 = Large Regional Carriers
+-- 3 = Large = 2 = National Carriers
+-- 4 = Major = 3 = Major Carriers
+-- Other BTS values are not mapped
+INSERT INTO carrier_size_category(id, name, min_annual_revenue_million_dollars, max_annual_revenue_million_dollars) VALUES
+	(1, 'Small', NULL, 20),
+	(2, 'Medium', 20, 100),
+	(3, 'Large', 100, 1000),
+	(4, 'Major', 1000, NULL);
+-- SOURCE: L_CARRIER_GROUP_NEW (BTS)
+-- Carrier / Airline categories based on type of delivery / transport
+CREATE TABLE carrier_type(
+	id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	name VARCHAR(32) NOT NULL
+
+)Engine=InnoDB DEFAULT CHARACTER SET utf8
+               DEFAULT COLLATE utf8_general_ci;
+-- Values are based on L_CARRIER_GROUP_NEW document and go as follows
+-- 1 = Commuter = Passenger transport (> 60 seats) = 6 & 9 = Commuter Carriers
+-- 2 = All Cargo = No passengers transported, maximum payload over 18 000 pounds = 7 = All Cargo Carriers
+-- 3 = Small Certified = <= 60 seats and <= 18 000 pounds of maximum payload = 5 = Small Certificated Carriers
+INSERT INTO carrier_type (id, name) VALUES
+	(1, 'Commuter'),
+	(2, 'All Cargo'),
+	(3, 'Small Certificated');
+
 
 -- Dynamically Added    ----------------------------------
 
@@ -200,6 +240,37 @@ CREATE TABLE station(
 
 	CONSTRAINT s_c_station_city_link_fk FOREIGN KEY s_c_station_city_link_idx (city_id)
 	    REFERENCES city(id) ON DELETE SET NULL
+
+)Engine=InnoDB DEFAULT CHARACTER SET utf8
+               DEFAULT COLLATE utf8_general_ci;
+
+-- SOURCES: CARRIER DECODE (BTS), airlines.dat (OpenFlights), airlines.dat (RouteMapper)
+-- Lists carriers / airlines, including their IATA & ICAO codes, where applicable
+CREATE TABLE carrier(
+	id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	name VARCHAR(64) NOT NULL,
+	alias VARCHAR(32),
+	call_sign VARCHAR(32),
+	dot_id INT,
+	open_flights_id INT,
+	iata_code VARCHAR(2),
+	icao_code VARCHAR(3),
+	country_id INT,
+	world_area_code INT,
+	size_category_id INT,
+	type_category_id INT,
+	started DATE,
+	ended DATE,
+	is_closed BOOLEAN NOT NULL DEFAULT FALSE,
+
+	INDEX c_carrier_iata_idx (iata_code),
+	INDEX c_carrier_icao_idx (icao_code),
+
+	CONSTRAINT c_c_carrier_country_fk FOREIGN KEY c_c_carrier_country_idx (country_id)
+	    REFERENCES country(id) ON DELETE SET NULL,
+
+	CONSTRAINT c_wa_carrier_world_area_code_fk FOREIGN KEY c_wa_carrier_world_area_code_idx (world_area_code)
+	    REFERENCES world_area(code) ON DELETE SET NULL
 
 )Engine=InnoDB DEFAULT CHARACTER SET utf8
                DEFAULT COLLATE utf8_general_ci;
