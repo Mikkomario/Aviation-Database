@@ -56,16 +56,24 @@ object DbCountry extends SingleRowModelAccess[Country]
 	 * @param connection DB Connection (implicit)
 	 * @return Country that best matches that name. None if no such country could be found.
 	 */
-	def withName(countryName: String, ignoreCountriesWithIsoCode: Boolean = false)
+	def withName(countryName: String, ignoreCountriesWithIsoCode: Boolean = false,
+	             preferCountriesWithoutIsoCode: Boolean = false)
 	            (implicit connection: Connection) =
 	{
 		val exactNameCondition = model.withName(countryName).toCondition
 		val noIsoCodeCondition = model.isoCodeColumn.isNull
+		val firstCondition =
+		{
+			if (ignoreCountriesWithIsoCode || preferCountriesWithoutIsoCode)
+				exactNameCondition && noIsoCodeCondition
+			else
+				exactNameCondition
+		}
 		// Attempts to find direct name matches first (prefers countries without ISO-code)
-		find(exactNameCondition && noIsoCodeCondition)
+		find(firstCondition)
 			// If that didn't work, expands the search to countries with an ISO code (if allowed)
 			.orElse {
-				if (ignoreCountriesWithIsoCode)
+				if (ignoreCountriesWithIsoCode || !preferCountriesWithoutIsoCode)
 					None
 				else
 					factory.getMany(exactNameCondition && model.isoCodeColumn.isNotNull).minByOption { _.name.length }
@@ -75,11 +83,18 @@ object DbCountry extends SingleRowModelAccess[Country]
 				val nameWords = countryName.words
 				val wordConditions = nameWords.map { name => model.nameColumn.contains(name) }
 				val wordsCondition = wordConditions.head && wordConditions.tail
+				val firstWordsCondition =
+				{
+					if (ignoreCountriesWithIsoCode || preferCountriesWithoutIsoCode)
+						wordsCondition && noIsoCodeCondition
+					else
+						wordsCondition
+				}
 				// Searches from countries without ISO-code first
-				factory.getMany(wordsCondition && noIsoCodeCondition).minByOption { _.name.length }
+				factory.getMany(firstWordsCondition).minByOption { _.name.length }
 					// And if that didn't work, includes those with ISO-code (if allowed)
 					.orElse {
-						if (ignoreCountriesWithIsoCode)
+						if (ignoreCountriesWithIsoCode || !preferCountriesWithoutIsoCode)
 							None
 						else
 							factory.getMany(wordsCondition && model.isoCodeColumn.isNotNull)

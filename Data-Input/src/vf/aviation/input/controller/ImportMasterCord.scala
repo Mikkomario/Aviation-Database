@@ -179,7 +179,7 @@ object ImportMasterCord
 					case Some(worldArea) => worldArea.countryId -> worldArea.stateId
 					// Case: No matching world area found => Attempts to find country based on name
 					case None =>
-						DbCountry.withName(row.countryName) match
+						DbCountry.withName(row.countryName, preferCountriesWithoutIsoCode = true) match
 						{
 							// Case: Country was found with name search => uses that
 							case Some(country) => country.id -> None

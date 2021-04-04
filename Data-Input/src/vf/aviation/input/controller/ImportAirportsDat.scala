@@ -130,32 +130,33 @@ object ImportAirportsDat
 							// Case: No Iata match found => Country name search required
 							// TODO: Could pull only id instead
 							else
-								DbCountry.withName(countryName).map { _.id }.orElse {
-									// If there weren't any results with country name search either,
-									// checks with city names (exact) as the last option
-									val existingCities = rows.flatMap { _.cityName }.toSet[String]
-										.flatMap { DbCities.withExactName(_) }
-									if (existingCities.isEmpty)
-										None
-									else if (existingCities.size == 1)
-										Some(existingCities.head.countryId)
-									else
-									{
-										// In case there are competing options,
-										// selects the country with most matching cities
-										val availableCountryIds = existingCities.groupBy { _.countryId }
-											.view.mapValues { _.size }.toMap
-										val mostCitiesCount = availableCountryIds.valuesIterator.max
-										
-										val competingOptions = availableCountryIds.filter { _._2 == mostCitiesCount }
-										// Shows a warning if the options can't be distinguished at this time
-										if (competingOptions.size > 1)
-											println(s"Warning: Multiple country options (${
-												competingOptions.keys.mkString(", ")}) for cities: ${
-												rows.flatMap { _.cityName }.mkString(", ") }")
-										competingOptions.keys.headOption
+								DbCountry.withName(countryName, preferCountriesWithoutIsoCode = true).map { _.id }
+									.orElse {
+										// If there weren't any results with country name search either,
+										// checks with city names (exact) as the last option
+										val existingCities = rows.flatMap { _.cityName }.toSet[String]
+											.flatMap { DbCities.withExactName(_) }
+										if (existingCities.isEmpty)
+											None
+										else if (existingCities.size == 1)
+											Some(existingCities.head.countryId)
+										else
+										{
+											// In case there are competing options,
+											// selects the country with most matching cities
+											val availableCountryIds = existingCities.groupBy { _.countryId }
+												.view.mapValues { _.size }.toMap
+											val mostCitiesCount = availableCountryIds.valuesIterator.max
+											
+											val competingOptions = availableCountryIds.filter { _._2 == mostCitiesCount }
+											// Shows a warning if the options can't be distinguished at this time
+											if (competingOptions.size > 1)
+												println(s"Warning: Multiple country options (${
+													competingOptions.keys.mkString(", ")}) for cities: ${
+													rows.flatMap { _.cityName }.mkString(", ") }")
+											competingOptions.keys.headOption
+										}
 									}
-								}
 						}
 						val remainingRowsView = nonMatchingAirportRows.view.map { Some(Airport.id) -> _ } ++
 							nonAirportRows.view.flatMap { case (typeId, rows) => rows.map { typeId -> _ } }

@@ -250,7 +250,7 @@ CREATE TABLE carrier(
 	id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
 	name VARCHAR(96) NOT NULL,
 	alias VARCHAR(32),
-	call_sign VARCHAR(32),
+	call_sign VARCHAR(48),
 	dot_id INT,
 	open_flights_id INT,
 	iata_code VARCHAR(2),

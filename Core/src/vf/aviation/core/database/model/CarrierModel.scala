@@ -13,6 +13,14 @@ import java.time.LocalDate
 
 object CarrierModel
 {
+	// ATTRIBUTES   ----------------------
+	
+	/**
+	 * Name of the attribute that shows whether a carrier has ceased to function
+	 */
+	val isClosedAttName = "isClosed"
+	
+	
 	// COMPUTED --------------------------
 	
 	/**
@@ -24,8 +32,30 @@ object CarrierModel
 	 */
 	def table = factory.table
 	
+	/**
+	 * @return Column that shows whether a carrier has ceased to function
+	 */
+	def isClosedColumn = table(isClosedAttName)
+	
 	
 	// OTHER    --------------------------
+	
+	/**
+	 * @param carrierId Carrier id
+	 * @return A model with only id set
+	 */
+	def withId(carrierId: Int) = apply(Some(carrierId))
+	
+	/**
+	 * @param iataCode IATA standard carrier code
+	 * @return A model with that code
+	 */
+	def withIataCode(iataCode: String) = apply(iataCode = Some(iataCode))
+	/**
+	 * @param icaoCode ICAO standard carrier code
+	 * @return A model with that code
+	 */
+	def withIcaoCode(icaoCode: String) = apply(icaoCode = Some(icaoCode))
 	
 	/**
 	 * @param data Carrier data
@@ -68,10 +98,14 @@ case class CarrierModel(id: Option[Int] = None, name: Option[String] = None, ali
                         ended: Option[LocalDate] = None, isClosed: Option[Boolean] = None)
 	extends StorableWithFactory[Carrier]
 {
+	import CarrierModel._
+	
+	// IMPLEMENTED  -------------------------------
+	
 	override def factory = CarrierModel.factory
 	
 	override def valueProperties = Vector("id" -> id, "name" -> name, "alias" -> alias, "callSign" -> callSign,
 		"dotId" -> dotId, "openFlightsId" -> openFlightsId, "iataCode" -> iataCode, "icaoCode" -> icaoCode,
 		"countryId" -> countryId, "worldAreaCode" -> worldAreaCode, "sizeCategoryId" -> sizeCategoryId,
-		"typeCategoryId" -> typeCategoryId, "started" -> started, "ended" -> ended, "isClosed" -> isClosed)
+		"typeCategoryId" -> typeCategoryId, "started" -> started, "ended" -> ended, isClosedAttName -> isClosed)
 }
