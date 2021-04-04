@@ -274,3 +274,30 @@ CREATE TABLE carrier(
 
 )Engine=InnoDB DEFAULT CHARACTER SET utf8
                DEFAULT COLLATE utf8_general_ci;
+
+-- SOURCES: manufacturers.csv (BST), Order_3660.1D_Aircraft_Type_Designators (manufacturer part), ACFTREF
+-- Lists aircraft manufacturers
+CREATE TABLE aircraft_manufacturer(
+	id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	icao_code VARCHAR(32),
+	alt_code VARCHAR(3),
+	country_id INT,
+
+	CONSTRAINT am_c_manufacturer_country_link_fk FOREIGN KEY am_c_manufacturer_country_link_idx (country_id)
+	    REFERENCES country(id) ON DELETE SET NULL
+
+)Engine=InnoDB DEFAULT CHARACTER SET utf8
+               DEFAULT COLLATE utf8_general_ci;
+
+-- SOURCES: Same as manufacturers
+-- Lists possibly multiple names for a single aircraft manufacturer
+CREATE TABLE aircraft_manufacturer_name(
+	id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	manufacturer_id INT NOT NULL,
+	name VARCHAR(134) NOT NULL,
+
+	CONSTRAINT amn_am_name_owner_link_fk FOREIGN KEY amn_am_name_owner_link_idx (manufacturer_id)
+	    REFERENCES aircraft_manufacturer(id) ON DELETE CASCADE
+
+)Engine=InnoDB DEFAULT CHARACTER SET utf8
+               DEFAULT COLLATE utf8_general_ci;
