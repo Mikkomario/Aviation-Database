@@ -4,7 +4,8 @@ import utopia.flow.generic.DataType
 import utopia.flow.util.FileExtensions._
 import vf.aviation.core.database.ConnectionPool
 import vf.aviation.core.util.Globals._
-import vf.aviation.input.controller.ImportMasterCord
+import vf.aviation.input.controller.station
+import vf.aviation.input.controller.station.ImportMasterCord
 
 import java.nio.file.Path
 import scala.util.{Failure, Success}
@@ -21,7 +22,7 @@ object MasterCordImportTest extends App
 	val inputDirectory: Path = "Data-Input/input"
 	
 	ConnectionPool { implicit connection =>
-		ImportMasterCord(inputDirectory/"846163630_T_MASTER_CORD.csv") match
+		station.ImportMasterCord(inputDirectory/"846163630_T_MASTER_CORD.csv") match
 		{
 			case Success(_) => println("Imported airport data")
 			case Failure(error) => error.printStackTrace()

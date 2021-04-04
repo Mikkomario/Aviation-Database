@@ -4,8 +4,9 @@ import utopia.flow.generic.DataType
 import utopia.flow.util.FileExtensions._
 import utopia.vault.database.Connection
 import vf.aviation.core.database.ConnectionPool
-import vf.aviation.input.controller.ImportCarrierDecode
 import vf.aviation.core.util.Globals._
+import vf.aviation.input.controller.carrier
+import vf.aviation.input.controller.carrier.ImportCarrierDecode
 
 import java.nio.file.Path
 import scala.util.{Failure, Success}
@@ -24,7 +25,7 @@ object CarrierDecodeImportTest extends App
 	val inputDirectory: Path = "Data-Input/input"
 	
 	ConnectionPool { implicit connection =>
-		ImportCarrierDecode(inputDirectory/"846163630_T_CARRIER_DECODE.csv") match
+		carrier.ImportCarrierDecode(inputDirectory/"846163630_T_CARRIER_DECODE.csv") match
 		{
 			case Success(_) => println("Done")
 			case Failure(error) => error.printStackTrace()

@@ -1,11 +1,11 @@
-package vf.aviation.input.controller
+package vf.aviation.input.controller.carrier
 
 import utopia.flow.datastructure.immutable.{Constant, Model, ModelDeclaration}
 import utopia.flow.generic.{FromModelFactoryWithSchema, IntType, LocalDateType, StringType}
 import utopia.flow.generic.ValueUnwraps._
 import utopia.flow.parse.CsvReader
-import utopia.flow.time.TimeExtensions._
 import utopia.flow.time.Today
+import utopia.flow.time.TimeExtensions._
 import utopia.flow.util.CollectionExtensions._
 import utopia.vault.database.Connection
 import vf.aviation.core.database.access.many.country.DbWorldAreas
@@ -39,8 +39,8 @@ object ImportCarrierDecode
 	/**
 	 * Reads carrier data from CARRIER DECODE document. Expects the document to be ordered by carrier code.
 	 * Also expects country and world area data to be inserted already. No other carrier data should be imported yet.
-	 * @param path Path to the file to read
-	 * @param separator Separator placed between columns (default = ",")
+	 * @param path       Path to the file to read
+	 * @param separator  Separator placed between columns (default = ",")
 	 * @param connection DB Connection (implicit)
 	 * @return Success or failure
 	 */
@@ -67,16 +67,14 @@ object ImportCarrierDecode
 						missingWorldAreas += row.worldAreaCode
 					
 					// Interprets some enumeration values
-					val sizeCategory = row.groupId match
-					{
+					val sizeCategory = row.groupId match {
 						case 4 => Some(Small)
 						case 1 => Some(Medium)
 						case 2 => Some(Large)
 						case 3 => Some(Major)
 						case _ => None
 					}
-					val typeCategory = row.groupId match
-					{
+					val typeCategory = row.groupId match {
 						case 6 | 9 => Some(Commuter)
 						case 7 => Some(AllCargo)
 						case 5 => Some(SmallCertified)
@@ -99,7 +97,8 @@ object ImportCarrierDecode
 			// Logs a warning for missing world area codes
 			if (missingWorldAreas.nonEmpty)
 				println(s"Following world area codes couldn't be found from the DB: [${
-					missingWorldAreas.toVector.sorted.mkString(", ")}]")
+					missingWorldAreas.toVector.sorted.mkString(", ")
+				}]")
 		}
 	}
 	
@@ -119,4 +118,5 @@ object ImportCarrierDecode
 	
 	private case class CarrierRow(id: Int, code: String, name: String, worldAreaCode: Int, groupId: Int,
 	                              startDate: LocalDate, endDate: Option[LocalDate] = None)
+	
 }

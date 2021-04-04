@@ -1,8 +1,8 @@
-package vf.aviation.input.controller
+package vf.aviation.input.controller.station
 
 import utopia.flow.datastructure.immutable.{Constant, Model, ModelDeclaration}
-import utopia.flow.generic.ValueUnwraps._
 import utopia.flow.generic.{DoubleType, FromModelFactoryWithSchema, StringType}
+import utopia.flow.generic.ValueUnwraps._
 import utopia.flow.parse.CsvReader
 import utopia.flow.util.CollectionExtensions._
 import utopia.flow.util.StringExtensions._
@@ -37,8 +37,8 @@ object ImportRouteMapperAirports
 	
 	/**
 	 * Reads and processes route mapper airport data by inserting new stations to DB
-	 * @param path Path to the file to read
-	 * @param separator Separator between columns (default = ";")
+	 * @param path       Path to the file to read
+	 * @param separator  Separator between columns (default = ";")
 	 * @param connection DB Connection (implicit)
 	 * @return Success or failure
 	 */
@@ -95,4 +95,5 @@ object ImportRouteMapperAirports
 			// Capitalizes the first character of each word. Leaves the rest in lower case.
 			.map { _.split(" ").map { _.toLowerCase.capitalize }.mkString(" ") }
 	}
+	
 }

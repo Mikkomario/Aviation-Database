@@ -5,7 +5,8 @@ import utopia.flow.util.FileExtensions._
 import utopia.vault.database.Connection
 import vf.aviation.core.database.ConnectionPool
 import vf.aviation.core.util.Globals._
-import vf.aviation.input.controller.ImportRouteMapperAirports
+import vf.aviation.input.controller.station
+import vf.aviation.input.controller.station.ImportRouteMapperAirports
 
 import java.nio.file.Path
 import scala.util.{Failure, Success}
@@ -24,7 +25,7 @@ object RouteMapperAirportsImportTest extends App
 	val inputDirectory: Path = "Data-Input/input"
 	
 	ConnectionPool { implicit connection =>
-		ImportRouteMapperAirports(inputDirectory/"route-mapper-airports.csv") match
+		station.ImportRouteMapperAirports(inputDirectory/"route-mapper-airports.csv") match
 		{
 			case Success(_) => println("Done")
 			case Failure(error) => error.printStackTrace()

@@ -1,4 +1,4 @@
-package vf.aviation.input.controller
+package vf.aviation.input.controller.station
 
 import utopia.flow.datastructure.immutable.{Constant, Model, ModelDeclaration}
 import utopia.flow.generic.{DoubleType, FromModelFactoryWithSchema, IntType, LocalDateType, StringType}
@@ -43,8 +43,8 @@ object ImportMasterCord
 	
 	/**
 	 * Imports city and airport data from the MASTER_CORD file
-	 * @param path Path to the MASTER_CORD file
-	 * @param separator Separator between columns (default = ",")
+	 * @param path       Path to the MASTER_CORD file
+	 * @param separator  Separator between columns (default = ",")
 	 * @param connection DB Connection (implicit)
 	 * @return Success or failure
 	 */
@@ -65,30 +65,25 @@ object ImportMasterCord
 					// Checks whether that city market was registered already. Uses cached city id if possible.
 					val cityId = capturedMarketAndCityIds.getOrElse(row.cityMarketId, {
 						// Finds target country + state
-						val (countryId, stateId) = row.stateIsoCode match
-						{
+						val (countryId, stateId) = row.stateIsoCode match {
 							// Case: State ISO-code provided => connects to the matching state
 							case Some(stateIsoCode) =>
-								DbState.withIsoCode(stateIsoCode) match
-								{
+								DbState.withIsoCode(stateIsoCode) match {
 									// Case: State found => connects to that state
 									case Some(state) => state.countryId -> Some(state.id)
 									// Case: State not found => inserts a new state if possible and connects to that
 									case None =>
 										val (countryId, stateId) = findCountryAndStateWithoutStateIsoCode(row)
 										// Case: State was found in the end (bug / data problem)
-										if (stateId.isDefined)
-										{
+										if (stateId.isDefined) {
 											println(s"State ${
 												stateId.get
 											} has a different ISO-code from proposed $stateIsoCode")
 											countryId -> stateId
 										}
 										// Case: Country found but state not => inserts a new state
-										else
-										{
-											row.stateName match
-											{
+										else {
+											row.stateName match {
 												case Some(stateName) =>
 													val newStateId = StateModel.insert(StateData(stateName,
 														countryId, stateIsoCode, row.stateFipsCode)).id
@@ -149,18 +144,15 @@ object ImportMasterCord
 	// Returns country id -> state id (optional). None if no connection was found.
 	private def findCountryAndStateWithoutStateIsoCode(row: AirportRow)(implicit connection: Connection) =
 	{
-		row.countryIsoCode match
-		{
+		row.countryIsoCode match {
 			// Case: Country ISO-code provided => Connects to the matching country
 			case Some(countryIsoCode) =>
-				DbCountry.withIsoCode(countryIsoCode) match
-				{
+				DbCountry.withIsoCode(countryIsoCode) match {
 					// Case: Country existed already => connects to that country
 					case Some(country) => country.id -> None
 					case None =>
 						// Makes sure the country doesn't exist without an ISO-code either
-						DbCountry.withName(row.countryName, ignoreCountriesWithIsoCode = true) match
-						{
+						DbCountry.withName(row.countryName, ignoreCountriesWithIsoCode = true) match {
 							// Case: Name match => Updates country ISO code and connects to that country
 							case Some(nameMatch) =>
 								CountryModel.withId(nameMatch.id).withIsoCode(countryIsoCode).update()
@@ -173,14 +165,12 @@ object ImportMasterCord
 				}
 			// Case: Can't link country / state with ISO-code => Uses WAC instead
 			case None =>
-				DbWorldArea(row.cityMarketWorldAreaCode).pull match
-				{
+				DbWorldArea(row.cityMarketWorldAreaCode).pull match {
 					// Case: Matching world area found => collects country and state ids
 					case Some(worldArea) => worldArea.countryId -> worldArea.stateId
 					// Case: No matching world area found => Attempts to find country based on name
 					case None =>
-						DbCountry.withName(row.countryName, preferCountriesWithoutIsoCode = true) match
-						{
+						DbCountry.withName(row.countryName, preferCountriesWithoutIsoCode = true) match {
 							// Case: Country was found with name search => uses that
 							case Some(country) => country.id -> None
 							// Case: No country found => Inserts a new country
@@ -233,4 +223,5 @@ object ImportMasterCord
 			numberOfHours.hours + numberOfMinutes.minutes
 		}
 	}
+	
 }

@@ -4,7 +4,8 @@ import utopia.flow.generic.DataType
 import utopia.flow.util.FileExtensions._
 import vf.aviation.core.database.ConnectionPool
 import vf.aviation.core.util.Globals._
-import vf.aviation.input.controller.ImportCountriesDat
+import vf.aviation.input.controller.country
+import vf.aviation.input.controller.country.ImportCountriesDat
 
 import java.nio.file.Path
 import scala.util.{Failure, Success}
@@ -22,7 +23,7 @@ object CountriesDatImportTest extends App
 	
 	ConnectionPool { implicit connection =>
 		println("Importing countries.dat file")
-		ImportCountriesDat(inputDirectory/"countries.dat.txt") match
+		country.ImportCountriesDat(inputDirectory/"countries.dat.txt") match
 		{
 			case Success(countries) =>
 				println(s"Inserted ${countries.size} new countries: [${countries.map { _.id }.mkString(", ")}]")

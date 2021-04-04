@@ -1,22 +1,21 @@
 package vf.aviation.input.test
 
 import utopia.flow.generic.DataType
+import utopia.flow.util.FileExtensions._
 import utopia.vault.database.Connection
 import vf.aviation.core.database.ConnectionPool
+import vf.aviation.core.util.Globals._
+import vf.aviation.input.controller.carrier
 
 import java.nio.file.Path
 import scala.util.{Failure, Success}
-import utopia.flow.util.FileExtensions._
-import vf.aviation.core.util.Globals._
-import vf.aviation.input.controller.carrier
-import vf.aviation.input.controller.carrier.ImportAirlinesDat
 
 /**
- * Imports the contents of airlines.dat file
+ * Imports the contents of route mapper -originated airlines.dat file
  * @author Mikko Hilpinen
  * @since 4.4.2021, v0.1
  */
-object AirlinesDatImportTest extends App
+object RouteMapperAirlinesImportTest extends App
 {
 	DataType.setup()
 	// Specifies correct character sets for the database connections
@@ -25,9 +24,9 @@ object AirlinesDatImportTest extends App
 	val inputDirectory: Path = "Data-Input/input"
 	
 	ConnectionPool { implicit connection =>
-		carrier.ImportAirlinesDat(inputDirectory/"airlines.csv") match
+		carrier.ImportRouteMapperAirlines(inputDirectory/"route-mapper-airlines.csv") match
 		{
-			case Success(_) => println("Done")
+			case Success(data) => println(s"Inserted ${data.size} new airlines to the DB")
 			case Failure(error) => error.printStackTrace()
 		}
 	}

@@ -1,4 +1,4 @@
-package vf.aviation.input.controller
+package vf.aviation.input.controller.country
 
 import utopia.flow.datastructure.immutable.{Constant, Model, ModelDeclaration}
 import utopia.flow.generic.{FromModelFactoryWithSchema, IntType, LocalDateType, StringType}
@@ -11,7 +11,7 @@ import utopia.flow.util.UncertainBoolean
 import utopia.flow.util.UncertainBoolean.{Certain, Undefined}
 import utopia.vault.database.Connection
 import vf.aviation.core.database.access.single.country.DbCountry
-import vf.aviation.core.database.model.country.{CityModel, CountryModel, StateModel, WorldAreaModel, WorldRegionModel}
+import vf.aviation.core.database.model.country._
 import vf.aviation.core.model.partial.country.{CityData, CountryData, StateData}
 import vf.aviation.core.model.stored.country.{WorldArea, WorldRegion}
 import vf.aviation.core.util.StringFormatExtensions._
@@ -38,8 +38,8 @@ object ImportWacCountryState
 	
 	/**
 	 * Imports world area code, country and state information from a .csv file
-	 * @param path Path to the file to read
-	 * @param separator Separator between the columns (default = ',')
+	 * @param path       Path to the file to read
+	 * @param separator  Separator between the columns (default = ',')
 	 * @param connection DB Connection (implicit)
 	 * @return Read countries. May contain a failure.
 	 */
@@ -74,8 +74,7 @@ object ImportWacCountryState
 					rows.groupBy { _.countryIsoCode }.flatMap { case (countryIsoCode, rows) =>
 						if (countryIsoCode.isDefined)
 							Vector(handleCountryRows(regionCode, countryIsoCode, rows))
-						else
-						{
+						else {
 							println(s"Handling ${rows.size} countries without ISO code")
 							rows.map { row => handleCountryRows(regionCode, None, Vector(row)) }
 						}
@@ -117,10 +116,8 @@ object ImportWacCountryState
 			independent = mainRow.independent))
 		
 		// Inserts the country world area code & capital (if present and latest)
-		if (mainRow.isLatestVersion)
-		{
-			val countryWorldArea =
-			{
+		if (mainRow.isLatestVersion) {
+			val countryWorldArea = {
 				if (mainRow.isCountryRow)
 					Some(WorldAreaModel.insert(WorldArea(mainRow.worldAreaCode, country.id,
 						name = Some(mainRow.worldAreaName), started = Some(mainRow.started.yearMonth),
@@ -143,8 +140,7 @@ object ImportWacCountryState
 				row.stateName.map { stateName =>
 					val stateData = StateData(stateName, country.id, stateIsoCode, row.stateFipsCode, row.comment)
 					// World area codes are not inserted if they aren't the latest version of that code
-					if (row.isLatestVersion)
-					{
+					if (row.isLatestVersion) {
 						val wacData = WorldArea(row.worldAreaCode, country.id, name = Some(row.worldAreaName),
 							started = Some(row.started.yearMonth), deprecatedAfter = row.ended)
 						stateData -> Some(wacData)
@@ -181,8 +177,7 @@ object ImportWacCountryState
 		{
 			// independence is parsed from COUNTRY_TYPE (string)
 			val countryTypeString = model("COUNTRY_TYPE").getString
-			val independence =
-			{
+			val independence = {
 				if (countryTypeString.startsWith("I"))
 					Certain(true)
 				else if (countryTypeString.startsWith("D"))
@@ -209,6 +204,8 @@ object ImportWacCountryState
 		def worldRegionCode = worldAreaCode / 100
 		
 		def isStateRow = stateIsoCode.isDefined
+		
 		def isCountryRow = !isStateRow
 	}
+	
 }

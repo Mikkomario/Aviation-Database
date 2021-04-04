@@ -1,4 +1,4 @@
-package vf.aviation.input.controller
+package vf.aviation.input.controller.station
 
 import utopia.flow.datastructure.immutable.Value
 import utopia.flow.generic.ValueConversions._
@@ -48,8 +48,8 @@ object ImportAirportsDat
 	
 	/**
 	 * Imports data from airports.dat file
-	 * @param path Path to the file to read
-	 * @param separator Separator between columns (default = ",")
+	 * @param path       Path to the file to read
+	 * @param separator  Separator between columns (default = ",")
 	 * @param connection Db Connection (implicit)
 	 * @return Success or failure
 	 */
@@ -77,8 +77,7 @@ object ImportAirportsDat
 					}
 					// Checks for existing matches based on the airport IATA code
 					val (nonMatchingAirportRows, iataMatchAirports) = airportRows.flatten.dividedWith { row =>
-						row.iataCode.flatMap { DbAirport.withIataCode(_) } match
-						{
+						row.iataCode.flatMap { DbAirport.withIataCode(_) } match {
 							case Some(existing) => Right(row -> existing)
 							case None => Left(row)
 						}
@@ -98,25 +97,21 @@ object ImportAirportsDat
 					// For the rest of the airport matches / updates, needs country data
 					if (nonMatchingAirportRows.isEmpty && nonAirportRows.isEmpty)
 						Vector()
-					else
-					{
+					else {
 						// Finds out which country this data is linked to. Uses IATA-airport links if possible.
 						val iataLinkCityIds = iataMatchAirports.flatMap { _._2.cityId }.toSet
-						val iataLinkCountryIds =
-						{
+						val iataLinkCountryIds = {
 							if (iataLinkCityIds.isEmpty)
 								Set[Int]()
 							else
 								DbCities.withIds(iataLinkCityIds).countryIds
 						}
-						val existingCountryId =
-						{
+						val existingCountryId = {
 							// Case: Iata link country found
 							if (iataLinkCountryIds.size == 1)
 								Some(iataLinkCountryIds.head)
 							// Case: Multiple options found
-							else if (iataLinkCountryIds.size > 1)
-							{
+							else if (iataLinkCountryIds.size > 1) {
 								val countries = DbCountries(iataLinkCountryIds).all
 								val lowerCountryName = countryName.toLowerCase
 								countries.find { _.name.toLowerCase == lowerCountryName }
@@ -140,8 +135,7 @@ object ImportAirportsDat
 											None
 										else if (existingCities.size == 1)
 											Some(existingCities.head.countryId)
-										else
-										{
+										else {
 											// In case there are competing options,
 											// selects the country with most matching cities
 											val availableCountryIds = existingCities.groupBy { _.countryId }
@@ -152,20 +146,23 @@ object ImportAirportsDat
 											// Shows a warning if the options can't be distinguished at this time
 											if (competingOptions.size > 1)
 												println(s"Warning: Multiple country options (${
-													competingOptions.keys.mkString(", ")}) for cities: ${
-													rows.flatMap { _.cityName }.mkString(", ") }")
+													competingOptions.keys.mkString(", ")
+												}) for cities: ${
+													rows.flatMap { _.cityName }.mkString(", ")
+												}")
 											competingOptions.keys.headOption
 										}
 									}
 						}
 						val remainingRowsView = nonMatchingAirportRows.view.map { Some(Airport.id) -> _ } ++
 							nonAirportRows.view.flatMap { case (typeId, rows) => rows.map { typeId -> _ } }
+						
 						def insertCity(cityName: String, row: AirportRow, countryId: Int) = CityModel.insert(
 							CityData(cityName, countryId, timeZone = row.timeZoneDifference,
 								timeZoneName = row.timeZoneName, daylightSavingZoneCode = row.daylightSavingsZone
 									.filter(daylightSavingZoneCodes.contains)))
-						existingCountryId match
-						{
+						
+						existingCountryId match {
 							// Case: Existing country found => Targets existing cities in that country, if possible
 							case Some(countryId) =>
 								// Each remaining row is handled individually
@@ -216,7 +213,7 @@ object ImportAirportsDat
 				Vector("Railway", "Train Station", "Train Depot"))
 			val newAirportsCount = stationsAccess.updateTypeWithName(Airport.id,
 				Vector("Airport", "Airfield", "Airstrip", "Air Base", "Air Force Base",
-				"Airpark", "Air Park", "Aerop", "Aeroclub", "Aerodrom", "Aero Park"))
+					"Airpark", "Air Park", "Aerop", "Aeroclub", "Aerodrom", "Aero Park"))
 			val newFerryPortsCount = stationsAccess.updateTypeWithName(FerryTerminal.id, Vector("Ferry"))
 			
 			println(s"Assigned $newAirportsCount stations as airports, $newTrainStationsCount as railway stations and $newFerryPortsCount as ferry ports")
@@ -233,8 +230,7 @@ object ImportAirportsDat
 			if (row.size < 13)
 				Failure(new IllegalArgumentException(
 					s"Airport row must have at least 13 items. Row: ${row.mkString(", ")}"))
-			else
-			{
+			else {
 				/*
 					- 0: Airport id
 					- 1: Name
@@ -251,6 +247,7 @@ object ImportAirportsDat
 					- 12: Type Code
 				 */
 				def value(index: Int): Value = row(index).notEmpty.filter { _ != nullString }
+				
 				value(6).double.toTry { new IllegalArgumentException(s"Latitude ${row(6)} is invalid") }
 					.flatMap { latitude =>
 						value(7).double.toTry { new IllegalArgumentException(s"Longitude ${row(7)} is invalid") }
@@ -282,4 +279,5 @@ object ImportAirportsDat
 		def toStationData(cityId: Option[Int], typeId: Option[Int]) = StationData(name, coordinates, altitude, typeId,
 			openFlightsId = Some(id), iataCode = iataCode, icaoCode = icaoCode, cityId = cityId)
 	}
+	
 }

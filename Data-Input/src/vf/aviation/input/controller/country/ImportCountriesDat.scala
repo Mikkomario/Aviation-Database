@@ -1,4 +1,4 @@
-package vf.aviation.input.controller
+package vf.aviation.input.controller.country
 
 import utopia.flow.parse.CsvReader
 import utopia.flow.util.CollectionExtensions._
@@ -34,8 +34,8 @@ object ImportCountriesDat
 	
 	/**
 	 * Reads country data from the countries.dat file and updates the database accordingly
-	 * @param path Path to read
-	 * @param separator Separator between columns (default = ",")
+	 * @param path       Path to read
+	 * @param separator  Separator between columns (default = ",")
 	 * @param connection DB Connection (implicit)
 	 * @return Inserted countries. May contain a failure
 	 */
@@ -50,19 +50,16 @@ object ImportCountriesDat
 		CsvReader.iterateRawRowsIn(path, separator) { rowIterator =>
 			val countriesToInsert = rowIterator.mapCatching(CountryRow.fromRow) { _.printStackTrace() }.flatMap { row =>
 				// Prefers ISO-code matching, if possible
-				row.isoCode match
-				{
+				row.isoCode match {
 					case Some(isoCode) =>
-						countryIdByIsoCode.get(isoCode) match
-						{
+						countryIdByIsoCode.get(isoCode) match {
 							// Case: ISO-code match was found => updates dafif code, if possible
 							case Some(countryId) =>
 								row.dafifCode.foreach { dafifCode => DbCountry(countryId).dafifCode = dafifCode }
 								None
 							// Case: No ISO-code match was found => attempts to match by name
 							case None =>
-								matchByName(row.name, nonIsoCodeCountries) match
-								{
+								matchByName(row.name, nonIsoCodeCountries) match {
 									// Case: Match was found => ISO code is assigned
 									case Some(matchingCountry) =>
 										CountryModel.withId(matchingCountry.id).withIsoCode(isoCode)
@@ -75,8 +72,7 @@ object ImportCountriesDat
 						}
 					case None =>
 						// Attempts to find matching country by name
-						matchByName(row.name, nonIsoCodeCountries ++ isoCodeCountries) match
-						{
+						matchByName(row.name, nonIsoCodeCountries ++ isoCodeCountries) match {
 							// Case: Matching country was found => assigns dafif-code (if present)
 							case Some(matchingCountry) =>
 								row.dafifCode.foreach { dafifCode =>
@@ -125,4 +121,5 @@ object ImportCountriesDat
 	}
 	
 	private case class CountryRow(name: String, isoCode: Option[String] = None, dafifCode: Option[String] = None)
+	
 }
