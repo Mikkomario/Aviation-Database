@@ -5,7 +5,7 @@ package vf.aviation.core.model.enumeration
  * @author Mikko Hilpinen
  * @since 2.4.2021, v0.1
  */
-sealed trait StandardStationType
+trait StandardStationType
 {
 	/**
 	 * @return Station type id of this type

@@ -6,7 +6,7 @@ import utopia.vault.database.Connection
 import utopia.vault.sql.Delete
 import vf.aviation.core.database.{AviationTables, ConnectionPool}
 import vf.aviation.core.util.Globals._
-import vf.aviation.input.controller.{ImportAirportsDat, ImportCountriesDat, ImportMasterCord, ImportRouteMapperAirports, ImportWacCountryState}
+import vf.aviation.input.controller.{ImportAirportsDat, ImportCarrierDecode, ImportCountriesDat, ImportMasterCord, ImportRouteMapperAirports, ImportWacCountryState}
 
 import java.nio.file.Path
 import scala.util.{Failure, Success}
@@ -51,6 +51,9 @@ object AllDataImportTest extends App
 		}.flatMap { _ =>
 			println("Starting route mapper airports.dat document processing")
 			ImportRouteMapperAirports(inputDirectory/"route-mapper-airports.csv")
+		}.flatMap { _ =>
+			println("Starting CARRIER DECODE document processing")
+			ImportCarrierDecode(inputDirectory/"846163630_T_CARRIER_DECODE.csv")
 		} match
 		{
 			case Success(_) => println("Finished importing data")

@@ -248,7 +248,7 @@ CREATE TABLE station(
 -- Lists carriers / airlines, including their IATA & ICAO codes, where applicable
 CREATE TABLE carrier(
 	id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-	name VARCHAR(64) NOT NULL,
+	name VARCHAR(96) NOT NULL,
 	alias VARCHAR(32),
 	call_sign VARCHAR(32),
 	dot_id INT,
