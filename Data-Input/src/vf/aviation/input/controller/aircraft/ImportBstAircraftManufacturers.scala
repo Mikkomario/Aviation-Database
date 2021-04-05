@@ -9,7 +9,7 @@ import utopia.flow.util.StringExtensions._
 import utopia.vault.database.Connection
 import vf.aviation.core.database.access.single.country.DbCountry
 import vf.aviation.core.database.model.aircraft.{AircraftManufacturerModel, AircraftManufacturerNameModel}
-import vf.aviation.core.model.partial.aircraft.AircraftManufacturerData
+import vf.aviation.core.model.partial.aircraft.{AircraftManufacturerData, AircraftManufacturerNameData}
 
 import java.nio.file.Path
 import scala.collection.mutable
@@ -54,7 +54,7 @@ object ImportBstAircraftManufacturers
 					// After insert, applies names
 					AircraftManufacturerNameModel.insert(
 						manufacturers.zip(rows).flatMap { case (manufacturer, row) =>
-							row.name.map { manufacturer.id -> _ }
+							row.name.map { AircraftManufacturerNameData(manufacturer.id, _) }
 						})
 				}
 		}

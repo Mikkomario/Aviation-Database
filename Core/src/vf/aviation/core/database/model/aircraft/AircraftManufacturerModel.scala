@@ -13,6 +13,10 @@ object AircraftManufacturerModel
 	// ATTRIBUTES   ----------------------
 	
 	/**
+	 * Name of the attribute that contains manufacturer icao code
+	 */
+	val icaoCodeAttName = "icaoCode"
+	/**
 	 * Name of the attribute that contains associated country's id
 	 */
 	val countryIdAttName = "countryId"
@@ -28,6 +32,11 @@ object AircraftManufacturerModel
 	 * @return Table used by this model
 	 */
 	def table = factory.table
+	
+	/**
+	 * @return Column that contains manufacturer icao code
+	 */
+	def icaoCodeColumn = table(icaoCodeAttName)
 	
 	
 	// OTHER    --------------------------
@@ -80,6 +89,6 @@ case class AircraftManufacturerModel(id: Option[Int] = None, icaoCode: Option[St
 	
 	override def factory = AircraftManufacturerModel.factory
 	
-	override def valueProperties = Vector("id" -> id, "icaoCode" -> icaoCode, "altCode" -> altCode,
+	override def valueProperties = Vector("id" -> id, icaoCodeAttName -> icaoCode, "altCode" -> altCode,
 		countryIdAttName -> countryId)
 }

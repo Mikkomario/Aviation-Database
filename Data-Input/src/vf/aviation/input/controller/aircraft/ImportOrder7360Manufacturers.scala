@@ -9,7 +9,7 @@ import utopia.vault.database.Connection
 import vf.aviation.core.database.access.single.aircraft.DbAircraftManufacturer
 import vf.aviation.core.database.access.single.country.DbCountry
 import vf.aviation.core.database.model.aircraft.{AircraftManufacturerModel, AircraftManufacturerNameModel}
-import vf.aviation.core.model.partial.aircraft.AircraftManufacturerData
+import vf.aviation.core.model.partial.aircraft.{AircraftManufacturerData, AircraftManufacturerNameData}
 
 import java.nio.file.Path
 import scala.collection.immutable.VectorBuilder
@@ -42,7 +42,7 @@ object ImportOrder7360Manufacturers
 	{
 		CsvReader.iterateLinesIn(path, separator, ignoreEmptyStringValues = true) { linesIterator =>
 			// Manufacturer id -> name
-			val nameInsertsBuilder = new VectorBuilder[(Int, String)]()
+			val nameInsertsBuilder = new VectorBuilder[AircraftManufacturerNameData]()
 			
 			// Processes one manufacturer at a time
 			// Ignores codes which only consist of digits (original document may be misread)
@@ -59,7 +59,8 @@ object ImportOrder7360Manufacturers
 							}
 						// Prepares new name inserts (Ignores those starting with "See")
 						nameInsertsBuilder ++= row.names.filterNot { _.toLowerCase.startsWith("see") }
-							.filterNot { name => existing.names.exists { _ ~== name } }.map { existing.id -> _ }
+							.filterNot { name => existing.names.exists { _ ~== name } }
+							.map { AircraftManufacturerNameData(existing.id, _) }
 						None
 					// Case: New manufacturer
 					case None =>
@@ -77,7 +78,7 @@ object ImportOrder7360Manufacturers
 				// Then inserts the manufacturer names
 				AircraftManufacturerNameModel.insert(manufacturers.zip(data)
 					.flatMap { case (manufacturer, (_, names)) =>
-						names.map { manufacturer.id -> _ }
+						names.map {AircraftManufacturerNameData(manufacturer.id, _) }
 					})
 			}
 			
