@@ -68,31 +68,17 @@ object ImportBstAircraftManufacturers
 		override val schema = ModelDeclaration(PropertyDeclaration("Code", StringType))
 		
 		override protected def fromValidatedModel(model: Model[Constant]) =
-			ManufacturerRow(model("Code"), model("Name").string.filterNot { _.startsWithIgnoreCase("see") })
+		{
+			val (name, countries) = model("Name").string.filterNot { _.startsWithIgnoreCase("see") } match
+			{
+				case Some(original) =>
+					val (name, countries) = ManufacturerUtils.separateNameAndCountries(original)
+					Some(name) -> countries
+				case None => None -> Vector()
+			}
+			ManufacturerRow(model("Code"), name, countries)
+		}
 	}
 	
-	private case class ManufacturerRow(icaoCode: String, rawName: Option[String])
-	{
-		private val parenthesisStartIndex = rawName.flatMap { name =>
-			name.optionLastIndexOf(")").flatMap { parenthesisEndIndex =>
-				name.take(parenthesisEndIndex).optionLastIndexOf("(")
-			}
-		}
-		
-		val name = rawName.map { name =>
-			parenthesisStartIndex match
-			{
-				case Some(index) => name.take(index)
-				case None => name
-			}
-		}
-		val countryNames = rawName.flatMap { name =>
-			parenthesisStartIndex.map { index => name.drop(index + 1).untilFirst(")") }
-		} match
-		{
-			case Some(parenthesisString) => parenthesisString.split("/").map { _.trim }.toVector
-				.filterNot { _.isEmpty }
-			case None => Vector()
-		}
-	}
+	private case class ManufacturerRow(icaoCode: String, name: Option[String], countryNames: Vector[String])
 }

@@ -1,0 +1,8677 @@
+ICAO;Type;ICAO-Type;W;C;AWC;Model
+A002;Gyrocopter;1P/S;Light;F;I;IRKUT, A-002
+;;;;;;DOUGLAS, AD Skyraider
+A1;Fixed-wing;1P/S+;Medium;F;III;DOUGLAS, EA-1 Skyraider
+;;;;;;DOUGLAS, Skyraider
+;;;;;;FAIRCHILD (1), A-10 Thunderbolt 2
+A10*;Fixed-wing;2J/L;Medium;E;III;FAIRCHILD (1), OA-10 Thunderbolt 2
+;;;;;;FAIRCHILD (1), Thunderbolt 2
+;;;;;;AGUSTA, A-109
+;;;;;;AGUSTA, A-109 Grand
+;;;;;;AGUSTA, A-109 Nexus
+;;;;;;AGUSTA, A-109 Power
+;;;;;;AGUSTA, AW-109
+;;;;;;AGUSTA, AW-109 Da Vinci
+;;;;;;AGUSTA, AW-109 Grand
+;;;;;;AGUSTA, AW-109 GrandNew
+;;;;;;AGUSTA, AW-109 Nexus
+;;;;;;AGUSTA, AW-109 Power
+;;;;;;AGUSTA, AW-109 Trekker
+;;;;;;AGUSTA, Da Vinci
+;;;;;;AGUSTA, ESC-2
+;;;;;;AGUSTA, Grand
+;;;;;;AGUSTA, GrandNew
+;;;;;;AGUSTA, Hkp15
+;;;;;;AGUSTA, MH-68 Stingray
+;;;;;;AGUSTA, Nexus
+;;;;;;AGUSTA, Power
+A109;Helicopter;2T/S;Light;F;I;AGUSTA, Stingray
+;;;;;;AGUSTA, Trekker
+;;;;;;AGUSTAWESTLAND, AW-109
+;;;;;;AGUSTAWESTLAND, AW-109 Grand
+;;;;;;AGUSTAWESTLAND, AW-109 GrandNew
+;;;;;;AGUSTAWESTLAND, AW-109 Power
+;;;;;;AGUSTAWESTLAND, Grand
+;;;;;;AGUSTAWESTLAND, GrandNew
+;;;;;;AGUSTAWESTLAND, Power
+;;;;;;DENEL, A-109
+;;;;;;FINMECCANICA, AW-109 GrandNew
+;;;;;;FINMECCANICA, AW-109 Power
+;;;;;;FINMECCANICA, Grand
+;;;;;;FINMECCANICA, Power
+;;;;;;JIANGXI CHANGHE-AGUSTA, CA-109 Power
+;;;;;;JIANGXI CHANGHE-AGUSTA, Power
+;;;;;;LEONARDO, AW-109 GrandNew
+;;;;;;LEONARDO, AW-109 Trekker
+;;;;;;LEONARDO, Trekker
+;;;;;;SABCA, A-109
+;;;;;;AGUSTA, A-119 Koala
+;;;;;;AGUSTA, AW-119 Koala
+;;;;;;AGUSTA, Koala
+;;;;;;AGUSTAWESTLAND, AW-119 Koala
+;;;;;;AGUSTAWESTLAND, Koala
+A119;Helicopter;1T/S;Light;F;I;DENEL, A-119 Koala
+;;;;;;DENEL, Koala
+;;;;;;FINMECCANICA, AW-119 Koala
+;;;;;;FINMECCANICA, Koala
+;;;;;;LEONARDO, AW-119 Koala
+;;;;;;LEONARDO, Koala
+;;;;;;AEROTEC (1), A-122 Uirapuru
+A122;Fixed-wing;1P/S;Light;F;I;AEROTEC (1), T-23 Uirapuru
+;;;;;;AEROTEC (1), Uirapuru
+A124;Fixed-wing;4J/H;Heavy;B;III;ANTONOV, An-124 Ruslan ANTONOV, Ruslan
+;;;;;;AGUSTA, A-129 Mangusta
+;;;;;;AGUSTA, AW-129
+A129;Helicopter;2T/S;Light;F;I;AGUSTA, Mangusta AGUSTA, T-129
+;;;;;;AGUSTAWESTLAND, AW-129
+;;;;;;TAI, T-129
+;;;;;;AGUSTA, AW-139
+;;;;;;AGUSTA, UH-139
+;;;;;;AGUSTAWESTLAND, AW-139
+;;;;;;AGUSTAWESTLAND, HH-139
+A139;Helicopter;2T/S+;Light;F;I;AGUSTAWESTLAND, UH-139 AGUSTAWESTLAND, VH-139
+;;;;;;BELL-AGUSTA, AB-139
+;;;;;;FINMECCANICA, AW-139
+;;;;;;HELIVERT, AW-139
+;;;;;;LEONARDO, AW-139
+;;;;;;ANTONOV, An-140
+A140;Fixed-wing;2T/L;Medium;E;III;HESA, Faraz
+;;;;;;HESA, IRAN-140 Faraz
+A148;Fixed-wing;2J/L;Medium;D;III;ANTONOV, An-148
+;;;;;;AGUSTA, AW-149
+A149;Helicopter;2T/S+;Medium;F;I;AGUSTAWESTLAND, AW-149
+;;;;;;LEONARDO, AW-149
+A158;Fixed-wing;2J/L;Medium;D;III;ANTONOV, An-158
+A16;Fixed-wing;1P/S;Light;F;I;AVIADESIGN, A-16 Sport Falcon
+;;;;;;AGUSTAWESTLAND, AW-169
+A169;Helicopter;2T/S;Light;F;I;FINMECCANICA, AW-169
+;;;;;;LEONARDO, AW-169
+A178;Fixed-wing;2J/L;Medium;D;III;ANTONOV, An-178
+;;;;;;AGUSTAWESTLAND, AW-189
+A189;Helicopter;2T/S+;Medium;F;I;FINMECCANICA, AW-189
+;;;;;;LEONARDO, AW-189
+A19;Fixed-wing;1P/S;Light;F;I;AEROPRACT, A-19
+A19N;Fixed-wing;2J/L;Medium;D;III;AIRBUS, A-319neo
+A20;Fixed-wing;2P/S+;Medium;F;III;DOUGLAS, A-20 Havoc DOUGLAS, Havoc
+A205;Gyrocopter;1P/S;Light;F;I;OSKBES-MAI, MAI-205
+A20N;Fixed-wing;2J/L;Medium;D;III;AIRBUS, A-320neo
+A21;Fixed-wing;1P/S;Light;F;I;AEROPRACT, A-21 Solo AEROPRACT, Solo
+A210;Fixed-wing;1P/S;Light;F;I;AQUILA, A-210 AQUILA, AT-01
+A211;Fixed-wing;1P/S;Light;F;I;ALFA-M, A-211
+A21N;Fixed-wing;2J/L;Medium;D;III;AIRBUS, A-321neo
+A22;Fixed-wing;1P/S;Light;F;I;SADLER, A-22 Piranha SADLER, Piranha
+A223;Fixed-wing;1P/S;Light;F;I;OSKBES-MAI, Kityonok OSKBES-MAI, MAI-223 Kityonok
+A225;Fixed-wing;6J/J;Heavy;A;III;ANTONOV, An-225 Mriya ANTONOV, Mriya
+A23;Fixed-wing;1P/S;Light;F;I;AEROPRACT, A-23 Dragon AEROPRACT, Dragon
+A25;@Fixed-wing;1P/S;Light;F;I;AEROPRACT, A-25 Breeze AEROPRACT, Breeze
+A251;@Fixed-wing;2P/S;Light;F;II;AVIATIK-ALYANS, Aleks-251
+A27;Fixed-wing;1P/S;Light;F;I;AEROPRACT, A-27 AVANTAGE, A-27
+;;;;;;
+;;;;;;
+A270;Fixed-wing;1T/S;Light;F;I;
+;;;;;;
+;;;;;;
+A29;Fixed-wing;1P/S;Light;F;I;
+A2RT;Helicopter;2T/S;Light;F;I;
+;;;;;;
+;;;;;;
+A3*;Fixed-wing;2J/L;Medium;E;III;
+;;;;;;
+;;;;;;
+;;;;;;
+A306;Fixed-wing;2J/H;Heavy;C;III;7
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+A30B;Fixed-wing;2J/H;Heavy;C;III;8
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+A31;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+A310;Fixed-wing;2J/H;Heavy;C;III;7
+;;;;;;
+;;;;;;
+A318;Fixed-wing;2J/L;Medium;D;III;7
+;;;;;;
+;;;;;;
+A319;Fixed-wing;2J/L;Medium;D;III;7
+;;;;;;
+;;;;;;
+A320;Fixed-wing;2J/L;Medium;D;III;7
+;;;;;;
+A321;Fixed-wing;2J/L;Medium;D;III;7
+A33;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+A332;Fixed-wing;2J/H;Heavy;B;III;8
+;;;;;;
+;;;;;;
+A333;Fixed-wing;2J/H;Heavy;B;III;8
+A339;Fixed-wing;2J/H;Heavy;B;III;
+;;;;;;
+A342;Fixed-wing;4J/H;Heavy;B;III;9
+;;;;;;
+;;;;;;
+A343;Fixed-wing;4J/H;Heavy;B;III;9
+;;;;;;
+;;;;;;
+A345;Fixed-wing;4J/H;Heavy;B;III;9
+;;;;;;
+;;;;;;
+A346;Fixed-wing;4J/H;Heavy;B;III;9
+;;;;;;
+A35;Fixed-wing;1P/S Light;F;I;;AVANTAGE, A-35 Scanner AVANTAGE, Scanner
+;;;;;;AIRBUS, A-350-900 XWB
+A359;Fixed-wing;2J/H Heavy;B;III;10;AIRBUS, A-350-900 XWB Prestige
+;;;;;;AIRBUS, Prestige (A-350-900)
+;;;;;;AIRBUS, A-350-1000 XWB
+A35K;Fixed-wing;AIRBUS, A-350-1000 XWB Prestige NOWGT 2J/ Heavy;NOWGT;III;;
+;;;;;;AIRBUS, Prestige (A-350-1000)
+;;;;;;CESSNA, 318D Dragonfly
+;;;;;;CESSNA, 318E Dragonfly
+A37*;Fixed-wing;2J/S+ Light;F;III;;CESSNA, A-37 Dragonfly
+;;;;;;CESSNA, Dragonfly
+;;;;;;CESSNA, OA-37 Dragonfly
+;;;;;;AIRBUS, A-380-800
+A388;Fixed-wing;4J/J Heavy;A;III;10;AIRBUS, A-380-800 Prestige
+;;;;;;AIRBUS, Prestige (A-380-800)
+;;;;;;AIRBUS, A-300ST Beluga
+;;;;;;AIRBUS, A-300ST Super Transporter
+;;;;;;AIRBUS, Beluga
+A3ST;Fixed-wing;2J/H Heavy;C;III;;AIRBUS, Super Transporter SATIC, A-300ST Beluga
+;;;;;;SATIC, A-300ST Super Transporter
+;;;;;;SATIC, Beluga
+;;;;;;SATIC, Super Transporter
+;;;;;;DOUGLAS, A-4 Skyhawk
+;;;;;;DOUGLAS, Skyhawk
+;;;;;;DOUGLAS, TA-4 Skyhawk
+;;;;;;MCDONNELL DOUGLAS, A-4 Skyhawk
+A4*;Fixed-wing;1J/S+ Medium;F;III;;MCDONNELL DOUGLAS, OA-4 Skyhawk MCDONNELL DOUGLAS, Skyhawk
+;;;;;;MCDONNELL DOUGLAS, TA-4 Skyhawk
+;;;;;;SINGAPORE, A-4 Super Skyhawk
+;;;;;;SINGAPORE, Super Skyhawk
+;;;;;;SINGAPORE, TA-4 Super Skyhawk
+;;;;;;AIRBUS, A-400M Atlas
+A400;Fixed-wing;4T/H Heavy;C;III;;AIRBUS, A-400M Grizzly AIRBUS, Atlas
+;;;;;;AIRBUS, Grizzly
+A5;@Fixed-wing;1P/S Light;F;I;;ICON, A-5
+;;;;;;BERIEV, A-50
+A50;Fixed-wing;4J/H Heavy;C;III;;BERIEV, Be-976 ILYUSHIN, A-50
+;;;;;;ILYUSHIN, Be-976
+;;;;;;ADAM (2), A-500
+A500;Fixed-wing;2P/S Light;F;II;;ADAM (2), A-500 CarbonAero
+;;;;;;ADAM (2), CarbonAero
+A504;Fixed-wing;1P/S Light;F;I;;AVRO, 504 AVRO, 504 Replica
+;;;;;;GRUMMAN, A-6 Intruder
+;;;;;;GRUMMAN, EA-6 Prowler
+;;;;;;GRUMMAN, G-128 Intruder
+A6;Fixed-wing;2J/L Medium;E;III;;GRUMMAN, G-128 Prowler
+;;;;;;GRUMMAN, Intruder
+;;;;;;GRUMMAN, KA-6 Intruder
+;;;;;;GRUMMAN, Prowler
+A600;Helicopter;1P/S Light;F;I;;ROTORWAY, A-600 Talon
+;;;;;;AYRES, S-2R-T660 Turbo Thrush
+A660;Fixed-wing;1T/S+ Light;F;III;;AYRES, Turbo Thrush (S-2R-T660) THRUSH, S-2R-660 Turbo Thrush 660
+;;;;;;THRUSH, Turbo Thrush 660
+;;;;;;
+;;;;;;
+;;;;;;
+A7*;Fixed-wing;1J/L;Medium;E;III;
+;;;;;;
+;;;;;;
+;;;;;;
+A700;Fixed-wing;2J/S;Light;F;III;
+A743;Fixed-wing;2J/L;Medium;D;III;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+A748;Fixed-wing;2T/L;Medium;D;III;5
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+A890;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+A9;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+A900;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+A910;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+AA1;Fixed-wing;1P/S;Light;F;I;1
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+AA37;Fixed-wing;2P/S;Light;F;II;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+AA5;Fixed-wing;1P/S;Light;F;I;1
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+AAT3;Fixed-wing;1P/S;Light;F;I;
+AAT4;Fixed-wing;1P/S;Light;F;I;
+AB11;Fixed-wing;1P/S;Light;F;I;
+AB15;Fixed-wing;1P/S;Light;F;I;
+AB18;Fixed-wing;1P/S;Light;F;I;
+AB95;Fixed-wing;1P/S;Light;F;I;
+AC10;Gyrocopter;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+AC11;Fixed-wing;1P/S;Light;F;I;2
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+AC31;Helicopter;1T/S;Light;F;I;
+AC33;Helicopter;3T/S+;Medium;F;I;
+AC4;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+AC50;Fixed-wing;2P/S;Light;F;II;3
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+AC52;Fixed-wing;2P/S;Light;F;II;1
+;;;;;;
+;;;;;;
+AC56;Fixed-wing;2P/S;Light;F;II;4
+;;;;;;
+;;;;;;
+AC5A;Fixed-wing;1P/S;Light;F;I;
+AC5M;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+AC68;Fixed-wing;2P/S;Light;F;II;5
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+AC6L;Fixed-wing;2P/S;Light;F;II;6
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+AC72;Fixed-wing;2P/S;Light;F;II;4
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+AC80;Fixed-wing;2T/S;Light;F;II;4
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+AC90;Fixed-wing;2T/S;Light;F;II;4
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+AC95;Fixed-wing;2T/S;Light;F;II;6
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+ACAM;Fixed-wing;2P/S;Light;F;II;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+ACAR;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+ACED;Fixed-wing;1P/S;Light;F;I;
+ACJR;@Fixed-wing;1P/S;Light;F;I;
+ACPL;Fixed-wing;1P/S;Light;F;I;
+ACR2;Fixed-wing;1P/S;Light;F;I;
+ACRD;Fixed-wing;2P/S;Light;F;II;
+;;;;;;
+ACRO;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+ACSR;Fixed-wing;1P/S;Light;F;I;
+AD20;Fixed-wing;1P/S;Light;F;I;
+ADEL;Gyrocopter;1P/S;Light;F;I;
+ADVE;Fixed-wing;1P/S;Light;F;I;
+ADVN;@Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+AE45;Fixed-wing;2P/S;Light;F;II;
+;;;;;;
+AEA1;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+AERK;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+AEST;Fixed-wing;2P/S;Light;F;II;5
+;;;;;;
+;;;;;;
+;;;;;;
+AFOX;Fixed-wing;1P/S;Light;F;I;
+AG02;Fixed-wing;1P/S;Light;F;I;
+AGSH;@Fixed-wing;1P/S;Light;F;I;
+AI10;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+AIGT;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+AIRD;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+AIRL;Fixed-wing;2P/S;Light;F;II;
+AJ27;Fixed-wing;2J/L;Medium;E;III;
+;;;;;;
+AJET*;Fixed-wing;2J/S+;Medium;F;III;
+;;;;;;
+AK1;Fixed-wing;1P/S;Light;F;I;AKAFLIEG KARLSRUHE, AK-1
+AKOY;@Fixed-wing;1P/S;Light;F;I;LISA , Akoya
+AKRO;Fixed-wing;1P/S;Light;F;I;STEPHENS, Akro
+ALBU;Fixed-wing;1P/S;Light;F;I;AVIATION DEVELOPMENT, Alaskan Bushmaster
+ALC1;Fixed-wing;1P/S;Light;F;I;ALTAIR COELHO, AC-11
+ALGR;Fixed-wing;1P/S;Light;F;I;FANTASY AIR, Allegro
+ALH;Helicopter;2T/S;Light;F;I;HINDUSTAN, ALH Dhruv HINDUSTAN, Dhruv
+ALIG;Fixed-wing;1P/S;Light;F;I;ARION, Lightning ARION, LS-1 Lightning
+ALIZ;Fixed-wing;1T/S+;Medium;F;III;BREGUET, 1050 Alizé BREGUET, Alizé
+;;;;;;AEROSPATIALE, Alouette 2
+;;;;;;AEROSPATIALE, SA-318 Alouette 2
+;;;;;;REPUBLIC, Alouette 2
+;;;;;;REPUBLIC, SE-3130 Alouette 2
+;;;;;;SUD, Alouette 2
+ALO2;Helicopter;1T/S;Light;F;I;SUD, SA-318 Alouette 2
+;;;;;;SUD, SA-3180 Alouette 2
+;;;;;;SUD, SE-313 Alouette 2
+;;;;;;SUD, SE-3130 Alouette 2
+;;;;;;SUD-EST, Alouette 2
+;;;;;;SUD-EST, SE-3130 Alouette 2
+;;;;;;AEROSPATIALE, Alouette 3
+;;;;;;AEROSPATIALE, SA-316 Alouette 3
+;;;;;;AEROSPATIALE, SA-319 Alouette 3
+;;;;;;F+W EMMEN, Alouette 3
+;;;;;;F+W EMMEN, SE-3160 Alouette 3
+;;;;;;HINDUSTAN, Chetak
+;;;;;;HINDUSTAN, Chetan
+;;;;;;HINDUSTAN, SA-316 Chetak
+ALO3;Helicopter;1T/S;Light;F;I;HINDUSTAN, SA-316 Chetan HINDUSTAN, SE-3160 Chetak
+;;;;;;ICA, Alouette 3
+;;;;;;ICA, IAR-316 Alouette 3
+;;;;;;LICHTWERK, Alouette 3
+;;;;;;LICHTWERK, SE-3160 Alouette 3
+;;;;;;SUD, Alouette 3
+;;;;;;SUD, SA-316 Alouette 3
+;;;;;;SUD, SA-319 Alouette 3
+;;;;;;SUD, SE-3160 Alouette 3
+;;;;;;AUSTER, Alpine
+ALPI;Fixed-wing;1P/S;Light;F;I;AUSTER, J-5Q Alpine
+;;;;;;AUSTER, J-5R Alpine
+ALSL;Fixed-wing;1P/S;Light;F;I;AIRLONY, Skylane
+ALTO;Fixed-wing;1P/S;Light;F;I;DIRECT FLY, Alto
+;;;;;;AERFER-AERMACCHI, AM-3
+AM3;Fixed-wing;1P/S;Light;F;I;AERITALIA-AERMACCHI, AM-3 ATLAS, AM-3 Bosbok
+;;;;;;ATLAS, Bosbok
+;;;;;;AERITALIA, AMX Ghibli
+;;;;;;AERITALIA, Ghibli
+;;;;;;AERMACCHI, AMX Ghibli
+;;;;;;AERMACCHI, Ghibli
+;;;;;;ALENIA, AMX Ghibli
+AMX*;Fixed-wing;1J/S+;Medium;F;III;ALENIA, Ghibli  AMX, A-1
+;;;;;;AMX, AMX
+;;;;;;AMX, AMX Ghibli
+;;;;;;AMX, Ghibli
+;;;;;;EMBRAER, A-1
+;;;;;;EMBRAER, AMX
+AN12;Fixed-wing;4T/L;Medium;D;III;ANTONOV, An-12 SHAANXI, Y-8
+;;;;;;AICSA, An-2
+;;;;;;ANTONOV, An-2
+AN2;Fixed-wing;1P/S;Light;F;I;NANCHANG, Y-5 PZL-MIELEC, An-2 Antek
+;;;;;;PZL-MIELEC, Antek
+;;;;;;SHIJIAZHUANG, Y-5
+AN22;Fixed-wing;4T/H;Heavy;B;III;ANTONOV, An-22 Antheus ANTONOV, Antheus
+;;;;;;ANTONOV, An-24
+AN24;Fixed-wing;2T/L;Medium;D;III;XIAN, Y-7-100 XIAN, Y-7-200
+;;;;;;XIAN, Y-7E
+AN26;Fixed-wing;2T/L;Medium;D;III;ANTONOV, An-26 XIAN, Y-7H
+;;;;;;ANTONOV, An-28
+;;;;;;PZL-MIELEC, An-28
+AN28;Fixed-wing;2T/S+;Light;F;III;PZL-MIELEC, An-28 Bryza
+;;;;;;PZL-MIELEC, Bryza (TWD-10 engines)
+;;;;;;PZL-MIELEC, M-28 Bryza (TWD-10 engines)
+AN3;Fixed-wing;1T/S+;Light;F;III;ANTONOV, An-3
+AN30;Fixed-wing;2T/L;Medium;D;III;ANTONOV, An-30
+;;;;;;ANTONOV, An-32
+;;;;;;ANTONOV, An-32 Firekiller
+AN32;Fixed-wing;2T/L;Medium;D;III;ANTONOV, An-32 Sutlej
+;;;;;;ANTONOV, Firekiller
+;;;;;;ANTONOV, Sutlej
+AN38;Fixed-wing;2T/S+;Medium;F;III;ANTONOV, An-38
+AN70;Fixed-wing;4T/H;Medium;D;III;ANTONOV, An-70
+;;;;;;ANTONOV, An-72
+AN72;Fixed-wing;2J/L;Medium;D;III;ANTONOV, An-74-100
+;;;;;;ANTONOV, An-74-200
+AN8;Fixed-wing;2T/L;Medium;D;III;ANTONOV, An-8
+;;;;;;ANGEL, 44 Angel
+ANGL;Fixed-wing;2P/S;Light;F;II;ANGEL, Angel KING'S, 44 Angel
+;;;;;;KING'S, Angel
+ANKA;Fixed-wing;TAI, Anka NOWGT1P/;Light;NOWGT;I;
+ANSN;Fixed-wing;2P/S;Light;F;II;AVRO, 652 Anson AVRO, Anson
+ANST;Helicopter;2T/S;Light;F;I;KAZAN, Ansat
+;;;;;;AEROPRAKT, A-20
+;;;;;;AEROPRAKT, A-20 Sky Cruiser
+;;;;;;AEROPRAKT, A-20 Super Cruiser
+;;;;;;AEROPRAKT, A-20 Varlet
+AP20;Fixed-wing;1P/S;Light;F;I;AEROPRAKT, A-20 Vista AEROPRAKT, SA-20 Vista
+;;;;;;AEROPRAKT, Sky Cruiser
+;;;;;;AEROPRAKT, Super Cruiser
+;;;;;;AEROPRAKT, Varlet
+;;;;;;AEROPRAKT, Vista
+;;;;;;AEROPRAKT, A-22
+;;;;;;AEROPRAKT, A-22 Foxbat
+;;;;;;AEROPRAKT, A-22 Sharik
+;;;;;;AEROPRAKT, A-22 Valor
+AP22;Fixed-wing;1P/S;Light;F;I;AEROPRAKT, A-22 Vision
+;;;;;;AEROPRAKT, Foxbat
+;;;;;;AEROPRAKT, Sharik
+;;;;;;AEROPRAKT, Valor
+;;;;;;AEROPRAKT, Vision
+AP24;@Fixed-wing;1P/S;Light;F;I;AEROPRAKT, A-24 Viking AEROPRAKT, Viking
+;;;;;;
+AP26;Fixed-wing;2P/S;Light;F;II;
+;;;;;;
+;;;;;;
+AP28;Fixed-wing;2P/S;Light;F;II;
+;;;;;;
+AP32;Fixed-wing;1P/S;Light;F;I;
+AP36;Fixed-wing;2P/S;Light;F;II;
+;;;;;;
+;;;;;;
+;;;;;;
+APM2;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+APM3;Fixed-wing;1P/S;Light;F;I;
+APM4;Fixed-wing;1P/S;Light;F;I;
+APUP;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+AR11;Fixed-wing;1P/S;Light;F;I;1
+;;;;;;
+AR15;Fixed-wing;1P/S;Light;F;I;2
+AR50;Fixed-wing;1P/S;Light;F;I;
+AR5T;Fixed-wing;1P/S;Light;F;I;
+AR65;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+AR6T;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+AR79;Fixed-wing;1P/S;Light;F;I;
+ARCE;Fixed-wing;1E/S;Light;F;I;
+ARCP;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+ARES*;Fixed-wing;1J/S;Light;F;III;
+;;;;;;
+;;;;;;
+ARKS;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+ARON;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+ARV1;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+ARVA;Fixed-wing;2T/S+;Light;F;III;5
+;;;;;;
+;;;;;;
+ARWF;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+AS02;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+AS14;Fixed-wing;1P/S;Light;F;I;
+AS16;Fixed-wing;1P/S;Light;F;I;
+AS20;Fixed-wing;1P/S;Light;F;I;
+AS21;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+AS22;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+AS24;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+AS25;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+AS26;Fixed-wing;1P/S;Light;F;I;
+AS28;Fixed-wing;1P/S;Light;F;I;
+AS29;Fixed-wing;1P/S;Light;F;I;
+AS2T;Fixed-wing;1T/S;Light;F;I;
+AS30;Fixed-wing;1P/S;Light;F;I;
+AS31;Fixed-wing;1P/S;Light;F;I;
+;;;;;;AEROSPATIALE, AS-332B Super Puma
+;;;;;;AEROSPATIALE, AS-332B1 Super Puma
+;;;;;;AEROSPATIALE, AS-332C Super Puma
+;;;;;;AEROSPATIALE, AS-332F1 Super Puma
+;;;;;;AEROSPATIALE, AS-332L Super Puma
+;;;;;;AEROSPATIALE, AS-332L Tiger
+;;;;;;AEROSPATIALE, AS-332L1 Super Puma
+;;;;;;AEROSPATIALE, AS-332M Super Puma
+;;;;;;AEROSPATIALE, AS-332M1 Super Puma
+;;;;;;AEROSPATIALE, AS-532SC Cougar
+;;;;;;AEROSPATIALE, AS-532UC Cougar
+;;;;;;AEROSPATIALE, AS-532UL Cougar
+;;;;;;AEROSPATIALE, Cougar
+;;;;;;AEROSPATIALE, Hkp10 Super Puma
+;;;;;;AEROSPATIALE, Super Puma
+;;;;;;AEROSPATIALE, Tiger
+;;;;;;AIRBUS HELICOPTERS, AS-332C Super Puma
+;;;;;;AIRBUS HELICOPTERS, AS-332L1 Super Puma
+;;;;;;AIRBUS HELICOPTERS, AS-532AL Cougar
+;;;;;;AIRBUS HELICOPTERS, Cougar
+;;;;;;AIRBUS HELICOPTERS, Super Puma
+;;;;;;ATLAS, Oryx
+;;;;;;ATLAS, SA-330 Oryx
+;;;;;;CASA, AS-332 Super Puma
+AS32;Helicopter;2T/S+;Medium;F;I;CASA, Cougar  CASA, Super Puma
+;;;;;;DIRGANTARA , NAS-332 Super Puma
+;;;;;;DIRGANTARA, Super Puma
+;;;;;;EUROCOPTER, AS-332C Super Puma
+;;;;;;EUROCOPTER, AS-332L1 Super Puma
+;;;;;;EUROCOPTER, AS-332M1 Super Puma
+;;;;;;EUROCOPTER, AS-532AL Cougar
+;;;;;;EUROCOPTER, AS-532SC Cougar
+;;;;;;EUROCOPTER, AS-532UC Cougar
+;;;;;;EUROCOPTER, AS-532UL Cougar
+;;;;;;EUROCOPTER, Cougar
+;;;;;;EUROCOPTER, Hkp10 Super Puma
+;;;;;;EUROCOPTER, Super Puma
+;;;;;;NURTANIO, NAS-332 Super Puma
+;;;;;;NURTANIO, Super Puma
+;;;;;;NUSANTARA, NAS-332 Super Puma
+;;;;;;NUSANTARA, Super Puma
+;;;;;;RUAG, AS-532 Cougar
+;;;;;;RUAG, Cougar
+;;;;;;SF, AS-532 Cougar
+;;;;;;SF, Cougar
+;;;;;;SINGAPORE, AS-332 Super Puma
+;;;;;;SINGAPORE, Super Puma
+;;;;;;TAI, AS-532 Cougar
+;;;;;;TAI, Cougar
+;;;;;;AEROSPATIALE, AS-332L2 Super Puma Mk2
+;;;;;;AEROSPATIALE, AS-532A2 Cougar Mk2
+;;;;;;AEROSPATIALE, AS-532U2 Cougar Mk2
+;;;;;;AEROSPATIALE, Cougar Mk2
+AS3B;Helicopter;2T/S+;Medium;F;I;AEROSPATIALE, Super Puma Mk2 EUROCOPTER, AS-332L2 Super Puma Mk2
+;;;;;;EUROCOPTER, AS-532A2 Cougar Mk2
+;;;;;;EUROCOPTER, AS-532U2 Cougar Mk2
+;;;;;;EUROCOPTER, Cougar Mk2
+;;;;;;EUROCOPTER, Super Puma Mk2
+;;;;;;AEROSPATIALE, AS-350 AStar
+;;;;;;AEROSPATIALE, AS-350 Ecureuil
+;;;;;;AEROSPATIALE, AS-350 SuperStar
+;;;;;;AEROSPATIALE, AS-550 Fennec
+;;;;;;AEROSPATIALE, AStar
+;;;;;;AEROSPATIALE, Ecureuil
+;;;;;;AEROSPATIALE, Fennec (AS-550)
+;;;;;;AEROSPATIALE, SuperStar
+;;;;;;AIRBUS HELICOPTERS, AS-350 Ecureuil
+;;;;;;AIRBUS HELICOPTERS, AS-350 SuperStar
+;;;;;;AIRBUS HELICOPTERS, AS-550 Fennec
+;;;;;;AIRBUS HELICOPTERS, Ecureuil
+;;;;;;AIRBUS HELICOPTERS, Fennec
+;;;;;;AIRBUS HELICOPTERS, H-125 Ecureuil
+;;;;;;AIRBUS HELICOPTERS, H-125 Fennec
+;;;;;;AIRBUS HELICOPTERS, H-125 SuperStar
+;;;;;;AIRBUS HELICOPTERS, SuperStar
+;;;;;;AVICOPTER, AC-301
+AS50;Helicopter;1T/S;Light;F;I;CHANGHE, Z-11
+;;;;;;EUROCOPTER, AS-350 AStar
+;;;;;;EUROCOPTER, AS-350 Ecureuil
+;;;;;;EUROCOPTER, AS-350 Stylence
+;;;;;;EUROCOPTER, AS-350 SuperStar
+;;;;;;EUROCOPTER, AS-550 Fennec
+;;;;;;EUROCOPTER, AStar
+;;;;;;EUROCOPTER, Ecureuil
+;;;;;;EUROCOPTER, Fennec (AS-550)
+;;;;;;EUROCOPTER, Squirrel
+;;;;;;EUROCOPTER, Stylence (AS-350)
+;;;;;;EUROCOPTER, SuperStar
+;;;;;;HELIBRAS, Esquilo (HB-350)
+;;;;;;HELIBRAS, HA-1 Esquilo
+;;;;;;HELIBRAS, HB-350 Esquilo
+;;;;;;HELIBRAS, UH-12 Esquilo
+;;;;;;HELIBRAS, H-50 Esquilo
+;;;;;;LOT, AS-350 Ecureuil
+;;;;;;LOT, Ecureuil
+;;;;;;AEROSPATIALE, AS-355 Ecureuil 2
+;;;;;;AEROSPATIALE, AS-355 TwinStar
+;;;;;;AEROSPATIALE, AS-555 Fennec
+;;;;;;AEROSPATIALE, Ecureuil 2
+;;;;;;AEROSPATIALE, Fennec (AS-555)
+;;;;;;AEROSPATIALE, TwinStar
+;;;;;;AIRBUS HELICOPTERS, AS-355 Ecureuil 2
+;;;;;;AIRBUS HELICOPTERS, Ecureuil 2
+;;;;;;EUROCOPTER, AS-355 Ecureuil 2
+;;;;;;EUROCOPTER, AS-355 Stylence
+AS55;Helicopter;2T/S;Light;F;I;EUROCOPTER, AS-355 TwinStar EUROCOPTER, AS-555 Fennec
+;;;;;;EUROCOPTER, Ecureuil 2
+;;;;;;EUROCOPTER, Fennec (AS-555)
+;;;;;;EUROCOPTER, Stylence (AS-355)
+;;;;;;EUROCOPTER, Twin Squirrel
+;;;;;;EUROCOPTER, TwinStar
+;;;;;;HELIBRAS, CH-55 Esquilo
+;;;;;;HELIBRAS, Esquilo (HB-355)
+;;;;;;HELIBRAS, HB-355 Esquilo
+;;;;;;HELIBRAS, UH-13 Esquilo
+;;;;;;HELIBRAS, VH-55 Esquilo
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+AS65;Helicopter;2T/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+AS80;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+ASO4;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+ASTO;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+ASTR;Fixed-wing;2J/S+;Medium;F;III;7
+;;;;;;
+;;;;;;
+AT2P;Fixed-wing;1P/S;Light;F;I;
+AT3*;Fixed-wing;2J/S+;Medium;F;III;
+;;;;;;
+AT3P;Fixed-wing;1P/S;Light;F;I;1
+;;;;;;
+;;;;;;
+AT3T;Fixed-wing;1T/S;Light;F;I;
+;;;;;;
+AT43;Fixed-wing;2T/L;Medium;E;III;3
+;;;;;;
+AT44;Fixed-wing;2T/L;Medium;E;III;3
+;;;;;;
+;;;;;;
+AT45;Fixed-wing;2T/L;Medium;E;III;3
+;;;;;;
+AT46;Fixed-wing;2T/L;Medium;E;III;3
+AT5P;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+AT5T;Fixed-wing;1T/S;Light;F;I;
+;;;;;;
+AT6T;Fixed-wing;1T/S;Light;F;I;
+AT72;Fixed-wing;2T/L;Medium;E;III;3
+AT73;Fixed-wing;2T/L;Medium;E;III;3
+AT75;Fixed-wing;2T/L;Medium;E;III;3
+AT76;Fixed-wing;2T/L;Medium;E;III;3
+AT8T;Fixed-wing;1T/S+;Light/ Medium;F;III;
+ATAC;Fixed-wing;1P/S;Light;F;I;
+ATG1;Fixed-wing;2J/S;Light;F;III;
+ATIS;Fixed-wing;1P/S;Light;F;I;
+ATL;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+ATLA;Fixed-wing;2T/L;Medium;D;III;
+;;;;;;
+;;;;;;
+ATP;Fixed-wing;2T/L;Medium;D;III;6
+ATTL;Fixed-wing;1P/S;Light;F;I;
+AU11;Fixed-wing;1P/S;Light;F;I;
+AUJ2;Fixed-wing;1P/S;Light;F;I;
+AUJ4;Fixed-wing;1P/S;Light;F;I;
+AUS3;Fixed-wing;1P/S;Light;F;I;
+AUS4;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+AUS5;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+AUS6;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+AUS7;Fixed-wing;1P/S;Light;F;I;
+AUS9;Fixed-wing;1P/S;Light;F;I;AUSTER, Auster AOP9 AUSTER, B5
+;;;;;;ALPLA, AVO-68 Samburo
+;;;;;;ALPLA, Samburo
+AV68;Fixed-wing;1P/S;Light;F;I;M & D FLUGZEUGBAU, AVO-68 Samburo M & D FLUGZEUGBAU, Samburo
+;;;;;;NITSCHE, AVO-68 Samburo
+;;;;;;NITSCHE, Samburo
+;;;;;;AVID, Avid Amphibian
+AVAM;@Fixed-wing;1P/S;Light;F;I;AVID, Catalina
+;;;;;;LIGHT AERO, Avid Amphibian
+;;;;;;AIRDALE, Avid Flyer
+;;;;;;AIRDALE, Flyer
+;;;;;;AVID, Avid Commuter
+;;;;;;AVID, Avid Flyer
+AVID;Fixed-wing;1P/S;Light;F;I;INDAER PERU, Ag-Chuspi INDAER PERU, Chuspi
+;;;;;;INDAER PERU, IAP-001 Chuspi
+;;;;;;INDAER PERU, IAP-002 Ag-Chuspi
+;;;;;;LIGHT AERO, Avid Flyer
+;;;;;;YALO, Avid Flyer
+;;;;;;AVRO, 594 Avian
+AVIN;Fixed-wing;1P/S;Light;F;I;AVRO, 616 Avian
+;;;;;;AVRO, Avian
+AVK4;Fixed-wing;2T/S;Light;F;II;AVTEK, 400
+AVLN;@Fixed-wing;1T/S;Light;F;I;AIRMASTER, Avalon 680
+AVTR;@Fixed-wing;1P/S;Light;F;I;AERO ADVENTURE, Aventura 2 ARNET PEREYRA, Aventura 2
+;;;;;;AGUSTA, AB-206 JetRanger
+;;;;;;AGUSTA, AB-206 LongRanger
+;;;;;;AGUSTA, Hkp6 JetRanger
+;;;;;;AGUSTA, JetRanger
+;;;;;;AGUSTA, LongRanger
+;;;;;;BELL, 406
+;;;;;;BELL, 206A JetRanger
+;;;;;;BELL, 206B JetRanger
+;;;;;;BELL, 206L LongRanger
+;;;;;;BELL, 406 Combat Scout
+;;;;;;BELL, CH-136
+;;;;;;BELL, CH-139
+;;;;;;BELL, COH-58
+;;;;;;BELL, Combat Scout
+B06;Helicopter;1T/S;Light;F;I;BELL, Creek BELL, JetRanger
+;;;;;;BELL, Kiowa
+;;;;;;BELL, Kiowa Warrior
+;;;;;;BELL, LongRanger
+;;;;;;BELL, OH-58 Kiowa
+;;;;;;BELL, OH-58 Kiowa Warrior
+;;;;;;BELL, SeaRanger
+;;;;;;BELL, TH-206
+;;;;;;BELL, TH-57 SeaRanger
+;;;;;;BELL, TH-67 Creek
+;;;;;;BELL, VH-4 JetRanger
+;;;;;;COMMONWEALTH (1), BA-206 Kiowa
+;;;;;;COMMONWEALTH (1), CA-32 Kiowa
+;;;;;;COMMONWEALTH (1), Kiowa
+;;;;;;PANHA, 2061
+;;;;;;BELL, 206LT TwinRanger
+B06T;Helicopter;2T/S;Light;F;I;BELL, TwinRanger TRIDAIR, 206L-ST Gemini ST
+;;;;;;TRIDAIR, Gemini ST
+B1;Fixed-wing;4J/H;Heavy;C;III;ROCKWELL, B-1 Lancer ROCKWELL, Lancer
+B103;@Fixed-wing;2P/S;Light;F;II;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+B105;Helicopter;2T/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+B13;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+B14A;Fixed-wing;1P/S;Light;F;I;1
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+B14B;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+B14C;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+B150;Helicopter;1T/S;Light;F;I;
+B17;Fixed-wing;4P/L;Medium;D;III;
+;;;;;;
+;;;;;;
+B18T;Fixed-wing;2T/S;Light;F;II;1
+;;;;;;
+;;;;;;
+;;;;;;
+B190;Fixed-wing;2T/S+;Medium;F;III;7
+;;;;;;
+;;;;;;
+B2;Fixed-wing;4J/H;Heavy;C;III;
+;;;;;;
+;;;;;;
+;;;;;;
+B209;Fixed-wing;1P/S;Light;F;I;4
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+B212;Helicopter;2T/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+B214;Helicopter;1T/S+;Medium;F;I;
+;;;;;;
+;;;;;;
+B222;Helicopter;2T/S;Light;F;I;
+;;;;;;
+B23;Fixed-wing;2P/L;Medium;D;III;
+;;;;;;
+B230;Helicopter;2T/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+B24;Fixed-wing;4P/L;Medium;D;III;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+B25;Fixed-wing;2P/L;Medium;E;III;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+B26;Fixed-wing;2P/L;Medium;E;III;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+B26M;Fixed-wing;2P/S+;Medium;F;III;
+;;;;;;
+B29;Fixed-wing;4P/L;Medium;D;III;
+B305;Helicopter;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+B350;Fixed-wing;2T/S+;Light/ Medium;F;III;7
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+B360;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+B36T;Fixed-wing;1T/S;Light;F;I;1
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+B37M;Fixed-wing;2J/L;Medium;D;III;
+;;;;;;
+;;;;;;
+B38M;Fixed-wing;2J/L;Medium;D;III;
+;;;;;;
+;;;;;;
+B39M;Fixed-wing;2J/L;Medium;D;III;
+;;;;;;
+;;;;;;
+;;;;;;
+B407;Helicopter;1T/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+B412;Helicopter;2T/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+B427;Helicopter;2T/S;Light;F;I;
+B429;Helicopter;2T/S;Light;F;I;
+B430;Helicopter;2T/S;Light;F;I;
+;;;;;;
+B461;Fixed-wing;4J/L;Medium;E;III;7
+;;;;;;
+;;;;;;
+;;;;;;
+B462;Fixed-wing;4J/L;Medium;E;III;7
+;;;;;;
+;;;;;;
+B463;Fixed-wing;4J/L;Medium;E;III;7
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+B47G;Helicopter;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+B47J;Helicopter;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+B47T;Helicopter;1T/S;Light;F;I;
+B505;Helicopter;1T/S;Light;F;I;
+B52;Fixed-wing;8J/H;Heavy;B;III;
+B525;Helicopter;2T/S+;Medium;F;I;
+;;;;;;
+B58T;Fixed-wing;2P/S;Light;F;II;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+B60;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+B609;Tiltrotor;2T/S+;Medium;F;II;
+;;;;;;
+B60T;Fixed-wing;2T/S;Light;F;II;
+;;;;;;
+B701;Fixed-wing;4J/L;Medium;D;III;9
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+B703;Fixed-wing;4J/H;Heavy;C;III;9
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+B712;Fixed-wing;2J/L;Medium;D;III;7
+;;;;;;
+B720;Fixed-wing;4J/L;Medium;D;III;9
+B721;Fixed-wing;3J/L;Medium;D;III;7
+B722;Fixed-wing;3J/L;Medium;D;III;7
+;;;;;;
+;;;;;;
+B732;Fixed-wing;2J/L;Medium;D;III;7
+;;;;;;
+;;;;;;
+B733;Fixed-wing;2J/L;Medium;D;III;7
+B734;Fixed-wing;2J/L;Medium;D;III;8
+B735;Fixed-wing;2J/L;Medium;D;III;7
+B736;Fixed-wing;2J/L;Medium;D;III;7
+;;;;;;
+;;;;;;
+B737;Fixed-wing;2J/L;Medium;D;III;8
+;;;;;;
+;;;;;;
+;;;;;;
+B738;Fixed-wing;2J/L;Medium;D;III;9
+;;;;;;
+;;;;;;
+B739;Fixed-wing;2J/L;Medium;D;III;9
+;;;;;;
+B741;Fixed-wing;4J/H;Heavy;B;III;10
+;;;;;;
+B742;Fixed-wing;4J/H;Heavy;B;III;10
+;;;;;;
+B743;Fixed-wing;4J/H;Heavy;B;III;10
+B744;Fixed-wing;4J/H;Heavy;B;III;10
+;;;;;;
+B748;Fixed-wing;4J/H;Heavy;B;III;8
+;;;;;;
+B74D;Fixed-wing;4J/H;Heavy;B;III;
+B74R;Fixed-wing;4J/H;Heavy;B;III;10
+B74S;Fixed-wing;4J/H;Heavy;B;III;9
+B752;Fixed-wing;2J/L;Medium;D;III;7
+B753;Fixed-wing;2J/L;Medium;D;III;8
+B762;Fixed-wing;2J/H;Heavy;C;III;9
+B763;Fixed-wing;2J/H;Heavy;C;III;9
+B764;Fixed-wing;2J/H;Heavy;C;III;9
+B772;Fixed-wing;2J/H;Heavy;B;III;9
+B773;Fixed-wing;2J/H;Heavy;B;III;9
+B778;Fixed-wing;BOEING, 777-8 NOWGT2J/;Heavy;NOWGT;III;
+B779;Fixed-wing;BOEING, 777-9 NOWGT2J/;Heavy;NOWGT;III;
+;;;;;;
+B77L;Fixed-wing;2J/H;Heavy;B;III;7
+;;;;;;
+;;;;;;
+B77W;Fixed-wing;2J/H;Heavy;B;III;7
+;;;;;;
+;;;;;;
+B788;Fixed-wing;2J/H;Heavy;B;III;7
+;;;;;;
+;;;;;;
+B789;Fixed-wing;2J/H;Heavy;B;III;7
+;;;;;;
+B78X;Fixed-wing;2J/H;Heavy;B;III;
+;;;;;;
+;;;;;;
+BA11;Fixed-wing;2J/L;Medium;D;III;7
+;;;;;;
+;;;;;;
+BABY;Helicopter;1P/S;Light;F;I;
+BALL;;;;;;
+BAR6;Fixed-wing;1P/S;Light;F;I;
+BARC;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+BASS;Fixed-wing;2P/S;Light;F;II;8
+;;;;;;
+BBAT;Fixed-wing;1P/S;Light;F;I;
+BBIR;Fixed-wing;1P/S;Light;F;I;
+BCA3;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+BCAT;Fixed-wing;1P/S+;Light;F;III;
+;;;;;;
+BCS1;Fixed-wing;2J/L;Medium;D;III;
+BCS3;Fixed-wing;2J/L;Medium;D;III;
+;;;;;;
+BD10*;Fixed-wing;1J/S;Light;F;III;
+;;;;;;
+BD12;Fixed-wing;1P/S;Light;F;I;
+BD17;Fixed-wing;1P/S;Light;F;I;
+BD4;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+BD5;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+BD5J;Fixed-wing;1J/S;Light;F;III;
+;;;;;;
+;;;;;;
+;;;;;;
+BD5T;Fixed-wing;1T/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+BDOG;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+BE10;Fixed-wing;2T/S;Light;F;II;7
+;;;;;;
+BE12;@Fixed-wing;2T/L;Medium;D;III;
+;;;;;;
+;;;;;;
+BE17;Fixed-wing;1P/S;Light;F;I;2
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+BE18;Fixed-wing;2P/S;Light;F;II;4
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+BE19;Fixed-wing;1P/S;Light;F;I;1
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+BE20;Fixed-wing;2T/S+;Light/ Medium;F;III;7
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+BE23;Fixed-wing;1P/S;Light;F;I;2
+;;;;;;
+;;;;;;
+BE24;Fixed-wing;1P/S;Light;F;I;3
+;;;;;;
+;;;;;;
+BE30;Fixed-wing;2T/S+;Light;F;III;6
+;;;;;;
+BE32;Fixed-wing;2T/S+;Medium;F;III;
+;;;;;;
+;;;;;;
+;;;;;;
+BE33;Fixed-wing;1P/S;Light;F;I;4
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+BE35;Fixed-wing;1P/S;Light;F;I;3
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+BE36;Fixed-wing;1P/S;Light;F;I;2
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+BE40;Fixed-wing;2J/S+;Medium;F;III;8
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+BE45;Fixed-wing;2J/S+;Medium;F;III;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+BE50;Fixed-wing;2P/S;Light;F;II;4
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+BE55;Fixed-wing;2P/S;Light;F;II;6
+;;;;;;
+;;;;;;
+;;;;;;
+BE56;Fixed-wing;2P/S;Light;F;II;2
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+BE58;Fixed-wing;2P/S;Light;F;II;6
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+BE60;Fixed-wing;2P/S;Light;F;II;8
+;;;;;;
+;;;;;;
+BE65;Fixed-wing;2P/S;Light;F;II;5
+;;;;;;
+;;;;;;
+BE70;Fixed-wing;2P/S;Light;F;II;1
+BE76;Fixed-wing;2P/S;Light;F;II;4
+BE77;Fixed-wing;1P/S;Light;F;I;1
+;;;;;;
+;;;;;;
+;;;;;;
+BE80;Fixed-wing;2P/S;Light;F;II;5
+;;;;;;
+;;;;;;
+;;;;;;
+BE88;Fixed-wing;2P/S;Light;F;II;5
+BE95;Fixed-wing;2P/S;Light;F;II;5
+BE99;Fixed-wing;2T/S;Light;F;II;5
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+BE9L;Fixed-wing;2T/S;Light;F;II;5
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+BE9T;Fixed-wing;2T/S;Light;F;II;7
+;;;;;;
+BEAR;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+BELF;Fixed-wing;4T/L;Medium;D;III;
+BER2;@Fixed-wing;2J/L;Medium;D;III;
+BER4;@Fixed-wing;2J/L;Medium;D;III;
+BETA;Fixed-wing;1P/S;Light;F;I;
+BEVR;Fixed-wing;1P/S;Light;F;I;
+BF19;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+BFIT;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+BILO;Fixed-wing;1P/S;Light;F;I;
+BIPL;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+BIRD;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+BISC;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+BK17;Helicopter;2T/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+BKUT;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+BL11;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+BL17;Fixed-wing;1P/S;Light;F;I;1
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+BL19;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+BL8;Fixed-wing;1P/S;Light;F;I;2
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+BLBU;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+BLCF;Fixed-wing;4J/H;Heavy;B;III;
+;;;;;;
+BLEN;Fixed-wing;2P/S+;Light;F;III;
+;;;;;;
+;;;;;;
+;;;;;;
+BLKS;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+BM6;Fixed-wing;1P/S;Light;F;I;
+BMAN;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+BN2P;Fixed-wing;2P/S;Light;F;II;1
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+BN2T;Fixed-wing;2T/S;Light;F;II;1
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+BOLT;Fixed-wing;1P/S;Light;F;I;
+BOOM;Fixed-wing;2P/S;Light;F;II;
+BPAT;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+BPOD;Fixed-wing;4E/S;Light;F;III;
+;;;;;;
+BR14;Fixed-wing;1P/S;Light;F;I;
+BR54;Gyrocopter;1P/S;Light;F;I;
+BR60;Fixed-wing;1P/S;Light;F;I;
+BR61;Fixed-wing;1P/S;Light;F;I;
+BRAV;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+BRB2;Helicopter;1P/S;Light;F;I;
+;;;;;;
+BREZ;Fixed-wing;1P/S;Light;F;I;
+BROU;Fixed-wing;1P/S;Light;F;I;
+BS60;Fixed-wing;2T/S;Light;F;II;
+BSCA;Fixed-wing;4J/H;Heavy;B;III;
+BSTP;Helicopter;2T/S+;Medium;F;I;
+BSTR;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+BT36;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+BTUB;Fixed-wing;1P/S;Light;F;I;
+BTX1*;Fixed-wing;1J/S;Light;F;III;
+BU20;Fixed-wing;3P/S;Light;F;III;2
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+BU31;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+BU33;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+BU81;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+BUC;Fixed-wing;2J/L;Medium;E;III;
+;;;;;;
+BUCA;@Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+BULT;Fixed-wing;1P/S;Light;F;I;
+BUSH;Fixed-wing;1P/S;Light;F;I;
+BX2;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+C02T;Fixed-wing;2T/S;Light;F;II;6
+;;;;;;
+;;;;;;
+C04T;Fixed-wing;2T/S;Light;F;II;4
+;;;;;;
+C06T;Fixed-wing;1T/S;Light;F;I;2
+C07T;Fixed-wing;1T/S;Light;F;I;2
+;;;;;;
+C08T;Fixed-wing;CT/S;Light;F;II;
+;;;;;;
+C1;Fixed-wing;2J/L;Medium;D;III;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+C101*;Fixed-wing;1J/S+;Light;F;III;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+C10T;Fixed-wing;1T/S;Light;F;I;2
+;;;;;;
+;;;;;;
+C119;Fixed-wing;2P/L;Medium;D;III;5
+;;;;;;
+C120;Fixed-wing;1P/S;Light;F;I;1
+C123;Fixed-wing;2P/L;Medium;D;III;
+C125;Fixed-wing;3P/L;Medium;E;III;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+C130;Fixed-wing;4T/L;Medium;D;III;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+C133;Fixed-wing;4T/L;Medium;D;III;
+;;;;;;
+C135;Fixed-wing;4J/H;Heavy;C;III;
+;;;;;;
+C140;Fixed-wing;1P/S;Light;F;I;3
+;;;;;;
+C141;Fixed-wing;4J/H;Heavy;C;III;
+;;;;;;
+;;;;;;
+C14T;Fixed-wing;2T/S;Light;F;II;5
+;;;;;;
+C15;Fixed-wing;4J/L;Medium;D;III;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+C150;Fixed-wing;1P/S;Light;F;I;1
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+C152;Fixed-wing;1P/S;Light;F;I;1
+;;;;;;
+;;;;;;
+;;;;;;
+C160;Fixed-wing;2T/L;Medium;D;III;
+;;;;;;
+C162;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+C17;Fixed-wing;4J/H;Heavy;C;III;
+;;;;;;
+;;;;;;
+C170;Fixed-wing;1P/S;Light;F;I;4
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+C172;Fixed-wing;1P/S;Light;F;I;1
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+C175;Fixed-wing;1P/S;Light;F;I;2
+;;;;;;
+;;;;;;
+C177;Fixed-wing;1P/S;Light;F;I;2
+;;;;;;
+;;;;;;
+C180;Fixed-wing;1P/S;Light;F;I;2
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+C182;Fixed-wing;1P/S;Light;F;I;2
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+C185;Fixed-wing;1P/S;Light;F;I;2
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+C188;Fixed-wing;1P/S;Light;F;I;1
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+C190;Fixed-wing;1P/S;Light;F;I;2
+C195;Fixed-wing;1P/S;Light;F;I;2
+C2;Fixed-wing;2T/L;Medium;E;III;
+C205;Fixed-wing;1P/S;Light;F;I;3
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+C206;Fixed-wing;1P/S;Light;F;I;2
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+C207;Fixed-wing;1P/S;Light;F;I;2
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+C208;Fixed-wing;1T/S;Light;F;I;3
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+C210;Fixed-wing;1P/S;Light;F;I;2
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+C212;Fixed-wing;2T/S+;Medium;F;III;5
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+C21T;Fixed-wing;2T/S;Light;F;II;5
+;;;;;;
+C22J;Fixed-wing;2J/S;Light;F;III;
+;;;;;;
+C240;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+C25A;Fixed-wing;2J/S;Light;F;III;7
+C25B;Fixed-wing;2J/S+;Light;F;III;7
+C25C;Fixed-wing;2J/S+;Medium;F;III;7
+C25M;Fixed-wing;2J/S;Light;F;III;
+;;;;;;
+C270;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+C27J;Fixed-wing;2T/L;Medium;D;III;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+C295;Fixed-wing;2T/L;Medium;E;III;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+C303;Fixed-wing;2P/S;Light;F;II;2
+;;;;;;
+C309;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+C30J;Fixed-wing;4T/L;Medium;D;III;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+C310;Fixed-wing;2P/S;Light;F;II;4
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+C320;Fixed-wing;2P/S;Light;F;II;5
+;;;;;;
+;;;;;;
+C335;Fixed-wing;2P/S;Light;F;II;4
+C336;Fixed-wing;2P/S;Light;F;II;3
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+C337;Fixed-wing;2P/S;Light;F;II;3
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+C340;Fixed-wing;2P/S;Light;F;II;4
+;;;;;;
+C365;Fixed-wing;1T/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+C402;Fixed-wing;2P/S;Light;F;II;3
+;;;;;;
+;;;;;;
+;;;;;;
+C404;Fixed-wing;2P/S;Light;F;II;5
+C411;Fixed-wing;2P/S;Light;F;II;4
+;;;;;;
+;;;;;;
+C414;Fixed-wing;2P/S;Light;F;II;6
+;;;;;;
+;;;;;;
+;;;;;;
+C42;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+C421;Fixed-wing;2P/S;Light;F;II;6
+;;;;;;
+;;;;;;
+;;;;;;
+C425;Fixed-wing;2T/S;Light;F;II;5
+;;;;;;
+;;;;;;
+C441;Fixed-wing;2T/S;Light;F;II;6
+;;;;;;
+;;;;;;
+C46;Fixed-wing;2P/L;Medium;D;III;
+;;;;;;
+;;;;;;
+C5;Fixed-wing;4J/H;Heavy;B;III;
+;;;;;;
+;;;;;;
+C500;Fixed-wing;2J/S;Light;F;III;6
+;;;;;;
+C501;Fixed-wing;2J/S;Light;F;III;6
+C510;Fixed-wing;2J/S;Light;F;III;5
+;;;;;;
+C525;Fixed-wing;2J/S;Light;F;III;7
+;;;;;;
+C526;Fixed-wing;2J/S;Light;F;III;
+;;;;;;
+C550;Fixed-wing;2J/S+;Light;F;III;7
+;;;;;;
+C551;Fixed-wing;2J/S;Light;F;III;5
+C55B;Fixed-wing;2J/S+;Light;F;III;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+C560;Fixed-wing;2J/S+;Medium;F;III;8
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+C56X;Fixed-wing;2J/S+;Medium;F;III;7
+;;;;;;
+C5M;Fixed-wing;4J/H;Heavy;B;III;
+;;;;;;
+;;;;;;
+C650;Fixed-wing;2J/S+;Medium;F;III;8
+;;;;;;
+;;;;;;
+C680;Fixed-wing;2J/S+;Medium;F;III;6
+C68A;Fixed-wing;2J/S+;Medium;F;III;
+C700;Fixed-wing;2J/S+;Medium;F;III;
+;;;;;;
+C72R;Fixed-wing;1P/S;Light;F;I;1
+;;;;;;
+C750;Fixed-wing;2J/S+;Medium;F;III;9
+;;;;;;
+;;;;;;
+C77R;Fixed-wing;1P/S;Light;F;I;2
+;;;;;;
+;;;;;;
+;;;;;;
+C82;Fixed-wing;2P/L;Medium;D;III;
+;;;;;;
+;;;;;;
+;;;;;;
+C82R;Fixed-wing;1P/S;Light;F;I;2
+;;;;;;
+;;;;;;
+C82S;Fixed-wing;1P/S;Light;F;I;
+C82T;Fixed-wing;1P/S;Light;F;I;
+C919;Fixed-wing;2J/L;Medium;D;III;
+C97;Fixed-wing;4P/L;Medium;D;III;
+CA12;Fixed-wing;1T/S;Light;F;I;
+;;;;;;
+CA19;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+CA1P;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+CA1T;Fixed-wing;1T/S;Light;F;I;
+;;;;;;
+;;;;;;
+CA25;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+CA3;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+CA4;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+CA41;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+CA6;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+CA61;Fixed-wing;1P/S;Light;F;I;
+CA65;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+CA7P;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;AEROCOMP, CA-7SLX Comp Air 7SLX
+;;;;;;AEROCOMP, CA-7T Comp Air 7T
+;;;;;;AEROCOMP, Comp Air 7SLX
+CA7T;Fixed-wing;1T/S;Light;F;I;AEROCOMP, Comp Air 7T COMP AIR, CA-7SLX Comp Air 7SLX
+;;;;;;COMP AIR, CA-7T Comp Air 7T
+;;;;;;COMP AIR, Comp Air 7SLX
+;;;;;;COMP AIR, Comp Air 7T
+;;;;;;AEROCOMP, CA-8 Comp Air 8
+CA8;Fixed-wing;1T/S;Light;F;I;AEROCOMP, Comp Air 8 COMP AIR, CA-8 Comp Air 8
+;;;;;;COMP AIR, Comp Air 8
+CA9;Fixed-wing;1T/S;Light;F;I;COMP AIR, CA-9 Comp Air 9 COMP AIR, Comp Air 9
+CABI;Fixed-wing;1T/S;Light;F;I;UNIVERSAL COMPOSITE, Carbon Bird
+CABN;Fixed-wing;1P/S;Light;F;I;PARAMOUNT, Cabinaire
+;;;;;;CLASS, Bush Caddy R-120
+CAD2;Fixed-wing;1P/S;Light;F;I;CLASS, Bush Caddy R-80
+;;;;;;DELISLE, Cadi
+;;;;;;CLASS, Bush Caddy L-160
+CAD4;Fixed-wing;1P/S;Light;F;I;CLASS, Bush Caddy L-162
+;;;;;;CLASS, Bush Caddy L-164
+;;;;;;AEROCOMP, CA-J Comp Air Jet
+CAJ;Fixed-wing;1J/S;Light;F;III;AEROCOMP, Comp Air Jet COMP AIR, CA-J Comp Air Jet
+;;;;;;COMP AIR, Comp Air Jet
+CAML;Fixed-wing;1P/S;Light;F;I;SOPWITH, Camel SOPWITH, Camel Replica
+;;;;;;GREGA, Aircamper
+;;;;;;GREGA, GN-1 Aircamper
+CAMP;Fixed-wing;1P/S;Light;F;I;PIETENPOL, Aircamper
+;;;;;;PIETENPOL, B-4 Aircamper
+;;;;;;ST. CROIX, Pietenpol Aircamper
+CAN4;Fixed-wing;1P/S;Light;F;I;CAMPANA, AN-4
+CAPL;Fixed-wing;1P/S;Light;F;I;CAPELLA, Capella FLIGHTWORKS, Capella
+CAR;Fixed-wing;1P/S;Light;F;I;AEROCAD, Aerocar
+CARV;Fixed-wing;4P/L;Medium;D;III;AVIATION TRADERS, ATL-98 Carvair AVIATION TRADERS, Carvair
+CASS;Fixed-wing;1P/S;Light;F;I;CASSUTT, Special NATIONAL AERONAUTICS, Cassutt 3M
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+CAT;@Fixed-wing;2P/S+;Medium;F;III;7
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+CAT1;Fixed-wing;1P/S;Light;F;I;
+CAT2;Fixed-wing;2P/S;Light;F;II;
+CAW;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+CB1;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+CC19;Fixed-wing;1P/S;Light;F;I;
+CD2;@Fixed-wing;2T/S;Light;F;II;
+CDC6;Fixed-wing;1P/S;Light;F;I;
+CDUS;Gyrocopter;1P/S;Light;F;I;
+CDW1;Fixed-wing;1P/S;Light;F;I;
+CE15;$Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+CE22;@Fixed-wing;2P/S;Light;F;II;
+;;;;;;
+;;;;;;
+;;;;;;
+CE23;@Fixed-wing;1P/S;Light;F;I;
+CE25;@Fixed-wing;2P/S;Light;F;II;
+;;;;;;
+CE27;@Fixed-wing;2P/S;Light;F;II;
+;;;;;;
+CE43;Fixed-wing;1P/S;Light;F;I;
+CEGL;Fixed-wing;1P/S;Light;F;I;
+CELR;Fixed-wing;1P/S;Light;F;I;
+CENT;Fixed-wing;1P/S;Light;F;I;
+CFRE;@Fixed-wing;1P/S;Light;F;I;
+CG3;Fixed-wing;1P/S;Light;F;I;CAUDRON, G-3 CAUDRON, G-3 Replica
+CGAN;$Fixed-wing;1P/S;Light;F;I;COLYAER, Gannet
+;;;;;;AIDC, A-CH-1 Chung-Tsing
+CH1;Fixed-wing;1T/S;Light;F;I;AIDC, Chung-Tsing AIDC, R-CH-1 Chung-Tsing
+;;;;;;AIDC, T-CH-1 Chung-Tsing
+;;;;;;ZENAIR, CH-100 Mono-Z
+CH10;Fixed-wing;1P/S;Light;F;I;ZENAIR, CH-100 Mono-Zénith ZENAIR, Mono-Z
+;;;;;;ZENAIR, Mono-Zénith
+CH12;Helicopter;1P/S;Light;F;I;CICARÉ, CH-12
+CH14;Helicopter;1T/S;Light;F;I;CICARÉ, Aguilucho CICARÉ, CH-14 Aguilucho
+;;;;;;ZENAIR, Acro-Z
+CH15;Fixed-wing;1P/S;Light;F;I;ZENAIR, Acro-Zénith ZENAIR, CH-150 Acro-Z
+;;;;;;ZENAIR, CH-150 Acro-Zénith
+;;;;;;ZENAIR, CH-180 Super Acro-Z
+CH18;Fixed-wing;1P/S;Light;F;I;ZENAIR, CH-180 Super Acro-Zénith ZENAIR, Super Acro-Z
+;;;;;;ZENAIR, Super Acro-Zénith
+;;;;;;HEINTZ , CH-200 Zénith
+CH20;Fixed-wing;1P/S;Light;F;I;HEINTZ , Zénith ZENAIR, CH-200 Zénith
+;;;;;;ZENAIR, Zénith (CH-200)
+CH25;Fixed-wing;1P/S;Light;F;I;ZENAIR, CH-250 Zénith ZENAIR, Zénith (CH-250)
+;;;;;;AMD, Alarus
+;;;;;;AMD, CH-2000 Alarus
+;;;;;;AMD, CH-2000 Zénith
+CH2T;Fixed-wing;1P/S;Light;F;I;AMD, Zénith JORDAN AEROSPACE, CH-2000 Sama
+;;;;;;JORDAN AEROSPACE, Sama
+;;;;;;ZENAIR, CH-2000 Zénith
+;;;;;;ZENAIR, Zénith (CH-2000)
+;;;;;;ZENAIR, CH-300 Tri-Z
+CH30;Fixed-wing;1P/S;Light;F;I;ZENAIR, CH-300 Tri-Zénith ZENAIR, Tri-Z
+;;;;;;ZENAIR, Tri-Zénith
+CH40;Fixed-wing;2P/S;Light;F;II;CHAMPION, 402 Lancer CHAMPION, Lancer
+;;;;;;ZENAIR, CH-50 Mini Zénith
+CH50;Fixed-wing;1P/S;Light;F;I;ZENAIR, CH-50 Mini-Z ZENAIR, Mini Zénith
+;;;;;;ZENAIR, Mini-Z
+;;;;;;AMD, CH-601 Zodiac
+;;;;;;AMD, Zodiac (CH-601)
+;;;;;;CZAW, CH-601 Zodiac
+;;;;;;CZAW, Zodiac
+;;;;;;DERAZONA, CH-601 Zodiac
+;;;;;;DERAZONA, Zodiac
+;;;;;;ROLAND, 601 Zodiac
+;;;;;;ROLAND, Z-602
+CH60;Fixed-wing;1P/S;Light;F;I;ROLAND, Z-602 Zodiac ZENAIR, CH-600 Zodiac
+;;;;;;ZENAIR, CH-601 Super Zodiac
+;;;;;;ZENAIR, CH-601 Zodiac
+;;;;;;ZENAIR, Super Zodiac
+;;;;;;ZENAIR, Zodiac (CH-600/601)
+;;;;;;ZENITH, CH-601 Super Zodiac
+;;;;;;ZENITH, CH-601 Zodiac
+;;;;;;ZENITH, Super Zodiac
+;;;;;;ZENITH, Zodiac (CH-601)
+;;;;;;
+CH62;Fixed-wing;2P/S;Light;F;II;
+;;;;;;
+;;;;;;
+CH64;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+CH65;Fixed-wing;1P/S;Light;F;I;
+CH7;Helicopter;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+CH70;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+CH75;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+CH7A;Fixed-wing;1P/S;Light;F;I;1
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+CH7B;Fixed-wing;1P/S;Light;F;I;1
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+CH80;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+CHAN;Fixed-wing;1P/S;Light;F;I;
+CHCS;Fixed-wing;1P/S;Light;F;I;
+CHGO;Fixed-wing;1P/S;Light;F;I;
+CHIC;Fixed-wing;1P/S;Light;F;I;
+CHIF;Helicopter;1P/S;Light;F;I;
+CHIN;Fixed-wing;1P/S;Light;F;I;
+CHIP;Fixed-wing;1P/S;Light;F;I;
+CHR1;Fixed-wing;1P/S;Light;F;I;
+CHR4;Fixed-wing;1P/S;Light;F;I;
+CHSY;Gyrocopter;1P/S;Light;F;I;
+CICA;Fixed-wing;2P/S;Light;F;II;
+CJ1;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+CJ6;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+CKUO*;Fixed-wing;2J/S+;Medium;F;III;
+CL2P;@Fixed-wing;2P/L;Medium;D;III;
+;;;;;;
+CL2T;@Fixed-wing;2T/L;Medium;D;III;
+;;;;;;
+CL30;Fixed-wing;2J/S+;Medium;F;III;7
+CL35;Fixed-wing;2J/S+;Medium;F;III;
+;;;;;;
+CL41*;Fixed-wing;1J/S;Light;F;III;
+;;;;;;
+CL44;Fixed-wing;4T/L;Medium;D;III;
+;;;;;;
+CL4G;Fixed-wing;4T/L;Medium;D;III;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+CL60;Fixed-wing;2J/L;Medium;E;III;8
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+CL8;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+CLA;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+CLB1;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+CLBR;Fixed-wing;1P/S;Light;F;I;
+CLD2;Gyrocopter;1P/S;Light;F;I;
+;;;;;;
+CLDS;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+CLON;Gyrocopter;1P/S;Light;F;I;
+CMA3;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+CMAS;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+CMD1;Gyrocopter;1P/S;Light;F;I;
+CMDE;Gyrocopter;1P/S;Light;F;I;
+CMDT;Gyrocopter;1P/S;Light;F;I;
+CN12;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+CN35;Fixed-wing;2T/S+;Medium;F;III;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+CNBR*;Fixed-wing;2J/L;Medium;E;III;
+;;;;;;
+CNDR;Fixed-wing;2T/S;Light;F;II;
+CNGP;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+CNUK;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+CO50;Fixed-wing;1P/S;Light;F;I;
+COAR;Fixed-wing;1P/S;Light;F;I;
+COBR;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+COL3;Fixed-wing;1P/S;Light;F;I;6
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+COL4;Fixed-wing;1P/S;Light;F;I;6
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+COMU;Helicopter;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+CONI;Fixed-wing;4P/L;Medium;D;III;9
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+COOT;@Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+CORO;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+CORR;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+CORS;Fixed-wing;1P/S+;Medium;F;III;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+CORV;Fixed-wing;2P/S;Light;F;II;
+;;;;;;
+COUG;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+COUR;Fixed-wing;1P/S;Light;F;I;1
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+COY2;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+COZY;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+CP10;Fixed-wing;1P/S;Light;F;I;4
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+CP13;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+CP20;Fixed-wing;1P/S;Light;F;I;4
+CP21;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+CP22;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+CP23;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+CP30;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+CP32;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+CP60;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+CP65;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+CP75;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+CP80;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+CP90;Fixed-wing;1P/S;Light;F;I;
+CPNA;Fixed-wing;1P/S;Light;F;I;
+CPUP;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+CR10;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+CRA1;Fixed-wing;1P/S;Light;F;I;
+CRAC;Fixed-wing;1P/S;Light;F;I;
+CRER;Fixed-wing;1P/S;Light;F;I;
+CRES;Fixed-wing;1T/S;Light;F;I;
+CRIO;@Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+CRJ1;Fixed-wing;2J/L;Medium;E;III;7
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+CRJ2;Fixed-wing;2J/L;Medium;E;III;7
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+CRJ7;Fixed-wing;2J/L;Medium;E;III;7
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+CRJ9;Fixed-wing;2J/L;Medium;E;III;8
+;;;;;;
+;;;;;;
+CRJX;Fixed-wing;2J/L;Medium;E;III;
+;;;;;;
+CRUZ;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+CT4;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+CTAH;Fixed-wing;1P/S;Light;F;I;
+CTLN;@Fixed-wing;1P/S;Light;F;I;
+CUB2;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+CUCA;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+CULP;Fixed-wing;1P/S;Light;F;I;
+CULV;Fixed-wing;1P/S;Light;F;I;
+CULX;Fixed-wing;2P/S;Light;F;II;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+CVLP;Fixed-wing;2P/L;Medium;D;III;7
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+CVLT;Fixed-wing;2T/L;Medium;D;III;7
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+CX5;Fixed-wing;1P/S;Light;F;I;
+CYCL;Fixed-wing;1P/S;Light;F;I;
+CYGT;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+D1;Fixed-wing;2P/S;Light;F;II;
+;;;;;;
+;;;;;;AERO-DIFUSION, Compostela
+;;;;;;AERO-DIFUSION, D-112 Popuplane
+;;;;;;AERO-DIFUSION, D-119 Popuplane
+;;;;;;AERO-DIFUSION, D-1190S Compostela
+;;;;;;AERO-DIFUSION, Popuplane
+;;;;;;AERO-JODEL, D-11
+;;;;;;ALPAVIA, D-117
+;;;;;;DENIZE, D-112
+;;;;;;DESJARDINS, D-01 Ibis
+;;;;;;DESJARDINS, Ibis
+;;;;;;EAC, D-127
+;;;;;;EAC, D-128
+;;;;;;FALCONAR, Cruiser
+;;;;;;FALCONAR, F-11
+;;;;;;FALCONAR, F-11 Sporty
+;;;;;;FALCONAR, F-12 Cruiser
+;;;;;;FALCONAR, Sporty
+;;;;;;JODEL, D-11
+;;;;;;JODEL, D-111
+;;;;;;JODEL, D-112
+;;;;;;JODEL, D-113
+;;;;;;JODEL, D-114
+D11;Fixed-wing;1P/S;Light;F;I;JODEL, D-115
+;;;;;;JODEL, D-116
+;;;;;;JODEL, D-117
+;;;;;;JODEL, D-118
+;;;;;;JODEL, D-119
+;;;;;;JODEL, D-120
+;;;;;;JODEL, D-121
+;;;;;;JODEL, D-122
+;;;;;;JODEL, D-123
+;;;;;;JODEL, D-124
+;;;;;;JODEL, D-125
+;;;;;;JODEL, D-126
+;;;;;;JODEL, D-127
+;;;;;;JODEL, D-128
+;;;;;;RENARD, D-112
+;;;;;;SAN, D-112
+;;;;;;SAN, D-117
+;;;;;;UETZ, U-2V
+;;;;;;VALLADEAU, D-112
+;;;;;;VALLADEAU, D-119
+;;;;;;WASSMER, D-112
+;;;;;;WASSMER, D-120 Paris-Nice
+;;;;;;WASSMER, Paris-Nice
+;;;;;;DORNA, Blue Bird
+;;;;;;DORNA, D-139 Blue Bird
+;;;;;;DORNA, D-139 Free Bird
+D139;Fixed-wing;1P/S;Light;F;I;DORNA, D-139 Parandeh Abi  DORNA, D-139 Parandeh Sefid
+;;;;;;DORNA, Free Bird
+;;;;;;DORNA, Parandeh Abi
+;;;;;;DORNA, Parandeh Sefid
+;;;;;;JODEL, Abeille
+;;;;;;JODEL, D-140 Abeille
+;;;;;;JODEL, D-140 Mousquetaire
+;;;;;;JODEL, Mousquetaire
+D140;Fixed-wing;1P/S;Light;F;I;MUDRY, D-140 Mousquetaire MUDRY, Mousquetaire
+;;;;;;SAN, Abeille
+;;;;;;SAN, D-140 Abeille
+;;;;;;SAN, D-140 Mousquetaire
+;;;;;;SAN, Mousquetaire
+;;;;;;
+D150;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+D18;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+D201;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+D228;Fixed-wing;2T/S+;Light;F;III;2
+;;;;;;
+D25;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+D250;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+D253;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+D28D;Fixed-wing;2P/S;Light;F;II;1
+;;;;;;
+;;;;;;
+;;;;;;
+D28T;Fixed-wing;2T/S;Light;F;II;1
+;;;;;;
+;;;;;;
+;;;;;;
+D31;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+D328;Fixed-wing;2T/S+;Medium;F;III;7
+;;;;;;
+D39;Fixed-wing;1P/S;Light;F;I;
+D4;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+D5;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+D5TU;Fixed-wing;1P/S;Light;F;I;
+D6;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+D6CR;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+D7;Fixed-wing;1P/S;Light;F;I;
+D8;Fixed-wing;1P/S;Light;F;I;
+DA2;Fixed-wing;1P/S;Light;F;I;
+DA36;Fixed-wing;1E/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+DA40;Fixed-wing;1P/S;Light;F;I;4
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+DA42;Fixed-wing;2P/S;Light;F;II;4
+;;;;;;
+;;;;;;
+DA5;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+DA50;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+DA62;Fixed-wing;2P/S;Light;F;II;
+DAHU;Fixed-wing;1P/S;Light;F;I;
+DAKH;Fixed-wing;1P/S;Light;F;I;
+DAL1;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+DAL4;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+DAL5;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+DART;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+DC10;Fixed-wing;3J/H;Heavy;C;III;9
+;;;;;;
+;;;;;;
+DC2;Fixed-wing;2P/S+;Medium;F;III;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+DC3;Fixed-wing;2P/S+;Medium;F;III;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+DC3S;Fixed-wing;2P/S+;Medium;F;III;8
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+DC3T;Fixed-wing;2T/S+;Medium;F;III;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+DC4;Fixed-wing;4P/L;Medium;D;III;7
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+DC6;Fixed-wing;4P/L;Medium;D;III;7
+;;;;;;
+;;;;;;
+;;;;;;
+DC7;Fixed-wing;4P/L;Medium;D;III;8
+;;;;;;
+;;;;;;
+;;;;;;
+DC85;Fixed-wing;4J/H;Heavy;C;III;9
+;;;;;;
+;;;;;;
+DC86;Fixed-wing;4J/H;Heavy;C;III;
+DC87;Fixed-wing;4J/H;Heavy;C;III;9
+DC91;Fixed-wing;2J/L;Medium;E;III;8
+DC92;Fixed-wing;2J/L;Medium;D;III;8
+;;;;;;
+;;;;;;
+;;;;;;
+DC93;Fixed-wing;2J/L;Medium;D;III;8
+;;;;;;
+;;;;;;
+;;;;;;
+DC94;Fixed-wing;2J/L;Medium;D;III;8
+DC95;Fixed-wing;2J/L;Medium;D;III;8
+DEAG;Gyrocopter;1P/S;Light;F;I;
+DEFI;Fixed-wing;2P/S;Light;F;II;
+DELF;Fixed-wing;1P/S;Light;F;I;
+DFL6;Fixed-wing;1P/S;Light;F;I;
+DFLY;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+DG15;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+DG1T;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+DG40;Fixed-wing;1P/S;Light;F;I;
+DG50;Fixed-wing;1P/S;Light;F;I;
+DG60;Fixed-wing;1P/S;Light;F;I;
+DG80;Fixed-wing;1P/S;Light;F;I;
+DH2T;Fixed-wing;1T/S;Light;F;I;2
+;;;;;;
+DH3T;Fixed-wing;1T/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+DH60;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+DH80;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+DH82;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+DH83;Fixed-wing;1P/S;Light;F;I;
+DH85;Fixed-wing;1P/S;Light;F;I;
+DH87;Fixed-wing;1P/S;Light;F;I;
+DH88;Fixed-wing;2P/S;Light;F;II;
+DH89;Fixed-wing;2P/S;Light;F;II;
+;;;;;;
+;;;;;;
+DH8A;Fixed-wing;2T/L;Medium;E;III;4
+;;;;;;
+;;;;;;
+DH8B;Fixed-wing;2T/L;Medium;E;III;4
+DH8C;Fixed-wing;2T/L;Medium;E;III;5
+DH8D;Fixed-wing;2T/L;Medium;D;III;6
+DH90;Fixed-wing;2P/S;Light;F;II;
+DH94;Fixed-wing;1P/S;Light;F;I;
+DHA3;Fixed-wing;3P/S;Light;F;III;
+;;;;;;
+;;;;;;
+DHC1;Fixed-wing;1P/S;Light;F;I;1
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+DHC2;Fixed-wing;1P/S;Light;F;I;2
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+DHC3;Fixed-wing;1P/S;Light;F;I;1
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+DHC4;Fixed-wing;2P/S+;Medium;F;III;5
+;;;;;;
+;;;;;;
+;;;;;;
+DHC5;Fixed-wing;2T/L;Medium;D;III;1
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+DHC6;Fixed-wing;2T/S;Light;F;II;4
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+DHC7;Fixed-wing;4T/L;Medium;D;III;2
+;;;;;;
+;;;;;;
+DIES;Fixed-wing;1P/S;Light;F;I;
+DIJ3;Fixed-wing;1P/S;Light;F;I;
+DIJ4;@Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+DIMO;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+DINO;Fixed-wing;1P/S;Light;F;I;
+DIPR;@Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+DISC;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+DJET;Fixed-wing;1J/S;Light;F;III;
+;;;;;;
+DJIN;Helicopter;1T/S;Light;F;I;
+;;;;;;
+DLH2;Fixed-wing;1E/S;Light;F;I;
+DLTA;Fixed-wing;1P/S;Light;F;I;
+DNGO;@Fixed-wing;1T/S;Light;F;I;
+;;;;;;
+DO27;Fixed-wing;1P/S;Light;F;I;1
+;;;;;;
+;;;;;;
+DO28;Fixed-wing;2P/S;Light;F;II;
+;;;;;;
+DOCX;Fixed-wing;1P/S;Light;F;I;
+DON;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+DOVE;Fixed-wing;2P/S;Light;F;II;4
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+DR1;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+DR10;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+DR22;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+DR30;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;ROBIN, 2+2 (DR-400)
+;;;;;;ROBIN, Cadet
+;;;;;;ROBIN, Chevalier (DR-400)
+;;;;;;ROBIN, Dauphin 2+2
+;;;;;;ROBIN, Dauphin 4
+;;;;;;ROBIN, Dauphin 80
+;;;;;;ROBIN, DR-400 2+2
+;;;;;;ROBIN, DR-400 Cadet
+;;;;;;ROBIN, DR-400 Chevalier
+;;;;;;ROBIN, DR-400 Dauphin 2+2
+;;;;;;ROBIN, DR-400 Dauphin 4
+;;;;;;ROBIN, DR-400 Dauphin 80
+;;;;;;ROBIN, DR-400 Earl
+;;;;;;ROBIN, DR-400 Ecoflyer
+;;;;;;ROBIN, DR-400 Major
+;;;;;;ROBIN, DR-400 Major 80
+DR40;Fixed-wing;1P/S;Light;F;I;ROBIN, DR-400 Petit Prince ROBIN, DR-400 Regent
+;;;;;;ROBIN, DR-400 Remo 180
+;;;;;;ROBIN, DR-400 Remo 200
+;;;;;;ROBIN, DR-400 Remo 212
+;;;;;;ROBIN, DR-400 Remorqueur
+;;;;;;ROBIN, DR-500 President
+;;;;;;ROBIN, Earl
+;;;;;;ROBIN, Ecoflyer
+;;;;;;ROBIN, Major (DR-400)
+;;;;;;ROBIN, Major 80
+;;;;;;ROBIN, Petit Prince (DR-400)
+;;;;;;ROBIN, President (DR-500)
+;;;;;;ROBIN, Regent
+;;;;;;ROBIN, Remo 180
+;;;;;;ROBIN, Remo 200
+;;;;;;ROBIN, Remo 212
+;;;;;;ROBIN, Remorqueur
+;;;;;;CRAE, Dragon Fly
+DRAG;Helicopter;1P/S;Light;F;I;DF HELICOPTERS, Dragon
+;;;;;;DRAGON FLY, Dragon Fly
+DRIF;Fixed-wing;1P/S;Light;F;I;AUSTFLIGHT, Drifter
+;;;;;;APPLEGATE & WEYANT, Dart GC
+;;;;;;CULVER, Dart G
+;;;;;;CULVER, Dart GK
+DRTG;Fixed-wing;1P/S;Light;F;I;CULVER, Dart GW
+;;;;;;DART, G
+;;;;;;DART, GK
+;;;;;;DART, GW
+DSA1;Fixed-wing;1P/S;Light;F;I;SMITH (1), DSA-1 Miniplane SMITH (1), Miniplane
+;;;;;;KILLINGSWORTH, DSK-1 Hawk
+DSK;Fixed-wing;1P/S;Light;F;I;KILLINGSWORTH, DSK-2 Golden Hawk KILLINGSWORTH, Golden Hawk
+;;;;;;KILLINGSWORTH, Hawk
+DSLK;Fixed-wing;1P/S;Light;F;I;DRIGGS, Skylark
+DT45;Fixed-wing;1T/S;Light;F;I;DIAMOND, Dart-450
+;;;;;;DUBNA, 2 Osa
+DUB2;Fixed-wing;1P/S;Light;F;I;DUBNA, Osa TAIFUN, DMZ-2 Osa
+;;;;;;TAIFUN, Osa
+DUCE;Fixed-wing;1P/S;Light;F;I;BAKENG, Duce
+;;;;;;SCHEMPP-HIRTH, Duo Discus T
+DUOD;Fixed-wing;1P/S;Light;F;I;SCHEMPP-HIRTH, Duo Discus XLT
+;;;;;;SCHEMPP-HIRTH, Duo Discus XT
+DUR5;Fixed-wing;1P/S;Light;F;I;DURAND, Mk5
+;;;;;;
+DV1;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+DV2;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+DV20;Fixed-wing;1P/S;Light;F;I;2
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+DW1;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+DWD2;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+DYH2;Helicopter;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+E110;Fixed-wing;2T/S+;Light;F;III;7
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+E120;Fixed-wing;2T/S+;Medium;F;III;7
+;;;;;;
+;;;;;;
+;;;;;;
+E121;Fixed-wing;2T/S;Light;F;II;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+E135;Fixed-wing;2J/L;Medium;E;III;7
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+E145;Fixed-wing;2J/L;Medium;E;III;7
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+E170;Fixed-wing;2J/L;Medium;E;III;7
+;;;;;;
+E190;Fixed-wing;2J/L;Medium;D;III;7
+;;;;;;
+E195;Fixed-wing;2J/L;Medium;D;III;
+;;;;;;
+;;;;;;
+;;;;;;
+E2;Fixed-wing;2T/L;Medium;E;III;
+;;;;;;
+;;;;;;
+;;;;;;
+E200;Fixed-wing;1P/S;Light;F;I;
+E230;Fixed-wing;1P/S;Light;F;I;
+E29E;Fixed-wing;1E/S;Light;F;I;
+E2CB;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+E300;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+E314;Fixed-wing;1T/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+E350;Fixed-wing;1T/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+E35L;Fixed-wing;2J/L;Medium;E;III;7
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+E3CF;Fixed-wing;4J/H;Heavy;C;III;
+;;;;;;
+;;;;;;
+;;;;;;
+E3TF;Fixed-wing;4J/H;Heavy;C;III;
+;;;;;;
+;;;;;;
+E400;Fixed-wing;1P/S;Light;F;I;
+E45X;Fixed-wing;2J/L;Medium;E;III;7
+E500;Fixed-wing;1T/S;Light;F;I;
+E50P;Fixed-wing;2J/S;Light;F;III;7
+;;;;;;
+E530*;Fixed-wing;2J/S+;Medium;F;III;
+;;;;;;
+E545;Fixed-wing;2J/S+;Medium;F;III;
+E550;Fixed-wing;2J/S+;Medium;F;III;
+E55P;Fixed-wing;2J/S+;Medium;F;III;6
+E6;Fixed-wing;4J/H;Heavy;C;III;
+;;;;;;
+E737;Fixed-wing;2J/L;Medium;D;III;
+;;;;;;
+E75L;Fixed-wing;2J/L;Medium;E;III;6
+E75S;Fixed-wing;2J/L;Medium;E;III;6
+E767;Fixed-wing;2J/H;Heavy;C;III;
+E7BH;Fixed-wing;1P/S;Light;F;I;
+EA40;Fixed-wing;1J/S;Light;F;III;
+EA50;Fixed-wing;2J/S;Light;F;III;4
+EAEA;Fixed-wing;1P/S;Light;F;I;
+EAGL;Fixed-wing;1P/S;Light;F;I;
+EAGT;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+EAGX;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+EB29;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+EBOY;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;AIRBUS HELICOPTERS, Colibri
+;;;;;;AIRBUS HELICOPTERS, EC-120 Colibri
+;;;;;;AIRBUS HELICOPTERS, H-120 Colibri
+EC20;Helicopter;1T/S;Light;F;I;EUROCOPTER, Colibri  EUROCOPTER, EC-120 Colibri
+;;;;;;EUROCOPTER, EC-120 Stylence
+;;;;;;EUROCOPTER, Stylence (EC-120)
+;;;;;;HARBIN, HC-120
+;;;;;;AIRBUS HELICOPTERS, Cougar Mk2+
+;;;;;;AIRBUS HELICOPTERS,  EC-225 Super Puma Mk2+
+;;;;;;AIRBUS HELICOPTERS, EC-725 Cougar Mk2+
+;;;;;;AIRBUS HELICOPTERS, H-225 Cougar Mk2+
+;;;;;;AIRBUS HELICOPTERS, H-225 Super Puma Mk2+
+EC25;Helicopter;2T/S+;Medium;F;I;AIRBUS HELICOPTERS, Super Puma Mk2+  EUROCOPTER, Caracal
+;;;;;;EUROCOPTER, Cougar Mk2+
+;;;;;;EUROCOPTER, EC-225 Super Puma Mk2+
+;;;;;;EUROCOPTER, EC-725 Caracal
+;;;;;;EUROCOPTER, EC-725 Cougar Mk2+
+;;;;;;EUROCOPTER, Super Puma Mk2+
+;;;;;;AIRBUS HELICOPTERS, EC-130
+;;;;;;AIRBUS HELICOPTERS, H-130
+EC30;Helicopter;1T/S;Light;F;I;EUROCOPTER, EC-130
+;;;;;;EUROCOPTER, EC-130 Stylence
+;;;;;;EUROCOPTER, Stylence (EC-130)
+;;;;;;AIRBUS HELICOPTERS, Bluecopter
+;;;;;;AIRBUS HELICOPTERS, EC-135
+;;;;;;AIRBUS HELICOPTERS, EC-135 Bluecopter
+EC35;Helicopter;2T/S;Light;F;I;AIRBUS HELICOPTERS, EC-635
+;;;;;;AIRBUS HELICOPTERS, H-135
+;;;;;;EUROCOPTER, EC-135
+;;;;;;EUROCOPTER, EC-635
+;;;;;;AIRBUS HELICOPTERS-KAWASAKI, BK-117C-2
+;;;;;;AIRBUS HELICOPTERS-KAWASAKI, EC-145
+;;;;;;AIRBUS HELICOPTERS-KAWASAKI, EC-645
+;;;;;;AIRBUS HELICOPTERS-KAWASAKI, H-145
+;;;;;;AIRBUS HELICOPTERS-KAWASAKI, Lakota
+;;;;;;AIRBUS HELICOPTERS-KAWASAKI, UH-72 Lakota
+;;;;;;EUROCOPTER, Lakota
+;;;;;;EUROCOPTER, UH-145
+EC45;Helicopter;2T/S;Light;F;I;EUROCOPTER, UH-72 Lakota
+;;;;;;EUROCOPTER-KAWASAKI, BK-117C-2
+;;;;;;EUROCOPTER-KAWASAKI, EC-145
+;;;;;;EUROCOPTER-KAWASAKI, EC-145 Stylence
+;;;;;;EUROCOPTER-KAWASAKI, H-72 Lakota
+;;;;;;EUROCOPTER-KAWASAKI, Lakota
+;;;;;;EUROCOPTER-KAWASAKI, Stylence (EC-145)
+;;;;;;EUROCOPTER-KAWASAKI, UH-145
+;;;;;;EUROCOPTER-KAWASAKI, UH-72 Lakota
+;;;;;;AIRBUS HELICOPTERS, EC-155
+EC55;Helicopter;2T/S;Light;F;I;AIRBUS HELICOPTERS, H-155
+;;;;;;EUROCOPTER, EC-155
+;;;;;;CROSES, Criquet
+EC6;Fixed-wing;1P/S;Light;F;I;CROSES, EC-6 Criquet CROSES, EC-8 Tourisme
+;;;;;;CROSES, Tourisme
+;;;;;;AIRBUS HELICOPTERS-HARBIN, EC-175
+;;;;;;AIRBUS HELICOPTERS-HARBIN, H-175
+EC75;Helicopter;2T/S+;Light;F;I;AIRBUS HELICOPTERS-HARBIN, Z-15
+;;;;;;EUROCOPTER-HARBIN, EC-175
+;;;;;;EUROCOPTER-HARBIN, Z-15
+;;;;;;TECNAM, Eaglet
+;;;;;;TECNAM, Echo
+ECHO;Fixed-wing;1P/S;Light;F;I;TECNAM, P-92 Eaglet TECNAM, P-92 Echo
+;;;;;;TECNAM, P-92 SeaSky
+;;;;;;TECNAM, SeaSky
+EDGE;Fixed-wing;1P/S;Light;F;I;ZIVKO, Edge 540 ZIVKO, Edge 540A
+EDGT;Fixed-wing;1P/S;Light;F;I;ZIVKO, Edge 540 T
+EFAN;Fixed-wing;2E/S;Light;F;II;AIRBUS, E-Fan
+;;;;;;AEROPRO, Eurofox
+EFOX;Fixed-wing;1P/S;Light;F;I;AEROTREK, A-220
+;;;;;;AEROTREK, A-240
+EGL3;Helicopter;1T/S;Light;F;I;ROTORWAY, Eagle 300T
+;;;;;;GROB, D-500 Egrett 2
+EGRT;Fixed-wing;1T/S;Light;F;I;GROB, Egrett 2 GROB, G-520 Strato 1
+;;;;;;GROB, Strato 1
+;;;;;;AGUSTAWESTLAND, AW-101
+;;;;;;AGUSTAWESTLAND, AW-101 Merlin Joint Supporter
+;;;;;;AGUSTAWESTLAND, Caesar
+;;;;;;AGUSTAWESTLAND, EH-101
+;;;;;;AGUSTAWESTLAND, EH-101 Merlin
+;;;;;;AGUSTAWESTLAND, EH-101 Merlin Joint Supporter
+;;;;;;AGUSTAWESTLAND, HH-101 Caesar
+;;;;;;AGUSTAWESTLAND, MCH-101
+;;;;;;AGUSTAWESTLAND, Merlin
+;;;;;;AGUSTAWESTLAND, Merlin Joint Supporter
+;;;;;;AGUSTAWESTLAND, SH-101
+;;;;;;AGUSTAWESTLAND, UH-101
+;;;;;;EHI, CH-149 Cormorant
+EH10;Helicopter;3T/S+;Medium;F;I;EHI, Cormorant EHI, EH-101
+;;;;;;EHI, EH-101 Merlin
+;;;;;;EHI, Merlin
+;;;;;;EHI, SH-101
+;;;;;;EHI, UH-101
+;;;;;;FINMECCANICA, AW-101
+;;;;;;FINMECCANICA, Caesar
+;;;;;;FINMECCANICA, HH-101 Caesar
+;;;;;;KAWASAKI, CH-101
+;;;;;;KAWASAKI, KHI-01
+;;;;;;KAWASAKI, MCH-101
+;;;;;;LEONARDO, AW-101
+;;;;;;LEONARDO, Caesar
+;;;;;;LEONARDO, HH-101 Caesar
+EL20;Fixed-wing;1P/S;Light;F;I;ELITAR, IE-202
+ELA7;Gyrocopter;1P/S;Light;F;I;ELA AVIACION, ELA-07
+ELF;Fixed-wing;1P/S;Light;F;I;PARNALL, Elf
+ELIT;Fixed-wing;2J/S;Light;F;III;AIR, Epic Elite  EPIC AIRCRAFT, Epic Elite
+ELPS;Fixed-wing;1P/S;Light;F;I;EXPLORER (1), Ellipse
+ELST;Fixed-wing;1P/S;Light;F;I;PUTZER, Elster
+ELTO;Helicopter;1P/S;Light;F;I;CONTINENTAL COPTERS, El Tomcat
+ELTR;Fixed-wing;1P/S;Light;F;I;ELITAR, Elitar ELITAR, IE-101 Elitar
+EM10;Fixed-wing;1J/S;Light;F;III;MARGANSKI, Bielik MARGANSKI, EM-10 Bielik
+EM11;Fixed-wing;2P/S;Light;F;II;MARGANSKI, EM-11 Orka MARGANSKI, Orka
+;;;;;;
+;;;;;;
+;;;;;;
+EN28;Helicopter;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+EN48;Helicopter;1T/S;Light;F;I;
+;;;;;;
+;;;;;;
+EP9;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+EPER;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+EPIC;Fixed-wing;1T/S;Light;F;I;
+;;;;;;
+;;;;;;
+EPX1;Fixed-wing;1P/S;Light;F;I;
+ERAC;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+ERCO;Fixed-wing;1P/S;Light;F;I;2
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+ES11;Helicopter;1T/S;Light;F;I;
+;;;;;;
+;;;;;;
+ES13;Fixed-wing;1P/S;Light;F;I;
+ESCA;Fixed-wing;1T/S;Light;F;I;
+ESCP;Fixed-wing;1P/S;Light;F;I;
+ESQL;Fixed-wing;1P/S;Light;F;I;
+ETA;Fixed-wing;1P/S;Light;F;I;
+ETAR*;Fixed-wing;1J/S+;Medium;F;III;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+EUFI*;Fixed-wing;2J/L;Medium;E;III;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+EUPA;Fixed-wing;1P/S;Light;F;I;
+EURT;Fixed-wing;1P/S;Light;F;I;
+EV55;Fixed-wing;2P/S;Light;F;II;
+;;;;;;
+EV97;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+EVAN;Fixed-wing;2P/S;Light;F;II;
+EVIC;Fixed-wing;1J/S;Light;F;III;
+EVOP;Fixed-wing;1P/S;Light;F;I;
+EVOT;Fixed-wing;1T/S;Light;F;I;
+EVSS;Fixed-wing;1P/S;Light;F;I;
+EX5T;Fixed-wing;1T/S;Light;F;I;
+EXEC;Helicopter;1P/S;Light;F;I;
+EXEJ;Helicopter;1T/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+EXPL;Helicopter;2T/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+EXPR;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+EZFL;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+EZFT;Fixed-wing;2P/S;Light;F;II;
+EZHV;Fixed-wing;1P/S;Light;F;I;
+EZIK;Fixed-wing;1P/S;Light;F;I;
+EZKC;Fixed-wing;1P/S;Light;F;I;
+F1*;Fixed-wing;2J/S+;Medium;F;III;
+F100;Fixed-wing;2J/L;Medium;D;III;7
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+F104*;Fixed-wing;1J/S+;Medium;F;III;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+F106*;Fixed-wing;1J/S+;Medium;F;III;
+;;;;;;GENERAL DYNAMICS, Aardvark
+;;;;;;GENERAL DYNAMICS, EF-111 Raven
+;;;;;;GENERAL DYNAMICS, F-111 Aardvark
+F111*;Fixed-wing;2J/L;Medium;E;III;GENERAL DYNAMICS, Raven
+;;;;;;GENERAL DYNAMICS, RF-111 Aardvark
+;;;;;;GRUMMAN, EF-111 Raven
+;;;;;;GRUMMAN, Raven
+;;;;;;LOCKHEED, F-117 Nighthawk
+F117*;Fixed-wing;2J/L;Medium;E;III;LOCKHEED, Nighthawk
+;;;;;;LOCKHEED, YF-117 Nighthawk
+F14*;Fixed-wing;2J/L;Medium;E;III;GRUMMAN, F-14 Tomcat GRUMMAN, Tomcat
+;;;;;;BOEING, Eagle
+;;;;;;BOEING, F-15 Eagle
+;;;;;;BOEING, F-15 Ra'am
+;;;;;;BOEING, F-15 Slam Eagle
+;;;;;;BOEING, Ra'am
+;;;;;;BOEING, Slam Eagle
+;;;;;;MCDONNELL DOUGLAS, Akef
+F15*;Fixed-wing;2J/L;Medium;E;III;MCDONNELL DOUGLAS, Baz MCDONNELL DOUGLAS, Eagle
+;;;;;;MCDONNELL DOUGLAS, F-15 Akef
+;;;;;;MCDONNELL DOUGLAS, F-15 Baz
+;;;;;;MCDONNELL DOUGLAS, F-15 Eagle
+;;;;;;MCDONNELL DOUGLAS, F-15 Ra'am
+;;;;;;MCDONNELL DOUGLAS, Ra'am
+;;;;;;MITSUBISHI, Eagle
+;;;;;;MITSUBISHI, F-15 Eagle
+;;;;;;FIESELER, Fi-156 Storch
+;;;;;;FIESELER, Storch
+;;;;;;MORANE-SAULNIER, Criquet
+;;;;;;MORANE-SAULNIER, MS-500 Criquet
+;;;;;;MORANE-SAULNIER, MS-501 Criquet
+F156;Fixed-wing;1P/S;Light;F;I;MORANE-SAULNIER, MS-502 Criquet
+;;;;;;MORANE-SAULNIER, MS-504 Criquet
+;;;;;;MORANE-SAULNIER, MS-505 Criquet
+;;;;;;MORANE-SAULNIER, MS-506 Criquet
+;;;;;;MRÁZ, Cap
+;;;;;;MRÁZ, K-65 Cap
+;;;;;;FOKKER, F-16 Fighting Falcon
+;;;;;;FOKKER, Fighting Falcon
+;;;;;;GENERAL DYNAMICS, Barak
+;;;;;;GENERAL DYNAMICS, Brakeet
+;;;;;;GENERAL DYNAMICS, F-16 Barak
+;;;;;;GENERAL DYNAMICS, F-16 Brakeet
+;;;;;;GENERAL DYNAMICS, F-16 Netz
+;;;;;;GENERAL DYNAMICS, F-16A Fighting Falcon
+;;;;;;GENERAL DYNAMICS, F-16B Fighting Falcon
+;;;;;;GENERAL DYNAMICS, F-16C Fighting Falcon
+;;;;;;GENERAL DYNAMICS, F-16D Fighting Falcon
+;;;;;;GENERAL DYNAMICS, F-16N Fighting Falcon
+;;;;;;GENERAL DYNAMICS, Fighting Falcon (F-16A/B/C/D/N)
+;;;;;;GENERAL DYNAMICS, Netz
+;;;;;;GENERAL DYNAMICS, NF-16 Fighting Falcon
+F16*;Fixed-wing;1J/L;Medium;E;III;GENERAL DYNAMICS, TF-16 Fighting Falcon KOREA AEROSPACE, F-16 Fighting Falcon
+;;;;;;KOREA AEROSPACE, Fighting Falcon
+;;;;;;LOCKHEED, F-16 Fighting Falcon
+;;;;;;LOCKHEED, Fighting Falcon
+;;;;;;LOCKHEED MARTIN, Desert Falcon
+;;;;;;LOCKHEED MARTIN, F-16 Desert Falcon
+;;;;;;LOCKHEED MARTIN, F-16 Fighting Falcon
+;;;;;;LOCKHEED MARTIN, F-16 Sufa
+;;;;;;LOCKHEED MARTIN, Fighting Falcon
+;;;;;;LOCKHEED MARTIN, Sufa
+;;;;;;SABCA, F-16 Fighting Falcon
+;;;;;;SABCA, Fighting Falcon
+;;;;;;SAMSUNG, F-16 Fighting Falcon
+;;;;;;SAMSUNG, Fighting Falcon
+;;;;;;TAI, F-16 Fighting Falcon
+;;;;;;TAI, Fighting Falcon
+F16X*;Fixed-wing;1J/L;Medium;E;III;GENERAL DYNAMICS, F-16XL Fighting Falcon GENERAL DYNAMICS, Fighting Falcon (F-16XL)
+;;;;;;ASTA, AF-18 Hornet
+;;;;;;ASTA, ATF-18 Hornet
+;;;;;;ASTA, Hornet
+;;;;;;BOEING, FA-18C Hornet
+;;;;;;BOEING, FA-18D Hornet
+;;;;;;BOEING, Hornet
+;;;;;;GAF, AF-18 Hornet
+;;;;;;GAF, ATF-18 Hornet
+;;;;;;GAF, Hornet
+;;;;;;MCDONNELL DOUGLAS, ATF-18 Hornet
+;;;;;;MCDONNELL DOUGLAS, CF-18 Hornet
+;;;;;;MCDONNELL DOUGLAS, CF-188 Hornet
+F18H*;Fixed-wing;2J/L;Medium;E;III;MCDONNELL DOUGLAS, EF-18 Hornet
+;;;;;;MCDONNELL DOUGLAS, FA-18A Hornet
+;;;;;;MCDONNELL DOUGLAS, FA-18B Hornet
+;;;;;;MCDONNELL DOUGLAS, FA-18C Hornet
+;;;;;;MCDONNELL DOUGLAS, FA-18D Hornet
+;;;;;;MCDONNELL DOUGLAS, Hornet
+;;;;;;MCDONNELL DOUGLAS, KAF-18 Hornet
+;;;;;;PATRIA, FA-18 Hornet
+;;;;;;PATRIA, Hornet
+;;;;;;SF, FA-18 Hornet
+;;;;;;SF, Hornet
+;;;;;;VALMET, FA-18 Hornet
+;;;;;;VALMET, Hornet
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+F18S*;Fixed-wing;2J/L;Medium;E;III;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+F1FV;Fixed-wing;1P/S;Light;F;I;
+F2*;Fixed-wing;1J/L;Medium;E;III;
+;;;;;;
+F22*;Fixed-wing;2J/L;Medium;E;III;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+F260;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+F26T;Fixed-wing;1T/S;Light;F;I;3
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+F27;Fixed-wing;2T/L;Medium;D;III;5
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+F28;Fixed-wing;2J/L;Medium;E;III;7
+F2TH;Fixed-wing;2J/S+;Medium;F;III;8
+F30;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+F35*;Fixed-wing;1J/L;Medium;E;III;
+;;;;;;
+;;;;;;
+;;;;;;
+F3F;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+F4*;Fixed-wing;2J/L;Medium;E;III;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+F406;Fixed-wing;2T/S;Light;F;II;6
+;;;;;;
+;;;;;;
+;;;;;;
+F41E;Fixed-wing;2P/S;Light;F;II;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+F5*;Fixed-wing;2J/S+;Medium;F;III;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+F50;Fixed-wing;2T/L;Medium;D;III;3
+;;;;;;
+;;;;;;
+F5SA*;Fixed-wing;2J/S+;Medium;F;III;
+F60;Fixed-wing;2T/L;Medium;D;III;
+;;;;;;
+F600;Fixed-wing;2T/S;Light;F;II;4
+;;;;;;
+F70;Fixed-wing;2J/L;Medium;D;III;
+;;;;;;
+;;;;;;
+F8*;Fixed-wing;1J/S+;Medium;F;III;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+F86*;Fixed-wing;1J/L;Medium;E;III;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+F8L;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+F900;Fixed-wing;3J/L;Medium;E;III;8
+;;;;;;
+F9F*;Fixed-wing;1J/S+;Light;F;III;
+;;;;;;
+;;;;;;
+FA01;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+FA02;Fixed-wing;1P/S;Light;F;I;
+FA03;Fixed-wing;1P/S;Light;F;I;
+FA04;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+FA10;Fixed-wing;2J/S+;Medium;F;III;8
+;;;;;;
+FA11;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+FA20;Fixed-wing;2J/S+;Medium;F;III;7
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+FA24;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+FA50;Fixed-wing;3J/S+;Medium;F;III;8
+FA5X;Fixed-wing;2J/L;Medium;E;III;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+FA62;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+FA7X;Fixed-wing;3J/L;Medium;E;III;4
+FA8X;Fixed-wing;3J/L;Medium;E;III;
+FAET;Fixed-wing;1P/S;Light;F;I;
+FALC;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+FALM;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+FANL;Fixed-wing;1P/S;Light;F;I;
+FANT;Fixed-wing;1P/S;Light;F;I;
+FB1A;Fixed-wing;1P/S;Light;F;I;
+FB1B;Fixed-wing;1P/S;Light;F;I;
+FB5;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+FBA2;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+FBIR;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+FC1*;Fixed-wing;1J/S+;Medium;F;III;
+;;;;;;
+;;;;;;
+;;;;;;
+FDCT;Fixed-wing;1P/S;Light;F;I;
+FDMC;Fixed-wing;1P/S;Light;F;I;
+FE51;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+FEST;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+FFLY;Fixed-wing;1P/S+;Light;F;III;
+FG01;Fixed-wing;1P/S;Light;F;I;
+FGT;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+FH11;Helicopter;1T/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+FIBO;Fixed-wing;1P/S;Light;F;I;STARFIRE, Firebolt Convertible
+FIKD;Fixed-wing;1P/S;Light;F;I;FIKE, D
+FIKE;Fixed-wing;1P/S;Light;F;I;FIKE, E
+;;;;;;FLEET, 10
+FINC;Fixed-wing;1P/S;Light;F;I;FLEET, 11 FLEET, 16 Finch
+;;;;;;FLEET, Finch
+FJ10;Fixed-wing;2J/S;Light;F;III;AEROSTAR (1), FJ-100
+FJR3;Fixed-wing;1P/S;Light;F;I;FAJR, F-3
+FK12;Fixed-wing;1P/S;Light;F;I;B & F TECHNIK, Comet B & F TECHNIK, FK-12 Comet
+FK14;Fixed-wing;1P/S;Light;F;I;B & F TECHNIK, FK-14 Polaris B & F TECHNIK, Polaris
+FK9;Fixed-wing;1P/S;Light;F;I;B & F TECHNIK, FK-9
+;;;;;;AVIA (1), Aviastarlet
+FL3;Fixed-wing;1P/S;Light;F;I;AVIA (1), L-3 Aviastarlet LOMBARDI, Aviastarlet
+;;;;;;LOMBARDI, FL-3 Aviastarlet
+FL53;Fixed-wing;1P/S;Light;F;I;METEOR, FL-53
+FL54;Fixed-wing;1P/S;Light;F;I;METEOR, FL-54
+FL55;Fixed-wing;1P/S;Light;F;I;METEOR, FL-55
+;;;;;;DASSAULT, Flamant
+FLAM;Fixed-wing;2P/S+;Light;F;III;DASSAULT, MD-311 Flamant
+;;;;;;DASSAULT, MD-312 Flamant
+FLE2;Fixed-wing;1P/S;Light;F;I;FLEET, 2
+;;;;;;FLEET, 7
+FLE7;Fixed-wing;1P/S;Light;F;I;FLEET, 7 Fawn
+;;;;;;FLEET, Fawn
+;;;;;;FLITZER, Flitzer
+FLIZ;Fixed-wing;1P/S;Light;F;I;FLITZER, Z-1 Flitzer
+;;;;;;FLITZER, Z-21 Flitzer
+FLSH;Fixed-wing;1P/S;Light;F;I;EURO-FLY, Flash
+;;;;;;FLYER, Flyer NG
+FLSS;Fixed-wing;1P/S;Light;F;I;FLYER, Flyer SS
+;;;;;;KOLB, Flyer SS
+FM25;Fixed-wing;1P/S;Light;F;I;FLYING MACHINES, FM-250 Vampire FLYING MACHINES, Vampire
+;;;;;;NARDI, FN-333 Riviera
+FN33;@Fixed-wing;1P/S;Light;F;I;NARDI, Riviera SIAI-MARCHETTI, FN-333 Riviera
+;;;;;;SIAI-MARCHETTI, Riviera
+FNKB;Fixed-wing;1P/S;Light;F;I;AKRON, Funk B FUNK, B
+FOOF;Fixed-wing;1P/S;Light;F;I;STEWART (2), Foo Fighter STEWART (2), JD-2 Foo Fighter
+FORT;Fixed-wing;1P/S;Light;F;I;FLEET, 60 Fort FLEET, Fort
+;;;;;;AEROSPATIALE, CM-170R Magister
+;;;;;;AEROSPATIALE, Magister
+;;;;;;AIR-FOUGA, CM-170R Magister
+;;;;;;AIR-FOUGA, Magister
+;;;;;;FOUGA, CM-170R Magister
+;;;;;;FOUGA, Magister
+;;;;;;IAI, CM-170R Magister
+;;;;;;IAI, CM-170R Tzukit
+;;;;;;IAI, Magister
+;;;;;;IAI, Tzukit
+;;;;;;POTEZ, CM-170R Magister
+FOUG*;Fixed-wing;2J/S;Light;F;III;POTEZ, CM-175 Zéphyr POTEZ, Magister
+;;;;;;POTEZ, Zéphyr
+;;;;;;POTEZ AIR-FOUGA, CM-170R Magister
+;;;;;;POTEZ AIR-FOUGA, CM-175 Zéphyr
+;;;;;;POTEZ AIR-FOUGA, Magister
+;;;;;;POTEZ AIR-FOUGA, Zéphyr
+;;;;;;SUD, CM-170R Magister
+;;;;;;SUD, Magister
+;;;;;;SUDFLUG, CM-170R Magister
+;;;;;;SUDFLUG, Magister
+;;;;;;VALMET, CM-170R Magister
+;;;;;;VALMET, Magister
+;;;;;;DENNEY, Kitfox
+;;;;;;KITFOX, Kitfox
+;;;;;;PACI, Skyfox
+FOX;Fixed-wing;1P/S;Light;F;I;SKYFOX, CA-25 Gazelle SKYFOX, CA-25 Impala
+;;;;;;SKYFOX, Gazelle
+;;;;;;SKYFOX, Impala
+;;;;;;SKYSTAR, Kitfox
+FOXT;Fixed-wing;1P/S;Light;F;I;TEAM TANGO, Foxtrot-4
+;;;;;;CABRINHA, Free Spirit
+;;;;;;CABRINHA, RC-412 Free Spirit
+FREE;Fixed-wing;1P/S;Light;F;I;CEI, Free Spirit CEI, RC-412 Free Spirit
+;;;;;;FREE SPIRIT, Free Spirit
+;;;;;;FREE SPIRIT, RC-412 Free Spirit
+;;;;;;AEROSPATIALE, SA-321 Super Frelon
+;;;;;;AEROSPATIALE, Super Frelon
+FREL;Helicopter;3T/S+;Medium;F;I;CHANGHE, Z-8
+;;;;;;SUD, SA-321 Super Frelon
+;;;;;;SUD, Super Frelon
+FRNT;Fixed-wing;1P/S;Light;F;I;SKY RAIDER, Frontier
+FRON;Fixed-wing;1P/S;Light;F;I;FRONTIER, Frontier MD-2
+FS51;Fixed-wing;1P/S;Light;F;I;FALCONAR, Mustang FALCONAR, SAL P-51D Mustang
+FT30;Fixed-wing;1P/S;Light;F;I;NAI, FT-300 NANJING UNIVERSITY, FT-300
+;;;;;;AIR PARTS, Fletcher FU-24
+;;;;;;CABLE-PRICE, Fletcher FU-24
+;;;;;;FLAIR, FU-24
+FU24;Fixed-wing;1P/S;Light;F;I;FLETCHER, FU-24 JAMES, Fletcher FU-24
+;;;;;;NEW ZEALAND, Fletcher FU-24
+;;;;;;PACIFIC AEROSPACE, Fletcher FU-24
+;;;;;;SARGENT-FLETCHER, FU-24
+FURY;Fixed-wing;1P/S+;Light;F;III;HAWKER, Fury HAWKER, Sea Fury
+FW19;Fixed-wing;1P/S;Light;F;I;FOUR WINDS, 192
+FW21;Fixed-wing;1P/S;Light;F;I;FOUR WINDS, FX-210
+;;;;;;
+FW44;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+FW90;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+G1;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+G103;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+G109;Fixed-wing;1P/S;Light;F;I;2
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+G115;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+G120;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+G12T;Fixed-wing;1T/S;Light;F;I;
+G140;Fixed-wing;1T/S;Light;F;I;
+G150;Fixed-wing;2J/S+;Medium;F;III;4
+;;;;;;
+;;;;;;
+G159;Fixed-wing;2T/S+;Medium;F;III;7
+;;;;;;
+;;;;;;
+G15T;Fixed-wing;1P/S;Light;F;I;
+G160;Fixed-wing;1T/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+G164;Fixed-wing;1P/S;Light;F;I;1
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+G180;Fixed-wing;1P/S;Light;F;I;
+G200;Fixed-wing;1P/S;Light;F;I;
+G202;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+G21;@Fixed-wing;2P/S;Light;F;II;
+;;;;;;
+;;;;;;
+;;;;;;
+G21M;@Fixed-wing;4P/S;Light;F;III;
+;;;;;;
+;;;;;;
+G21T;@Fixed-wing;2T/S;Light;F;II;
+;;;;;;
+;;;;;;
+G222;Fixed-wing;2T/L;Medium;D;III;
+;;;;;;
+G250;Fixed-wing;2J/S+;Medium;F;III;
+G280;Fixed-wing;2J/S+;Medium;F;III;
+G2CA;Helicopter;1P/S;Light;F;I;
+;;;;;;
+G2GL*;Fixed-wing;1J/S;Light;F;III;
+;;;;;;
+;;;;;;
+;;;;;;
+G2T1;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+G3;Fixed-wing;1P/S;Light;F;I;
+G300;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+G44;@Fixed-wing;2P/S;Light;F;II;5
+;;;;;;
+;;;;;;
+;;;;;;
+G46;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+G4SG*;Fixed-wing;1J/S+;Light;F;III;
+;;;;;;
+G59;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+G64T;Fixed-wing;1T/S;Light;F;I;1
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+G73;@Fixed-wing;2P/S+;Light;F;III;6
+;;;;;;
+G73T;@Fixed-wing;2T/S+;Light;F;III;
+;;;;;;
+;;;;;;
+;;;;;;
+G800;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+G850;Fixed-wing;2P/S+;Medium;F;III;
+;;;;;;
+G96;Fixed-wing;2P/S+;Medium;F;III;
+;;;;;;
+G97;Fixed-wing;1P/S;Light;F;I;
+GA10;Fixed-wing;1T/S;Light;F;I;
+GA20;Fixed-wing;1P/S;Light;F;I;
+GA5C;Fixed-wing;2J/L;Medium;D;III;
+GA6C;Fixed-wing;2J/L;Medium;D;III;
+;;;;;;
+;;;;;;
+GA7;Fixed-wing;2P/S;Light;F;II;1
+;;;;;;
+;;;;;;
+;;;;;;
+GA8;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+GALX;Fixed-wing;2J/S+;Medium;F;III;5
+;;;;;;
+;;;;;;
+GANT;Fixed-wing;CT/S+;Medium;F;III;
+GAUN;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+GAVI;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+GAZL;Helicopter;1T/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+GBSP;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+GC1;Fixed-wing;1P/S;Light;F;I;2
+;;;;;;
+GDUK;@Fixed-wing;2P/S;Light;F;II;
+GEMI;Fixed-wing;2P/S;Light;F;II;
+GENI;Fixed-wing;1E/S;Light;F;I;
+GEPE;Fixed-wing;1P/S;Light;F;I;
+GF20;Fixed-wing;1P/S;Light;F;I;
+GFLY;Fixed-wing;1J/S+;Medium;F;III;
+GL5T;Fixed-wing;2J/L;Medium;D;III;7
+GL7T;Fixed-wing;2J/L;Medium;D;III;
+GLAD;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+GLAS;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+GLEX;Fixed-wing;2J/L;Medium;D;III;7
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+GLF2;Fixed-wing;2J/L;Medium;E;III;8
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+GLF3;Fixed-wing;2J/L;Medium;E;III;8
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+GLF4;Fixed-wing;2J/L;Medium;E;III;8
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+GLF5;Fixed-wing;2J/L;Medium;D;III;7
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+GLF6;Fixed-wing;2J/L;Medium;D;III;
+GLID;;;;;;
+GLSP;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+GLST;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+GLTU;Fixed-wing;1T/S;Light;F;I;
+GM01;Fixed-wing;1P/S;Light;F;I;
+GM17;Fixed-wing;1T/S;Light;F;I;
+GMGC;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+GNAT*;Fixed-wing;1J/S;Light;F;III;
+;;;;;;
+GOBU;Gyrocopter;1P/S;Light;F;I;
+GOLF;Fixed-wing;1P/S;Light;F;I;
+GOOS;@Fixed-wing;1P/S;Light;F;I;
+GOTR;Fixed-wing;1P/S;Light;F;I;
+GP1;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+GP3;@Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+GP4;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+GR51;Fixed-wing;1T/S;Light;F;I;
+;;;;;;
+GRAF;Fixed-wing;1P/S;Light;F;I;
+GRFN;Fixed-wing;1P/S;Light;F;I;
+GRIF;Fixed-wing;1P/S;Light;F;I;
+GRIZ;Fixed-wing;1T/S;Light;F;I;
+;;;;;;
+;;;;;;
+GSIS;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+GSPN;Fixed-wing;2J/S+;Light;F;III;
+;;;;;;
+GUEP;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+GURI;Fixed-wing;1P/S;Light;F;I;
+GX;Fixed-wing;1P/S;Light;F;I;
+GY10;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+GY20;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+GY30;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+GY80;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+GYRO;;;;;;
+H111;Fixed-wing;2P/S+;Medium;F;III;
+;;;;;;
+H12T;Helicopter;1T/S;Light;F;I;
+;;;;;;
+H160;Helicopter;2T/S+;Light;F;I;
+;;;;;;
+;;;;;;
+H2;Helicopter;2T/S+;Light;F;I;
+;;;;;;
+;;;;;;
+H202;Fixed-wing;1P/S;Light;F;I;
+H204;Fixed-wing;1P/S;Light;F;I;
+H207;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+H21;Helicopter;1P/S+;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+H25A;Fixed-wing;2J/S+;Medium;F;III;6
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+H25B;Fixed-wing;2J/S+;Medium;F;III;7
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+H25C;Fixed-wing;2J/S+;Medium;F;III;7
+;;;;;;BREDANARDI, NH-300
+;;;;;;HUGHES, 200
+;;;;;;HUGHES, 269
+;;;;;;HUGHES, 280
+;;;;;;HUGHES, 300
+;;;;;;HUGHES, 269 Sky Knight
+;;;;;;HUGHES, 300 Sky Knight
+;;;;;;HUGHES, Hkp5
+;;;;;;HUGHES, Osage
+;;;;;;HUGHES, Sky Knight
+;;;;;;HUGHES, TH-300
+;;;;;;HUGHES, TH-55 Osage
+;;;;;;KAWASAKI, TH-55
+;;;;;;NARDI, NH-300
+H269;Helicopter;1P/S;Light;F;I;SCHWEIZER, 269
+;;;;;;SCHWEIZER, 300
+;;;;;;SCHWEIZER, 269A
+;;;;;;SCHWEIZER, 269B
+;;;;;;SCHWEIZER, 269C
+;;;;;;SCHWEIZER, 269C Sky Knight
+;;;;;;SCHWEIZER, 300 Sky Knight
+;;;;;;SCHWEIZER, Hkp5
+;;;;;;SCHWEIZER, Osage
+;;;;;;SCHWEIZER, Sky Knight
+;;;;;;SCHWEIZER, TH-300
+;;;;;;SCHWEIZER, TH-55 Osage
+;;;;;;SHANGHAI SIKORSKY, Shen 2
+;;;;;;SHANGHAI SIKORSKY, Shen 3
+;;;;;;SIKORSKY, S-300
+H40;Fixed-wing;1P/S;Light;F;I;HOFFMANN, H-40
+;;;;;;KAMAN, H-43A
+;;;;;;KAMAN, HH-43A
+;;;;;;KAMAN, HOK
+H43A;Helicopter;1P/S;Light;F;I;KAMAN, HUK
+;;;;;;KAMAN, K-600
+;;;;;;KAMAN, OH-43
+;;;;;;KAMAN, UH-43
+;;;;;;KAMAN, HH-43B Huskie
+;;;;;;KAMAN, HH-43F Huskie
+H43B;Helicopter;1T/S;Light;F;I;KAMAN, Huskie
+;;;;;;KAMAN, K-600-3 Huskie
+;;;;;;KAMAN, K-600-5 Huskie
+;;;;;;BOEING VERTOL, 107
+;;;;;;BOEING VERTOL, CH-113 Labrador
+;;;;;;BOEING VERTOL, CH-46 Sea Knight
+;;;;;;BOEING VERTOL, HH-46 Sea Knight
+;;;;;;BOEING VERTOL, Hkp4
+H46;Helicopter;2T/S+;Medium;F;I;BOEING VERTOL, Labrador
+;;;;;;BOEING VERTOL, Sea Knight
+;;;;;;BOEING VERTOL, UH-46 Sea Knight
+;;;;;;KAWASAKI, Hkp4
+;;;;;;KAWASAKI, KV-107
+;;;;;;VERTOL, 107
+;;;;;;AGUSTAWESTLAND, Chinook
+;;;;;;AGUSTAWESTLAND, ICH-47 Chinook
+;;;;;;BOEING, CH-47 Chinook
+;;;;;;BOEING, Chinook
+;;;;;;BOEING, HH-47
+;;;;;;BOEING, JCH-47 Chinook
+;;;;;;BOEING, MH-47 Chinook
+;;;;;;BOEING VERTOL, 114
+;;;;;;BOEING VERTOL, 234
+;;;;;;BOEING VERTOL, 414
+H47;Helicopter;2T/L;Medium;E;I;BOEING VERTOL, CH-47 Chinook BOEING VERTOL, Chinook
+;;;;;;BOEING VERTOL, JCH-47 Chinook
+;;;;;;BOEING VERTOL, MH-47 Chinook
+;;;;;;FINMECCANICA, Chinook
+;;;;;;FINMECCANICA, ICH-47 Chinook
+;;;;;;KAWASAKI, CH-47 Chinook
+;;;;;;KAWASAKI, Chinook
+;;;;;;LEONARDO, Chinook
+;;;;;;LEONARDO, ICH-47 Chinook
+;;;;;;MERIDIONALI, CH-47 Chinook
+;;;;;;MERIDIONALI, Chinook
+;;;;;;AGUSTA, NH-500
+;;;;;;BOEING, Defender
+;;;;;;BOEING, Lifter
+;;;;;;BOEING, MD-500
+;;;;;;BOEING, MD-500 Defender
+;;;;;;BOEING, MD-500 Nightfox
+;;;;;;BOEING, MD-530F Lifter
+;;;;;;BOEING, MD-530MG Defender
+;;;;;;BOEING, MD-530MG Nightfox
+;;;;;;BOEING, Nightfox
+;;;;;;BREDANARDI, NH-500
+;;;;;;HUGHES, 369
+;;;;;;HUGHES, 500
+;;;;;;HUGHES, 500 Defender
+;;;;;;HUGHES, 530F
+;;;;;;HUGHES, AH-6C
+;;;;;;HUGHES, AH-6G
+;;;;;;HUGHES, Cayuse
+;;;;;;HUGHES, Defender
+;;;;;;HUGHES, MH-6B
+;;;;;;HUGHES, MH-6C
+;;;;;;HUGHES, MH-6E
+;;;;;;HUGHES, MH-6H
+;;;;;;HUGHES, OH-6 Cayuse
+;;;;;;KAWASAKI, 369
+;;;;;;KAWASAKI, 500
+H500;Helicopter;1T/S;Light;F;I;KAWASAKI, OH-6 KOREAN AIR, 369
+;;;;;;KOREAN AIR, 500
+;;;;;;KOREAN AIR, 500 Defender
+;;;;;;KOREAN AIR, 520MK Black Tiger
+;;;;;;KOREAN AIR, Black Tiger
+;;;;;;KOREAN AIR, Defender
+;;;;;;MCDONNELL DOUGLAS, AH-6G
+;;;;;;MCDONNELL DOUGLAS, Defender
+;;;;;;MCDONNELL DOUGLAS, Lifter
+;;;;;;MCDONNELL DOUGLAS, MD-500
+;;;;;;MCDONNELL DOUGLAS, MD-500 Defender
+;;;;;;MCDONNELL DOUGLAS, MD-500 Nightfox
+;;;;;;MCDONNELL DOUGLAS, MD-530F Lifter
+;;;;;;MCDONNELL DOUGLAS, MD-530MG Defender
+;;;;;;MCDONNELL DOUGLAS, MD-530MG Nightfox
+;;;;;;MCDONNELL DOUGLAS, MH-6H
+;;;;;;MCDONNELL DOUGLAS, Nightfox
+;;;;;;MD HELICOPTERS, Defender
+;;;;;;MD HELICOPTERS, Lifter
+;;;;;;MD HELICOPTERS, MD-500
+;;;;;;MD HELICOPTERS, MD-500 Defender
+;;;;;;MD HELICOPTERS, MD-500 Nightfox
+;;;;;;MD HELICOPTERS, MD-530F Lifter
+;;;;;;MD HELICOPTERS, MD-530MG Defender
+;;;;;;MD HELICOPTERS, MD-530MG Nightfox
+;;;;;;MD HELICOPTERS, Nightfox
+;;;;;;RACA, 500
+;;;;;;SIKORSKY, CH-53A Sea Stallion
+;;;;;;SIKORSKY, CH-53A Yasur
+;;;;;;SIKORSKY, CH-53C
+;;;;;;SIKORSKY, CH-53D Sea Stallion
+;;;;;;SIKORSKY, CH-53G
+;;;;;;SIKORSKY, HH-53
+;;;;;;SIKORSKY, MH-53H
+H53;Helicopter;2T/L;Medium;E;I;SIKORSKY, MH-53J SIKORSKY, RH-53 Sea Stallion
+;;;;;;SIKORSKY, S-65
+;;;;;;SIKORSKY, S-65 Yasur
+;;;;;;SIKORSKY, Sea Stallion
+;;;;;;SIKORSKY, TH-53
+;;;;;;SIKORSKY, VH-53 Sea Stallion
+;;;;;;SIKORSKY, Yasur
+;;;;;;VFW, CH-53G
+;;;;;;SIKORSKY, CH-53E Super Stallion
+;;;;;;SIKORSKY, CH-53K King Stallion
+;;;;;;SIKORSKY, King Stallion
+H53S;Helicopter;3T/L;Medium;E;I;SIKORSKY, MH-53E Sea Dragon
+;;;;;;SIKORSKY, S-80
+;;;;;;SIKORSKY, Sea Dragon
+;;;;;;SIKORSKY, Super Stallion
+;;;;;;ASTA, S-70 Seahawk
+;;;;;;ASTA, Seahawk
+;;;;;;HAWKER DE HAVILLAND, Black Hawk
+;;;;;;HAWKER DE HAVILLAND, S-70 Black Hawk
+;;;;;;KOREAN AIR, Black Hawk
+;;;;;;KOREAN AIR, UH-60 Black Hawk
+;;;;;;MITSUBISHI, S-70 Seahawk
+;;;;;;MITSUBISHI, Seahawk
+;;;;;;MITSUBISHI, SH-60 Seahawk
+;;;;;;MITSUBISHI, UH-60
+;;;;;;MITSUBISHI, USH-60 Seahawk
+;;;;;;SIKORSKY, AH-60 Black Hawk
+;;;;;;SIKORSKY, Black Hawk
+;;;;;;SIKORSKY, Desert Hawk
+;;;;;;SIKORSKY, EH-60 Black Hawk
+;;;;;;SIKORSKY, Firehawk
+;;;;;;SIKORSKY, HH-60 Black Hawk
+;;;;;;SIKORSKY, HH-60 Jayhawk
+;;;;;;SIKORSKY, HH-60 Pave Hawk
+;;;;;;SIKORSKY, HH-60 Rescue Hawk
+;;;;;;SIKORSKY, HM-2 Blackhawk
+;;;;;;SIKORSKY, Jayhawk
+;;;;;;SIKORSKY, JUH-60 Black Hawk
+;;;;;;SIKORSKY, Knighthawk
+H60;Helicopter;2T/S+;Medium;F;I;SIKORSKY, MH-60 Black Hawk SIKORSKY, MH-60 Knighthawk
+;;;;;;SIKORSKY, MH-60 Strikehawk
+;;;;;;SIKORSKY, NSH-60 Seahawk
+;;;;;;SIKORSKY, Ocean Hawk
+;;;;;;SIKORSKY, Pave Hawk
+;;;;;;SIKORSKY, Rescue Hawk
+;;;;;;SIKORSKY, S-70
+;;;;;;SIKORSKY, S-70 Black Hawk
+;;;;;;SIKORSKY, S-70 Desert Hawk
+;;;;;;SIKORSKY, S-70 Firehawk
+;;;;;;SIKORSKY, S-70 Super Blue Hawk
+;;;;;;SIKORSKY, S-70 Thunderhawk
+;;;;;;SIKORSKY, Seahawk
+;;;;;;SIKORSKY, SH-60 Ocean Hawk
+;;;;;;SIKORSKY, SH-60 Seahawk
+;;;;;;SIKORSKY, Strikehawk
+;;;;;;SIKORSKY, Super Blue Hawk
+;;;;;;SIKORSKY, Thunderhawk
+;;;;;;SIKORSKY, UH-60 Black Hawk
+;;;;;;SIKORSKY, UH-60 Firehawk
+;;;;;;SIKORSKY, UH-60 Yanshuf
+;;;;;;SIKORSKY, VH-60 White Hawk
+;;;;;;SIKORSKY, White Hawk
+;;;;;;SIKORSKY, Yanshuf
+;;;;;;WESTLAND, WS-70
+;;;;;;BOEING, AH-64 Longbow Apache
+;;;;;;BOEING, AH-64 Saraf
+;;;;;;BOEING, Longbow Apache
+;;;;;;BOEING, Saraf
+;;;;;;FUJI, AH-64 Longbow Apache
+;;;;;;FUJI, Longbow Apache
+;;;;;;HUGHES, 77 Apache
+;;;;;;HUGHES, AH-64 Apache
+;;;;;;HUGHES, Apache
+H64;Helicopter;2T/S+;Medium;F;I;HUGHES, JAH-64 Apache
+;;;;;;MCDONNELL DOUGLAS, AH-64 Apache
+;;;;;;MCDONNELL DOUGLAS, AH-64 Longbow Apache
+;;;;;;MCDONNELL DOUGLAS, AH-64 Pethen
+;;;;;;MCDONNELL DOUGLAS, Apache
+;;;;;;MCDONNELL DOUGLAS, JAH-64 Apache
+;;;;;;MCDONNELL DOUGLAS, Longbow Apache
+;;;;;;MCDONNELL DOUGLAS, Pethen
+;;;;;;WESTLAND, Longbow Apache
+;;;;;;WESTLAND, WAH-64 Longbow Apache
+HA2;Gyrocopter;1P/S;Light;F;I;HOLLMANN, HA-2 Sportster HOLLMANN, Sportster
+HA31;Fixed-wing;1P/S;Light;F;I;HINDUSTAN, Basant HINDUSTAN, HA-31 Basant
+;;;;;;HAWKER BEECHCRAFT, 4000 Hawker 4000
+;;;;;;HAWKER BEECHCRAFT, Hawker 4000
+HA4T;Fixed-wing;2J/S+;Medium;F;III;RAYTHEON, 4000 Hawker 4000 RAYTHEON, 4000 Hawker Horizon
+;;;;;;RAYTHEON, Hawker 4000
+;;;;;;RAYTHEON, Hawker Horizon
+HAHU;Fixed-wing;1P/S;Light;F;I;SINDLINGER, Hawker Hurricane SINDLINGER, HH-1 Hawker Hurricane
+;;;;;;ALENIA, AV-8 Harrier
+;;;;;;ALENIA, Harrier
+;;;;;;BOEING, AV-8 Harrier
+;;;;;;BOEING, Harrier
+;;;;;;BRITISH AEROSPACE, Harrier
+;;;;;;BRITISH AEROSPACE, Sea Harrier
+;;;;;;CASA, EAV-8 Matador
+;;;;;;CASA, Matador
+HAR*;Fixed-wing;1J/L;Medium;E;III;HAWKER SIDDELEY, AV-8 Harrier
+;;;;;;HAWKER SIDDELEY, Harrier
+;;;;;;HAWKER SIDDELEY, TAV-8 Harrier
+;;;;;;MCDONNELL DOUGLAS, AV-8 Harrier
+;;;;;;MCDONNELL DOUGLAS, EAV-8 Matador
+;;;;;;MCDONNELL DOUGLAS, Harrier
+;;;;;;MCDONNELL DOUGLAS, Matador
+;;;;;;MCDONNELL DOUGLAS, TAV-8 Harrier
+;;;;;;MCDONNELL DOUGLAS, TAV-8 Matador
+HAW3;Gyrocopter;1P/S;Light;F;I;GROEN, H2X Hawk 3 GROEN, Hawk 3
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+HAWK*;Fixed-wing;1J/S+;Medium;F;III;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+HB21;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+HB23;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+HB3;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+HCAT;Fixed-wing;1P/S+;Light;F;III;
+;;;;;;
+HD34;Fixed-wing;2P/S+;Medium;F;III;
+HDJT;Fixed-wing;2J/S;Light;F;III;
+;;;;;;
+HEAD;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+HERN;Fixed-wing;4P/S+;Light;F;III;8
+;;;;;;
+;;;;;;
+;;;;;;
+HF20;Fixed-wing;2J/S+;Medium;F;III;7
+;;;;;;
+HI27;Fixed-wing;1P/S;Light;F;I;
+HIGH;Fixed-wing;1P/S;Light;F;I;
+HIND;Fixed-wing;1P/S;Light;F;I;
+HL2;Fixed-wing;1P/S;Light;F;I;
+HLD4;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+HM38;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+HN70;Fixed-wing;1P/S;Light;F;I;
+HORN;Fixed-wing;1P/S;Light;F;I;
+HORZ;Fixed-wing;1P/S;Light;F;I;FISHER, Horizon FISHER AERO, Horizon
+HPTR;@Fixed-wing;1P/S;Light;F;I;IDEA, Hydropteron
+HPZL;Fixed-wing;1P/S;Light;F;I;HISTORICAL AIRCRAFT, PZL P-11C
+;;;;;;ROBIN, HR-100 President
+;;;;;;ROBIN, HR-100 Royal
+;;;;;;ROBIN, HR-100 Safari
+HR10;Fixed-wing;1P/S;Light;F;I;ROBIN, HR-100 Tiara ROBIN, President (HR-100)
+;;;;;;ROBIN, Royal
+;;;;;;ROBIN, Safari
+;;;;;;ROBIN, Tiara
+;;;;;;ROBIN, Acrobin
+HR20;Fixed-wing;1P/S;Light;F;I;ROBIN, HR-200 ROBIN, HR-200 Acrobin
+;;;;;;ROBIN, R-200
+HRNT;Fixed-wing;1P/S;Light;F;I;AAK, Hornet
+HROC;Fixed-wing;1P/S;Light;F;I;HARMON (2), Rocket
+HRYA;Fixed-wing;1P/S;Light;F;I;HISTORICAL AIRCRAFT, Ryan Trainer
+HSMT;Helicopter;1P/S;Light;F;I;ROTORSMART, HeliSmart
+HT16*;Fixed-wing;1J/S;Light;F;III;HINDUSTAN, HJT-16 Kiran HINDUSTAN, Kiran
+HT2;Fixed-wing;1P/S;Light;F;I;HINDUSTAN, HT-2
+HT32;Fixed-wing;1P/S;Light;F;I;HINDUSTAN, Deepak HINDUSTAN, HPT-32 Deepak
+HT34;Fixed-wing;1T/S;Light;F;I;HINDUSTAN, HTT-34
+HT36*;Fixed-wing;1J/S;Light;F;III;HINDUSTAN, HJT-36 Sitara HINDUSTAN, Sitara
+HU1;Fixed-wing;1P/S;Light;F;I;SHENYANG SAILPLANE, HU-1 Seagull SHENYANG SAILPLANE, Seagull
+HU2;Fixed-wing;1P/S;Light;F;I;SHENYANG SAILPLANE, HU-2 Petrel SHENYANG SAILPLANE, Petrel
+;;;;;;BELL, 209 HueyCobra
+;;;;;;BELL, AH-1E HueyCobra
+;;;;;;BELL, AH-1F HueyCobra
+;;;;;;BELL, AH-1P HueyCobra
+HUCO;Helicopter;1T/S;Light;F;I;BELL, AH-1S HueyCobra BELL, HueyCobra
+;;;;;;BELL, TAH-1 HueyCobra
+;;;;;;BELL, TH-1S HueyCobra
+;;;;;;FUJI, AH-1 HueyCobra
+;;;;;;FUJI, HueyCobra
+HUML;Fixed-wing;1P/S;Light;F;I;HUMMEL, Hummel Bird
+HUMM;Fixed-wing;1P/S;Light;F;I;AEROTEK (2), Hummingbird
+HUNT*;Fixed-wing;1J/S+;Medium;F;III;HAWKER, Hunter
+HURI;Fixed-wing;1P/S;Light;F;I;HAWKER, Hurricane HAWKER, Sea Hurricane
+HURK;Fixed-wing;1T/S;Light;F;I;TAI, Hürkuş
+;;;;;;AVIAT, A-1 Husky
+;;;;;;AVIAT, A-1 Husky Pup
+HUSK;Fixed-wing;1P/S;Light;F;I;AVIAT, Husky AVIAT, Husky Pup
+;;;;;;CHRISTEN, A-1 Husky
+;;;;;;CHRISTEN, Husky
+HW4P;Gyrocopter;1P/S;Light;F;I;GROEN, Hawk 4
+HW4T;Gyrocopter;1T/S;Light;F;I;GROEN, Jet Hawk 4T
+HX2;Helicopter;1T/S;Light;F;I;HELOWERKS, HX-2 Wasp HELOWERKS, Wasp
+HYPR;Fixed-wing;1P/S;Light;F;I;P&M AVIATION, HypR
+I103;Fixed-wing;1P/S;Light;F;I;ILYUSHIN, Il-103
+I114;Fixed-wing;2T/L;Medium;D;III;ILYUSHIN, Il-114
+I115;Fixed-wing;1P/S;Light;F;I;AISA, I-115
+I11B;Fixed-wing;1P/S;Light;F;I;AISA, I-11B Peque AISA, Peque
+I153;Fixed-wing;1P/S;Light;F;I;POLIKARPOV, I-153
+I15B;Fixed-wing;1P/S;Light;F;I;POLIKARPOV, I-15bis
+I16;Fixed-wing;1P/S;Light;F;I;POLIKARPOV, I-16
+;;;;;;INSTYTUT LOTNICTWA, I-22 Iryda
+;;;;;;INSTYTUT LOTNICTWA, Iryda
+I22*;Fixed-wing;1J/S+;Medium;F;III;PZL-MIELEC, I-22 Iryda PZL-MIELEC, Iryda
+;;;;;;PZL-MIELEC, M-93 Iryda
+;;;;;;PZL-MIELEC, M-96 Iryda
+;;;;;;INSTYTUT LOTNICTWA, I-23 Manager
+I23;Fixed-wing;1P/S;Light;F;I;INSTYTUT LOTNICTWA, Manager PZL-SWIDNIK, I-23 Manager
+;;;;;;PZL-SWIDNIK, Manager
+I3;Fixed-wing;1P/S;Light;F;I;INTERAVIA, I-3
+I66;Fixed-wing;1P/S;Light;F;I;IANNOTTA, I-66 San Francisco IANNOTTA, San Francisco
+I828;Fixed-wing;1T/S;Light;F;I;ICA, IAR-828
+;;;;;;DINFIA, IA-46 Ranquel
+IA46;Fixed-wing;1P/S;Light;F;I;DINFIA, IA-46 Super Ranquel DINFIA, Ranquel
+;;;;;;DINFIA, Super Ranquel
+;;;;;;DINFIA, Guarani 2
+IA50;Fixed-wing;2T/S+;Medium;F;III;DINFIA, IA-50 Guarani 2 FMA, Guarani 2
+;;;;;;FMA, IA-50 Guarani 2
+;;;;;;DINFIA, IA-51 Tehuelche
+IA51;Fixed-wing;1P/S;Light;F;I;DINFIA, Tehuelche FMA, IA-51 Tehuelche
+;;;;;;FMA, Tehuelche
+IA58;Fixed-wing;2T/S+;Light;F;III;FMA, IA-58 Pucará FMA, Pucará
+;;;;;;FMA, AT-63 Pampa
+;;;;;;FMA, IA-63 Pampa
+IA63*;Fixed-wing;1J/S;Light;F;III;FMA, Pampa LMAASA, AT-63 Pampa
+;;;;;;LMAASA, IA-63 Pampa
+;;;;;;LMAASA, Pampa
+IFUR;Fixed-wing;1P/S;Light;F;I;ISAACS, Fury
+;;;;;;AVIA (2), Av-14
+IL14;Fixed-wing;2P/S+;Medium;F;III;ILYUSHIN, Il-14
+;;;;;;VEB, Il-14
+;;;;;;ILYUSHIN, Bizon
+;;;;;;ILYUSHIN, Il-18
+;;;;;;ILYUSHIN, Il-18 Bizon
+IL18;Fixed-wing;4T/L;Medium;D;III;ILYUSHIN, Il-20
+;;;;;;ILYUSHIN, Il-22 Zebra
+;;;;;;ILYUSHIN, Il-24
+;;;;;;ILYUSHIN, Zebra
+;;;;;;HARBIN, H-5
+IL28;Fixed-wing;2J/L;Medium;E;III;HARBIN, HJ-5 HARBIN, HZ-5
+;;;;;;ILYUSHIN, Il-28
+IL38;Fixed-wing;4T/L;Medium;D;III;ILYUSHIN, Il-38
+IL62;Fixed-wing;4J/H;Heavy;C;III;ILYUSHIN, Il-62
+;;;;;;ILYUSHIN, Gajaraj
+;;;;;;ILYUSHIN, Il-76
+IL76;Fixed-wing;4J/H;Heavy;C;III;ILYUSHIN, Il-76 Gajaraj
+;;;;;;ILYUSHIN, Il-78
+;;;;;;ILYUSHIN, Il-82
+IL86;Fixed-wing;4J/H;Heavy;C;III;ILYUSHIN, Il-86 ILYUSHIN, Il-87
+IL96;Fixed-wing;4J/H;Heavy;B;III;ILYUSHIN, Il-96
+;;;;;;IMPULSE, Impulse
+IMPU;Fixed-wing;1P/S;Light;F;I;IMPULSE, Xcite
+;;;;;;IMPULSE, Xturn
+INCQ;Fixed-wing;1P/S;Light;F;I;INPAER, Conquest
+INEC;Fixed-wing;1P/S;Light;F;I;INPAER, Excel
+INEX;Fixed-wing;1P/S;Light;F;I;INPAER, Explorer
+ION;Fixed-wing;1P/S;Light;F;I;ION, Ion
+IP06;Fixed-wing;1P/S;Light;F;I;IPE, Curucaca IPE, IPE-06 Curucaca
+IP10;Fixed-wing;1P/S;Light;F;I;IPE, IPE-010
+IP26;Fixed-wing;1P/S;Light;F;I;IPAI, IPAI-26 Tuca IPAI, Tuca
+IP6A;Fixed-wing;1P/S;Light;F;I;IPE, IPE-06A
+;;;;;;EMBRAER, EMB-200 Ipanema
+;;;;;;EMBRAER, EMB-201 Ipanema
+;;;;;;EMBRAER, EMB-202 Ipanema
+;;;;;;EMBRAER, Ipanema
+IPAN;Fixed-wing;1P/S;Light;F;I;EMBRAER, U-19 Ipanema
+;;;;;;NEIVA, EMB-201 Ipanema
+;;;;;;NEIVA, EMB-202 Ipanema
+;;;;;;NEIVA, G-19 Ipanema
+;;;;;;NEIVA, Ipanema
+IR21;Fixed-wing;1P/S;Light;F;I;ICA, IAR-821
+IR22;Fixed-wing;1P/S;Light;F;I;ICA, IAR-822 ICA, IAR-826
+IR23;Fixed-wing;1P/S;Light;F;I;ICA, IAR-823
+IR24;Fixed-wing;1P/S;Light;F;I;ICA, IAR-824
+IR25;Fixed-wing;1T/S;Light;F;I;ICA, IAR-825TP Triumf ICA, Triumf
+;;;;;;BUCURESTI, Dacic
+IR27;Fixed-wing;1P/S;Light;F;I;BUCURESTI, IAR-827 Dacic ICA, Dacic
+;;;;;;ICA, IAR-827 Dacic
+IR28;Fixed-wing;1P/S;Light;F;I;ICA, IAR-28MA ICA, IS-28MA
+IR31;Fixed-wing;1P/S;Light;F;I;ICA, IAR-831 Pelican ICA, Pelican
+IR46;Fixed-wing;1P/S;Light;F;I;IAR, IAR-46 Katty IAR, Katty
+;;;;;;AVIOANE, IAR-109 Swift
+;;;;;;AVIOANE, IAR-99 Soim
+IR99*;Fixed-wing;1J/S;Light;F;III;AVIOANE, Soim AVIOANE, Swift
+;;;;;;CRAIOVA, IAR-99 Soim
+;;;;;;CRAIOVA, Soim
+IS2;Helicopter;1P/S;Light;F;I;INSTYTUT LOTNICTWA, IS-2
+IS28;Fixed-wing;1P/S;Light;F;I;IAR, IS-28M2 ICA, IS-28M2
+ISAT;Fixed-wing;1P/S;Light;F;I;AEROJAMES, 01 Isatis AEROJAMES, Isatis
+ISPT;Fixed-wing;1P/S;Light;F;I;ISAACS, Spitfire
+;;;;;;AUSTER, Aiglet
+;;;;;;AUSTER, Alpha
+;;;;;;AUSTER, Autocrat
+;;;;;;AUSTER, J-1 Aiglet
+;;;;;;AUSTER, J-1 Alpha
+J1;Fixed-wing;1P/S;Light;F;I;AUSTER, J-1 Autocrat AUSTER, J-1 Kingsland
+;;;;;;AUSTER, J-1 Workmaster
+;;;;;;AUSTER, Kingsland
+;;;;;;AUSTER, Workmaster
+;;;;;;TAYLORCRAFT (2), Autocrat
+;;;;;;TAYLORCRAFT (2), J-1 Autocrat
+J10*;Fixed-wing;1J/S+;Medium;F;III;
+;;;;;;
+;;;;;;
+J177;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+J2;Fixed-wing;1P/S;Light;F;I;1
+;;;;;;
+J20*;Fixed-wing;2J/L;J-20;E;III;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+J3;Fixed-wing;1P/S;Light;F;I;1
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+J300;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+J328;Fixed-wing;2J/S+;Medium;F;III;6
+;;;;;;
+;;;;;;
+J4;Fixed-wing;1P/S;Light;F;I;1
+J4B2;Gyrocopter;1P/S;Light;F;I;
+;;;;;;
+J5;Fixed-wing;1P/S;Light;F;I;1
+;;;;;;
+J728;Fixed-wing;2J/L;Medium;E;III;
+;;;;;;
+J8A*;Fixed-wing;2J/S+;Medium;F;III;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+J8B*;Fixed-wing;2J/S+;Medium;F;III;
+;;;;;;
+;;;;;;
+;;;;;;
+JAB2;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+JAB4;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+JABI;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+JACE;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+JAG2;Helicopter;1T/S;Light;F;I;
+;;;;;;
+JAGR*;Fixed-wing;2J/S+;Medium;F;III;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+JAJ5;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+JAJ6;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+JANU;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+JARO;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+JAST*;Fixed-wing;1J/S;Light;F;III;
+;;;;;;
+;;;;;;
+;;;;;;
+JB1;@Fixed-wing;1P/S;Light;F;I;
+JB15;Fixed-wing;1P/S;Light;F;I;
+JC01;Fixed-wing;1P/S;Light;F;I;
+JC02;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+JCOM;Fixed-wing;2J/S+;Medium;F;III;9
+;;;;;;
+JCRU;Fixed-wing;1T/S;Light;F;I;
+JD2;Fixed-wing;1P/S;Light;F;I;
+JDOE;Fixed-wing;1P/S;Light;F;I;
+JE2;Gyrocopter;1P/S;Light;F;I;
+JFOX;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+JH7*;Fixed-wing;2J/L;Medium;E;III;
+;;;;;;
+;;;;;;
+;;;;;;
+JK05;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+JL9*;Fixed-wing;1J/S+;Medium;F;III;
+;;;;;;
+;;;;;;
+JN76;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+JPM1;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+JPRO*;Fixed-wing;1J/S+;Light;F;III;
+;;;;;;
+;;;;;;
+JRC1;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+JS1;Fixed-wing;2T/S+;Light;F;III;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+JS20;Fixed-wing;2T/S;Light;F;II;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+JS3;Fixed-wing;2T/S;Light;F;II;
+JS31;Fixed-wing;2T/S+;Light/ Medium;F;III;5
+;;;;;;
+JS32;Fixed-wing;2T/S+;Medium;F;III;5
+;;;;;;
+;;;;;;
+;;;;;;
+JS41;Fixed-wing;2T/S+;Medium;F;III;7
+;;;;;;
+;;;;;;
+;;;;;;
+JSQA*;Fixed-wing;1J/S;Light;F;III;
+;;;;;;
+JT2;Fixed-wing;1P/S;Light;F;I;
+JU52;Fixed-wing;3P/S+;Medium;F;III;
+JUN1;Fixed-wing;1P/S;Light;F;I;KAMINSKAS, Jungster 1 KAMINSKAS, RK-1 Jungster 1
+JUN2;Fixed-wing;1P/S;Light;F;I;KAMINSKAS, Jungster 2 KAMINSKAS, RK-2 Jungster 2
+;;;;;;ANDREASSON, BA-7
+;;;;;;ANDREASSON, MFI-9
+JUNR;Fixed-wing;1P/S;Light;F;I;BOLKOW, BO-208 Junior BOLKOW, Junior
+;;;;;;MALMO, Junior
+;;;;;;MALMO, MFI-9 Junior
+JUPI;Fixed-wing;1P/S;Light;F;I;LAMMER GEYER, Jupiter
+K126;Helicopter;1T/S;Light;F;I;ICA, Ka-126 KAMOV, Ka-126
+K209;Helicopter;1T/S;Light;F;I;FAMA, K-209 KISS FAMA, KISS
+K226;Helicopter;2T/S;Light;F;I;KAMOV, Ka-226 Sergei KAMOV, Sergei
+K250;Fixed-wing;1P/S;Light;F;I;KESTREL (1), K-250
+K35E;Fixed-wing;4J/H;Heavy;C;III;BOEING, KC-135E Stratotanker BOEING, Stratotanker (TF33 engines)
+;;;;;;BOEING, C-135FR Stratotanker
+K35R;Fixed-wing;4J/H;Heavy;C;III;BOEING, KC-135R Stratotanker BOEING, KC-135T Stratotanker
+;;;;;;BOEING, Stratotanker (CFM56 engines)
+;;;;;;KOREA AEROSPACE, A-50 Golden Eagle
+;;;;;;KOREA AEROSPACE, F/A-50 Golden Eagle
+K50*;Fixed-wing;1J/S+;Medium;F;III;KOREA AEROSPACE, Golden Eagle
+;;;;;;KOREA AEROSPACE, T/A-50 Golden Eagle
+;;;;;;KOREA AEROSPACE, T-50 Golden Eagle
+K51;Fixed-wing;1P/S;Light;F;I;KOVÁCS, K-51 Peregrino KOVÁCS, Peregrino
+;;;;;;HONGDU, JL-8
+;;;;;;HONGDU, K-8 Karakorum
+K8*;Fixed-wing;1J/S;Light;F;III;HONGDU, Karakorum NANCHANG, JL-8 Karakorum
+;;;;;;NANCHANG, K-8 Karakorum
+;;;;;;NANCHANG, Karakorum
+KA25;Helicopter;2T/S+;Medium;F;I;KAMOV, Ka-25
+KA26;Helicopter;2P/S;Light;F;I;KAMOV, Ka-26
+;;;;;;KAMOV, HH-32
+;;;;;;KAMOV, Ka-252
+;;;;;;KAMOV, Ka-27
+KA27;Helicopter;2T/S+;Medium;F;I;KAMOV, Ka-28
+;;;;;;KAMOV, Ka-29
+;;;;;;KAMOV, Ka-31
+;;;;;;KAMOV, Ka-32
+;;;;;;KAMOV, Black Shark
+;;;;;;KAMOV, Chernaya Akula
+KA50;Helicopter;2T/S+;Medium;F;I;KAMOV, Ka-50 Black Shark KAMOV, Ka-50 Chernaya Akula
+;;;;;;KAMOV, Ka-50 Werewolf
+;;;;;;KAMOV, Werewolf
+KA52;Helicopter;2T/S+;Medium;F;I;KAMOV, Alligator KAMOV, Ka-52 Alligator
+;;;;;;KAMOV, Ka-60 Kasatka
+KA62;Helicopter;2T/S+;Light;F;I;KAMOV, Ka-62
+;;;;;;KAMOV, Kasatka
+KAFI;Fixed-wing;1P/S;Light;F;I;KARI, Firefly
+KAK1;Fixed-wing;1P/S;Light;F;I;KIEGER, AK-1
+KAK3;Fixed-wing;1P/S;Light;F;I;JUNKERS PROFLY, Junka KIEGER, AK-3
+KAT3;Fixed-wing;1T/S;Light;F;I;KHRUNICHEV, AT-3
+KATB;Fixed-wing;2P/S;Light;F;II;KARI, Twinbee
+KATR;Fixed-wing;1P/S;Light;F;I;AEROSAMARA, Katran
+KC2;Fixed-wing;2J/L;Medium;D;III;KAWASAKI, C-2 KAWASAKI, XC-2
+KC39;Fixed-wing;2J/L;Medium;D;III;EMBRAER, KC-390
+KE3;Fixed-wing;4J/H;Heavy;C;III;BOEING, KE-3
+KEHA;Fixed-wing;1P/S;Light;F;I;KESTREL (2), Float Hawk KESTREL (2), Sport Hawk
+KELA;Fixed-wing;1P/S;Light;F;I;KELEHER, Lark
+KELD;Fixed-wing;1P/S;Light;F;I;KELLY, D
+KERO;Fixed-wing;1P/S;Light;F;I;REARWIN, 2000 Ken-Royce REARWIN, Ken-Royce
+KEST;Fixed-wing;1T/S;Light;F;I;FARNBOROUGH, F-1 Kestrel FARNBOROUGH, Kestrel
+KFAB;Fixed-wing;1P/S;Light;F;I;KITPLANES FOR AFRICA, Bushbaby KITPLANES FOR AFRICA, Explorer
+KFAS;Fixed-wing;1P/S;Light;F;I;KITPLANES FOR AFRICA, Safari
+KFIR*;Fixed-wing;1J/S+;Medium;F;III;IAI, Kfir
+;;;;;;ANDERSON, EA-1 Kingfisher
+KFIS;@Fixed-wing;1P/S;Light;F;I;ANDERSON, Kingfisher WARNER (1), Super Kingfisher
+;;;;;;WARNER (1), W-1 Super Kingfisher
+KH4;Helicopter;1P/S;Light;F;I;KAWASAKI, KH-4
+;;;;;;PULSAR, Sport 150
+KIS2;Fixed-wing;1P/S;Light;F;I;TRI-R, KIS TD
+;;;;;;TRI-R, KIS TR-1
+;;;;;;PULSAR, Super Cruiser
+KIS4;Fixed-wing;1P/S;Light;F;I;TRI-R, Cruiser
+;;;;;;TRI-R, KIS TR-4 Cruiser
+KITI;Fixed-wing;1P/S;Light;F;I;MITCHELL-PROCTER, Kittiwake
+KIWI;Fixed-wing;1P/S;Light;F;I;TWI, Kiwi VALENTIN, Kiwi
+KK60;Fixed-wing;1P/S;Light;F;I;KARI-KEEN, 60 Coupe KARI-KEEN, Coupe
+;;;;;;BOLKOW, BO-207
+;;;;;;BOLKOW, F-207
+KL07;Fixed-wing;1P/S;Light;F;I;BOLKOW, Kl-107
+;;;;;;KLEMM, Kl-107
+;;;;;;NABERN, Kl-107
+KL25;Fixed-wing;1P/S;Light;F;I;KLEMM, L-25
+KL35;Fixed-wing;1P/S;Light;F;I;KLEMM, Kl-35
+KLBR;Fixed-wing;1P/S;Light;F;I;KOLB, King Colbra
+KM2;Fixed-wing;1P/S;Light;F;I;FUJI, KM-2 FUJI, TL-1
+KMAX;Helicopter;1T/S;Light;F;I;KAMAN, K-1200 K-Max KAMAN, K-Max
+KNTW;Fixed-wing;1P/S;Light;F;I;PAYNE, Knight Twister PAYNE, Sunday Knight Twister
+KODI;Fixed-wing;1T/S;Light;F;I;QUEST, Kodiak
+KOLL;Fixed-wing;1P/S;Light;F;I;KOLB, Laser
+;;;;;;JIHLAVAN, KP-2 Rapid 200
+;;;;;;JIHLAVAN, KP-2 Skyleader 150
+;;;;;;JIHLAVAN, KP-2 Skyleader 200
+KP2;Fixed-wing;1P/S;Light;F;I;JIHLAVAN, Rapid 200 JIHLAVAN, Skyleader 150
+;;;;;;JIHLAVAN, Skyleader 200
+;;;;;;KAPPA, KP-2 Sova
+;;;;;;KAPPA, Sova
+;;;;;;JIHLAVAN, KP-5 Rapid 500
+;;;;;;JIHLAVAN, KP-5 Skyleader 500
+KP5;Fixed-wing;1P/S;Light;F;I;JIHLAVAN, KP-5 Skyleader 600 JIHLAVAN, Rapid 500
+;;;;;;JIHLAVAN, Skyleader 500
+;;;;;;JIHLAVAN, Skyleader 600
+KR1;Fixed-wing;1P/S;Light;F;I;RAND, KR-1
+KR2;Fixed-wing;1P/S;Light;F;I;RAND, KR-2
+;;;;;;
+KR21;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+KR30;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+KR31;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+KR34;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+KRAG;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+KRAH;Fixed-wing;1P/S;Light;F;I;
+KRIC;Fixed-wing;1P/S;Light;F;I;
+KSTK;Fixed-wing;2P/S;Light;F;II;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+KT1;Fixed-wing;1T/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+KTOO;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+KZ2;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+KZ3;Fixed-wing;1P/S;Light;F;I;
+KZ4;Fixed-wing;2P/S;Light;F;II;
+KZ7;Fixed-wing;1P/S;Light;F;I;
+KZ8;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+L10;Fixed-wing;2P/S;Light;F;II;
+;;;;;;
+L101;Fixed-wing;3J/H;Heavy;C;III;9
+;;;;;;
+L11;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+L11E;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+L12;Fixed-wing;2P/S;Light;F;II;
+;;;;;;
+;;;;;;
+L13;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+L13M;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+L13S;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+L14;Fixed-wing;2P/S+;Medium;F;III;
+;;;;;;
+L15*;Fixed-wing;2J/S+;Medium;F;III;
+;;;;;;
+L159*;Fixed-wing;1J/S+;Medium;F;III;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+L18;Fixed-wing;2P/L;Medium;E;III;8
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+L181;Fixed-wing;1P/S;Light;F;I;
+L188;Fixed-wing;4T/L;Medium;D;III;7
+L200;Fixed-wing;2P/S;Light;F;II;
+L29*;Fixed-wing;1J/S;Light;F;III;
+;;;;;;
+L29A;Fixed-wing;4J/L;Medium;E;III;8
+;;;;;;
+;;;;;;
+L29B;Fixed-wing;4J/L;Medium;E;III;9
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+L37;Fixed-wing;2P/S+;Medium;F;III;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+L380;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+L39*;Fixed-wing;1J/S;Light;F;III;
+;;;;;;
+;;;;;;
+L4;@Fixed-wing;2P/S;Light;F;II;
+;;;;;;
+L40;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+L410;Fixed-wing;2T/S+;Light;F;III;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+L5;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+L59*;Fixed-wing;1J/S+;Light;F;III;
+L6;@Fixed-wing;2P/S;Light;F;II;
+;;;;;;
+;;;;;;
+L60;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+L610;Fixed-wing;2T/S+;Medium;F;III;
+;;;;;;
+L70;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+L8;Fixed-wing;1P/S;Light;F;I;3
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+L90;Fixed-wing;1T/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+LA25;@Fixed-wing;1P/S;Light;F;I;2
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+LA4;@Fixed-wing;1P/S;Light;F;I;2
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+LA60;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+LA6T;Fixed-wing;1T/S;Light;F;I;
+LA8;@Fixed-wing;2P/S;Light;F;II;
+LACO;Fixed-wing;1P/S;Light;F;I;
+LAE1;Fixed-wing;1E/S;Light;F;I;
+LAKR;Fixed-wing;1P/S;Light;F;I;
+LAKX;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+LAMA;Helicopter;1T/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+LANC;Fixed-wing;4P/L;Medium;D;III;
+LARK;Fixed-wing;1P/S;Light;F;I;1
+LAST;Fixed-wing;1P/S;Light;F;I;
+LBUG;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+LCA*;Fixed-wing;1J/S+;Medium;F;III;
+;;;;;;
+;;;;;;
+LCB;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+LCH;Helicopter;2T/S;Light;F;I;
+LCR;Fixed-wing;1P/S;Light;F;I;
+LEG2;Fixed-wing;1P/S;Light;F;I;
+LEGD;Fixed-wing;1P/S;Light;F;I;
+LEOP;Fixed-wing;2J/S;Light;F;III;
+LESP;Fixed-wing;1P/S;Light;F;I;
+LEVI;Fixed-wing;1P/S;Light;F;I;
+LGEZ;Fixed-wing;1P/S;Light;F;I;
+LH10;Fixed-wing;1P/S;Light;F;I;
+LIBE;Fixed-wing;1P/S;Light;F;I;
+LION;Fixed-wing;1P/S;Light;F;I;
+LJ23;Fixed-wing;2J/S;Light;F;III;8
+LJ24;Fixed-wing;2J/S+;Light;F;III;7
+LJ25;Fixed-wing;2J/S+;Light;F;III;9
+LJ28;Fixed-wing;2J/S+;Light;F;III;7
+LJ31;Fixed-wing;2J/S+;Medium;F;III;7
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+LJ35;Fixed-wing;2J/S+;Medium;F;III;9
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+LJ40;Fixed-wing;2J/S+;Medium;F;III;6
+LJ45;Fixed-wing;2J/S+;Medium;F;III;6
+;;;;;;
+LJ55;Fixed-wing;2J/S+;Medium;F;III;8
+;;;;;;
+LJ60;Fixed-wing;2J/S+;Medium;F;III;10
+LJ70;Fixed-wing;2J/S+;Medium;F;III;
+LJ75;Fixed-wing;2J/S+;Medium;F;III;
+LJ85;Fixed-wing;2J/S+;Medium;F;III;
+LK17;Fixed-wing;1P/S;Light;F;I;
+LK19;Fixed-wing;1P/S;Light;F;I;
+LK20;Fixed-wing;1P/S;Light;F;I;LAK, LAK-20M SPORTINE AVIACIJA, LAK-20M
+LM5;Fixed-wing;1P/S;Light;F;I;LOMBARDI, Aviastar LOMBARDI, LM-5 Aviastar
+LM5X;Fixed-wing;1P/S;Light;F;I;LIGHT MINIATURE, LM-5 Super Cub LIGHT MINIATURE, Super Cub
+LM7;Fixed-wing;1P/S;Light;F;I;LOMBARDI, LM-7
+LMK1;Fixed-wing;1P/S;Light;F;I;CATA, LMK-1 Oryx CATA, Oryx
+LN27;Fixed-wing;1P/S;Light;F;I;FALCOMPOSITE, Furio FALCOMPOSITE, LN-27 Furio
+LN3;@Fixed-wing;1P/S;Light;F;I;FLYGFABRIKEN, LN-3 Seagull  FLYGFABRIKEN, Seagull
+;;;;;;LANCAIR, Lancair 200
+;;;;;;LANCAIR, Lancair 235
+;;;;;;LANCAIR, Lancair 320
+;;;;;;LANCAIR, Lancair 360
+LNC2;Fixed-wing;1P/S;Light;F;I;NEICO, Lancair 200
+;;;;;;NEICO, Lancair 235
+;;;;;;NEICO, Lancair 320
+;;;;;;NEICO, Lancair 360
+;;;;;;PAI, Lancair 320
+;;;;;;LANCAIR, Lancair 4
+LNC4;Fixed-wing;1P/S;Light;F;I;NEICO, Lancair 4 PADC, Lancair 4
+;;;;;;PAI, Lancair 4
+;;;;;;LANCAIR, Lancair ES
+LNCE;Fixed-wing;1P/S;Light;F;I;LANCAIR, Lancair Super ES PADC, Lancair ES
+;;;;;;PAI, Lancair ES
+LNP4;Fixed-wing;1T/S;Light;F;I;LANCAIR, Lancair PropJet 4
+LNT4;Fixed-wing;1T/S;Light;F;I;LANCAIR, Sentry 4T
+LOCA;Fixed-wing;1P/S;Light;F;I;AEROLAB, LoCamp
+LOVE;Fixed-wing;1P/S;Light;F;I;LOVING-WAYNE, Love LOVING-WAYNE, WR-1 Love
+LP1;Fixed-wing;1P/S;Light;F;I;LOPRESTI, Fury LOPRESTI, LP-1 Fury
+LR2T;Helicopter;1T/S;Light;F;I;LOAD RANGER, 2000
+LS10;Fixed-wing;1P/S;Light;F;I;DG FLUGZEUGBAU, LS-10ST
+LS2;Fixed-wing;1P/S;Light;F;I;HAT, LS-2
+LS8;Fixed-wing;1P/S;Light;F;I;DG FLUGZEUGBAU, LS-8ST ROLLADEN-SCHNEIDER, LS-8T
+LS9;Fixed-wing;1P/S;Light;F;I;ROLLADEN-SCHNEIDER, LS-9
+LSTR;Fixed-wing;1P/S;Light;F;I;CUSTOM FLIGHT, Lite Star
+LTNG*;Fixed-wing;2J/L;Medium;E;III;BAC, Lightning ENGLISH ELECTRIC, Lightning
+LUL5;Fixed-wing;1P/S;Light;F;I;LUCAS, L-5
+LUL6;Fixed-wing;1P/S;Light;F;I;LUCAS, L-6
+LUL7;Fixed-wing;1P/S;Light;F;I;LUCAS, L-7
+LUL8;Fixed-wing;1P/S;Light;F;I;LUCAS, L-8
+;;;;;;LAVIASA, LAV-51 Master
+LV51;Fixed-wing;1P/S;Light;F;I;LAVIASA, LAV-51 Super Master LAVIASA, Master
+;;;;;;LAVIASA, Super Master
+LW20;Fixed-wing;1P/S;Light;F;I;HOWARD HUGHES, Australian LightWing Speed SP-2000
+LW40;Fixed-wing;1P/S;Light;F;I;HOWARD HUGHES, Australian LightWing Speed SP-4000
+;;;;;;HOWARD HUGHES, Austalian LightWing Sport 2000
+LWIN;Fixed-wing;1P/S;Light;F;I;HOWARD HUGHES, Australian LightWing GA-912 HOWARD HUGHES, Australian LightWing GR-582
+;;;;;;HOWARD HUGHES, Australian LightWing GR-912
+;;;;;;
+;;;;;;
+LX32;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+LX34;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+LYNX;Helicopter;2T/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+LYSA;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+M10;Fixed-wing;1P/S;Light;F;I;1
+;;;;;;
+;;;;;;
+;;;;;;
+M101;Fixed-wing;1T/S;Light;F;I;
+;;;;;;
+;;;;;;
+M106;Fixed-wing;1P/S;Light;F;I;
+M108;Fixed-wing;1P/S;Light;F;I;
+M10F;Fixed-wing;1P/S;Light;F;I;
+M10R;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+M110;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+M15;Fixed-wing;1J/S;Light;F;III;
+M17*;Fixed-wing;1J/L;Medium;D;III;
+;;;;;;
+M18;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+M18T;Fixed-wing;1T/S;Light;F;I;
+;;;;;;
+M1SC;Fixed-wing;1P/S;Light;F;I;
+M2;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+M200;Fixed-wing;1P/S;Light;F;I;1
+;;;;;;
+;;;;;;
+M203;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+M20P;Fixed-wing;1P/S;Light;F;I;4
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+M20T;Fixed-wing;1P/S;Light;F;I;6
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+M21;Fixed-wing;1P/S;Light;F;I;
+M212;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+M22;Fixed-wing;1P/S;Light;F;I;3
+;;;;;;
+M24;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+M26;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+M28;Fixed-wing;2T/S+;Light/ Medium;F;III;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+M2HK;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+M308;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+M326*;Fixed-wing;1J/S+;Light;F;III;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+M339*;Fixed-wing;1J/S+;Light;F;III;
+;;;;;;
+;;;;;;
+M346*;Fixed-wing;2J/S+;Medium;F;III;
+;;;;;;
+;;;;;;
+M360;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+M4;Fixed-wing;1P/S;Light;F;I;1
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+M404;Fixed-wing;2P/L;Medium;D;III;3
+;;;;;;
+;;;;;;
+;;;;;;
+M5;Fixed-wing;1P/S;Light;F;I;1
+;;;;;;
+;;;;;;
+;;;;;;
+M55*;Fixed-wing;2J/L;Medium;D;III;
+M6;Fixed-wing;1P/S;Light;F;I;1
+M600;Fixed-wing;1T/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+M7;Fixed-wing;1P/S;Light;F;I;1
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+M74;Helicopter;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+M7T;Fixed-wing;1T/S;Light;F;I;1
+;;;;;;
+;;;;;;
+M8;Fixed-wing;1P/S;Light;F;I;
+M9;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+MA1;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+MA5;Fixed-wing;1P/S;Light;F;I;
+MA60;Fixed-wing;2T/L;Medium;D;III;
+MA6H;Fixed-wing;2T/L;Medium;D;III;
+MAGC;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+MAGI;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+MAGN;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+MAJR;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+MAKO;Fixed-wing;1P/S;Light;F;I;
+MAMB;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+MAME;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+MARS;$Fixed-wing;4P/L;Medium;D;III;
+;;;;;;
+MAVR;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+MC10;Fixed-wing;2P/S;Light;F;II;
+;;;;;;
+;;;;;;
+MC23;Fixed-wing;2J/L;Medium;D;III;
+MC45;Fixed-wing;1P/S;Light;F;I;
+MC90;Fixed-wing;1P/S;Light;F;I;
+MCOU;Fixed-wing;1P/S;Light;F;I;
+MCOY;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+MCR1;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+MCR4;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+MCRR;Fixed-wing;1P/S;Light;F;I;
+MCUL;Fixed-wing;1P/S;Light;F;I;
+MD11;Fixed-wing;3J/H;Heavy;C;III;9
+;;;;;;
+;;;;;;
+;;;;;;
+MD3;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+MD3R;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+MD52;Helicopter;1T/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+MD60;Helicopter;1T/S;Light;F;I;
+;;;;;;
+MD81;Fixed-wing;2J/L;Medium;D;III;7
+;;;;;;
+MD82;Fixed-wing;2J/L;Medium;D;III;7
+;;;;;;
+;;;;;;
+MD83;Fixed-wing;2J/L;Medium;D;III;8
+;;;;;;
+MD87;Fixed-wing;2J/L;Medium;D;III;7
+MD88;Fixed-wing;2J/L;Medium;D;III;8
+;;;;;;
+MD90;Fixed-wing;2J/L;Medium;D;III;8
+;;;;;;
+;;;;;;
+;;;;;;
+ME08;Fixed-wing;1P/S;Light;F;I;1
+;;;;;;
+;;;;;;
+;;;;;;
+ME09;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+ME62*;Fixed-wing;2J/S+;Light;F;III;
+MEAD;Fixed-wing;1P/S;Light;F;I;
+MEL2;Fixed-wing;1P/S;Light;F;I;
+MERK;Fixed-wing;2P/S;Light;F;II;
+MESS;Fixed-wing;1P/S;Light;F;I;
+METR*;Fixed-wing;2J/S+;Medium;F;III;
+MEXP;Fixed-wing;1P/S;Light;F;I;
+MF10;Fixed-wing;1P/S;Light;F;I;
+;;;;;;PAKISTAN, Mushshak
+;;;;;;PAKISTAN, Shahbaz
+;;;;;;PAKISTAN, Super Mushshak
+MF17;Fixed-wing;1P/S;Light;F;I;SAAB, MFI-15 Safari SAAB, MFI-17 Supporter
+;;;;;;SAAB, Safari
+;;;;;;SAAB, Supporter
+;;;;;;SAAB, T-17 Supporter
+;;;;;;AERO (2), CS-102
+;;;;;;AERO (2), S-102
+;;;;;;AERO (2), S-103
+MG15*;Fixed-wing;1J/S+;Light;F;III;MIKOYAN, MiG-15 PZL-MIELEC, LiM-1
+;;;;;;PZL-MIELEC, LiM-2
+;;;;;;PZL-MIELEC, SBLiM-1
+;;;;;;PZL-MIELEC, SBLiM-2
+;;;;;;CHENGDU, FT-5
+;;;;;;CHENGDU, JJ-5
+;;;;;;MIKOYAN, MiG-17
+;;;;;;PZL-MIELEC, LiM-5
+MG17*;Fixed-wing;1J/S+;Light;F;III;PZL-MIELEC, LiM-6
+;;;;;;SHENYANG, F-5
+;;;;;;SHENYANG, FT-5
+;;;;;;SHENYANG, J-5
+;;;;;;SHENYANG, JJ-5
+;;;;;;GUIZHOU, F-6
+;;;;;;GUIZHOU, J-6
+;;;;;;MIKOYAN, MiG-19
+;;;;;;NANCHANG, F-6
+MG19*;Fixed-wing;2J/S+;Medium;F;III;NANCHANG, J-6
+;;;;;;SHENYANG, F-6
+;;;;;;SHENYANG, J-6
+;;;;;;SHENYANG, JJ-6
+;;;;;;SHENYANG, JZ-6
+;;;;;;AEROSTAR (2), Lancer
+;;;;;;AEROSTAR (2), MiG-21 Lancer
+;;;;;;CHENGDU, Airguard
+;;;;;;CHENGDU, F-7
+;;;;;;CHENGDU, F-7 Airguard
+;;;;;;CHENGDU, F-7 Skybolt
+MG21*;Fixed-wing;1J/S+;Medium;F;III;CHENGDU, J-7 CHENGDU, Skybolt
+;;;;;;ELBIT, Lancer
+;;;;;;ELBIT, MiG-21 Lancer
+;;;;;;GUIZHOU, FT-7
+;;;;;;GUIZHOU, JJ-7
+;;;;;;HINDUSTAN, MiG-21
+;;;;;;MIKOYAN, MiG-21
+;;;;;;HINDUSTAN, Bahadur
+;;;;;;HINDUSTAN, MiG-27 Bahadur
+MG23*;Fixed-wing;1J/S+;Medium;F;III;MIKOYAN, Bahadur MIKOYAN, MiG-23
+;;;;;;MIKOYAN, MiG-27
+;;;;;;MIKOYAN, MiG-27 Bahadur
+MG25*;Fixed-wing;2J/L;Medium;E;III;MIKOYAN, MiG-25
+;;;;;;MAPO, MiG-29
+;;;;;;MAPO, MiG-33
+;;;;;;MIKOYAN, Baaz
+MG29*;Fixed-wing;2J/L;Medium;E;III;MIKOYAN, MiG-29
+;;;;;;MIKOYAN, MiG-29 Baaz
+;;;;;;MIKOYAN, MiG-33
+;;;;;;MIKOYAN, MiG-35
+MG31*;Fixed-wing;2J/L;Medium;E;III;MAPO, MiG-31 MIKOYAN, MiG-31
+MG44*;Fixed-wing;2J/L;Medium;E;III;MIKOYAN, MiG 1-44
+MGAT*;Fixed-wing;1J/S+;Light;F;III;MAPO, MiG-AT MIKOYAN, MiG-AT
+MGIC;Fixed-wing;1P/S;Light;F;I;KAISER, Magic WZL 3, DEKO-9
+MGNM;Fixed-wing;1P/S;Light;F;I;AVIATION ENTERPRISES, Magnum
+MH02;Fixed-wing;2J/S;Light;F;III;HONDA-MISSISSIPPI, MH-02
+MH20;Helicopter;2T/S;Light;F;I;MITSUBISHI, MH-2000
+MH46;Fixed-wing;1P/S;Light;F;I;AEROSETTE, Eclipse AEROSETTE, MH-46 Eclipse
+MI10;Helicopter;2T/L;Medium;D;I;MIL, Mi-10
+MI14;Helicopter;2T/S+;Medium;F;I;MIL, Mi-14
+;;;;;;MIL, Mi-2
+;;;;;;PZL-SWIDNIK, Bazant
+;;;;;;PZL-SWIDNIK, Kania
+MI2;Helicopter;2T/S;Light;F;I;PZL-SWIDNIK, Kitty Hawk PZL-SWIDNIK, Mi-2
+;;;;;;PZL-SWIDNIK, Mi-2 Bazant
+;;;;;;PZL-SWIDNIK, Mi-2 Kania
+;;;;;;PZL-SWIDNIK, Mi-2 Kitty Hawk
+;;;;;;MIL, AH-2 Sabre
+;;;;;;MIL, Caribe
+;;;;;;MIL, Mi-24
+MI24;Helicopter;2T/S+;Medium;F;I;MIL, Mi-25
+;;;;;;MIL, Mi-35
+;;;;;;MIL, Mi-35 Caribe
+;;;;;;MIL, Sabre
+MI26;Helicopter;2T/L;Medium;D;I;MIL, Mi-26
+MI28;Helicopter;2T/S+;Medium;F;I;MIL, Mi-28
+MI34;Helicopter;1P/S;Light;F;I;MIL, Mi-34
+MI38;Helicopter;2T/S+;Medium;F;I;MIL, Mi-38
+;;;;;;HARBIN, Xuanfeng
+MI4;Helicopter;1P/S+;Light;F;I;HARBIN, Z-5 HARBIN, Z-5 Xuanfeng
+;;;;;;MIL, Mi-4
+MI6;Helicopter;2T/L;Medium;D;I;MIL, Mi-22 MIL, Mi-6
+;;;;;;MIL, Mi-17
+;;;;;;MIL, Mi-171
+;;;;;;MIL, Mi-172
+MI8;Helicopter;2T/S+;Medium;F;I;MIL, Mi-19 MIL, Mi-8
+;;;;;;MIL, Mi-9
+;;;;;;SICHUAN LANTIAN, Mi-17
+;;;;;;SICHUAN LANTIAN, Mi-171
+;;;;;;MARMANDE, Microjet 200
+MICO;Fixed-wing;2J/S;Light;F;III;MICROJET, Microjet 200
+;;;;;;MICROTURB , Microjet 200
+MIDR;Fixed-wing;1P/S;Light;F;I;ACBA, ACBA-8 Midour 2 ACBA, Midour 2
+;;;;;;AEROCAD, Mini-Imp
+MIMP;Fixed-wing;1P/S;Light;F;I;MINI-IMP, Mini-Imp
+;;;;;;TAYLOR (2), Mini-Imp
+;;;;;;BUSHBY, Midget Mustang
+;;;;;;BUSHBY, MM-1 Midget Mustang
+MIMU;Fixed-wing;1P/S;Light;F;I;LONG, Midget Mustang LONG, MM-1 Midget Mustang
+;;;;;;MUSTANG, Midget Mustang
+;;;;;;MUSTANG, MM-1 Midget Mustang
+MIR2*;Fixed-wing;1J/S+;Medium;F;III;DASSAULT, Mirage 2000 DASSAULT, Vajra
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+MIRA*;Fixed-wing;1J/S+;Medium;F;III;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+MITE;Fixed-wing;1P/S;Light;F;I;1
+;;;;;;
+MJ10;Fixed-wing;1P/S;Light;F;I;
+MJ12;Fixed-wing;1P/S;Light;F;I;
+MJ1H;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+MJ2;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+MJ3;Fixed-wing;1P/S;Light;F;I;
+MJ4;Fixed-wing;1P/S;Light;F;I;
+MJ5;Fixed-wing;1P/S;Light;F;I;
+MJ53;Fixed-wing;1P/S;Light;F;I;
+MJ55;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+MJ7;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+MJ77;Fixed-wing;1P/S;Light;F;I;
+MJ8;Fixed-wing;1P/S;Light;F;I;
+MJ80;Fixed-wing;1P/S;Light;F;I;
+MJ9;Fixed-wing;1P/S;Light;F;I;
+MJ90;Fixed-wing;1P/S;Light;F;I;
+MLER;Fixed-wing;1P/S;Light;F;I;
+MM14;Gyrocopter;1P/S;Light;F;I;
+MM16;Gyrocopter;1P/S;Light;F;I;
+MM19;Gyrocopter;1P/S;Light;F;I;
+MM21;Gyrocopter;1P/S;Light;F;I;
+MM22;Gyrocopter;1P/S;Light;F;I;
+MM24;Gyrocopter;1P/S;Light;F;I;
+MMAC;Fixed-wing;1P/S;Light;F;I;
+MMAX;Gyrocopter;1P/S;Light;F;I;
+;;;;;;MARA WING, 1-L Malamut
+MMUT;Fixed-wing;1P/S;Light;F;I;MARA WING, L-1 Malamut
+;;;;;;MARA WING, Malamut
+MNEX;Fixed-wing;1P/S;Light;F;I;NORMAN, Nordic 8 Mini Explorer
+MOCU;Fixed-wing;1P/S;Light;F;I;CULP, MonoCulp
+MOGO;Fixed-wing;1P/S;Light;F;I;KINETIC, Mountain Goat MONTAGNE, Mountain Goat
+MOL1;Fixed-wing;1P/S;Light;F;I;MOLNIYA, 1
+MONA;Fixed-wing;1P/S;Light;F;I;MILES, M-17 Monarch MILES, Monarch
+MONI;Fixed-wing;1P/S;Light;F;I;MONNETT, Moni
+;;;;;;MORRISEY, 2150
+;;;;;;MORRISEY, 2000 Nifty
+MOR2;Fixed-wing;1P/S;Light;F;I;MORRISEY, Nifty SHINN, 2150
+;;;;;;VARGA, 2150 Kachina
+;;;;;;VARGA, Kachina
+MOSP;Fixed-wing;1P/S;Light;F;I;MONG, Sport
+MOSQ;Fixed-wing;2P/S+;Medium;F;III;DE HAVILLAND, DH-98 Mosquito DE HAVILLAND, Mosquito
+MOTO;Fixed-wing;1P/S;Light;F;I;HUMBERT , Moto Du Ciel
+MP02;Fixed-wing;1P/S;Light;F;I;AERO-KROS, Czajka AERO-KROS, MP-02 Czajka
+;;;;;;PLAN, Busard
+MP20;Fixed-wing;1P/S;Light;F;I;PLAN, MP-205 Busard
+;;;;;;PLAN, MP-207 Busard
+MR25;Fixed-wing;1P/S;Light;F;I;MURPHY, SR-2500 Super Rebel MURPHY, Super Rebel (SR-2500)
+;;;;;;MURPHY, Moose
+MR35;Fixed-wing;1P/S;Light;F;I;MURPHY, SR-3500 Moose MURPHY, SR-3500 Super Rebel
+;;;;;;MURPHY, Super Rebel (SR-3500)
+MR3T;Fixed-wing;1T/S;Light;F;I;MURPHY, SR-3500 T-Moose MURPHY, T-Moose
+MRAI;Fixed-wing;1P/S;Light;F;I;MONNETT, Monerai P
+MRAM;Fixed-wing;1P/S;Light;F;I;HARMON (1), 1-2 Mister America HARMON (1), Mister America
+MRF1*;Fixed-wing;1J/S+;Medium;F;III;DASSAULT, Mirage F1
+MRJ7;Fixed-wing;2J/L;Medium;D;III;MITSUBISHI, MRJ-70
+MRJ9;Fixed-wing;2J/L;Medium;D;III;MITSUBISHI, MRJ-90
+;;;;;;CSA, Mermaid
+MRMD;@Fixed-wing;1P/S;Light;F;I;CZAW, Mermaid
+;;;;;;WET AERO, M-6
+MRTN;Fixed-wing;1P/S;Light;F;I;MIRAGE, Marathon
+MS1;Fixed-wing;1P/S;Light;F;I;MYSKY, MS-1
+MS18;Fixed-wing;1P/S;Light;F;I;SOCATA, MS-200FG Morane
+MS23;Fixed-wing;1P/S;Light;F;I;MORANE-SAULNIER, MS-230
+MS25;Fixed-wing;1P/S;Light;F;I;SOCATA, MS-200RG Morane
+MS30;Fixed-wing;1P/S;Light;F;I;SOCATA, Epsilon 2 SOCATA, MS-300 Epsilon 2
+MS31;Fixed-wing;1P/S;Light;F;I;MORANE-SAULNIER, MS-315 MORANE-SAULNIER, MS-317
+MS73;Fixed-wing;1P/S;Light;F;I;MORANE-SAULNIER, Alcyon MORANE-SAULNIER, MS-733 Alcyon
+;;;;;;DINFIA, MS-760 Paris
+MS76*;Fixed-wing;2J/S;Light;F;III;DINFIA, Paris MORANE-SAULNIER, MS-760 Paris
+;;;;;;MORANE-SAULNIER, Paris
+;;;;;;MORANE-SAULNIER, AI
+MSAI;Fixed-wing;1P/S;Light;F;I;MORANE-SAULNIER, MoS-27 MORANE-SAULNIER, MoS-29
+;;;;;;MORANE-SAULNIER, MoS-30
+MSQ2;Fixed-wing;1P/S;Light;F;I;BACKCOUNTRY, Mackey SQ-2 MACKEY, SQ-2
+;;;;;;
+MT;Gyrocopter;1P/S;Light;F;I;
+;;;;;;
+MT2*;Fixed-wing;2J/S+;Medium;F;III;
+;;;;;;
+;;;;;;
+MU2;Fixed-wing;2T/S;Light;F;II;6
+;;;;;;
+;;;;;;
+MU23;Fixed-wing;1P/S;Light;F;I;
+MU30;Fixed-wing;2J/S+;Medium;F;III;7
+;;;;;;
+MUS2;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+MVN1;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+MVRK;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+MX10;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+MX1T;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+MX2;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+MX65;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+MX80;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+MXS;Fixed-wing;1P/S;Light;F;I;
+MY12;Fixed-wing;1P/S;Light;F;I;
+MY13;Fixed-wing;1P/S;Light;F;I;
+MYA4;Fixed-wing;4J/H;Heavy;C;III;
+MYS4*;Fixed-wing;1J/S+;Medium;F;III;
+;;;;;;
+;;;;;;
+N110;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+N120;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+N250;Fixed-wing;2T/L;Medium;D;III;
+;;;;;;
+N260;Fixed-wing;2T/S+;Medium;F;III;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+N262;Fixed-wing;2T/S+;Medium;F;III;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+N3;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+N320;Fixed-wing;1P/S;Light;F;I;
+N340;Fixed-wing;1P/S;Light;F;I;
+N3N;Fixed-wing;1P/S;Light;F;I;
+N5;Fixed-wing;1P/S;Light;F;I;
+NA40;Helicopter;2T/S;Light;F;I;
+;;;;;;
+NAL2;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+NAVI;Fixed-wing;1P/S;Light;F;I;2
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+NC85;Fixed-wing;1P/S;Light;F;I;
+ND1T;Fixed-wing;1T/S;Light;F;I;
+NDAC;Fixed-wing;1P/S;Light;F;I;
+NDAT;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+NDIC;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+NG4;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+NG5;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+NH90;Helicopter;2T/S+;Medium;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+NHCO;Fixed-wing;1P/S;Light;F;I;
+NI28;Fixed-wing;1P/S;Light;F;I;
+NIBB;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+NIMB;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+NIPR;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+NM5;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+NMCU;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+NNJA;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+NOMA;Fixed-wing;2T/S;Light;F;II;2
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+NORA;Fixed-wing;2P/L;Medium;D;III;
+;;;;;;
+;;;;;;
+;;;;;;
+NORS;Fixed-wing;1P/S;Light;F;I;2
+;;;;;;
+;;;;;;
+NPOR;Fixed-wing;1P/S;Light;F;I;
+NSTR;Fixed-wing;1P/S;Light;F;I;
+NT10;Fixed-wing;1P/S;Light;F;I;
+NXT;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+O1;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+O3;Fixed-wing;1P/S;Light;F;I;
+OH1;Helicopter;2T/S;Light;F;I;
+OKHO;Gyrocopter;1P/S;Light;F;I;
+OM1;Fixed-wing;1P/S;Light;F;I;
+OMAG;Fixed-wing;1P/S;Light;F;I;
+OMGA;Fixed-wing;1P/S;Light;F;I;
+OMLA;Fixed-wing;1T/S;Light;F;I;
+ONE;Fixed-wing;1P/S;Light;F;I;
+ONEX;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+OPCA;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+OR10;@Fixed-wing;1P/S;Light;F;I;
+OR12;@Fixed-wing;2P/S;Light;F;II;
+;;;;;;
+;;;;;;
+;;;;;;
+OSCR;Fixed-wing;1P/S;Light;F;I;2
+;;;;;;
+;;;;;;
+;;;;;;
+OUDE;Fixed-wing;1P/S;Light;F;I;
+OVOD;Fixed-wing;1P/S;Light;F;I;
+OZZI;Fixed-wing;1P/S;Light;F;I;
+P06T;Fixed-wing;2P/S;Light;F;II;
+P1;Fixed-wing;4J/L;Medium;D;III;
+P100;Fixed-wing;1P/S;Light;F;I;
+P130;Fixed-wing;1P/S;Light;F;I;
+P136;@Fixed-wing;2P/S;Light;F;II;4
+P148;Fixed-wing;1P/S;Light;F;I;
+P149;Fixed-wing;1P/S;Light;F;I;
+P180;Fixed-wing;2T/S;Light;F;II;1
+P18T;Fixed-wing;1T/S;Light;F;I;
+P19;Fixed-wing;1P/S;Light;F;I;
+P1HH;Fixed-wing;2T/ NOWGT;;Light;NOWGT;III
+;;;;;;
+;;;;;;
+;;;;;;
+P2;Fixed-wing;2P/L;;Medium;D;III
+;;;;;;
+;;;;;;
+;;;;;;
+P208;Fixed-wing;1P/S;;Light;F;I
+;;;;;;
+;;;;;;
+P210;Fixed-wing;1P/S;;Light;F;I
+;;;;;;
+;;;;;;
+P212;Fixed-wing;2P/S;;Light;F;II
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+P220;Fixed-wing;1P/S;;Light;F;I
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+P230;Fixed-wing;1P/S;;Light;F;I
+P27;Fixed-wing;1P/S;;Light;F;I
+P270;Fixed-wing;1P/S;;Light;F;I
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+P28A;Fixed-wing;1P/S;Light;F;I;1
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+P28B;Fixed-wing;1P/S;Light;F;I;3
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+P28R;Fixed-wing;1P/S;Light;F;I;3
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+P28S;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+P28T;Fixed-wing;1P/S;Light;F;I;2
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+P28U;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+P3;Fixed-wing;4T/L;Medium;D;III;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+P32R;Fixed-wing;1P/S;Light;F;I;3
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+P32T;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+P337;Fixed-wing;2P/S;Light;F;II;3
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+P38;Fixed-wing;2P/S+;Medium;F;III;
+;;;;;;
+;;;;;;
+P39;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+P40;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+P46T;Fixed-wing;1T/S;Light;F;I;4
+;;;;;;
+;;;;;;
+;;;;;;
+P47;Fixed-wing;1P/S+;Medium;F;III;
+;;;;;;
+;;;;;;
+P4Y;Fixed-wing;4P/L;Medium;D;III;
+;;;;;;
+P50;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+P51;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+P57;Fixed-wing;1P/S;Light;F;I;
+P60;Fixed-wing;1P/S;Light;F;I;
+P61;Fixed-wing;2P/S+;Medium;F;III;
+P63;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+P66P;Fixed-wing;2P/S;Light;F;II;3
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+P66T;Fixed-wing;2T/S;Light;F;II;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+P68;Fixed-wing;2P/S;Light;F;II;3
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+P68T;Fixed-wing;2T/S;Light;F;II;3
+P70;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+P750;Fixed-wing;1T/S;Light;F;I;
+;;;;;;
+;;;;;;
+P8;Fixed-wing;2J/L;Medium;D;III;
+;;;;;;
+P80;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+P82;Fixed-wing;2P/S+;Medium;F;III;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+PA11;Fixed-wing;1P/S;Light;F;I;1
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+PA12;Fixed-wing;1P/S;Light;F;I;1
+;;;;;;
+;;;;;;
+PA14;Fixed-wing;1P/S;Light;F;I;1
+;;;;;;
+;;;;;;
+PA15;Fixed-wing;1P/S;Light;F;I;1
+;;;;;;
+PA16;Fixed-wing;1P/S;Light;F;I;1
+;;;;;;
+PA17;Fixed-wing;1P/S;Light;F;I;1
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+PA18;Fixed-wing;1P/S;Light;F;I;1
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+PA20;Fixed-wing;1P/S;Light;F;I;1
+;;;;;;
+;;;;;;
+PA22;Fixed-wing;1P/S;Light;F;I;2
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+PA23;Fixed-wing;2P/S;Light;F;II;2
+;;;;;;
+;;;;;;
+PA24;Fixed-wing;1P/S;Light;F;I;4
+;;;;;;
+;;;;;;
+;;;;;;
+PA25;Fixed-wing;1P/S;Light;F;I;1
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+PA27;Fixed-wing;2P/S;Light;F;II;3
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+PA30;Fixed-wing;2P/S;Light;F;II;1
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+PA31;Fixed-wing;2P/S;Light;F;II;2
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+PA32;Fixed-wing;1P/S;Light;F;I;3
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+PA34;Fixed-wing;2P/S;Light;F;II;7
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+PA36;Fixed-wing;1P/S;Light;F;I;2
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+PA38;Fixed-wing;1P/S;Light;F;I;3
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+PA44;Fixed-wing;2P/S;Light;F;II;2
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+PA46;Fixed-wing;1P/S;Light;F;I;4
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+PA47;Fixed-wing;1J/S;Light;F;III;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+PACE;Fixed-wing;1P/S;Light;F;III;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+PAGO;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+PANT;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+PAR1;Fixed-wing;1P/S;Light;F;I;
+PAR4;Fixed-wing;1P/S;Light;F;I;
+PARA;;;;;;
+PARL;Fixed-wing;1P/S;Light;F;I;
+PAT2;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+PAT4;Fixed-wing;2T/S;Light;F;II;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+PAUL;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+PAV4;Gyrocopter;1P/S;Light;F;I;
+;;;;;;
+PAY1;Fixed-wing;2T/S;Light;F;II;5
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+PAY2;Fixed-wing;2T/S;Light;F;II;2
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+PAY3;Fixed-wing;2T/S;Light;F;II;8
+;;;;;;
+PAY4;Fixed-wing;2T/S;Light;F;II;4
+;;;;;;
+;;;;;;
+PC12;Fixed-wing;1T/S;Light;F;I;4
+;;;;;;
+;;;;;;
+PC21;Fixed-wing;1T/S;Light;F;I;
+PC24;Fixed-wing;2J/S+;Medium;F;III;
+PC6P;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+PC6T;Fixed-wing;1T/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+PC7;Fixed-wing;1T/S;Light;F;I;1
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+PC9;Fixed-wing;1T/S;Light;F;I;
+;;;;;;
+PCA2;Gyrocopter;1P/S;Light;F;I;
+PDIG;Fixed-wing;2P/S;Light;F;II;
+PECR;Fixed-wing;1P/S;Light;F;I;
+PEGA;Fixed-wing;2P/S;Light;F;II;
+PEGZ;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+PELI;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+PEMB;Fixed-wing;2P/S+;Light;F;III;
+;;;;;;
+;;;;;;
+PETL;Fixed-wing;1P/S;Light;F;I;
+;;;;;;AAC, SeaStar
+;;;;;;BILLIE, Pétrel
+PETR;@Fixed-wing;1P/S;Light;F;I;EDRA, Paturi EDRA, SeaStar
+;;;;;;EDRA, Super Petrel
+;;;;;;SMAN, Pétrel
+PGEE;Fixed-wing;1P/S;Light;F;I;HOLCOMB, Perigee
+PGK1;Fixed-wing;1P/S;Light;F;I;WESTERN, Hirondelle WESTERN, PGK-1 Hirondelle
+PHIL;Helicopter;1P/S;Light;F;I;VTOL AIRCRAFT, Phillicopter
+PHIX;Gyrocopter;1P/S;Light;F;I;PHENIX, Phenix
+PHNX;Fixed-wing;1P/S;Light;F;I;FREEDOM, Phoenix
+PIAE;Fixed-wing;1E/S;Light;F;I;PIPISTREL, Alpha Electro  PIPISTREL, WattsUp
+PIAT;Fixed-wing;1P/S;Light;F;I;PIPISTREL, Alpha Trainer
+;;;;;;EUROSPACE, Excalibur
+;;;;;;EUROSPACE, F-15 Excalibur
+;;;;;;GENERAL AVIA, Delfino
+;;;;;;GENERAL AVIA, F-15 Delfino
+PICO;Fixed-wing;1P/S;Light;F;I;GENERAL AVIA, F-15 Picchio  GENERAL AVIA, Picchio
+;;;;;;ODESSA, Delfin
+;;;;;;ODESSA, Y-1 Delfin
+;;;;;;PROCAER, F-15 Picchio
+;;;;;;PROCAER, Picchio
+;;;;;;CASA, Pillán
+;;;;;;CASA, T-35 Pillán
+;;;;;;CASA, T-35 Tamiz
+;;;;;;CASA, Tamiz
+;;;;;;ENAER, ECH-51 Pillán
+;;;;;;ENAER, Pillán
+;;;;;;ENAER, T-35A Pillán
+PILL;Fixed-wing;1P/S;Light;F;I;ENAER, T-35B Pillán
+;;;;;;ENAER, T-35C Pillán
+;;;;;;ENAER, T-35D Pillán
+;;;;;;ENAER, T-35S Pillán
+;;;;;;INDAER PERU, Pillán
+;;;;;;INDAER PERU, T-35 Pillán
+;;;;;;PIPER, PA-28R-300 Pillán
+;;;;;;PIPER, Pillán
+;;;;;;GENERAL AVIA, F-22 Pinguino
+PINO;Fixed-wing;1P/S;Light;F;I;GENERAL AVIA, F-22 Pinguino Sprint GENERAL AVIA, Pinguino
+;;;;;;GENERAL AVIA, Pinguino Sprint
+PIPA;Fixed-wing;1P/S;Light;F;I;PIPISTREL, Panthera
+PISI;Fixed-wing;1P/S;Light;F;I;PIPISTREL, Sinus
+PIT4;Fixed-wing;1E/S;Light;F;I;PIPISTREL, Taurus Electro G4
+PITA;Fixed-wing;1P/S;Light;F;I;PIPISTREL, Taurus 503
+PITE;Fixed-wing;1E/S;Light;F;I;PIPISTREL, Taurus Electro  PIPISTREL, Taurus Electro G2
+PIVI;Fixed-wing;1P/S;Light;F;I;PIPISTREL, Surveyor  PIPISTREL, Virus
+PK11;Fixed-wing;1P/S;Light;F;I;PIK, PIK-11 Tumppu PIK, Tumppu
+PK15;Fixed-wing;1P/S;Light;F;I;PIK, Hinu PIK, PIK-15 Hinu
+PK18;Fixed-wing;1P/S;Light;F;I;PIK, PIK-18 Sytky PIK, Sytky
+PK19;Fixed-wing;1P/S;Light;F;I;PIK, Muhinu PIK, PIK-19 Muhinu
+;;;;;;EIRI, PIK-20E
+PK20;Fixed-wing;1P/S;Light;F;I;ISSOIRE , PIK-20E ISSOIRE , PIK-30
+;;;;;;PIK, PIK-20E
+PK21;Fixed-wing;1P/S;Light;F;I;PIK, PIK-21 Super Sytky PIK, Super Sytky
+;;;;;;PIK, PIK-23 Suhinu
+;;;;;;PIK, PIK-23 Towmaster
+;;;;;;PIK, Suhinu
+PK23;Fixed-wing;1P/S;Light;F;I;PIK, Towmaster VALMET, PIK-23 Suhinu
+;;;;;;VALMET, PIK-23 Towmaster
+;;;;;;VALMET, Suhinu
+;;;;;;VALMET, Towmaster
+PK25;Fixed-wing;1P/S;Light;F;I;PIK, PIK-25 Varttimarkka PIK, Varttimarkka
+;;;;;;UETZ, Pelikan
+PKAN;Fixed-wing;1P/S;Light;F;I;UETZ, U-3M Pelikan
+;;;;;;UETZ, U-4M Pelikan
+PL1;Fixed-wing;1P/S;Light;F;I;PAZMANY, Laminar PAZMANY, PL-1 Laminar
+;;;;;;FLIGHT ENGINEERS, Airtruk
+;;;;;;FLIGHT ENGINEERS, PL-12 Airtruk
+PL12;Fixed-wing;1P/S;Light;F;I;TRANSAVIA, Airtruk TRANSAVIA, PL-12 Airtruk
+;;;;;;TRANSAVIA, PL-12 Skyfarmer
+;;;;;;TRANSAVIA, Skyfarmer
+PL2;Fixed-wing;1P/S;Light;F;I;PAZMANY, PL-2
+PL4;Fixed-wing;1P/S;Light;F;I;PAZMANY, PL-4
+PL9;Fixed-wing;1P/S;Light;F;I;PAZMANY, PL-9 Stork PAZMANY, Stork
+;;;;;;TAYLORCRAFT (2), Auster 1
+PLUS;Fixed-wing;1P/S;Light;F;I;TAYLORCRAFT (2), Plus C
+;;;;;;TAYLORCRAFT (2), Plus D
+PNR2;Fixed-wing;1P/S;Light;F;I;ALPI, Pioneer 200 ALPI, Pioneer 230
+PNR3;Fixed-wing;1P/S;Light;F;I;ALPI, Pioneer 300 ALPI, Pioneer 330
+PNR4;Fixed-wing;1P/S;Light;F;I;ALPI, Pioneer 400
+;;;;;;CSS, CSS-13
+PO2;Fixed-wing;1P/S;Light;F;I;PODESVA, Po-2 PZL-MIELEC, CSS-13
+;;;;;;PZL-OKECIE, CSS-13
+;;;;;;POTEZ, 60 Sauterelle
+PO60;Fixed-wing;1P/S;Light;F;I;POTEZ, 600 Sauterelle
+;;;;;;POTEZ, Sauterelle
+POLI;Fixed-wing;1P/S;Light;F;I;ALVAREZ, Polliwagen
+PONY;@Fixed-wing;1P/S;Light;F;I;REDA, Pony
+PP2;Fixed-wing;1P/S;Light;F;I;PILATUS, P-2
+PP3;Fixed-wing;1P/S;Light;F;I;PILATUS, P-3
+;;;;;;HUNTING, P-56 Provost
+;;;;;;HUNTING, Provost
+PPRO;Fixed-wing;1P/S;Light;F;I;HUNTING PERCIVAL, P-56 Provost HUNTING PERCIVAL, Provost
+;;;;;;PERCIVAL, P-56 Provost
+;;;;;;PERCIVAL, Provost
+PRBP;Fixed-wing;1P/S;Light;F;I;HOWARD HUGHES, Pocket Rocket PR-Bipe
+PRBR;Fixed-wing;1P/S;Light;F;I;HOWARD HUGHES, Pocket Rocket PR-Breeze
+PRCE;Fixed-wing;2P/S;Light;F;II;PERCIVAL, P-57 Sea Prince PERCIVAL, Sea Prince
+PREN;Fixed-wing;1P/S;Light;F;I;PERCIVAL, P-40 Prentice PERCIVAL, Prentice
+PRET;Fixed-wing;1P/S;Light;F;I;GM&T, GM&T Pretty Flight
+PREX;Fixed-wing;1P/S;Light;F;I;PRIVATE EXPLORER, Private Explorer
+;;;;;;
+;;;;;;
+PRM1;Fixed-wing;2J/S+;Light;F;III;7
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+PROC;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+PROT;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+PROW;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+PRPR;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+PRTS;Fixed-wing;2J/S;Light;F;III;
+;;;;;;
+PRXT;Fixed-wing;1T/S;Light;F;I;
+PSTM;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+PSW4;Helicopter;1T/S;Light;F;I;
+;;;;;;
+;;;;;;
+PT21;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+PT22;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+PT70;Fixed-wing;1P/S;Light;F;I;
+PT80;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+PTMS;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+PTRL;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+PTS1;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+PTS2;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+PTSS;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+PUL6;Fixed-wing;1P/S;Light;F;I;
+PULR;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+PULS;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+PUMA;Helicopter;2T/S+;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+PUP;Fixed-wing;1P/S;Light;F;I;2
+PURS;Fixed-wing;1P/S;Light;F;I;
+PUSH;Fixed-wing;1P/S;Light;F;I;
+PW4;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+PZ01;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+PZ02;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+PZ04;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+PZ05;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+PZ06;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+PZ12;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+PZ26;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+PZ3T;Fixed-wing;1T/S;Light;F;I;
+PZ4M;Fixed-wing;1P/S;Light;F;I;
+;;;;;;PZL-OKECIE, PZL-106AT Turbo Javelin
+;;;;;;PZL-OKECIE, PZL-106AT Turbo Kruk
+PZ6T;Fixed-wing;1T/S;Light;F;I;PZL-OKECIE, PZL-106BT Turbo Javelin PZL-OKECIE, PZL-106BT Turbo Kruk
+;;;;;;PZL-OKECIE, Turbo Javelin
+;;;;;;PZL-OKECIE, Turbo Kruk
+Q01;Fixed-wing;1P/S;Light;F;I;REINER STEMME, Q-01
+;;;;;;GENERAL ATOMICS, Grey Eagle
+;;;;;;GENERAL ATOMICS, MQ-1 Gray Eagle
+;;;;;;GENERAL ATOMICS, MQ-1 Predator
+Q1;Landplane;GENERAL ATOMICS, MQ-1 Warrior NOWGT 1P/;Light;NOWGT;I;
+;;;;;;GENERAL ATOMICS, Predator
+;;;;;;GENERAL ATOMICS, RQ-1 Predator
+;;;;;;GENERAL ATOMICS, Warrior
+;;;;;;NORTHROP GRUMMAN, EQ-4 Global Hawk
+;;;;;;NORTHROP GRUMMAN, EuroHawk
+;;;;;;NORTHROP GRUMMAN, Global Hawk
+Q4;Landplane;NORTHROP GRUMMAN, MQ-4 Triton NOWGT 1J/;Medium;NOWGT;III;
+;;;;;;NORTHROP GRUMMAN, RQ-4 EuroHawk
+;;;;;;NORTHROP GRUMMAN, RQ-4 Global Hawk
+;;;;;;NORTHROP GRUMMAN, Triton
+;;;;;;HONGDU, A-5
+Q5*;Fixed-wing;2J/S+;Medium;F;III;HONGDU, Q-5 NANCHANG, A-5
+;;;;;;NANCHANG, Q-5
+;;;;;;GENERAL ATOMICS, Guardian
+;;;;;;GENERAL ATOMICS, Ikhana
+;;;;;;GENERAL ATOMICS, MQ-9 Guardian
+Q9;Landplane;1T/ NOWGT;Light;NOWGT;I;GENERAL ATOMICS, MQ-9 Ikhana GENERAL ATOMICS, MQ-9 Predator B
+;;;;;;GENERAL ATOMICS, MQ-9 Reaper
+;;;;;;GENERAL ATOMICS, Predator B
+;;;;;;GENERAL ATOMICS, Reaper
+QAIL;Fixed-wing;1P/S;Light;F;I;AEROSPORT, Quail
+QALT;Fixed-wing;1P/S;Light;F;I;FMP, Qualt
+QEST;Fixed-wing;1P/S;Light;F;I;OMNI-WELD, Questor
+QIC2;Fixed-wing;1P/S;Light;F;I;QUICKIE, Quickie Q2 QUICKIE, Quickie Q200
+QR01;Fixed-wing;1P/S;Light;F;I;QUERCY, CQR-01
+QUAS;Fixed-wing;1P/S;Light;F;I;AEROALCOOL, Quasar Lite QUASAR, Quasar Lite
+QUIC;Fixed-wing;1P/S;Light;F;I;QUICKIE, Quickie
+R100;Fixed-wing;1P/S;Light;F;I;ROBIN, Aiglon ROBIN, R-1180 Aiglon
+;;;;;;AIRCRAFT SPRUCE, DR-109 Rhino
+;;;;;;AIRCRAFT SPRUCE, Rhino
+R109;Fixed-wing;1P/S;Light;F;I;KIMBALL, DR-109 Rhino KIMBALL, Rhino
+;;;;;;RIHN, DR-109 Rhino
+;;;;;;RIHN, Rhino
+R11;Fixed-wing;1P/S;Light;F;I;RUPERT, R-11
+R135;Fixed-wing;4J/H;Heavy;C;III;BOEING, RC-135 BOEING, TC-135
+R185;Fixed-wing;1P/S;Light;F;I;JOHNSON, Rocket 185 ROCKET, Rocket 185
+R2;$Fixed-wing;1P/S;Light;F;I;SAU, R-02 Robert SAU, Robert
+;;;;;;ALPHA AVIATION, Alpha 120
+;;;;;;ALPHA AVIATION, Alpha 160
+;;;;;;ALPHA AVIATION, R-2120 Alpha 120
+;;;;;;ALPHA AVIATION, R-2160 Alpha 160
+;;;;;;ROBIN, Alpha
+R200;Fixed-wing;1P/S;Light;F;I;ROBIN, Alpha Sport
+;;;;;;ROBIN, R-2100 Super Club
+;;;;;;ROBIN, R-2112 Alpha
+;;;;;;ROBIN, R-2120 Alpha
+;;;;;;ROBIN, R-2160 Alpha Sport
+;;;;;;ROBIN, Super Club
+;;;;;;AERO ELI, Yo-Yo
+;;;;;;ROBINSON, Beta
+R22;Helicopter;1P/S;Light;F;I;ROBINSON, Mariner ROBINSON, R-22
+;;;;;;ROBINSON, R-22 Beta
+;;;;;;ROBINSON, R-22 Mariner
+;;;;;;ROBIN, R-300
+;;;;;;ROBIN, R-3000
+R300;Fixed-wing;1P/S;Light;F;I;ROBIN, R-3100
+;;;;;;ROBIN, R-3120
+;;;;;;ROBIN, R-3140
+;;;;;;SIKORSKY, H-4 Hoverfly
+R4;Helicopter;1P/S;Light;F;I;SIKORSKY, Hoverfly
+;;;;;;SIKORSKY, R-4 Hoverfly
+;;;;;;ROBINSON, Astro
+;;;;;;ROBINSON, Clipper
+R44;Helicopter;1P/S;Light;F;I;ROBINSON, R-44 Astro ROBINSON, R-44 Clipper
+;;;;;;ROBINSON, R-44 Raven
+;;;;;;ROBINSON, Raven
+R66;Helicopter;1T/S;Light;F;I;ROBINSON, R-66
+R721;Fixed-wing;3J/L;Medium;D;III;BOEING, 727-100RE Super 27 BOEING, Super 27 (100)
+R722;Fixed-wing;3J/L;Medium;D;III;BOEING, 727-200RE Super 27 BOEING, Super 27 (200)
+R90F;Fixed-wing;1P/S;Light;F;I;RUSCHMEYER, R-90-230FG
+R90R;Fixed-wing;1P/S;Light;F;I;RUSCHMEYER, MF-85 RUSCHMEYER, R-90-230RG
+R90T;Fixed-wing;1T/S;Light;F;I;RUSCHMEYER, R-90-420AT
+;;;;;;ADAM (1), Loisirs
+;;;;;;ADAM (1), RA-14 Loisirs
+;;;;;;FALCONAR, AMF-S14 Maranda
+RA14;Fixed-wing;1P/S;Light;F;I;FALCONAR, Maranda MARANDA, BM-1 Loisirs
+;;;;;;MARANDA, BM-1 Super Loisirs
+;;;;;;MARANDA, Loisirs
+;;;;;;MARANDA, Super Loisirs
+RA17;Fixed-wing;1P/S;Light;F;I;ADAM (1), RA-17 MARANDA, BM-3
+RAF2;Gyrocopter;1P/S;Light;F;I;ROTARY AIR FORCE, RAF-2000
+RAID;Fixed-wing;1P/S;Light;F;I;SKY RAIDER, Super Sky Raider
+RAIL;Fixed-wing;1P/S;Light;F;I;AEROSPORT, Rail
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+RALL;Fixed-wing;1P/S;Light;F;I;3
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+RANG;Fixed-wing;1P/S;Light;F;I;1
+RARO;Fixed-wing;1P/S;Light;F;I;
+RAV3;Fixed-wing;1P/S;Light;F;I;
+RAV5;Fixed-wing;1P/S;Light;F;I;
+RAZM;Fixed-wing;1P/S;Light;F;I;
+RBEL;Fixed-wing;1P/S;Light;F;I;
+RC3;@Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+RC70;Fixed-wing;2P/S;Light;F;II;
+;;;;;;
+;;;;;;
+RD03;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+RD20;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+RDH2;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+RELI;Fixed-wing;1P/S;Light;F;I;3
+;;;;;;
+RENE;Fixed-wing;1P/S;Light;F;I;
+REV6;Gyrocopter;1T/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+RF10;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+RF3;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+RF4;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+RF47;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+RF5;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+RF6;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+RF9;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+RFAL*;Fixed-wing;2J/L;Medium;E;III;
+;;;;;;
+;;;;;;
+RGNT;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+RJ03;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+RJ1H;Fixed-wing;4J/L;Medium;E;III;7
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+RJ70;Fixed-wing;4J/L;Medium;E;III;7
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+RJ85;Fixed-wing;4J/L;Medium;E;III;7
+;;;;;;
+;;;;;;
+RK5;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+RLU1;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+RMOU;Helicopter;1T/S;Light;F;I;
+RNGR;Fixed-wing;1P/S;Light;F;I;
+ROAR;Fixed-wing;1R/S;Light;F;III;
+;;;;;;
+RODS;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+ROND;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+ROSE;Fixed-wing;1P/S;Light;F;I;
+RP1;Helicopter;2T/S;Light;F;I;
+;;;;;;
+RPUP;Gyrocopter;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+RS12;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+RS18;Fixed-wing;1P/S;Light;F;I;
+RS20;Fixed-wing;1P/S;Light;F;I;
+RTA4;Fixed-wing;1P/S;Light;F;I;
+RUBI;Fixed-wing;1P/S;Light;F;I;
+RV10;Fixed-wing;1P/S;Light;F;I;
+RV12;Fixed-wing;1P/S;Light;F;I;
+RV14;Fixed-wing;1P/S;Light;F;I;
+RV3;Fixed-wing;1P/S;Light;F;I;
+RV4;Fixed-wing;1P/S;Light;F;I;
+RV4T;Fixed-wing;1T/S;Light;F;I;
+;;;;;;
+RV6;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+RV7;Fixed-wing;1P/S;Light;F;I;
+RV8;Fixed-wing;1P/S;Light;F;I;
+RV9;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+RVAL;Helicopter;2T/S+;Medium;F;I;
+;;;;;;
+;;;;;;
+RW19;Fixed-wing;1P/S;Light;F;I;
+RW20;Fixed-wing;1P/S;Light;F;I;
+RW22;Fixed-wing;1P/S;Light;F;I;
+RW26;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+RW3;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+RYSA;Fixed-wing;2T/S+;Light;F;III;
+;;;;;;
+;;;;;;
+RYST;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+S05F;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+S05R;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+S1;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+S10;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+S107;$Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+S108;Fixed-wing;1P/S;Light;F;I;2
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+S10S;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+S11;Fixed-wing;1P/S;Light;F;I;
+S12;@Fixed-wing;1P/S;Light;F;I;
+S122;Fixed-wing;2P/S;Light;F;II;
+S12S;Fixed-wing;1P/S;Light;F;I;
+S15S;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+S15U;Fixed-wing;1P/ NOWGT;Light;NOWGT;I;
+;;;;;;
+S200;Fixed-wing;1J/S;Light;F;III;
+S202;@Fixed-wing;2P/S;Light;F;II;
+S208;Fixed-wing;1P/S;Light;F;I;
+S21;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+S210;Fixed-wing;2J/L;Medium;D;III;8
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+S211*;Fixed-wing;1J/S;Light;F;III;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+S223;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+S22T;Fixed-wing;1P/S;Light;F;I;
+S274;Helicopter;1T/S;Light;F;I;
+S278;Helicopter;1T/S;Light;F;I;
+S285;Helicopter;1T/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+S2P;Fixed-wing;2P/S+;Medium;F;III;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+S2T;Fixed-wing;2T/S+;Medium;F;III;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+S3;Fixed-wing;2J/L;Medium;E;III;
+;;;;;;
+;;;;;;
+S32E;Fixed-wing;1E/S;Light;F;I;
+S32M;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+S330;Helicopter;1T/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+S360;Helicopter;1T/S;Light;F;I;
+;;;;;;
+;;;;;;
+S37*;Fixed-wing;2J/L;Medium;E;III;
+;;;;;;
+S38;@Fixed-wing;2P/S;Light;F;II;
+S39;@Fixed-wing;1P/S;Light;F;I;
+S4;Fixed-wing;1P/S;Light;F;I;
+S400;$Fixed-wing;2P/S;Light;F;II;
+S434;Helicopter;1T/S;Light;F;I;
+S45;Fixed-wing;1P/S;Light;F;I;
+S450;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+S51;Helicopter;1P/S;Light;F;I;
+;;;;;;
+S51D;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+S52;Helicopter;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+S55P;Helicopter;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+S55T;Helicopter;1T/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+S58P;Helicopter;1P/S+;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+S58T;Helicopter;1T/S+;Light;F;I;
+;;;;;;
+S6;Fixed-wing;1P/S;Light;F;I;
+S601;Fixed-wing;2J/S+;Light;F;III;5
+;;;;;;AGUSTA, AS-61A
+;;;;;;AGUSTA, AS-61N
+;;;;;;AGUSTA, ASH-61
+;;;;;;AGUSTA, SH-3
+;;;;;;HELIPRO, S-61 Shortsky
+;;;;;;HELIPRO, Shortsky
+;;;;;;MITSUBISHI, HSS-2
+;;;;;;MITSUBISHI, S-61A
+;;;;;;MITSUBISHI, S-61B
+;;;;;;SIKORSKY, CH-124 Sea King
+;;;;;;SIKORSKY, HSS-2 Sea King
+;;;;;;SIKORSKY, Nuri
+;;;;;;SIKORSKY, S-61A
+S61;Helicopter;2T/S+;Medium;F;I;SIKORSKY, S-61A Nuri
+;;;;;;SIKORSKY, S-61B
+;;;;;;SIKORSKY, S-61D
+;;;;;;SIKORSKY, S-61L
+;;;;;;SIKORSKY, S-61N
+;;;;;;SIKORSKY, Sea King
+;;;;;;SIKORSKY, SH-3 Sea King
+;;;;;;SIKORSKY, UH-3 Sea King
+;;;;;;SIKORSKY, VH-3 Sea King
+;;;;;;UNITED CANADA, CH-124 Sea King
+;;;;;;WESTLAND, Commando
+;;;;;;WESTLAND, Sea King
+;;;;;;WESTLAND, WS-61 Commando
+;;;;;;WESTLAND, WS-61 Sea King
+;;;;;;AGUSTA, AS-61R
+;;;;;;AGUSTA, HH-3
+;;;;;;SIKORSKY, CH-3
+S61R;Helicopter;2T/S+;Medium;F;I;SIKORSKY, HH-3
+;;;;;;SIKORSKY, HH-3 Pelican
+;;;;;;SIKORSKY, Pelican
+;;;;;;SIKORSKY, S-61R
+;;;;;;SIKORSKY, HH-52 Seaguard
+S62;Helicopter;1T/S;Light;F;I;SIKORSKY, S-62
+;;;;;;SIKORSKY, Seaguard
+;;;;;;SIKORSKY, CH-54 Tarhe
+S64;Helicopter;2T/L;Medium;E;I;SIKORSKY, S-64 Skycrane SIKORSKY, Skycrane
+;;;;;;SIKORSKY, Tarhe
+S65C;Helicopter;2T/S;Light;F;I;AEROSPATIALE, Dauphin 2 (SA-365C) AEROSPATIALE, SA-365C Dauphin 2
+;;;;;;KEYSTONE, S-76
+;;;;;;SIKORSKY, AUH-76
+;;;;;;SIKORSKY, Eagle
+S76;Helicopter;2T/S;Light;F;I;SIKORSKY, H-76 Eagle
+;;;;;;SIKORSKY, S-76
+;;;;;;SIKORSKY, S-76 Spirit
+;;;;;;SIKORSKY, Spirit
+;;;;;;SIPA, S-901
+S900;Fixed-wing;1P/S;Light;F;I;SIPA, S-902 SIPA, S-903
+;;;;;;SIPA, S-904
+;;;;;;SIKORSKY, CH-148 Cyclone
+;;;;;;SIKORSKY, Cyclone
+S92;Helicopter;2T/S+;Medium;F;I;SIKORSKY, H-92 Superhawk SIKORSKY, Helibus
+;;;;;;SIKORSKY, S-92 Helibus
+;;;;;;SIKORSKY, Superhawk
+S97;Helicopter;1T/S;Light;F;I;SIKORSKY, Raider SIKORSKY, S-97 Raider
+SA02;Fixed-wing;1P/S;Light;F;I;K & S, Cavalier (SA-102.5) K & S, SA-102.5 Cavalier
+SA03;Fixed-wing;1P/S;Light;F;I;K & S, Cavalier (SA-103) K & S, SA-103 Cavalier
+SA04;Fixed-wing;1P/S;Light;F;I;K & S, Cavalier (SA-104) K & S, SA-104 Cavalier
+SA05;Fixed-wing;1P/S;Light;F;I;K & S, SA-105 Super Cavalier K & S, Super Cavalier
+SA10;Fixed-wing;1P/S;Light;F;I;STOLP, SA-100 Starduster STOLP, Starduster
+SA11;Fixed-wing;1P/S;Light;F;I;STITS, Playmate STITS, SA-11 Playmate
+;;;;;;ICP, Rampage
+SA2;Fixed-wing;1P/S;Light;F;I;ICP, SA-2 Rampage ICP, SA-2 Vimana
+;;;;;;ICP, Vimana
+SA20;@Fixed-wing;1P/S;Light;F;I;BERIEV, SA-20
+SA3;Fixed-wing;1P/S;Light;F;I;STITS, Playboy STITS, SA-3 Playboy
+SA30;Fixed-wing;1P/S;Light;F;I;STOLP, SA-300 Starduster Too STOLP, Starduster Too
+;;;;;;SCHWEIZER, Condor
+SA37;Fixed-wing;1P/S;Light;F;I;SCHWEIZER, RG-8 Condor
+;;;;;;SCHWEIZER, SA-2-37 Condor
+;;;;;;SCHWEIZER, RU-38A Twin Condor
+SA38;Fixed-wing;2P/S;Light;F;II;SCHWEIZER, SA-2-38A Twin Condor
+;;;;;;SCHWEIZER, Twin Condor (piston)
+SA50;Fixed-wing;1P/S;Light;F;I;STOLP, SA-500 Starlet STOLP, Starlet
+SA6;Fixed-wing;1P/S;Light;F;I;STITS, Flut-R-Bug STITS, SA-6 Flut-R-Bug
+SA6E;Fixed-wing;1T/S;Light;F;I;SREYA, Envoy SREYA, SA-6 Envoy
+SA7;Fixed-wing;1P/S;Light;F;I;STITS, SA-7 Sky-Coupe STITS, Sky-Coupe
+SA70;Fixed-wing;1P/S;Light;F;I;STOLP, Acroduster STOLP, SA-700 Acroduster
+SA75;Fixed-wing;1P/S;Light;F;I;STOLP, Acroduster Too STOLP, SA-750 Acroduster Too
+;;;;;;SCHWEIZER, RU-38B Twin Condor
+SA8T;Fixed-wing;2T/S;Light;F;II;SCHWEIZER, SA-2-38B Twin Condor
+;;;;;;SCHWEIZER, Twin Condor (turbine)
+SAB2;Fixed-wing;1P/S;Light;F;I;ARNET PEREYRA, Sabre 2 KEUTHAN, Sabre 2
+SABA;Fixed-wing;1P/S;Light;F;I;PARAVAR PARS, Saba
+;;;;;;ACE, Super Ace
+SACE;Fixed-wing;1P/S;Light;F;I;ACRO SPORT, Super Ace CORBEN, Super Ace
+;;;;;;POBER, Super Ace
+SACR;Fixed-wing;1P/S;Light;F;I;SMITH (3), Acro Advanced
+SAFF;Fixed-wing;1P/S;Light;F;I;HALSTED, Saffire
+SAH1;Fixed-wing;1P/S;Light;F;I;FLS, Sprint TRAGO MILLS, SAH-1
+SAKO;Fixed-wing;1P/S;Light;F;I;RANS, S-10 Sakota RANS, Sakota
+SALB;Fixed-wing;1P/S;Light;F;I;SKYGEAR, Albatross
+SAM;Fixed-wing;1P/S;Light;F;I;SAM AIRCRAFT, Sam
+SAND;$Fixed-wing;4P/L;Medium;D;III;SHORT, S-25 Sandringham SHORT, Sandringham
+SAPH;Fixed-wing;1P/S;Light;F;I;PIEL, CP-1320 Saphir PIEL, Saphir
+SASH;Fixed-wing;2P/S;Light;F;II;SHARK AIRCRAFT, Shark
+SASP;Fixed-wing;1P/S;Light;F;I;SUPERMARINE AIRCRAFT, Spitfire Mk25 SUPERMARINE AIRCRAFT, Spitfire Mk26
+;;;;;;PROTECH, ProStar
+SASY;Fixed-wing;1P/S;Light;F;I;PROTECH, PT-2 ProStar PROTECH, PT-2 Sassy
+;;;;;;PROTECH, Sassy
+;;;;;;CASA, HA-220 Super Saeta
+;;;;;;CASA, Super Saeta
+SATA*;Fixed-wing;2J/S;Light;F;III;HISPANO, HA-200 Saeta HISPANO, HA-220 Super Saeta
+;;;;;;HISPANO, Saeta
+;;;;;;HISPANO, Super Saeta
+SAVA;Fixed-wing;1P/S;Light;F;I;SADLER, Vampire
+;;;;;;ALMS, Callao
+SAVG;Fixed-wing;1P/S;Light;F;I;RUSSO, Savage
+;;;;;;ZLIN AVIATION, Savage
+SB05*;Fixed-wing;2J/S;Light;F;III;SAAB, 105 SAAB, Sk60
+SB20;Fixed-wing;2T/L;Medium;E;III;SAAB, 2000
+SB29*;Fixed-wing;1J/S+;Medium;F;III;SAAB, 29 SAAB, J29
+;;;;;;SAAB, 32 Lansen
+SB32*;Fixed-wing;1J/S+;Medium;F;III;SAAB, J32 Lansen
+;;;;;;SAAB, Lansen
+;;;;;;SAAB, 35 Draken
+;;;;;;SAAB, Draken
+;;;;;;SAAB, F-35 Draken
+;;;;;;SAAB, J35 Draken
+SB35*;Fixed-wing;1J/S+;Medium;F;III;SAAB, RF-35 Draken
+;;;;;;SAAB, Sk35 Draken
+;;;;;;SAAB, TF-35 Draken
+;;;;;;VALMET, 35 Draken
+;;;;;;VALMET, Draken
+;;;;;;SAAB, 37 Viggen
+;;;;;;SAAB, AJ37 Viggen
+;;;;;;SAAB, AJS37 Viggen
+SB37*;Fixed-wing;1J/L;Medium;E;III;SAAB, JA37 Viggen SAAB, SF37 Viggen
+;;;;;;SAAB, SH37 Viggen
+;;;;;;SAAB, Sk37 Viggen
+;;;;;;SAAB, Viggen
+;;;;;;SAAB, 39 Gripen
+SB39*;Fixed-wing;1J/S+;Medium;F;III;SAAB, Gripen
+;;;;;;SAAB, JAS39 Gripen
+SB7;Fixed-wing;1P/S;Light;F;I;SEABIRD, SB-7 Seeker SEABIRD, Seeker
+;;;;;;DE SCHELDE, 91 Safir
+;;;;;;DE SCHELDE, Safir
+SB91;Fixed-wing;1P/S;Light;F;I;DE SCHELDE, Sk50 Safir SAAB, 91 Safir
+;;;;;;SAAB, Safir
+;;;;;;SAAB, Sk50 Safir
+;;;;;;DOUGLAS, A-24 Dauntless
+SBD;Fixed-wing;1P/S;Light;F;I;DOUGLAS, Dauntless
+;;;;;;DOUGLAS, SBD Dauntless
+SBLS;Fixed-wing;2P/S;Light;F;II;SLIPSTREAM, SkyBlaster
+SBM3;Fixed-wing;1P/S;Light;F;I;E & K, Kos E & K, SBM-03 Kos
+SBOY;Fixed-wing;1P/S;Light;F;I;INTERPLANE, Skyboy
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+SBR1;Fixed-wing;2J/S+;Medium;F;III;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+SBR2;Fixed-wing;2J/S+;Medium;F;III;
+;;;;;;
+;;;;;;
+;;;;;;
+SC01;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+SC7;Fixed-wing;2T/S+;Light;F;III;2
+;;;;;;
+SCAM;Fixed-wing;1P/S;Light;F;I;
+SCEP;Fixed-wing;1P/S;Light;F;I;
+SCII;Gyrocopter;1P/S;Light;F;I;
+SCOM;Fixed-wing;1P/S;Light;F;I;
+SCOR;Helicopter;1P/S;Light;F;I;
+SCOU;Helicopter;1T/S;Light;F;I;
+SCRO;Fixed-wing;1P/S;Light;F;I;
+SCTR;Fixed-wing;1P/S;Light;F;I;
+SCUB;Fixed-wing;1P/S;Light;F;I;
+SCW1;Fixed-wing;1P/S;Light;F;I;
+SD26;Fixed-wing;1P/S;Light;F;I;
+SD4;Fixed-wing;1P/S;Light;F;I;
+SDUS;Fixed-wing;1P/S;Light;F;I;
+SE5A;Fixed-wing;1P/S;Light;F;I;
+SE5R;Fixed-wing;1P/S;Light;F;I;
+SEAT;@Fixed-wing;1T/S;Light;F;I;
+SEAW;@Fixed-wing;1P/S;Light;F;I;
+SERA;Fixed-wing;1P/S;Light;F;I;
+SEST;@Fixed-wing;1T/S;Light;F;I;
+;;;;;;
+;;;;;;
+SF2;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+SF23;Fixed-wing;1P/S;Light;F;I;
+SF24;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+SF25;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+SF27;Fixed-wing;1P/S;Light;F;I;
+SF28;Fixed-wing;1P/S;Light;F;I;
+SF31;Fixed-wing;1P/S;Light;F;I;
+SF32;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+SF34;Fixed-wing;2T/L;Medium;E;III;5
+;;;;;;
+;;;;;;
+SF35;Fixed-wing;1P/S;Light;F;I;
+SF36;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+SF50;Fixed-wing;1J/S;Light;F;III;
+;;;;;;
+SG37;Fixed-wing;1P/S;Light;F;I;
+SG70;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+SG92;Fixed-wing;1T/S;Light;F;I;
+;;;;;;
+;;;;;;
+SGRA;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+SGUP;Fixed-wing;4T/L;Medium;D;III;10
+;;;;;;
+SH33;Fixed-wing;2T/S+;Medium;F;III;6
+;;;;;;
+SH36;Fixed-wing;2T/S+;Medium;F;III;6
+SH4;Helicopter;1P/S;Light;F;I;
+SH5;$Fixed-wing;4T/L;Medium;D;III;HARBIN, PS-5 HARBIN, SH-5
+SHAC;Fixed-wing;4P/L;Medium;D;III;AVRO, 696 Shackleton AVRO, Shackleton
+SHAK;@Fixed-wing;1P/S;Light;F;I;FREEDOM MASTER, Air Shark FREEDOM MASTER, FM-2 Air Shark
+SHAW*;Fixed-wing;1J/S+;Medium;F;III;ARMSTRONG WHITWORTH, Sea Hawk HAWKER, Sea Hawk
+SHEA;@Fixed-wing;1P/S;Light;F;I;SEAFLIGHT, Shearwater
+SHEK;Fixed-wing;1P/S;Light;F;I;RANS, S-16 Shekari RANS, Shekari
+SHER;Fixed-wing;1P/S;Light;F;I;SHERPA, Sherpa SHERPA, Sherpa C-400
+SHIP;;;;;;(any manufacturer), Airship
+SHOE;Fixed-wing;1P/S;Light;F;I;MERCURY, Shoestring
+SHOP;Fixed-wing;1P/S;Light;F;I;SALVAY-STARK, Skyhopper
+SHOR;Fixed-wing;1P/S;Light;F;I;HIGHER CLASS, Super Hornet
+SHRK;Fixed-wing;1P/S;Light;F;I;SHARK AERO, Shark
+SHRT;Fixed-wing;1T/S;Light;F;I;SHERPA, Sherpa K-650T
+SIDE;Fixed-wing;1P/S;Light;F;I;SMYTH, S Sidewinder SMYTH, Sidewinder
+SIGM;Fixed-wing;1P/S;Light;F;I;ELITAR, Sigma
+;;;;;;LUNDS TEKNISKE, SA-60 Silhouette
+SILH;Fixed-wing;1P/S;Light;F;I;LUNDS TEKNISKE, Silhouette SILHOUETTE, SA-60 Silhouette
+;;;;;;SILHOUETTE, Silhouette
+SIR2;Fixed-wing;1P/S;Light;F;I;RHEIN, Sirius 2
+;;;;;;TECNAM, P-2002
+SIRA;Fixed-wing;1P/S;Light;F;I;TECNAM, P-2002 Sierra
+;;;;;;TECNAM, Sierra
+;;;;;;EMIVEST, SJ-30
+SJ30;Fixed-wing;2J/S+;Light;F;III;SINO SWEARINGEN, SJ-30
+;;;;;;SWEARINGEN, SJ-30
+SJET;Fixed-wing;1J/S;Light;F;III;EXCEL-JET, Sport-Jet 2
+SK10;Fixed-wing;1P/S;Light;F;I;SKYETON, K-10 Swift SKYETON, Swift
+SK70;Fixed-wing;2P/S;Light;F;II;STARKRAFT, SK-700
+SKAR;Fixed-wing;1P/S;Light;F;I;III, Sky Arrow
+SKIF;@Fixed-wing;1P/S;Light;F;I;AEROLITES, AeroSkiff
+;;;;;;COLONIAL, C-1 Skimmer
+SKIM;@Fixed-wing;1P/S;Light;F;I;COLONIAL, C-2 Skimmer
+;;;;;;COLONIAL, Skimmer
+SKRA;Fixed-wing;1P/S;Light;F;I;BEST OFF, Sky Ranger SYNAIRGIE , Sky Ranger
+SKYC;Fixed-wing;2P/S;Light;F;II;OMA SUD, Skycar
+SKYO;Fixed-wing;1P/S;Light;F;I;SKYOTE AEROMARINE, Skyote
+;;;;;;COMMONWEALTH (2), 185 Skyranger
+;;;;;;COMMONWEALTH (2), Skyranger
+SKYR;Fixed-wing;1P/S;Light;F;I;REARWIN, 175 Skyranger REARWIN, 180 Skyranger
+;;;;;;REARWIN, 190 Skyranger
+;;;;;;REARWIN, Skyranger
+SL1;Fixed-wing;1P/S;Light;F;I;STAR-LITE, SL-1 Star-Lite STAR-LITE, Star-Lite
+SL39;Fixed-wing;1P/S;Light;F;I;MAPO, SL-39
+;;;;;;AVIOTECHNICA, Leshii
+SL90;Fixed-wing;1P/S;Light;F;I;AVIOTECHNICA, SL-90 Leshii INTERAVIA, I-1
+;;;;;;MAPO, I-1
+SLG2;Fixed-wing;1P/S;Light;F;I;AIRPLANE FACTORY, Sling 2
+SLG4;Fixed-wing;1P/S;Light;F;I;AIRPLANE FACTORY, Sling 4
+SLK3;Fixed-wing;1P/S;Light;F;I;SLICK, 360
+SLK5;Fixed-wing;1P/S;Light;F;I;SLICK, 540
+SM01;Fixed-wing;1P/S;Light;F;I;STERN-MALLICK, SM-01 Vega STERN-MALLICK, Vega
+SM19;Fixed-wing;1T/S;Light;F;I;SIAI-MARCHETTI, SM-1019
+SM20;Fixed-wing;1T/S;Light;F;I;TECHNOAVIA, SM-2000
+;;;;;;STINSON, SM-6000 Tri-Motor
+SM60;Fixed-wing;3P/S;Light;F;III;STINSON, T Tri-Motor
+;;;;;;STINSON, Tri-Motor (SM-6000/T)
+;;;;;;MORAVAN, Rhino
+;;;;;;MORAVAN, Zlin Z-400 Rhino
+SM92;Fixed-wing;1P/S;Light;F;I;TECHNOAVIA, Finist TECHNOAVIA, SM-92 Finist
+;;;;;;ZLIN, Rhino
+;;;;;;ZLIN, Z-400 Rhino
+SMAX;@Fixed-wing;1P/S;Light;F;I;AIRMAX, M-22 SeaMax AIRMAX, SeaMax
+SMB2*;Fixed-wing;1J/S+;Medium;F;III;DASSAULT, Super Mystère B2
+;;;;;;CALUMET, 636 Snobird Adventurer
+SNAD;Gyrocopter;1P/S;Light;F;I;CALUMET, Snobird Adventurer SNOBIRD, 636 Snobird Adventurer
+;;;;;;SNOBIRD, Snobird Adventurer
+;;;;;;DALLAIR, FR-01 Snap
+;;;;;;DALLAIR , FR-100 Snap
+SNAP;Fixed-wing;1P/S;Light;F;I;DALLAIR , Snap TECNAM, FR-01 Snap
+;;;;;;TECNAM, FR-100 Snap
+;;;;;;TECNAM, Snap
+;;;;;;CIAC, Calima
+;;;;;;CIAC, Synergy
+SNGY;Fixed-wing;1P/S;Light;F;I;CIAC, T-90 Calima LANCAIR, Calima
+;;;;;;LANCAIR, Synergy
+;;;;;;LANCAIR, T-90 Calima
+SNOS;Fixed-wing;1P/S;Light;F;I;VSR, Snoshoo VSR, SR-1 Snoshoo
+SNS2;Fixed-wing;1P/S;Light;F;I;SORRELL, Guppy SORRELL, SNS-2 Guppy
+SNS7;Fixed-wing;1P/S;Light;F;I;SORRELL, Hiperbipe SORRELL, SNS-7 Hiperbipe
+SNS9;Fixed-wing;1P/S;Light;F;I;SORRELL, EXP-2 SORRELL, SNS-9 EXP-2
+SNTA;Fixed-wing;1P/S;Light;F;I;AIRSPORT, Sonata
+SOK2;Fixed-wing;1P/S;Light;F;I;SOKO, 2
+SOKL;Fixed-wing;1P/S;Light;F;I;MRÁZ, M-1 Sokol MRÁZ, Sokol
+SOL1;Fixed-wing;4E/S;Light;F;III;SOLAR IMPULSE, 1
+SOL2;Fixed-wing;4E/S;Light;F;III;SOLAR IMPULSE, 2
+SOLI;Fixed-wing;1P/S;Light;F;I;RUTAN, 77 Solitaire RUTAN, Solitaire
+SONX;Fixed-wing;1P/S;Light;F;I;SONEX, Sonex
+SORA;Fixed-wing;1P/S;Light;F;I;ACS, ACS-100 Sora ACS, Sora
+;;;;;;LANSHE, SP-26
+SP20;Fixed-wing;1P/S;Light;F;I;MICCO, SP-20 MICCO, SP-26
+;;;;;;NEW MEYERS, SP-20
+SP33;Fixed-wing;2J/S;Light;F;III;SPECTRUM, Independence SPECTRUM, S-33 Independence
+SP55;Fixed-wing;1P/S;Light;F;I;TECHNOAVIA, SP-55
+SP6E;Fixed-wing;1P/S;Light;F;I;SAUSER, P-6E Replica
+;;;;;;SPARTAN, 7 Executive
+SP7;Fixed-wing;1P/S;Light;F;I;SPARTAN, Executive
+;;;;;;SPARTAN, UC-71 Executive
+SP91;Fixed-wing;1P/S;Light;F;I;TECHNOAVIA, Slava TECHNOAVIA, SP-91 Slava
+SP95;Fixed-wing;1P/S;Light;F;I;
+SPA2;Fixed-wing;1P/S;Light;F;I;
+SPAR;Fixed-wing;1P/S;Light;F;I;
+SPC2;Fixed-wing;1P/S;Light;F;I;
+SPDR;Fixed-wing;1P/S;Light;F;I;
+SPEL;Fixed-wing;1P/S;Light;F;I;
+SPGY;Gyrocopter;1P/S;Light;F;I;
+SPHA;Gyrocopter;1P/S;Light;F;I;
+SPIR;Fixed-wing;1P/S;Light;F;I;
+SPIT;Fixed-wing;1P/S;Light;F;I;
+SPOR;Fixed-wing;1P/S;Light;F;I;
+SPR2;Fixed-wing;1P/S;Light;F;I;
+SPRT;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+SPST;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+SPUP;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+SQ2T;Fixed-wing;1P/S;Light;F;I;
+SQES;Fixed-wing;2P/S;Light;F;II;
+SR01;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+SR20;Fixed-wing;1P/S;Light;F;I;1
+;;;;;;
+SR22;Fixed-wing;1P/S;Light;F;I;1
+SR71*;Fixed-wing;2J/L;Medium;E;III;
+SRAC;Fixed-wing;1P/S;Light;F;I;
+SRAI;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+SRAS;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+SRAY;@Fixed-wing;1P/S;Light;F;I;
+SREY;@Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+SS2;Fixed-wing;1R/S;Medium;F;III;
+;;;;;;
+;;;;;;AERO COMMANDER, Ag Commander (S-2)
+;;;;;;AERO COMMANDER, S-2 Ag Commander
+;;;;;;AYRES, Bull Thrush
+;;;;;;AYRES, S-2R-600 Thrush
+;;;;;;AYRES, S-2R-R1340 Thrush
+;;;;;;AYRES, S-2R-R1820 Bull Thrush
+;;;;;;AYRES, S-2R-R3S Thrush
+;;;;;;AYRES, Thrush
+;;;;;;NORTH AMERICAN ROCKWELL, Ag Commander
+SS2P;Fixed-wing;1P/S;Light;F;I;NORTH AMERICAN ROCKWELL, S-2 Ag Commander
+;;;;;;NORTH AMERICAN ROCKWELL, S-2 Thrush Commander
+;;;;;;NORTH AMERICAN ROCKWELL, Thrush Commander
+;;;;;;ROCKWELL, S-2 Thrush Commander
+;;;;;;ROCKWELL, Thrush Commander
+;;;;;;SERV-AERO, S-2 Thrush (piston conversions)
+;;;;;;SERV-AERO, Thrush (piston conversions)
+;;;;;;SNOW, S-2
+;;;;;;THRUSH, S-2R-R1340 Trush 400
+;;;;;;THRUSH, Thrush 400
+;;;;;;AYRES, S-2R-G Turbo Thrush
+;;;;;;AYRES, S-2RHG-T34 Turbo Thrush
+;;;;;;AYRES, S-2RHG-T65 Turbo Thrush
+;;;;;;AYRES, S-2R-T11 Turbo Thrush
+;;;;;;AYRES, S-2R-T15 Turbo Thrush
+;;;;;;AYRES, S-2R-T34 Turbo Thrush
+;;;;;;AYRES, S-2R-T41 Turbo Thrush
+;;;;;;AYRES, S-2R-T45 Turbo Thrush
+;;;;;;AYRES, S-2R-T65 Turbo Thrush
+;;;;;;AYRES, Turbo Thrush (S-2R-G/T except T660)
+;;;;;;AYRES, V-1 Vigilante
+SS2T;Fixed-wing;1T/S;Light;F;I;AYRES, Vigilante
+;;;;;;MARSH, Turbo Thrush
+;;;;;;SERV-AERO, S-2 Thrush (turboprop conversions)
+;;;;;;SERV-AERO, Thrush (turboprop conversions)
+;;;;;;TERR-MAR, Turbo Sea Thrush
+;;;;;;THRUSH, S-2RHG-T34 Turbo Thrush 510
+;;;;;;THRUSH, S-2RHG-T65 Turbo Thrush 550
+;;;;;;THRUSH, S-2R-T34 Turbo Thrush
+;;;;;;THRUSH, S-2R-T65 Turbo Thrush 550
+;;;;;;THRUSH, Turbo Thrush (S-2R-T34)
+;;;;;;THRUSH, Turbo Thrush 510
+;;;;;;THRUSH, Turbo Thrush 550
+SSAB*;Fixed-wing;1J/S+;Medium;F;III;NORTH AMERICAN, F-100 Super Sabre NORTH AMERICAN, Super Sabre
+SSC;Gyrocopter;1P/S;Light;F;I;BUTTERFLY, Super Sky Cycle
+SSTM;@Fixed-wing;1P/S;Light;F;I;SG AVIATION, Sea Storm
+;;;;;;PHILLIPS, Speedtwin
+ST1;Fixed-wing;2P/S;Light;F;II;PHILLIPS, ST-1 Speedtwin SPEEDTWIN, E2E Speedtwin
+;;;;;;SPEEDTWIN, Speedtwin
+;;;;;;SOCATA, Diplomate
+;;;;;;SOCATA, Provence
+ST10;Fixed-wing;1P/S;Light;F;I;SOCATA, ST-10 Diplomate SOCATA, ST-10 Provence
+;;;;;;SOCATA, ST-10 Super Horizon
+;;;;;;SOCATA, Super Horizon
+;;;;;;PANZL, S-330
+ST30;Fixed-wing;1P/S;Light;F;I;STAUDACHER, S-300
+;;;;;;WINGTIP TO WINGTIP, S-330
+ST50;Fixed-wing;1T/S;Light;F;I;ISRAVIATION, ST-50
+ST60;Fixed-wing;1P/S;Light;F;I;STAUDACHER, S-600
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+ST75;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+ST87;Fixed-wing;1P/S;Light;F;I;
+STAL;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+STAR;Fixed-wing;2T/S+;Light;F;III;7
+;;;;;;
+STAT;Fixed-wing;1T/S;Light;F;I;
+STCH;Fixed-wing;1P/S;Light;F;I;
+STFF;Fixed-wing;1P/S;Light;F;I;
+STIL;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+STLN;Fixed-wing;1T/S;Light;F;I;1
+;;;;;;
+;;;;;;
+;;;;;;
+STOR;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+STR2;Fixed-wing;1P/S;Light;F;I;
+STRA;Fixed-wing;1P/S;Light;F;I;
+STRE;Fixed-wing;1P/S;Light;F;I;
+STRI;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+STRK*;Fixed-wing;1J/S+;Light;F;III;
+;;;;;;
+STRM;Fixed-wing;1P/S;Light;F;I;
+STST;Fixed-wing;1P/S;Light;F;I;
+SU15*;Fixed-wing;2J/S+;Medium;F;III;
+;;;;;;
+SU17*;Fixed-wing;1J/L;Medium;E;III;
+;;;;;;
+SU24*;Fixed-wing;2J/L;Medium;E;III;
+;;;;;;
+;;;;;;
+SU25*;Fixed-wing;2J/L;Medium;E;III;
+;;;;;;
+;;;;;;
+SU26;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+SU27*;Fixed-wing;2J/L;Medium;E;III;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+SU29;Fixed-wing;1P/S;Light;F;I;
+SU31;Fixed-wing;1P/S;Light;F;I;
+SU38;Fixed-wing;1P/S;Light;F;I;
+SU7*;Fixed-wing;1J/S+;Medium;F;III;
+SU80;Fixed-wing;2T/S+;Medium;F;III;
+SU95;Fixed-wing;2J/L;Medium;D;III;
+SUBA;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+SUCO;Helicopter;2T/S+;Medium;F;I;
+;;;;;;
+;;;;;;
+SUNB;Fixed-wing;1P/S;Light;F;I;
+SUNV;Fixed-wing;1P/S;Light;F;I;
+SURN;Helicopter;2T/S+;Medium;F;I;
+SURU;Fixed-wing;1P/S;Light;F;I;
+SUSO;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+SV4;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+SVNH;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+SW18;Fixed-wing;1P/S;Light;F;I;
+SW2;Fixed-wing;2T/S;Light;F;II;6
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+SW3;Fixed-wing;2T/S+;Light;F;III;5
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+SW4;Fixed-wing;2T/S+;Light/ Medium;;F;III
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+SWAK;Fixed-wing;1P/S;Light;;F;I
+;;;;;;
+;;;;;;
+;;;;;;
+SWAT;Fixed-wing;1P/S;Light;;F;I
+;;;;;;
+SWIF*;Fixed-wing;1J/S+;Medium;;F;III
+SWIN;Fixed-wing;1P/S;Light;;F;I
+SWOR;Fixed-wing;1P/S;Light;;F;I
+SX30;Fixed-wing;1P/S;Light;;F;I
+SYCA;Helicopter;1P/S;Light;;F;I
+;;;;;;
+SYMP;Fixed-wing;1P/S;Light;;F;I
+;;;;;;
+SYNC;Fixed-wing;1P/S;Light;;F;I
+SZ45;Fixed-wing;1P/S;Light;;F;I
+;;;;;;
+SZ9M;Fixed-wing;1P/S;Light;;F;I
+;;;;;;
+T1*;Fixed-wing;1J/S;Light;;F;III
+T10;Fixed-wing;1P/S;Light;;F;I
+T101;Fixed-wing;1T/S;Light;;F;I
+T134;Fixed-wing;2J/L;Medium;;D;III
+T144;Fixed-wing;4J/H;Heavy;;C;III
+T154;Fixed-wing;3J/L;Medium;;D;III
+T160;Fixed-wing;4J/H;Heavy;B;III;TUPOLEV, Tu-160
+;;;;;;CLASSIC SPORT, S-18
+T18;Fixed-wing;1P/S;Light;F;I;SUNDERLAND, S-18 THORP, T-18 Tiger
+;;;;;;THORP, Tiger
+;;;;;;THK, Speedfire
+T19;Fixed-wing;1P/S;Light;F;I;THK, T-19 Speedfire  THK, T-19 Türkkuşu
+;;;;;;THK, Türkkuşu
+;;;;;;NORTH AMERICAN, Buckeye
+;;;;;;NORTH AMERICAN, T-2 Buckeye
+T2*;Fixed-wing;2J/S+;Light;F;III;NORTH AMERICAN ROCKWELL, Buckeye NORTH AMERICAN ROCKWELL, T-2 Buckeye
+;;;;;;ROCKWELL, Buckeye
+;;;;;;ROCKWELL, T-2 Buckeye
+;;;;;;TUPOLEV, Tu-204
+T204;Fixed-wing;2J/L;Medium;D;III;TUPOLEV, Tu-214 TUPOLEV, Tu-224
+;;;;;;TUPOLEV, Tu-234
+;;;;;;CESSNA, Stationair TC
+;;;;;;CESSNA, T206 Stationair TC
+;;;;;;CESSNA, T206 Turbo Stationair
+;;;;;;CESSNA, TP206 Turbo Super Skylane
+;;;;;;CESSNA, TU206 Turbo Skywagon 206
+;;;;;;CESSNA, TU206 Turbo Staionair
+T206;Fixed-wing;1P/S;Light;F;I;CESSNA, TU206 Turbo Staionair 6
+;;;;;;CESSNA, TU206 Turbo Super Skywagon
+;;;;;;CESSNA, Turbo Skywagon 206
+;;;;;;CESSNA, Turbo Staionair 6
+;;;;;;CESSNA, Turbo Stationair
+;;;;;;CESSNA, Turbo Super Skylane
+;;;;;;CESSNA, Turbo Super Skywagon
+T210;Fixed-wing;1P/S;Light;F;I;CESSNA, T210 Turbo Centurion CESSNA, Turbo Centurion
+;;;;;;AD AEROSPACE, T-211
+;;;;;;ADAMS, T-211
+;;;;;;DM AEROSPACE, T-211
+;;;;;;INDUS, Sky Skooter
+;;;;;;INDUS, Sport E
+;;;;;;INDUS, T-11 Sky Skooter
+T211;Fixed-wing;1P/S;Light;F;I;INDUS, T-211 Sport E
+;;;;;;INDUS, T-211 Thorpedo
+;;;;;;INDUS, Thorpedo
+;;;;;;STARPAC, Phoenix Flyer
+;;;;;;TANEJA, T-211
+;;;;;;THORP, T-211
+;;;;;;VENTURE, T-211
+T22M;Fixed-wing;2J/L;Medium;D;III;TUPOLEV, Tu-22M
+;;;;;;ANDERSON-GREENWOOD, Aries
+T250;Fixed-wing;1P/S;Light;F;I;ANDERSON-GREENWOOD, T-250 Aries BELLANCA, Aries
+;;;;;;BELLANCA, T-250 Aries
+;;;;;;HAMILTON, Nomair
+;;;;;;HAMILTON, T-28 Nomair
+;;;;;;NORTH AMERICAN, AT-28 Trojan
+;;;;;;NORTH AMERICAN, T-28 Trojan
+;;;;;;NORTH AMERICAN, Trojan
+T28;Fixed-wing;1P/S;Light;F;I;PACAERO, Nomad
+;;;;;;PACAERO, T-28 Nomad
+;;;;;;PACIFIC AIRMOTIVE, Nomad
+;;;;;;PACIFIC AIRMOTIVE, T-28 Nomad
+;;;;;;SUD, Fennec
+;;;;;;SUD, T-28 Fennec
+T30;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+T33*;Fixed-wing;1J/L;Medium;F;III;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+T334;Fixed-wing;2J/L;Medium;D;III;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+T34P;Fixed-wing;1P/S;Light;F;I;1
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+T34T;Fixed-wing;1T/S;Light;F;I;
+;;;;;;
+;;;;;;
+T35;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+T37*;Fixed-wing;2J/S;Light;F;III;
+;;;;;;
+;;;;;;
+T38*;Fixed-wing;2J/S;Light;F;III;
+;;;;;;
+T4*;Fixed-wing;2J/S+;Medium;F;III;
+T40;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+T411;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+T415;Fixed-wing;1P/S;Light;F;I;
+T419;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+T5;Fixed-wing;1T/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+T50;Fixed-wing;2P/S;Light;F;II;
+;;;;;;
+;;;;;;
+T50S*;Fixed-wing;2J/L;Medium;E;III;
+T51;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+T6;Fixed-wing;1P/S;Light;F;I;2
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+T7;Fixed-wing;1T/S;Light;F;I;
+;;;;;;
+TA15;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+TA16;@Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+TA20;Fixed-wing;1P/S;Light;F;I;4
+;;;;;;
+;;;;;;
+;;;;;;
+TAA1;Fixed-wing;1P/S;Light;F;I;
+TAGO;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+TAIL;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+TAMP;Fixed-wing;1P/S;Light;F;I;2
+TARO;Fixed-wing;1P/S;Light;F;I;
+TARR;Fixed-wing;1P/S;Light;F;I;
+TAYA;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+TAYB;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+TAYD;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+TB05;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+TB20;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+TB21;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+TB30;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+TB31;Fixed-wing;1T/S;Light;F;I;
+TBEE;@Fixed-wing;2P/S;Light;F;II;
+;;;;;;
+;;;;;;
+TBM;Fixed-wing;1P/S+;Medium;F;III;
+;;;;;;
+;;;;;;
+TBM7;Fixed-wing;1T/S;Light;F;I;5
+TBM8;Fixed-wing;1T/S;Light;F;I;
+TBM9;Fixed-wing;1T/S;Light;F;I;
+TBR3;Fixed-wing;1P/S;Light;F;I;
+TC2;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+TCAT;Fixed-wing;2P/S+;Medium;F;III;
+;;;;;;
+;;;;;;
+TCOU;Fixed-wing;2P/S;Light;F;II;1
+;;;;;;
+TD1;Fixed-wing;1P/S;Light;F;I;
+TD2;Fixed-wing;1T/S;Light;F;I;
+TD3;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+TEAL;@Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+TERM;Fixed-wing;1P/S;Light;F;I;
+TERR;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+TEX2;Fixed-wing;1T/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+TEXA;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+TF19;Fixed-wing;1P/S;Light;F;I;1
+;;;;;;
+TF21;Fixed-wing;1P/S;Light;F;I;4
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+TF22;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+TFK2;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+TFOC;Fixed-wing;1P/S;Light;F;I;
+TFUN;Fixed-wing;1P/S;Light;F;I;
+TGRS;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+TIGR;Helicopter;2T/S+;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+TIJU;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+TIPB;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+TJET;Fixed-wing;2J/S;Light;F;III;
+;;;;;;
+;;;;;;
+;;;;;;
+TL20;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+TL30;Fixed-wing;1P/S;Light;F;I;
+TLEG;Fixed-wing;1T/S;Light;F;I;
+TM5;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+TMOT;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+TMUS;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+TNAV;Fixed-wing;2P/S;Light;F;II;
+;;;;;;
+;;;;;;
+TNDR;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+TOBA;Fixed-wing;1P/S;Light;F;I;2
+;;;;;;
+TOOT;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+TOR*;Fixed-wing;2J/L;Medium;E;III;
+;;;;;;
+;;;;;;
+;;;;;;
+TOUR;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+TOXO;Fixed-wing;1P/S;Light;F;I;
+TP40;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+TPIL;Fixed-wing;1T/S;Light;F;I;
+;;;;;;
+TPIN;Fixed-wing;2P/S+;Light;F;III;
+TR1;@Fixed-wing;1P/S;Light;F;I;
+TR20;Fixed-wing;1P/S;Light;F;I;
+TR26;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+TR55;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+TRAL;Fixed-wing;1P/S;Light;F;I;
+TRAP;Fixed-wing;1P/S;Light;F;I;
+TRBA;Fixed-wing;1P/S;Light;F;I;
+TRDO;Fixed-wing;1P/S;Light;F;I;
+TRF1;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+TRIM;Fixed-wing;3P/S+;Light;F;III;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+TRIS;Fixed-wing;3P/S;Light;F;III;2
+;;;;;;
+;;;;;;
+;;;;;;
+TRMA;Fixed-wing;3P/S;Light;F;III;
+TRWN;Fixed-wing;2P/S;Light;F;II;
+TS11*;Fixed-wing;1J/S;Light;F;III;
+TS14;Fixed-wing;1P/S;Light;F;I;
+TS1J;Fixed-wing;1J/S;Light;F;III;
+TS8;Fixed-wing;1P/S;Light;F;I;
+TSPT;Fixed-wing;1P/S;Light;F;I;
+TSTN;Fixed-wing;1P/S;Light;F;I;
+TSTR;Gyrocopter;1P/S;Light;F;I;
+TT62;Fixed-wing;2P/S;Light;F;II;
+TTRS;Fixed-wing;1P/S;Light;F;I;
+TTWO;Fixed-wing;1P/S;Light;F;I;
+TU16;Fixed-wing;2J/L;Medium;D;III;
+TU22;Fixed-wing;2J/L;Medium;D;III;
+TU4;Fixed-wing;4T/L;Medium;D;III;
+;;;;;;
+TU95;Fixed-wing;4T/H;Heavy;C;III;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+TUCA;Fixed-wing;1T/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+TUL3;Fixed-wing;1P/S;Light;F;I;
+TUTR;Fixed-wing;1P/S;Light;F;I;
+TVL4;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+TVLB;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+TWEN;Fixed-wing;1P/S;Light;F;I;
+TWIR;Fixed-wing;2P/S;Light;F;II;
+TWSP;Fixed-wing;1P/S;Light;F;I;
+TWST;Fixed-wing;1P/S;Light;F;I;
+TZRV*;Fixed-wing;1J/S;Light;F;III;
+U15;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+U16;@Fixed-wing;2P/S+;Medium;F;III;4
+;;;;;;
+;;;;;;
+U2*;Fixed-wing;1J/S+;Medium;F;III;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+U21;Fixed-wing;2T/S;Light;F;II;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+U22;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+UBAT;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+UF10;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+UF13;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+UFHT;Gyrocopter;1P/S;Light;F;I;
+;;;;;;AGUSTA, AB-204
+;;;;;;AGUSTA, AB-205
+;;;;;;AGUSTA, Hkp3
+;;;;;;AIDC, UH-1
+;;;;;;BELL, 204
+;;;;;;BELL, 205
+;;;;;;BELL, 210
+;;;;;;BELL, CH-118
+;;;;;;BELL, CUH-1H
+;;;;;;BELL, EH-1 Iroquois
+;;;;;;BELL, HH-1 Iroquois
+;;;;;;BELL, Huey
+;;;;;;BELL, Iroquois
+;;;;;;BELL, SH-1 Iroquois
+;;;;;;BELL, TH-1E Iroquois
+;;;;;;BELL, TH-1F Iroquois
+;;;;;;BELL, TH-1H Iroquois
+UH1;Helicopter;1T/S;Light;F;I;BELL, TH-1L Iroquois
+;;;;;;BELL, UH-1A Iroquois
+;;;;;;BELL, UH-1B Iroquois
+;;;;;;BELL, UH-1C Iroquois
+;;;;;;BELL, UH-1D Iroquois
+;;;;;;BELL, UH-1E Iroquois
+;;;;;;BELL, UH-1F Iroquois
+;;;;;;BELL, UH-1H Iroquois
+;;;;;;BELL, UH-1L Iroquois
+;;;;;;BELL, UH-1M Iroquois
+;;;;;;BELL, UH-1V Iroquois
+;;;;;;DORNIER, UH-1
+;;;;;;FUJI, 204
+;;;;;;FUJI, 205
+;;;;;;FUJI, UH-1
+;;;;;;GLOBAL, Huey 800
+;;;;;;PANHA, Shabaviz 2-75
+;;;;;;UNC, Ultra Huey
+;;;;;;FAIRCHILD HILLER, E4
+;;;;;;FAIRCHILD HILLER, L3
+;;;;;;FAIRCHILD HILLER, L4
+;;;;;;FAIRCHILD HILLER, OH-23 Raven
+;;;;;;FAIRCHILD HILLER, Raven
+;;;;;;FAIRCHILD HILLER, SL3
+;;;;;;FAIRCHILD HILLER, SL4
+;;;;;;FAIRCHILD HILLER, UH-12E
+;;;;;;HILLER, H-23 Raven
+;;;;;;HILLER, HTE Raven
+;;;;;;HILLER, OH-23 Raven
+UH12;Helicopter;1P/S;Light;F;I;HILLER, Raven HILLER, UH-12B
+;;;;;;HILLER, UH-12C
+;;;;;;HILLER, UH-12E
+;;;;;;HILLER, UH-12E3
+;;;;;;HILLER, UH-12E4
+;;;;;;HILLER, UH-12E5
+;;;;;;HILLER, UH-12L3
+;;;;;;HILLER, UH-12L4
+;;;;;;HILLER, UH-12SL3
+;;;;;;HILLER, UH-12SL4
+;;;;;;ROGERSON HILLER, Hauler
+;;;;;;ROGERSON HILLER, UH-12E Hauler
+UH1Y;Helicopter;2T/S+;Medium;F;I;BELL, UH-1Y
+UHEL;;;;;;(any manufacturer), Microlight helicopter (any manufacturer), Ultralight helicopter
+;;;;;;STREAMLINE WELDING, 10 Ultimate Competitor
+;;;;;;STREAMLINE WELDING, 10 Ultimate Winner
+UL10;Fixed-wing;1P/S;Light;F;I;STREAMLINE WELDING, Ultimate Competitor STREAMLINE WELDING, Ultimate Winner
+;;;;;;ULTIMATE, 10 Albertan
+;;;;;;ULTIMATE, Albertan
+;;;;;;STREAMLINE WELDING, 20 Ultimate Companion
+UL20;Fixed-wing;1P/S;Light;F;I;STREAMLINE WELDING, Ultimate Companion
+;;;;;;ULTIMATE, 20
+UL2F;Fixed-wing;1P/S;Light;F;I;AEROS, Flamingo AEROS, UL-2000 Flamingo
+;;;;;;3XTRIM, 3X-47 Ultra
+UL45;Fixed-wing;1P/S;Light;F;I;3XTRIM, 450 Ultra
+;;;;;;3XTRIM, Ultra
+ULAC;;;;;;(any manufacturer), Microlight aircraft (any manufacturer), Ultralight aircraft
+ULPA;Fixed-wing;1P/S;Light;F;I;ULLMANN, Panther
+ULTS;Helicopter;1P/S;Light;F;I;AMERICAN SPORTSCOPTER, Ultrasport 496
+;;;;;;AIR & SPACE, 18
+UM18;Gyrocopter;1P/S;Light;F;I;FAIRCHILD (1), F-18 Flymobil FAIRCHILD (1), Flymobil
+;;;;;;UMBAUGH, 18
+;;;;;;NEIVA, N-621 Universal
+UNIV;Fixed-wing;1P/S;Light;F;I;NEIVA, N-622 Universal NEIVA, T-25 Universal
+;;;;;;NEIVA, Universal
+URRA;Fixed-wing;1P/S;Light;F;I;IBIS (2), Arrow IBIS (2), Urraco
+;;;;;;SHIN MEIWA, SS-2A
+US1;@Fixed-wing;4T/L;Medium;D;III;SHIN MEIWA, US-1 SHINMAYWA, SS-2A
+;;;;;;SHINMAYWA, US-1
+US2;@Fixed-wing;4T/L;Medium;D;III;SHINMAYWA, US-2
+UT60;Fixed-wing;1P/S;Light;F;I;UTVA, 60
+UT65;Fixed-wing;1P/S;Light;F;I;UTVA, 65 Privrednik UTVA, Privrednik
+UT66;Fixed-wing;1P/S;Light;F;I;UTVA, 66
+;;;;;;SAFAT, 03
+UT75;Fixed-wing;1P/S;Light;F;I;UTVA, 75
+;;;;;;UTVA, V-53
+UU12;Fixed-wing;1P/S;Light;F;I;UDET, Flamingo Replica UDET, U-12 Flamingo Replica
+;;;;;;GRUMMAN, AO-1 Mohawk
+;;;;;;GRUMMAN, G-134 Mohawk
+V1;Fixed-wing;2T/S+;Medium;F;III;GRUMMAN, Mohawk
+;;;;;;GRUMMAN, OV-1 Mohawk
+;;;;;;GRUMMAN, RV-1 Mohawk
+;;;;;;NORTH AMERICAN, Bronco
+;;;;;;NORTH AMERICAN, OV-10 Bronco
+V10;Fixed-wing;2T/S+;Light;F;III;NORTH AMERICAN ROCKWELL, Bronco NORTH AMERICAN ROCKWELL, OV-10 Bronco
+;;;;;;ROCKWELL, Bronco
+;;;;;;ROCKWELL, OV-10 Bronco
+;;;;;;BELL-BOEING, 901 Osprey
+;;;;;;BELL-BOEING, CV-22 Osprey
+V22;Tiltrotor;2T/L;Medium;E;II;BELL-BOEING, MV-22 Osprey
+;;;;;;BELL-BOEING, Osprey
+;;;;;;BELL-BOEING, V-22 Osprey
+V252;Fixed-wing;1P/S;Light;F;I;MSW, Votec 252
+V322;Fixed-wing;1P/S;Light;F;I;MSW, Votec 322
+V351;Fixed-wing;1P/S;Light;F;I;MSW, Votec 351
+V452;Fixed-wing;1T/S;Light;F;I;MSW, Votec 452
+V500;Helicopter;1P/S;Light;F;I;REVOLUTION, Voyager-500
+V8SP;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+VALI;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+VAMP*;Fixed-wing;1J/S;Light;F;III;
+;;;;;;
+;;;;;;
+VANT;Fixed-wing;1J/S;Light;F;III;
+VAUT*;Fixed-wing;2J/L;Medium;E;III;
+VELO;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+VENT;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+VEZE;Fixed-wing;1P/S;Light;F;I;
+VF14;Fixed-wing;2J/L;Medium;E;III;8
+VF2;Fixed-wing;1P/S;Light;F;I;
+VF35*;Fixed-wing;1J/L;Medium;E;III;
+VF60;Fixed-wing;1T/S;Light;F;I;
+VG3T;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+VGUL;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+VIMA;Fixed-wing;1P/S;Light;F;I;
+VIMY;Fixed-wing;2P/S;Light;F;II;
+VIPJ*;Fixed-wing;1J/S;Light;F;III;
+VIPR;Fixed-wing;1P/S;Light;F;I;
+VISI;Fixed-wing;1P/S;Light;F;I;
+VIVA;Fixed-wing;1P/S;Light;F;I;
+VIX;Fixed-wing;1P/S;Light;F;I;
+VIXN;Fixed-wing;1P/S;Light;F;I;
+VJ22;@Fixed-wing;1P/S;Light;F;I;
+VK3P;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+VL3;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+VM1;Fixed-wing;1P/S;Light;F;I;
+VMT;Fixed-wing;4J/H;Heavy;C;III;
+;;;;;;
+VNOM*;Fixed-wing;1J/S+;Medium;F;III;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+VO10;Fixed-wing;1P/S;Light;F;I;1
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+VOL2;Fixed-wing;1P/S;Light;F;I;
+VP2;Fixed-wing;1P/S;Light;F;I;
+VR20;Fixed-wing;1P/S;Light;F;I;
+VSON;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+VTOR;Fixed-wing;2T/S;Light;F;II;8
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+VTRA;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+VTUR;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+VULC;Fixed-wing;4J/L;Medium;D;III;
+VUT1;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+VVIG;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+VW10;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+VWIT;Fixed-wing;1P/S;Light;F;I;
+W11;Fixed-wing;1P/S;Light;F;I;
+;;;;;;WEATHERLY, 201
+W201;Fixed-wing;1P/S;Light;F;I;WEATHERLY, 620
+;;;;;;WEATHERLY, 620B
+;;;;;;PZL-SWIDNIK, Anakonda
+;;;;;;PZL-SWIDNIK, Erka
+;;;;;;PZL-SWIDNIK, Gipsowka
+;;;;;;PZL-SWIDNIK, Gluszec
+;;;;;;PZL-SWIDNIK, Huzar
+;;;;;;PZL-SWIDNIK, Procjon
+;;;;;;PZL-SWIDNIK, S-1 Procjon
+W3;Helicopter;2T/S+;Light;F;I;PZL-SWIDNIK, Sokól
+;;;;;;PZL-SWIDNIK, SRR-10 Procjon
+;;;;;;PZL-SWIDNIK, W-3 Anakonda
+;;;;;;PZL-SWIDNIK, W-3 Erka
+;;;;;;PZL-SWIDNIK, W-3 Gipsowka
+;;;;;;PZL-SWIDNIK, W-3 Gluszec
+;;;;;;PZL-SWIDNIK, W-3 Huzar
+;;;;;;PZL-SWIDNIK, W-3 Sokól
+W62T;Fixed-wing;1T/S;Light;F;I;WEATHERLY, 620BTG WEATHERLY, 620TP
+WA40;Fixed-wing;1P/S;Light;F;I;WASSMER, Super 4 WASSMER, WA-40 Super 4
+WA41;Fixed-wing;1P/S;Light;F;I;WASSMER, Baladou WASSMER, WA-41 Baladou
+WA42;Fixed-wing;1P/S;Light;F;I;WASSMER, Prestige WASSMER, WA-421 Prestige
+;;;;;;WASSMER, Atlantic
+;;;;;;WASSMER, Europa
+WA50;Fixed-wing;1P/S;Light;F;I;WASSMER, Pacific WASSMER, WA-51 Pacific
+;;;;;;WASSMER, WA-52 Europa
+;;;;;;WASSMER, WA-54 Atlantic
+;;;;;;WASSMER, Piranha
+WA80;Fixed-wing;1P/S;Light;F;I;WASSMER, WA-80 Piranha
+;;;;;;WASSMER, WA-81 Piranha
+WAC9;Fixed-wing;1P/S;Light;F;I;WACO, 9
+;;;;;;WACO, IBA
+;;;;;;WACO, PBA
+WACA;Fixed-wing;1P/S;Light;F;I;WACO, PLA WACO, RBA
+;;;;;;WACO, UBA
+;;;;;;WACO, ULA
+;;;;;;WACO, AGC
+;;;;;;WACO, AQC
+;;;;;;WACO, C
+;;;;;;WACO, CJC
+;;;;;;WACO, CUC
+;;;;;;WACO, DJC
+;;;;;;WACO, DQC
+;;;;;;WACO, EGC
+;;;;;;WACO, EQC
+;;;;;;WACO, QDC
+;;;;;;WACO, S
+WACC;Fixed-wing;1P/S;Light;F;I;WACO, UEC
+;;;;;;WACO, UIC
+;;;;;;WACO, UKC
+;;;;;;WACO, UKS
+;;;;;;WACO, VKS
+;;;;;;WACO, YKC
+;;;;;;WACO, YKS
+;;;;;;WACO, YOC
+;;;;;;WACO, YQC
+;;;;;;WACO, ZGC
+;;;;;;WACO, ZKS
+;;;;;;WACO, ZQC
+WACD;Fixed-wing;1P/S;Light;F;I;WACO, D WACO, S3HD
+;;;;;;WACO, ARE Aristocrat
+;;;;;;WACO, Aristocrat
+WACE;Fixed-wing;1P/S;Light;F;I;WACO, E (ARE/HRE/SRE) Aristocrat
+;;;;;;WACO, HRE Aristocrat
+;;;;;;WACO, SRE Aristocrat
+;;;;;;CLASSIC, Waco Classic
+;;;;;;WACO, CPF
+;;;;;;WACO, ENF
+;;;;;;WACO, F
+;;;;;;WACO, INF
+;;;;;;WACO, KNF
+;;;;;;WACO, PBF
+;;;;;;WACO, PCF
+;;;;;;WACO, QCF
+WACF;Fixed-wing;1P/S;Light;F;I;WACO, RNF WACO, UBF
+;;;;;;WACO, UMF
+;;;;;;WACO, UPF
+;;;;;;WACO, VPF
+;;;;;;WACO, YMF
+;;;;;;WACO, YPF
+;;;;;;WACO, ZPF
+;;;;;;WACO CLASSIC, YMF
+;;;;;;WACO OHIO, UMF
+;;;;;;WACO OHIO, YMF
+WACG;Fixed-wing;1P/S;Light;F;I;WACO, CRG WACO, G
+WACM;Fixed-wing;1P/S;Light;F;I;WACO, JWM WACO, JYM
+WACN;Fixed-wing;1P/S;Light;F;I;WACO, AVN WACO, ZVN
+;;;;;;WACO, 10
+;;;;;;WACO, 125
+;;;;;;WACO, ASO
+;;;;;;WACO, ATO
+;;;;;;WACO, BSO
+;;;;;;WACO, CSO
+WACO;Fixed-wing;1P/S;Light;F;I;WACO, CTO
+;;;;;;WACO, DSO
+;;;;;;WACO, E (GXE)
+;;;;;;WACO, GXE
+;;;;;;WACO, O
+;;;;;;WACO, PSO
+;;;;;;WACO, QSO
+WACT;Fixed-wing;1P/S;Light;F;I;WACO, RPT
+WAIX;Fixed-wing;1P/S;Light;F;I;SONEX, Waiex
+WASP;Helicopter;1T/S;Light;F;I;WESTLAND, Wasp
+WB57*;Fixed-wing;2J/L;Medium;E;III;MARTIN, 272 MARTIN, WB-57
+WBOO;Fixed-wing;1P/S;Light;F;I;DEAN-WILSON, DW-200 Whitney Boomerang DEAN-WILSON, Whitney Boomerang
+;;;;;;GENERAL MOTORS, FM Wildcat
+;;;;;;GENERAL MOTORS, Wildcat
+WCAT;Fixed-wing;1P/S;Light;F;I;GRUMMAN, F4F Wildcat
+;;;;;;GRUMMAN, G-36 Wildcat
+;;;;;;GRUMMAN, Wildcat
+WDEX;Fixed-wing;1P/S;Light;F;I;RADAB, Windex WINDEXAIR, Windex
+WESX;Helicopter;2T/S+;Light;F;I;WESTLAND, Wessex WESTLAND, WS-58 Wessex
+WF4U;Fixed-wing;1P/S;Light;F;I;WAR, Vought F4U Corsair
+WFOC;Fixed-wing;1P/S;Light;F;I;WAR, Focke-Wulf 190
+WFUR;Fixed-wing;1P/S;Light;F;I;WAR, Hawker Sea Fury
+WG30;Helicopter;2T/S+;Light;F;I;WESTLAND, 30 WESTLAND, WG-30
+WH1;Fixed-wing;1P/S;Light;F;I;WENDT, Traveler WENDT, WH-1 Traveler
+WHAT;Fixed-wing;1P/S;Light;F;I;WHATLEY, Special
+;;;;;;REFLEX, White Lightning
+WHIL;Fixed-wing;1P/S;Light;F;I;REFLEX, WLAC-1 White Lightning WHITE LIGHTNING, White Lightning
+;;;;;;WHITE LIGHTNING, WLAC-1 White Lightning
+WHIS;Fixed-wing;1P/S;Light;F;I;GROVE, GR-2 Whisper GROVE, Whisper
+;;;;;;MILES, M-11 Whitney Straight
+WHIT;Fixed-wing;1P/S;Light;F;I;MILES, Whitney Straight PHILLIPS & POWIS, M-11 Whitney Straight
+;;;;;;PHILLIPS & POWIS, Whitney Straight
+;;;;;;RUTAN, 348 White Knight Two
+WHK2;Fixed-wing;4J/L;Medium;D;III;RUTAN, White Knight Two SCALED, 348 White Knight Two
+;;;;;;SCALED, White Knight Two
+;;;;;;RUTAN, 318 White Knight
+WHKN;Fixed-wing;2J/S+;Medium;F;III;RUTAN, White Knight SCALED, 318 White Knight
+;;;;;;SCALED, White Knight
+WICH;Fixed-wing;1P/S;Light;F;I;JAVELIN, Wichawk
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+WILT;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+WIND;Fixed-wing;1P/S;Light;F;I;
+WINE;Fixed-wing;1P/S;Light;F;I;
+WIRR;Fixed-wing;1P/S;Light;F;I;
+WISP;Fixed-wing;1P/S;Light;F;I;
+WM2;Fixed-wing;1P/S;Light;F;I;
+WOPU;Fixed-wing;1P/S;Light;F;I;
+WP40;Fixed-wing;1P/S;Light;F;I;
+WP47;Fixed-wing;1P/S;Light;F;I;
+WS22;Fixed-wing;1P/S;Light;F;I;
+WSP;Fixed-wing;1P/S;Light;F;I;
+WT9;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+WUSH;@Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+WW1;Fixed-wing;1P/S;Light;F;I;
+WW23;Fixed-wing;2J/S+;Medium;F;III;7
+;;;;;;
+;;;;;;
+;;;;;;
+WW24;Fixed-wing;2J/S+;Medium;F;III;7
+;;;;;;
+;;;;;;
+;;;;;;
+WZ10;Helicopter;2T/S+;Light;F;I;
+WZER;Fixed-wing;1P/S;Light;F;I;
+X2;Helicopter;1T/S;Light;F;I;
+X29*;Fixed-wing;1J/S+;Medium;F;III;
+X3;Helicopter;2T/S;Light;F;I;
+X32*;Fixed-wing;1J/L;Medium;E;III;
+X4;Fixed-wing;1P/S;Light;F;I;
+X47B;Fixed-wing;NORTHROP GRUMMAN, X-47B NOWGT1J/;Medium;NOWGT;III;
+;;;;;;
+X49;Helicopter;2T/S+;Medium;F;I;
+;;;;;;
+X55;Fixed-wing;2J/S+;Medium;F;III;
+;;;;;;
+XA41;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+XA42;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+XA85;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+XAIR;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+XL2;Fixed-wing;1P/S;Light;F;I;
+XNON;Gyrocopter;1P/S;Light;F;I;
+XNOS;Fixed-wing;1P/S;Light;F;I;
+XV15;Tiltrotor;2T/S+;Light;F;II;
+Y11;Fixed-wing;2P/S;Light;F;II;
+Y112;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+Y12;Fixed-wing;2T/S;Light;F;II;
+;;;;;;
+;;;;;;
+Y12F;Fixed-wing;2T/S+;Medium;F;III;
+Y130*;Fixed-wing;2J/S+;Medium;F;III;
+Y141*;Fixed-wing;3J/L;Medium;E;III;
+;;;;;;
+Y18T;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+YAK3;Fixed-wing;1P/S;Light;F;I;
+YAK9;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+YALE;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+YARR;Fixed-wing;1P/S;Light;F;I;
+YAST;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+YC12;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+YK11;Fixed-wing;1P/S;Light;F;I;
+YK12;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+YK18;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+YK28*;Fixed-wing;2J/L;Medium;E;III;
+YK30*;Fixed-wing;1J/S;Light;F;III;
+YK38*;Fixed-wing;3J/S+;Medium;F;III;
+YK40;Fixed-wing;3J/S+;Medium;F;III;8
+YK42;Fixed-wing;3J/L;Medium;D;III;
+YK50;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+YK52;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+YK53;Fixed-wing;1P/S;Light;F;I;
+YK54;Fixed-wing;1P/S;Light;F;I;
+YK55;Fixed-wing;1P/S;Light;F;I;
+YK58;Fixed-wing;1P/S;Light;F;I;
+YNHL;Helicopter;2P/S;Light;F;I;
+YS11;Fixed-wing;2T/L;Medium;D;III;6
+YUNO;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+YURO*;Fixed-wing;2J/S+;Medium;F;III;
+;;;;;;
+;;;;;;
+Z22;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+Z26;Fixed-wing;1P/S;Light;F;I;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;LET, Cmelák
+;;;;;;LET, Sparka
+;;;;;;LET, Z-237 Cmelák
+;;;;;;LET, Z-37 Cmelák
+;;;;;;LET, Z-37 Sparka
+;;;;;;LET, Z-37A Cmelák
+Z37P;Fixed-wing;1P/S;Light;F;I;LET, Z-37C Cmelák MORAVAN, Cmelák
+;;;;;;MORAVAN, Sparka
+;;;;;;MORAVAN, Z-237 Cmelák
+;;;;;;MORAVAN, Z-37 Cmelák
+;;;;;;MORAVAN, Z-37 Sparka
+;;;;;;MORAVAN, Z-37A Cmelák
+;;;;;;MORAVAN, Z-37C Cmelák
+;;;;;;MORAVAN, Agro Turbo
+Z37T;Fixed-wing;1T/S;Light;F;I;MORAVAN, Z-137 Agro Turbo
+;;;;;;MORAVAN, Z-37T Agro Turbo
+;;;;;;MORAVAN, Firnas 142
+;;;;;;MORAVAN, Zlin Z-142
+;;;;;;MORAVAN, Zlin Z-242
+Z42;Fixed-wing;1P/S;Light;F;I;MORAVAN, Zlin Z-42 ZLIN, Firnas 142
+;;;;;;ZLIN, Z-142
+;;;;;;ZLIN, Z-242
+;;;;;;ZLIN, Z-42
+;;;;;;MORAVAN, Safir 43
+;;;;;;MORAVAN, Zlin Z-143
+Z43;Fixed-wing;1P/S;Light;F;I;MORAVAN, Zlin Z-43 ZLIN, Safir 43
+;;;;;;ZLIN, Z-143
+;;;;;;ZLIN, Z-43
+Z50;Fixed-wing;1P/S;Light;F;I;MORAVAN, Zlin Z-50 ZLIN, Z-50
+;;;;;;AEROKOPTER, AK-1
+ZA6;Helicopter;1P/S;Light;F;I;AEROKOPTER, Sanka AEROKOPTER, ZA-6 Sanka
+;;;;;;SAFAT, 02
+;;;;;;AERO ADVENTURE, Toucan
+ZEP2;Fixed-wing;1P/S;Light;F;I;ARNET PEREYRA, Toucan ARNET PEREYRA, Zephyr 2
+;;;;;;KEUTHAN, Zephyr 2
+ZEPH;Fixed-wing;1P/S;Light;F;I;ATEC, 122 Zephyr ATEC, Zephyr
+ZERO;Fixed-wing;1P/S;Light;F;I;MITSUBISHI, A6M Zero MITSUBISHI, Zero
+ZIA;Fixed-wing;1P/S;Light;F;I;APPLEBAY, Zia
+ZIU;Fixed-wing;1P/S;Light;F;I;TAI, ZIU
+ZULU;Fixed-wing;1P/S;Light;F;I;BUL, Zùlù

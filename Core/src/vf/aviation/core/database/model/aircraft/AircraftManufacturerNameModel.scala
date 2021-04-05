@@ -8,6 +8,14 @@ import vf.aviation.core.database.AviationTables
 
 object AircraftManufacturerNameModel
 {
+	// ATTRIBUTES   ----------------------
+	
+	/**
+	 * Name of the attribute that contains manufacturer name
+	 */
+	val nameAttName = "name"
+	
+	
 	// COMPUTED --------------------------
 	
 	/**
@@ -47,7 +55,9 @@ object AircraftManufacturerNameModel
 case class AircraftManufacturerNameModel(id: Option[Int] = None, manufacturerId: Option[Int] = None,
                                          name: Option[String] = None) extends Storable
 {
+	import AircraftManufacturerNameModel._
+	
 	override def table = AircraftManufacturerModel.table
 	
-	override def valueProperties = Vector("id" -> id, "manufacturerId" -> manufacturerId, "name" -> name)
+	override def valueProperties = Vector("id" -> id, "manufacturerId" -> manufacturerId, nameAttName -> name)
 }

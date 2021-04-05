@@ -10,6 +10,14 @@ import vf.aviation.core.model.stored.aircraft.AircraftManufacturer
 
 object AircraftManufacturerModel
 {
+	// ATTRIBUTES   ----------------------
+	
+	/**
+	 * Name of the attribute that contains associated country's id
+	 */
+	val countryIdAttName = "countryId"
+	
+	
 	// COMPUTED --------------------------
 	
 	/**
@@ -23,6 +31,12 @@ object AircraftManufacturerModel
 	
 	
 	// OTHER    --------------------------
+	
+	/**
+	 * @param icaoCode Manufacturer icao code
+	 * @return A model with that code
+	 */
+	def withIcaoCode(icaoCode: String) = apply(icaoCode = Some(icaoCode))
 	
 	/**
 	 * @param data Aircraft manufacturer data
@@ -62,8 +76,10 @@ case class AircraftManufacturerModel(id: Option[Int] = None, icaoCode: Option[St
                                      altCode: Option[String] = None, countryId: Option[Int] = None)
 	extends StorableWithFactory[AircraftManufacturer]
 {
+	import AircraftManufacturerModel._
+	
 	override def factory = AircraftManufacturerModel.factory
 	
 	override def valueProperties = Vector("id" -> id, "icaoCode" -> icaoCode, "altCode" -> altCode,
-		"countryId" -> countryId)
+		countryIdAttName -> countryId)
 }

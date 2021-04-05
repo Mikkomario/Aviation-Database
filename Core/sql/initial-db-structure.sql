@@ -277,11 +277,14 @@ CREATE TABLE carrier(
 
 -- SOURCES: manufacturers.csv (BST), Order_3660.1D_Aircraft_Type_Designators (manufacturer part), ACFTREF
 -- Lists aircraft manufacturers
+-- alt_code is from ACTREF
 CREATE TABLE aircraft_manufacturer(
 	id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
 	icao_code VARCHAR(32),
 	alt_code VARCHAR(3),
 	country_id INT,
+
+	INDEX am_manufacturer_code_idx (icao_code),
 
 	CONSTRAINT am_c_manufacturer_country_link_fk FOREIGN KEY am_c_manufacturer_country_link_idx (country_id)
 	    REFERENCES country(id) ON DELETE SET NULL
