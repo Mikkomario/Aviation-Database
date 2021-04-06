@@ -6,8 +6,10 @@ import utopia.flow.generic.FromModelFactoryWithSchema
 import utopia.flow.parse.CsvReader
 import utopia.flow.util.ActionBuffer
 import utopia.vault.database.Connection
+import vf.aviation.core.database.access.many.aircraft.DbAircraftManufacturers
 import vf.aviation.core.database.access.single.aircraft.DbAircraftManufacturer
 import vf.aviation.core.database.model.aircraft.{AircraftManufacturerModel, AircraftManufacturerNameModel}
+import vf.aviation.core.model.combined.FullAircraftManufacturer
 import vf.aviation.core.model.partial.aircraft.{AircraftManufacturerData, AircraftManufacturerNameData}
 
 import java.nio.file.Path
@@ -54,7 +56,10 @@ object ImportActRef
 					// Finds manufacturer ids matching those names (may contain duplicates)
 					val matchingManufacturers = manufacturerNames
 						.flatMap { name => DbAircraftManufacturer.forName(name).map { name -> _ } }.toMap
+					// In case there are multiple options found, prefers those that don't have an alt-code assigned
+					// yet (because they are already associated with a different row group while not having the same code)
 					val distinctManufacturers = matchingManufacturers.valuesIterator.toSet
+						.bestMatch(Vector(m => m.alternativeCode.isEmpty))
 					
 					// Assigns the rows between the manufacturer(s)
 					val rowsPerManufacturer =
@@ -75,16 +80,19 @@ object ImportActRef
 						else if (distinctManufacturers.size == 1)
 						{
 							val manufacturer = distinctManufacturers.head
+							// Adds the alt-code for that manufacturer
+							DbAircraftManufacturer(manufacturer.id).altCode = manufacturerCode
 							// Assigns new names for that manufacturer (no duplicates, however)
 							insertUniqueNames(manufacturer.id, manufacturerNames.toVector)
-							// TODO: Update manufacturer alt-id
 							// Uses that manufacturer for all rows
 							Map(manufacturer -> rows)
 						}
 						// Case: Multiple manufacturers found
 						else
 						{
-							// TODO: Update manufacturer alt-ids
+							// Assigns the alt-code for those manufacturers
+							DbAircraftManufacturers(distinctManufacturers.map { _.id })
+								.assignAlternativeCodeIfNotSet(manufacturerCode)
 							
 							// Case: All names were successful assigned
 							if (manufacturerNames.size == matchingManufacturers.size)
@@ -102,7 +110,13 @@ object ImportActRef
 							// Case: Some names couldn't be assigned
 							else
 							{
-								// val unassignedNames =
+								// Assigns the names to the manufacturer with most resemblance, or to the most
+								// prominent manufacturer
+								val unassignedNames = manufacturerNames -- matchingManufacturers.keySet
+								val manufacturersWithNames = distinctManufacturers
+									.map { m => DbAircraftManufacturer(m.id).full
+										.getOrElse { FullAircraftManufacturer(m, Vector()) } }
+								// TODO: Continue
 								???
 							}
 						}

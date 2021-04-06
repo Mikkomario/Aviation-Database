@@ -41,6 +41,10 @@ object AircraftManufacturerModel
 	 * @return Column that contains manufacturer icao code
 	 */
 	def icaoCodeColumn = table(icaoCodeAttName)
+	/**
+	 * @return Column that contains the alternative (3 character) manufacturer code
+	 */
+	def altCodeColumn = table(altCodeAttName)
 	
 	
 	// OTHER    --------------------------

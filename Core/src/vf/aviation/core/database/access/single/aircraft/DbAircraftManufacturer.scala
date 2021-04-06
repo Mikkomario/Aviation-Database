@@ -1,7 +1,7 @@
 package vf.aviation.core.database.access.single.aircraft
 
 import utopia.vault.database.Connection
-import utopia.vault.nosql.access.{IndexedAccess, SingleRowModelAccess, UniqueModelAccess}
+import utopia.vault.nosql.access.{Indexed, SingleRowModelAccess, UniqueModelAccess}
 import utopia.flow.generic.ValueConversions._
 import utopia.vault.model.immutable.Column
 import utopia.vault.sql.{Condition, Select, Where}
@@ -16,8 +16,7 @@ import vf.aviation.core.database.access.many.aircraft.DbAircraftManufacturerName
  * @author Mikko Hilpinen
  * @since 5.4.2021, v0.1
  */
-object DbAircraftManufacturer extends SingleRowModelAccess[AircraftManufacturer]
-	with IndexedAccess[Option[AircraftManufacturer]]
+object DbAircraftManufacturer extends SingleRowModelAccess[AircraftManufacturer] with Indexed
 {
 	// COMPUTED ---------------------------------
 	
