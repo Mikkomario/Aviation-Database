@@ -17,6 +17,10 @@ object AircraftManufacturerModel
 	 */
 	val icaoCodeAttName = "icaoCode"
 	/**
+	 * Name of the attribute that contains the alternative manufacturer code
+	 */
+	val altCodeAttName = "altCode"
+	/**
 	 * Name of the attribute that contains associated country's id
 	 */
 	val countryIdAttName = "countryId"

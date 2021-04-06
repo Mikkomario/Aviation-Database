@@ -110,6 +110,20 @@ object DbAircraftManufacturer extends SingleRowModelAccess[AircraftManufacturer]
 		def countryId_=(newCountryId: Int)(implicit connection: Connection) =
 			putAttribute(model.countryIdAttName, newCountryId)
 		
+		/**
+		 * @param connection DB Connection (implicit)
+		 * @return Alternative 3 character code for this manufacturer, if applicable & known
+		 */
+		def altCode(implicit connection: Connection) = pullAttribute(model.altCodeAttName).string
+		/**
+		 * Updates this manufacturer's alternative code
+		 * @param newAltCode New alternative manufacturer code
+		 * @param connection DB Connection (implicit)
+		 * @return Whether a row was updated
+		 */
+		def altCode_=(newAltCode: String)(implicit connection: Connection) =
+			putAttribute(model.altCodeAttName, newAltCode)
+		
 		
 		// IMPLEMENTED  -------------------------
 		
