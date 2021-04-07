@@ -99,6 +99,256 @@ INSERT INTO carrier_type (id, name) VALUES
 	(2, 'All Cargo'),
 	(3, 'Small Certificated');
 
+-- Lists more general aircarft engine categories
+CREATE TABLE generic_engine_type(
+	id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	name VARCHAR(32) NOT NULL,
+	is_airbreathing BOOLEAN NOT NULL,
+	is_rotation_based BOOLEAN NOT NULL
+
+)Engine=InnoDB DEFAULT CHARACTER SET utf8
+               DEFAULT COLLATE utf8_general_ci;
+
+-- Generic Groups & Specific groups
+--	- Rotating Airbreathing
+--		- Turboprop
+--		- Turboshaft
+--	- Non-rotating Airbreathing
+--		- Turbojet
+--		- Turbofan
+--		- Ramjet
+--	- Piston
+--		- 2-Cycle
+--		- 4-Cycle
+--	- Other Rotating
+--		- Electric
+--		- Rotary
+--	- Other Non-rotating
+--		- Rocket
+INSERT INTO generic_engine_type (id, name, is_airbreathing, is_rotation_based) VALUES
+	(1, 'Airbreathing Propelling', TRUE, TRUE),
+	(2, 'Airbreathing Jet', TRUE, FALSE),
+	(3, 'Piston', FALSE, TRUE),
+	(4, 'Other Propelling', FALSE, TRUE),
+	(5, 'Other Propulsion', FALSE; FALSE);
+
+CREATE TABLE specific_engine_type(
+	id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	generic_type_id INT NOT NULL,
+	name VARCHAR(32) NOT NULL
+)Engine=InnoDB DEFAULT CHARACTER SET utf8
+               DEFAULT COLLATE utf8_general_ci;
+INSERT INTO specific_engine_type (id, generic_type_id, name) VALUES
+	(1, 1, 'Turboprop'),
+	(2, 1, 'Turboshaft'),
+	(3, 2, 'Turbojet'),
+	(4, 2, 'Turbofan'),
+	(5, 2, 'Ramjet'),
+	(6, 3, '2-Cycle'),
+	(7, 3, '4-Cycle'),
+	(8, 4, 'Electric'),
+	(9, 4, 'Rotary'),
+	(10, 5, 'Rocket');
+
+-- - Land/Sea distiction (mostly for fixed wings)
+-- 	- LandPlane
+--	- Amphibian
+--	- SeaPlane
+-- - Weight distinction
+--	- Lighter-than-air
+--	- Heavier-than-air
+--	- Hybrid lift
+-- - Wing type distinction (applicable to heavier-than-air and hybrid aircrafts)
+--	- Fixed-wing
+--		- Airplane (requires motor to maneuver)
+--		- Glider (doesn't require a motor to maneuver)
+--	- Rotary-wing
+--		- Helicopter
+--		- Gyroplane/Gyrocopter
+--	- Tilt-wing
+--	- Ornithopter (not present in data)
+-- - Powered / non-powered distinction
+--	- Powered
+--	- Non-powered
+
+-- Determines where an aircraft can land
+CREATE TABLE aircraft_environment_category(
+	id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	can_land_in_ground BOOLEAN NOT NULL,
+	can_land_in_water BOOLEAN NOT NULL
+
+)Engine=InnoDB DEFAULT CHARACTER SET utf8
+               DEFAULT COLLATE utf8_general_ci;
+INSERT INTO aircraft_environment_category (id, can_land_in_ground, can_land_in_water) VALUES
+	(1, 'Land', TRUE, FALSE),
+	(2, 'Sea', FALSE, TRUE),
+	(3, 'Amphibian', TRUE, TRUE);
+
+-- Determines the lift type of the aircraft, whether based on weight or aerodynamics
+CREATE TABLE aircraft_lift_method(
+	id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	name VARCHAR(32) NOT NULL
+)Engine=InnoDB DEFAULT CHARACTER SET utf8
+               DEFAULT COLLATE utf8_general_ci;
+-- Aerodynamics (1) are heavier-than-air aircrafts which use other means for lift
+-- Lighter-Than-Airs (2) are based on lighter-than-air gasses
+-- Hybrids (3) combine these two elements
+INSERT INTO aircraft_lift_method (id, name) VALUES
+	(1, 'Aerodynamics'),
+	(2, 'Lighter-Than-Air'),
+	(3, 'Hybrid');
+
+CREATE TABLE aircraft_wing_type(
+	id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	name VARCHAR(32) NOT NULL
+
+)Engine=InnoDB DEFAULT CHARACTER SET utf8
+               DEFAULT COLLATE utf8_general_ci;
+INSERT INTO aircraft_wing_type (id, name) VALUES
+	(1, 'Fixed-Wing'),
+	(2, 'Rotary-Wing'),
+	(3, 'Transforming'),
+	(4, 'Wingless');
+
+-- Determines aircraft power use / function
+CREATE TABLE aircraft_power_use(
+	id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	name VARCHAR(32) NOT NULL,
+	is_powered BOOLEAN NOT NULL
+
+)Engine=InnoDB DEFAULT CHARACTER SET utf8
+               DEFAULT COLLATE utf8_general_ci;
+-- Fully Powered (1): E.g. Standard Airplane or a Helicopter
+-- Partly Powered (2): E.g. Powered Glider or a Gyroplane
+-- Non-powered (3): E.g. Glider or a balloon
+INSERT INTO aicraft_power_use (id, name, is_powered) VALUES
+	(1, 'Fully Powered', TRUE),
+	(2, 'Partly Powered', TRUE),
+	(3, 'Non-powered', FALSE);
+
+-- Combines lift type, wing type and power type, but not environment type
+CREATE TABLE aircraft_category(
+	id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	name VARCHAR(32) NOT NULL,
+	lift_method_id INT NOT NULL,
+	wing_type_id INT NOT NULL,
+	power_use_id INT NOT NULL
+
+)Engine=InnoDB DEFAULT CHARACTER SET utf8
+               DEFAULT COLLATE utf8_general_ci;
+-- Standard Airplane (1)
+-- Gliders (2, 3) based on power use
+-- Rotary-Wing aircrafts (4, 5) based on whether the rotor is powered
+-- Tilt-Wing/Tiltrotor (6, 7)
+-- Airships (8, 9 and 10) based on aerodynamics and power use
+INSERT INTO aircraft_category (id, name, lift_method_id, wing_type_id, power_use_id) VALUES
+	(1, 'Airplane', 1, 1, 1),
+	(2, 'Powered Glider', 1, 1, 2),
+	(3, 'Non-powered Glider', 1, 1, 3),
+	(4, 'Helicopter', 1, 2, 1),
+	(5, 'Gyroplane', 1, 2, 2),
+	(6, 'Tiltrotor', 1, 1, 1),
+	(7, 'Tilt-Wing', 1, 3, 1),
+	(8, 'Airship', 2, 4, 1),
+	(9, 'Balloon', 2, 4, 3),
+	(10, 'Hybrid Airship', 3, 1, 1);
+
+-- A custom weight category class based on wake turbulence categories by ICAO and FAA,
+-- As well as weight class system in ACREF
+-- These values are meant to be used as min/max pairs
+-- The maximum values are exclusive
+CREATE TABLE aircraft_weight_category(
+	id NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	code VARCHAR(2) NOT NULL,
+	name VARCHAR(16) NOT NULL,
+	icao_code VARCHAR(1) NOT NULL,
+	faa_code VARCHAR(2) NOT NULL,
+	min_take_off_weight_pounds INT,
+	max_take_off_weight_pounds INT
+
+)Engine=InnoDB DEFAULT CHARACTER SET utf8
+               DEFAULT COLLATE utf8_general_ci;
+-- Super / J (7) = Super class, which is above 1 000 000 pounds
+-- Heavy / H (6) = ICAO Heavy class, limited by FAA Large class
+-- Semi Heavy / H- (5) = Intersection between ICAO heavy and FAA large
+-- Medium+ / M+ (4) = Intersection between ACREF class 3 and FAA S+ class
+-- Medium / M (3) = Intersection between ICAO medium, FAA S+ and ACREF class 2
+-- Light+ / L+ (2) = Intersection between ICAO light and FAA S+
+-- Light / L (1) = FAA S class (also ACREF class 1)
+INSERT INTO aircraft_weight_category (id, code, name, icao_code, faa_code, min_take_off_weight_pounds, max_take_off_weight_pounds) VALUES
+	(1, 'L', 'Light', 'L', 'S', NULL, 12500),
+	(2, 'L+', 'Light+', 'L', 'S+', 12500, 15400),
+	(3, 'M', 'Medium', 'M', 'S+', 15400, 20000),
+	(4, 'M+', 'Medium+', 'M', 'S+', 20000, 41000),
+	(5, 'H-', 'Semi Heavy', 'M', 'L', 41000, 300000),
+	(6, 'H', 'Heavy', 'H', 'H', 300000, 1000000),
+	(7, 'J', 'Super', 'J', 'J', 1000000, NULL);
+
+-- SOURCE: Order_7360.1D_Aircraft_Type_Designators (FAA)
+-- Based on RECAT 1.5 Wake Categories
+-- Provides hints about aircraft wing span
+-- Please note that minimum values are exclusive and maximum values inclusive
+CREATE TABLE aircraft_wing_span_category(
+	id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	recat_wake_category_code VARCHAR(1) NOT NULL,
+	min_wing_span_feet INT NOT NULL,
+	max_wing_span_feet INT
+
+)Engine=InnoDB DEFAULT CHARACTER SET utf8
+               DEFAULT COLLATE utf8_general_ci;
+-- A => > 245 feet
+-- B => > 175 feet & <= 245 feet
+-- C => > 125 feet & <= 175 feet
+-- D => > 90 feet <= 175 feet
+-- E => > 65 feet <= 90 feet
+-- F => <= 65 feet (although the data doesn't spell this out)
+INSERT INTO aircraft_wing_span_category (id, recat_wake_category_code, min_wing_span_feet, max_wing_span_feet) VALUES
+	(1, 'F', 0, 65),
+	(2, 'E', 65, 90),
+	(3, 'D', 90, 175),
+	(4, 'C', 125, 175),
+	(5, 'B', 175, 245),
+	(6, 'A', 245, NULL);
+
+-- SOURCE: https://www.skybrary.aero/index.php/Airplane_Design_Group_(ADG)
+-- Matches values in FAA Aircraft Char Database
+-- Design group is based on most restrictive value (wing span or tail height)
+-- All maximum values are exclusive
+CREATE TABLE aircraft_design_group(
+	id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	code VARCHAR(3) NOT NULL,
+	max_wing_span_feet INT NOT NULL,
+	max_tail_height_feet INT NOT NULL
+
+)Engine=InnoDB DEFAULT CHARACTER SET utf8
+               DEFAULT COLLATE utf8_general_ci;
+INSERT INTO aircraft_design_group (id, code, max_wing_span_feet, max_tail_height_feet) VALUES
+	(1, 'I', 49, 20),
+	(2, 'II', 79, 30),
+	(3, 'III', 118, 45),
+	(4, 'IV', 171, 60),
+	(5, 'V', 214, 66),
+	(6, 'VI', 262, 80);
+
+-- Minimum values are exclusive, maximum values are inclusive
+-- Code determined by FAA-standard
+CREATE TABLE aircraft_approach_speed_group(
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    code CHAR NOT NULL,
+    min_approach_speed_knots INT NOT NULL,
+    max_approach_speed_knots INT,
+
+    INDEX apsg_code_idx (code)
+
+))Engine=InnoDB DEFAULT CHARACTER SET utf8
+                DEFAULT COLLATE utf8_general_ci;
+INSERT INTO aircraft_approach_speed_group (id, code, min_approach_speed_knots, max_approach_speed_knots) VALUES
+    (1, 'A', 0, 90),
+    (2, 'B', 90, 120),
+    (3, 'C', 120, 140),
+    (4, 'D', 140, 165),
+    (5, 'E', 165, NULL);
+
 
 -- Dynamically Added    ----------------------------------
 
@@ -299,8 +549,100 @@ CREATE TABLE aircraft_manufacturer_name(
 	manufacturer_id INT NOT NULL,
 	name VARCHAR(134) NOT NULL,
 
+	INDEX amn_manufacturer_name_idx (name),
+
 	CONSTRAINT amn_am_name_owner_link_fk FOREIGN KEY amn_am_name_owner_link_idx (manufacturer_id)
 	    REFERENCES aircraft_manufacturer(id) ON DELETE CASCADE
 
 )Engine=InnoDB DEFAULT CHARACTER SET utf8
                DEFAULT COLLATE utf8_general_ci;
+
+-- SOURCES: ACFTREF (and others)
+-- Lists aircraft model/series groups, which are usually attached to some ICAO code
+-- A model may be manufactured by multiple manufacturers, where each has their own series / variation
+-- Min and max weight categories are both inclusive
+CREATE TABLE aircraft_model(
+	id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	environment_id INT NOT NULL DEFAULT 1,
+	min_weight_category_id INT NOT NULL DEFAULT 1,
+    max_weight_category_id INT NOT NULL DEFAULT 7,
+	manufacturer_code VARCHAR(3),
+	model_code VARCHAR(2),
+	iata_code VARCHAR(3),
+	icao_code VARCHAR(4),
+	category_id INT,
+	wing_type_id INT,
+	number_of_engines INT,
+	engine_category_id INT,
+	engine_type_id INT,
+	airworthiness CHAR,
+	taxiway_design_group_code VARCHAR(2),
+
+    INDEX am_code_idx (manufacturer_code, model_code),
+	INDEX am_iata_idx (iata_code),
+	INDEX am_icao_idx (icao_code),
+
+	CONSTRAINT am_aec_ac_category_reference_fk FOREIGN KEY am_aec_ac_category_reference_idx (environment_id)
+	    REFERENCES aircraft_environment_category(id) ON DELETE CASCADE,
+
+	CONSTRAINT am_awc_ac_min_wt_category_reference_fk FOREIGN KEY am_awc_ac_min_wt_category_reference_idx (min_weight_category_id)
+	    REFERENCES aircraft_weight_category(id) ON DELETE CASCADE,
+
+	CONSTRAINT am_awc_ac_max_wt_category_reference_fk FOREIGN KEY am_awc_ac_max_wt_category_reference_idx (max_weight_category_id)
+	    REFERENCES aircraft_weight_category(id) ON DELETE CASCADE,
+
+	CONSTRAINT am_ac_ac_category_reference_fk FOREIGN KEY am_ac_ac_category_reference_idx (category_id)
+	    REFERENCES aircraft_category(id) ON DELETE SET NULL,
+
+	CONSTRAINT am_awt_ac_wing_type_reference_fk FOREIGN KEY am_awt_ac_wing_type_reference_idx (wing_type_id)
+	    REFERENCES aircraft_wing_type(id) ON DELETE SET NULL,
+
+	CONSTRAINT am_get_ac_engine_type_generic_reference_fk FOREIGN KEY am_get_ac_engine_type_generic_reference_idx (engine_category_id)
+	    REFERENCES generic_engine_type(id) ON DELETE SET NULL,
+
+	CONSTRAINT am_set_ac_engine_type_specific_reference_fk FOREIGN KEY am_set_ac_engine_type_specific_reference_idx (engine_type_id)
+	    REFERENCES specific_engine_type(id) ON DELETE SET NULL
+
+)Engine=InnoDB DEFAULT CHARSET=latin1;
+
+-- SOURCES: ACFTREF (and others)
+-- Represents a specific A/C model
+-- TODO: Add name as idx (possibly with manufacturer) if there are searches based on it
+CREATE TABLE aircraft_model_variant(
+	id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	model_id INT NOT NULL,
+	manufacturer_id INT NOT NULL,
+	name VARCHAR(16) NOT NULL,
+	manufacturer_code VARCHAR(3),
+	model_code VARCHAR(2),
+	series_code VARCHAR(2),
+	design_group_id INT,
+	wing_span_feet DOUBLE,
+    length_feet DOUBLE,
+    tail_height_feet DOUBLE,
+    wheel_base_feet DOUBLE,
+    main_gear_width_feet DOUBLE,
+	number_of_seats INT,
+	max_take_off_weight_pounds INT,
+	max_taxi_weight_pounds INT,
+	approach_speed_group_id INT,
+	approach_speed_knots INT,
+	cruising_speed_knots DOUBLE,
+	manufacture_started_year INT,
+	manufacture_ended_year INT,
+
+    INDEX amv_code_idx (manufacturer_code, model_code, series_code),
+
+	CONSTRAINT amv_am_parent_model_link_fk FOREIGN KEY amv_am_parent_model_link_idx (model_id)
+	    REFERENCES aircraft_model(id) ON DELETE CASCADE,
+
+	CONSTRAINT amv_am_manufacturer_link_fk FOREIGN KEY amv_am_manufacturer_link_idx (manufacturer_id)
+	    REFERENCES aircraft_manufacturer(id) ON DELETE CASCADE,
+
+    CONSTRAINT amv_adg_ac_design_group_reference_fk FOREIGN KEY amv_adg_ac_design_group_reference_idx (design_group_id)
+        REFERENCES aircraft_design_group(id) ON DELETE SET NULL,
+
+    CONSTRAINT amv_aasg_ac_approach_speed_group_reference_fk FOREIGN KEY amv_aasg_ac_approach_speed_group_reference_idx (approach_speed_group_id)
+        REFERENCES aircraft_approach_speed_group(id) ON DELETE SET NULL
+
+)Engine=InnoDB DEFAULT CHARSET=latin1;

@@ -1,16 +1,19 @@
 package vf.aviation.input.controller.aircraft
 
-import utopia.flow.datastructure.immutable.{Constant, Model}
+import utopia.flow.datastructure.immutable.{Constant, Model, ModelDeclaration}
 import utopia.flow.util.CollectionExtensions._
-import utopia.flow.generic.FromModelFactoryWithSchema
-import utopia.flow.parse.CsvReader
+import utopia.flow.generic.{FromModelFactoryWithSchema, IntType, StringType}
+import utopia.flow.generic.ValueUnwraps._
+import utopia.flow.parse.{CsvReader, Regex}
 import utopia.flow.util.ActionBuffer
+import utopia.flow.util.StringExtensions._
 import utopia.vault.database.Connection
 import vf.aviation.core.database.access.many.aircraft.DbAircraftManufacturers
 import vf.aviation.core.database.access.single.aircraft.DbAircraftManufacturer
 import vf.aviation.core.database.model.aircraft.{AircraftManufacturerModel, AircraftManufacturerNameModel}
 import vf.aviation.core.model.combined.FullAircraftManufacturer
 import vf.aviation.core.model.partial.aircraft.{AircraftManufacturerData, AircraftManufacturerNameData}
+import vf.aviation.core.model.stored.aircraft.AircraftManufacturer
 
 import java.nio.file.Path
 
@@ -24,7 +27,7 @@ object ImportActRef
 {
 	// ATTRIBUTES   --------------------------
 	
-	private val maxInsertSize = 1000
+	private val maxInsertSize = 750
 	
 	
 	// OTHER    ------------------------------
@@ -62,7 +65,7 @@ object ImportActRef
 						.bestMatch(Vector(m => m.alternativeCode.isEmpty))
 					
 					// Assigns the rows between the manufacturer(s)
-					val rowsPerManufacturer =
+					val rowsWithManufacturer: Vector[(VariantRow, AircraftManufacturer)] =
 					{
 						// Case: No matching manufacturers found
 						if (distinctManufacturers.isEmpty)
@@ -74,7 +77,7 @@ object ImportActRef
 							nameInsertBuffer ++= manufacturerNames.toVector.map { manufacturer.id -> _ }
 							
 							// Uses this manufacturer for all the rows
-							Map(manufacturer -> rows)
+							rows.map { _ -> manufacturer }
 						}
 						// Case: Unique manufacturer found
 						else if (distinctManufacturers.size == 1)
@@ -85,7 +88,7 @@ object ImportActRef
 							// Assigns new names for that manufacturer (no duplicates, however)
 							insertUniqueNames(manufacturer.id, manufacturerNames.toVector)
 							// Uses that manufacturer for all rows
-							Map(manufacturer -> rows)
+							rows.map { _ -> manufacturer }
 						}
 						// Case: Multiple manufacturers found
 						else
@@ -94,35 +97,103 @@ object ImportActRef
 							DbAircraftManufacturers(distinctManufacturers.map { _.id })
 								.assignAlternativeCodeIfNotSet(manufacturerCode)
 							
+							// Inserts new names for the manufacturers based on assignments, but avoids duplicates
+							val namesByManufacturers = matchingManufacturers.toVector.groupMap { _._2 } { _._1 }
+							namesByManufacturers.foreach { case (manufacturer, names) =>
+								insertUniqueNames(manufacturer.id, names)
+							}
+							
 							// Case: All names were successful assigned
 							if (manufacturerNames.size == matchingManufacturers.size)
 							{
-								// Inserts new names for the manufacturers based on assignments, but avoids duplicates
-								val namesByManufacturers = matchingManufacturers.toVector.groupMap { _._2 } { _._1 }
-								namesByManufacturers.foreach { case (manufacturer, names) =>
-									insertUniqueNames(manufacturer.id, names)
-								}
-								
 								// Assigns the rows based on manufacturer names
-								namesByManufacturers.view.mapValues { names =>
-									rows.filter { row => names.contains(row.manufacturerName) } }.toMap
+								rows.map { row => row -> matchingManufacturers(row.manufacturerName) }
 							}
 							// Case: Some names couldn't be assigned
 							else
 							{
-								// Assigns the names to the manufacturer with most resemblance, or to the most
-								// prominent manufacturer
+								// Assigns the names to the manufacturer with most resemblance
 								val unassignedNames = manufacturerNames -- matchingManufacturers.keySet
 								val manufacturersWithNames = distinctManufacturers
 									.map { m => DbAircraftManufacturer(m.id).full
 										.getOrElse { FullAircraftManufacturer(m, Vector()) } }
-								// TODO: Continue
-								???
+								val chosenManufacturers = unassignedNames
+									.map { name => name -> findBestMatch(name, manufacturersWithNames) }.toMap
+								
+								// Inserts new names for those manufacturers also
+								// Avoids duplicates, even though there shouldn't be any at this point
+								nameInsertBuffer ++= chosenManufacturers.flatMap { case (name, manufacturer) =>
+									if (manufacturer.names.exists { _ ~== name })
+										None
+									else
+										Some(manufacturer.id -> name)
+								}.toSeq
+								
+								val allMatchesMap = matchingManufacturers ++
+									chosenManufacturers.view.mapValues { _.manufacturer }
+								rows.map { row => row -> allMatchesMap(row.manufacturerName) }
 							}
 						}
 					}
+					
+					// Handles each model code separately
+					rowsWithManufacturer.groupBy { _._1.modelCode }.foreach { case (modelCode, rows) =>
+						// Groups the rows based on A/C category information
+						rows.groupBy { case (row, _) => (row.cateGoryId, row.typeId, row.engineTypeId,
+							row.numberOfEngines, row.weightClassId) }
+							.foreach { case ((categoryId, typeId, engineTypeId, numberOfEngines, weightClassId), rows) =>
+								// Creates a new model row for this group and a single model variant row for each row
+								// The inserts themselves are delayed
+								// TODO: Continue after the models have been created
+							}
+					}
 				}
 		}
+	}
+	
+	private def findBestMatch(name: String, manufacturers: Iterable[FullAircraftManufacturer]) =
+	{
+		// Counts the occurrence of words in the name in each manufacturer name
+		val nameWords = name.words.map { _.toLowerCase }
+		val firstResults = countWordsMatch(nameWords, manufacturers)
+		
+		if (firstResults.size > 1)
+		{
+			// If there are still many options, counts the occurrence of word parts in each manufacturer name
+			val splitRegex = !Regex.alphaNumeric
+			val wordParts = nameWords.flatMap { splitRegex.split(_).filter { _.nonEmpty } }
+			val secondResults = countWordsMatch(wordParts, manufacturers)
+			
+			if (secondResults.size > 1)
+			{
+				// If there are still many options, counts the number of even shorter word pieces
+				(3 to 1).findMap { rangeLength =>
+					val wordPieces = wordParts.flatMap { _.splitToSegments(rangeLength) }
+					val results = countWordsMatch(wordPieces, manufacturers)
+					if (results.size > 1)
+						None
+					else
+						Some(results.head)
+				// And if, for some strange reason, there are still many options, simply picks one
+				}.getOrElse(secondResults.minBy { _.names.map { _.length }.sum })
+			}
+			else
+				secondResults.head
+		}
+		else
+			firstResults.head
+	}
+	
+	private def countWordsMatch(words: Iterable[String], manufacturers: Iterable[FullAircraftManufacturer]) =
+	{
+		val counts = manufacturers.map { manufacturer =>
+			manufacturer -> manufacturer.names.map { name =>
+				val lowerName = name.toLowerCase
+				words.count(lowerName.contains)
+			}.maxOption.getOrElse(0)
+		}
+		val maxCount = counts.map { _._2 }.max
+		counts.filter { _._2 == maxCount }.map { _._1 }
 	}
 	
 	
@@ -130,12 +201,16 @@ object ImportActRef
 	
 	private object VariantRow extends FromModelFactoryWithSchema[VariantRow]
 	{
-		override val schema = ???
+		override val schema = ModelDeclaration("CODE" -> StringType, "MRF" -> StringType, "TYPE-ACFT" -> IntType,
+			"TYPE-ENG" -> IntType, "AC-CAT" -> IntType, "NO-ENG" -> IntType, "AC-WEIGHT" -> IntType)
 		
-		override protected def fromValidatedModel(model: Model[Constant]) = ???
+		override protected def fromValidatedModel(model: Model[Constant]) =
+			VariantRow(model("CODE"), model("MFR"), model("AC-CAT"), model("TYPE-ACFT"), model("AC-WEIGHT"),
+				model("TYPE-ENG"), model("NO-ENG"))
 	}
 	
-	private case class VariantRow(code: String, manufacturerName: String)
+	private case class VariantRow(code: String, manufacturerName: String, cateGoryId: Int, typeId: Int,
+	                              weightClassId: Int, engineTypeId: Int, numberOfEngines: Int)
 	{
 		// First 3 characters of the code denote a manufacturer
 		def manufacturerCode = code.take(3)
