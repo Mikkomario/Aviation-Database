@@ -1,11 +1,14 @@
 package vf.aviation.core.model.partial.aircraft
 
+import vf.aviation.core.model.enumeration.StandardAircraftWeightCategory
+
 /**
  * Contains basic information about an aircraft model
  * @author Mikko Hilpinen
  * @since 7.4.2021, v0.1
  * @param environmentId Id of this model's landing environment type (E.g. Sea or land)
- * @param weightCategoryIdRange Known possible weight variation by weight category ids (min & max)
+ * @param minWeightCategoryId Id of the smallest category of weights for aircrafts in this model (default = Light)
+ * @param maxWeightCategory Id of the largest category of weights for aircrafts in this model (default = Super)
  * @param manufacturerCode A 3 character code referring to an aircraft manufacturer (alt-code) (if known)
  * @param modelCode A 2 character code of this A/C model (if known)
  * @param iataCode 3 character IATA-assigned code for this aircraft model (if known)
@@ -18,10 +21,11 @@ package vf.aviation.core.model.partial.aircraft
  * @param airworthiness Airworthiness code assigned for this model (if known)
  * @param taxiwayDesignGroupCode Code of the taxiway design group this model belongs to (if known)
  */
-// TODO: Add default value for weight range
-case class AircraftModelData(environmentId: Int, weightCategoryIdRange: Range, manufacturerCode: Option[String] = None,
-                             modelCode: Option[String] = None, iataCode: Option[String] = None,
-                             icaoCode: Option[String] = None, categoryId: Option[Int] = None,
-                             wingTypeId: Option[Int] = None, numberOfEngines: Option[Int] = None,
-                             engineCategoryId: Option[Int] = None, engineTypeId: Option[Int] = None,
-                             airworthiness: Option[Char] = None, taxiwayDesignGroupCode: Option[String] = None)
+case class AircraftModelData(environmentId: Int, minWeightCategoryId: Int = StandardAircraftWeightCategory.min.id,
+                             maxWeightCategory: Int = StandardAircraftWeightCategory.max.id,
+                             manufacturerCode: Option[String] = None, modelCode: Option[String] = None,
+                             iataCode: Option[String] = None, icaoCode: Option[String] = None,
+                             categoryId: Option[Int] = None, wingTypeId: Option[Int] = None,
+                             numberOfEngines: Option[Int] = None, engineCategoryId: Option[Int] = None,
+                             engineTypeId: Option[Int] = None, airworthiness: Option[Char] = None,
+                             taxiwayDesignGroupCode: Option[String] = None)
