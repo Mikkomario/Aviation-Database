@@ -59,6 +59,14 @@ object AviationTables extends Tables(ConnectionPool)
 	 * @return Table that contains various names assigned to aircraft manufacturers
 	 */
 	def aircraftManufacturerName = apply("aircraft_manufacturer_name")
+	/**
+	 * @return Table that lists general A/C models (codes)
+	 */
+	def aircraftModel = apply("aircraft_model")
+	/**
+	 * @return Table that lists specific A/C model variatns
+	 */
+	def aircraftModelVariant = apply("aircraft_model_variant")
 	
 	private def apply(tableName: String): Table = apply("aviation_database", tableName)
 }
