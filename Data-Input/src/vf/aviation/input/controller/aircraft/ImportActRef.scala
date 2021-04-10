@@ -10,9 +10,14 @@ import utopia.flow.util.StringExtensions._
 import utopia.vault.database.Connection
 import vf.aviation.core.database.access.many.aircraft.DbAircraftManufacturers
 import vf.aviation.core.database.access.single.aircraft.DbAircraftManufacturer
-import vf.aviation.core.database.model.aircraft.{AircraftManufacturerModel, AircraftManufacturerNameModel}
+import vf.aviation.core.database.model.aircraft.{AircraftManufacturerModel, AircraftManufacturerNameModel, AircraftModelModel, AircraftModelVariantModel}
+import vf.aviation.core.model.cached.Speed
 import vf.aviation.core.model.combined.FullAircraftManufacturer
-import vf.aviation.core.model.partial.aircraft.{AircraftManufacturerData, AircraftManufacturerNameData}
+import vf.aviation.core.model.enumeration.StandardAircraftCategory.{Airplane, Airship, Balloon, Gyroplane, Helicopter, HybridAirship, NonPoweredGlider, PoweredGlider}
+import vf.aviation.core.model.enumeration.StandardAircraftWeightCategory.{Light, LightPlus, Medium, MediumPlus, Super}
+import vf.aviation.core.model.enumeration.StandardGenericEngineType.Piston
+import vf.aviation.core.model.enumeration.StandardSpecificEngineType.{Electric, FourCycle, RamJet, Rotary, TurboFan, TurboJet, TurboProp, TurboShaft, TwoCycle}
+import vf.aviation.core.model.partial.aircraft.{AircraftManufacturerData, AircraftManufacturerNameData, AircraftModelData, AircraftModelVariantData}
 import vf.aviation.core.model.stored.aircraft.AircraftManufacturer
 
 import java.nio.file.Path
@@ -27,7 +32,7 @@ object ImportActRef
 {
 	// ATTRIBUTES   --------------------------
 	
-	private val maxInsertSize = 750
+	private val maxInsertSize = 500
 	
 	
 	// OTHER    ------------------------------
@@ -54,7 +59,7 @@ object ImportActRef
 			linesIterator.mapCatching(VariantRow.apply) { _.printStackTrace() }
 				// Groups the rows by manufacturer
 				.groupBy { _.manufacturerCode }
-				.foreach { case (manufacturerCode, rows) =>
+				.flatMap { case (manufacturerCode, rows) =>
 					val manufacturerNames = rows.map { _.manufacturerName }.toSet
 					// Finds manufacturer ids matching those names (may contain duplicates)
 					val matchingManufacturers = manufacturerNames
@@ -137,16 +142,85 @@ object ImportActRef
 					}
 					
 					// Handles each model code separately
-					rowsWithManufacturer.groupBy { _._1.modelCode }.foreach { case (modelCode, rows) =>
+					rowsWithManufacturer.groupBy { _._1.modelCode }.flatMap { case (modelCode, rows) =>
 						// Groups the rows based on A/C category information
 						rows.groupBy { case (row, _) => (row.cateGoryId, row.typeId, row.engineTypeId,
 							row.numberOfEngines, row.weightClassId) }
-							.foreach { case ((categoryId, typeId, engineTypeId, numberOfEngines, weightClassId), rows) =>
+							.map { case ((categoryId, typeId, engineTypeId, numberOfEngines, weightClassId), rows) =>
 								// Creates a new model row for this group and a single model variant row for each row
 								// The inserts themselves are delayed
-								// TODO: Continue after the models have been created
+								// Parses min and max weight categories based on document enumeration (see ardata.pdf)
+								// TODO: Handle cases where id is none of these (if present)
+								val minWeightCategory = weightClassId match
+								{
+									case 1 | 4 => Light
+									case 2 => LightPlus
+									case 3 => MediumPlus
+								}
+								val maxWeightCategory = weightClassId match
+								{
+									case 1 | 4 => Light
+									case 2 => Medium
+									case 3 => Super
+								}
+								// Parses aircraft category from document enumeration (see ardata.pdf for details)
+								val category = typeId match
+								{
+									case "1" | "7" => Some(if (numberOfEngines > 0) PoweredGlider else NonPoweredGlider)
+									case "2" => Some(Balloon)
+									case "3" => Some(Airship)
+									case "4" | "5" => Some(Airplane)
+									case "6" => Some(Helicopter)
+									case "8" => Some(PoweredGlider)
+									case "9" => Some(Gyroplane)
+									case "H" => Some(HybridAirship)
+									case _ => None
+								}
+								// Parses engine type based on document enumeration (see ardata)
+								val specificEngineType = engineTypeId match
+								{
+									case 2 => Some(TurboProp)
+									case 3 => Some(TurboShaft)
+									case 4 => Some(TurboJet)
+									case 5 => Some(TurboFan)
+									case 6 => Some(RamJet)
+									case 7 => Some(TwoCycle)
+									case 8 => Some(FourCycle)
+									case 10 => Some(Electric)
+									case 11 => Some(Rotary)
+									case _ => None
+								}
+								val genericEngineType = specificEngineType.map { _.genericType }.orElse {
+									engineTypeId match
+									{
+										case 1 => Some(Piston)
+										case _ => None
+									}
+								}
+								val modelData = AircraftModelData(categoryId, minWeightCategory.id, maxWeightCategory.id,
+									Some(manufacturerCode + modelCode), None, None, category.map { _.id },
+									category.map { _.wingType.id }, Some(numberOfEngines),
+									genericEngineType.map { _.id }, specificEngineType.map { _.id })
+								val variantRows = rows.map { case (row, manufacturer) =>
+									VariantInsertInfo(manufacturer.id, row.name, row.code, row.numberOfSeats,
+										row.cruisingSpeed)
+								}
+								modelData -> variantRows
 							}
 					}
+				}
+				// Inserts new model & model variant data in bulks
+				.foreachGroup(maxInsertSize) { rows =>
+					// First inserts the models to acquire model ids
+					val models = AircraftModelModel.insert(rows.map { _._1 })
+					// Then inserts the model variants
+					val variantData = rows.zip(models).flatMap { case ((_, variantRows), model) =>
+						variantRows.map { row =>
+							AircraftModelVariantData(model.id, row.manufacturerId, row.name, Some(row.code),
+								numberOfSeats = Some(row.numberOfSeats), cruisingSpeed = row.cruisingSpeed)
+						}
+					}
+					AircraftModelVariantModel.insert(variantData)
 				}
 		}
 	}
@@ -199,24 +273,32 @@ object ImportActRef
 	
 	// NESTED   ------------------------------
 	
+	private case class VariantInsertInfo(manufacturerId: Int, name: String, code: String, numberOfSeats: Int,
+	                                     cruisingSpeed: Option[Speed])
+	
 	private object VariantRow extends FromModelFactoryWithSchema[VariantRow]
 	{
-		override val schema = ModelDeclaration("CODE" -> StringType, "MRF" -> StringType, "TYPE-ACFT" -> IntType,
-			"TYPE-ENG" -> IntType, "AC-CAT" -> IntType, "NO-ENG" -> IntType, "AC-WEIGHT" -> IntType)
+		override val schema = ModelDeclaration("MODEL" -> StringType, "CODE" -> StringType, "MRF" -> StringType,
+			"TYPE-ACFT" -> IntType,
+			"TYPE-ENG" -> IntType, "AC-CAT" -> IntType, "NO-ENG" -> IntType, "AC-WEIGHT" -> IntType,
+			"NO-SEATS" -> IntType)
 		
+		// Weight class is given as "CLASS 1 | CLASS 2 etc."
+		// TODO: Add weight class id parsing failure handling
 		override protected def fromValidatedModel(model: Model[Constant]) =
-			VariantRow(model("CODE"), model("MFR"), model("AC-CAT"), model("TYPE-ACFT"), model("AC-WEIGHT"),
-				model("TYPE-ENG"), model("NO-ENG"))
+			VariantRow(model("NAME"), model("CODE"), model("MFR"), model("AC-CAT"), model("TYPE-ACFT"),
+				model("AC-WEIGHT").getString.last.asDigit,
+				model("TYPE-ENG"), model("NO-ENG"), model("NO-SEATS"),
+				model("SPEED").int.filter { _ > 0 }.map { Speed.milesPerHour(_) })
 	}
 	
-	private case class VariantRow(code: String, manufacturerName: String, cateGoryId: Int, typeId: Int,
-	                              weightClassId: Int, engineTypeId: Int, numberOfEngines: Int)
+	private case class VariantRow(name: String, code: String, manufacturerName: String, cateGoryId: Int,
+	                              typeId: String, weightClassId: Int, engineTypeId: Int, numberOfEngines: Int,
+	                              numberOfSeats: Int, cruisingSpeed: Option[Speed] = None)
 	{
 		// First 3 characters of the code denote a manufacturer
 		def manufacturerCode = code.take(3)
 		// The 4th and 5th show aircraft model
 		def modelCode = code.slice(3, 5)
-		// The 6th and 7th describe model variant / series
-		def variantCode = code.drop(5)
 	}
 }

@@ -12,10 +12,9 @@ import java.time.Year
  * @param modelId Id of the model that describes this A/C type
  * @param manufacturerId Id of the manufacturer of this A/C variant
  * @param name Name of this model/variant
- * @param manufacturerCode 3-character manufacturer code associated with this variant (if known)
- * @param modelCode 2-character model code associated with this variant (if known)
- * @param seriesCode 2-character code assigned to this variant (if known),
- *                   used in combination with manufacturer and model codes
+ * @param altCode A 7-character code for this model variant where the 3 first characters match an aircraft
+ *                manufacturer alt code, the next 2 match a model code within that manufacturer group and the
+ *                last 2 are specific to this variant within that model type. (if known)
  * @param designGroupId Id of the aircraft design group this model belongs in (if known)
  * @param wingSpan Wing span of this aircraft type from the end of one wing to the end of the other (if known)
  * @param length Length of this aircraft type from nose to tail (if known)
@@ -32,13 +31,28 @@ import java.time.Year
  * @param manufactureStartedYear Year when the manufacturing of this model was started (if known)
  * @param manufactureEndedYear Year when the manufacturing of this model was ended (if known / if applicable)
  */
-case class AircraftModelVariantData(modelId: Int, manufacturerId: Int, name: String,
-                                    manufacturerCode: Option[String] = None, modelCode: Option[String] = None,
-                                    seriesCode: Option[String] = None, designGroupId: Option[Int] = None,
-                                    wingSpan: Option[Distance] = None, length: Option[Distance] = None,
-                                    tailHeight: Option[Distance], wheelBase: Option[Distance] = None,
-                                    mainGearWidth: Option[Distance] = None, numberOfSeats: Option[Int] = None,
+case class AircraftModelVariantData(modelId: Int, manufacturerId: Int, name: String, altCode: Option[String] = None,
+                                    designGroupId: Option[Int] = None, wingSpan: Option[Distance] = None,
+                                    length: Option[Distance] = None, tailHeight: Option[Distance] = None,
+                                    wheelBase: Option[Distance] = None, mainGearWidth: Option[Distance] = None,
+                                    numberOfSeats: Option[Int] = None,
                                     maxTakeOffWeight: Option[Weight] = None, maxTaxiWeight: Option[Weight] = None,
                                     approachSpeedGroupId: Option[Int] = None, approachSpeed: Option[Speed] = None,
                                     cruisingSpeed: Option[Speed] = None, manufactureStartedYear: Option[Year] = None,
                                     manufactureEndedYear: Option[Year] = None)
+{
+	/**
+	 * @return An alternative code for this model variant's manufacturer / manufacturer group
+	 */
+	def manufacturerCode = altCode.map { _.take(3) }
+	
+	/**
+	 * @return An alternative code for this variant's model type within the manufacturer group
+	 */
+	def modelCode = altCode.map { _.slice(3, 5) }
+	
+	/**
+	 * @return An alternative code for this variant within this model type
+	 */
+	def seriesCode = altCode.map { _.drop(5) }
+}

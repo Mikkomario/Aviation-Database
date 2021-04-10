@@ -16,9 +16,15 @@ object AircraftModelFactory extends FromValidatedRowModelFactory[AircraftModel]
 {
 	override def table = AviationTables.aircraftModel
 	
-	override protected def fromValidatedModel(model: Model[Constant]) = AircraftModel(model("id"),
-		AircraftModelData(model("environmentId"), model("minWeightCategoryId"), model("maxWeightCategoryId"),
-			model("manufacturerCode"), model("modelCode"), model("iataCode"), model("icaoCode"), model("categoryId"),
-			model("wingTypeId"), model("numberOfEngines"), model("engineCategoryId"), model("engineTypeId"),
-			model("airworthiness").string.flatMap { _.headOption }, model("taxiwayDesignGroupCode")))
+	override protected def fromValidatedModel(model: Model[Constant]) =
+	{
+		val altCode = model("manufacturerCode").string.flatMap { manufacturerCode =>
+			model("modelCode").string.map { manufacturerCode + _ }
+		}
+		AircraftModel(model("id"),
+			AircraftModelData(model("environmentId"), model("minWeightCategoryId"), model("maxWeightCategoryId"),
+				altCode, model("iataCode"), model("icaoCode"), model("categoryId"), model("wingTypeId"),
+				model("numberOfEngines"), model("engineCategoryId"), model("engineTypeId"),
+				model("airworthiness").string.flatMap { _.headOption }, model("taxiwayDesignGroupCode")))
+	}
 }

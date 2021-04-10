@@ -561,6 +561,7 @@ CREATE TABLE aircraft_manufacturer_name(
 -- Lists aircraft model/series groups, which are usually attached to some ICAO code
 -- A model may be manufactured by multiple manufacturers, where each has their own series / variation
 -- Min and max weight categories are both inclusive
+-- TODO: Check which attributes ought to be not null
 CREATE TABLE aircraft_model(
 	id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
 	environment_id INT NOT NULL DEFAULT 1,
@@ -608,6 +609,8 @@ CREATE TABLE aircraft_model(
 -- SOURCES: ACFTREF (and others)
 -- Represents a specific A/C model
 -- TODO: Add name as idx (possibly with manufacturer) if there are searches based on it
+-- TODO: Check which of the attributes ought to be not null
+-- TODO: Consider separating data to multiple tables (speed information, measurements information etc.)
 CREATE TABLE aircraft_model_variant(
 	id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
 	model_id INT NOT NULL,
