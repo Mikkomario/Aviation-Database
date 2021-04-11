@@ -6,7 +6,7 @@ import utopia.vault.database.Connection
 import utopia.vault.sql.Delete
 import vf.aviation.core.database.{AviationTables, ConnectionPool}
 import vf.aviation.core.util.Globals._
-import vf.aviation.input.controller.aircraft.{ImportBstAircraftManufacturers, ImportOrder7360Manufacturers}
+import vf.aviation.input.controller.aircraft.{ImportActRef, ImportBstAircraftManufacturers, ImportOrder7360Manufacturers}
 
 import java.nio.file.Path
 import scala.util.{Failure, Success}
@@ -28,6 +28,7 @@ object AllAircraftDataImportTest extends App
 		// Deletes pre-existing data
 		println("Deleting old data")
 		connection(Delete(AviationTables.aircraftManufacturer))
+		connection(Delete(AviationTables.aircraftModel))
 		
 		// Imports Manufacturers.csv data
 		println("Starting BST Manufacturers document processing")
@@ -35,6 +36,10 @@ object AllAircraftDataImportTest extends App
 			.flatMap { _ =>
 				println("Staring Order 7360 Manufacturer document processing")
 				ImportOrder7360Manufacturers(inputDirectory/"order-7360-manufacturers.csv")
+			}
+			.flatMap { _ =>
+				println("Starting ACFTREF document processing")
+				ImportActRef(inputDirectory/"ACFTREF.csv")
 			}
 		match
 		{

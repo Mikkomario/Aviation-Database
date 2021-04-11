@@ -1,5 +1,6 @@
 package vf.aviation.input.controller.aircraft
 
+import utopia.flow.collection.PollingIterator
 import utopia.flow.datastructure.immutable.{Constant, Model, ModelDeclaration}
 import utopia.flow.util.CollectionExtensions._
 import utopia.flow.generic.{FromModelFactoryWithSchema, IntType, StringType}
@@ -21,6 +22,8 @@ import vf.aviation.core.model.partial.aircraft.{AircraftManufacturerData, Aircra
 import vf.aviation.core.model.stored.aircraft.AircraftManufacturer
 
 import java.nio.file.Path
+import scala.collection.immutable.VectorBuilder
+import scala.io.Codec
 
 /**
  * Imports aircraft model, variant and manufacturer data from the ACTREF.txt file.
@@ -32,16 +35,26 @@ object ImportActRef
 {
 	// ATTRIBUTES   --------------------------
 	
+	private implicit val codec: Codec = Codec.UTF8
 	private val maxInsertSize = 500
 	
 	
 	// OTHER    ------------------------------
 	
+	/**
+	 * Reads aircraft manufacturer, aircraft model and aircraft model variant data from the ACTRREF document.
+	 * Expects there to be no aircraft model data in the DB prior to this method call.
+	 * @param path Path to the file to read
+	 * @param separator Spearator between columns (default = ",")
+	 * @param connection DB Connection (implicit)
+	 * @return Success or failure
+	 */
 	def apply(path: Path, separator: String = ",")(implicit connection: Connection) =
 	{
 		CsvReader.iterateLinesIn(path, separator, ignoreEmptyStringValues = true) { linesIterator =>
 			// Manufacturer name inserts are made in bulks
 			val nameInsertBuffer = ActionBuffer[(Int, String)](maxInsertSize) { items =>
+				println(s"Inserts ${items.size} new aircraft manufacturer names")
 				// Inserts the names
 				AircraftManufacturerNameModel.insert(items.map { case (manufacturerId, name) =>
 					AircraftManufacturerNameData(manufacturerId, name) })
@@ -56,172 +69,176 @@ object ImportActRef
 					.map { manufacturerId -> _ }
 			}
 			
-			linesIterator.mapCatching(VariantRow.apply) { _.printStackTrace() }
-				// Groups the rows by manufacturer
-				.groupBy { _.manufacturerCode }
-				.flatMap { case (manufacturerCode, rows) =>
-					val manufacturerNames = rows.map { _.manufacturerName }.toSet
-					// Finds manufacturer ids matching those names (may contain duplicates)
-					val matchingManufacturers = manufacturerNames
-						.flatMap { name => DbAircraftManufacturer.forName(name).map { name -> _ } }.toMap
-					// In case there are multiple options found, prefers those that don't have an alt-code assigned
-					// yet (because they are already associated with a different row group while not having the same code)
-					val distinctManufacturers = matchingManufacturers.valuesIterator.toSet
-						.bestMatch(Vector(m => m.alternativeCode.isEmpty))
-					
-					// Assigns the rows between the manufacturer(s)
-					val rowsWithManufacturer: Vector[(VariantRow, AircraftManufacturer)] =
+			// Groups the rows using a custom iterator (see NESTED section)
+			val groupedIterator = new GroupingRowIterator(
+				linesIterator.mapCatching(VariantRow.apply) { _.printStackTrace() }.pollable)
+			groupedIterator.flatMap { case (manufacturerCode, manufacturerNames, rows) =>
+				// Finds manufacturer ids matching those names (may contain duplicates)
+				val matchingManufacturers = manufacturerNames
+					.flatMap { name => DbAircraftManufacturer.forName(name).map { name -> _ } }.toMap
+				// In case there are multiple options found, prefers those that don't have an alt-code assigned
+				// yet (because they are already associated with a different row group while not having the same code)
+				val distinctManufacturers = matchingManufacturers.valuesIterator.toSet
+					.bestMatch(Vector(m => m.alternativeCode.isEmpty))
+				
+				// Assigns the rows between the manufacturer(s)
+				val rowsWithManufacturer: Vector[(VariantRow, AircraftManufacturer)] =
+				{
+					// Case: No matching manufacturers found
+					if (distinctManufacturers.isEmpty)
 					{
-						// Case: No matching manufacturers found
-						if (distinctManufacturers.isEmpty)
-						{
-							// Inserts a new manufacturer to the DB.
-							val manufacturer = AircraftManufacturerModel.insert(
-								AircraftManufacturerData(alternativeCode = Some(manufacturerCode)))
-							// Inserts all the names later.
-							nameInsertBuffer ++= manufacturerNames.toVector.map { manufacturer.id -> _ }
-							
-							// Uses this manufacturer for all the rows
-							rows.map { _ -> manufacturer }
+						// Inserts a new manufacturer to the DB.
+						val manufacturer = AircraftManufacturerModel.insert(
+							AircraftManufacturerData(alternativeCode = Some(manufacturerCode)))
+						// Inserts all the names later.
+						nameInsertBuffer ++= manufacturerNames.toVector.map { manufacturer.id -> _ }
+						
+						// Uses this manufacturer for all the rows
+						rows.map { _ -> manufacturer }
+					}
+					// Case: Unique manufacturer found
+					else if (distinctManufacturers.size == 1)
+					{
+						val manufacturer = distinctManufacturers.head
+						// Adds the alt-code for that manufacturer
+						DbAircraftManufacturer(manufacturer.id).altCode = manufacturerCode
+						// Assigns new names for that manufacturer (no duplicates, however)
+						insertUniqueNames(manufacturer.id, manufacturerNames.toVector)
+						// Uses that manufacturer for all rows
+						rows.map { _ -> manufacturer }
+					}
+					// Case: Multiple manufacturers found
+					else
+					{
+						// Assigns the alt-code for those manufacturers
+						DbAircraftManufacturers(distinctManufacturers.map { _.id })
+							.assignAlternativeCodeIfNotSet(manufacturerCode)
+						
+						// Inserts new names for the manufacturers based on assignments, but avoids duplicates
+						val namesByManufacturers = matchingManufacturers.toVector.groupMap { _._2 } { _._1 }
+						namesByManufacturers.foreach { case (manufacturer, names) =>
+							insertUniqueNames(manufacturer.id, names)
 						}
-						// Case: Unique manufacturer found
-						else if (distinctManufacturers.size == 1)
+						
+						// Case: All names were successful assigned
+						if (manufacturerNames.size == matchingManufacturers.size)
 						{
-							val manufacturer = distinctManufacturers.head
-							// Adds the alt-code for that manufacturer
-							DbAircraftManufacturer(manufacturer.id).altCode = manufacturerCode
-							// Assigns new names for that manufacturer (no duplicates, however)
-							insertUniqueNames(manufacturer.id, manufacturerNames.toVector)
-							// Uses that manufacturer for all rows
-							rows.map { _ -> manufacturer }
+							// Assigns the rows based on manufacturer names
+							rows.map { row => row -> matchingManufacturers(row.manufacturerName) }
 						}
-						// Case: Multiple manufacturers found
+						// Case: Some names couldn't be assigned
 						else
 						{
-							// Assigns the alt-code for those manufacturers
-							DbAircraftManufacturers(distinctManufacturers.map { _.id })
-								.assignAlternativeCodeIfNotSet(manufacturerCode)
+							// Assigns the names to the manufacturer with most resemblance
+							val unassignedNames = manufacturerNames -- matchingManufacturers.keySet
+							val manufacturersWithNames = distinctManufacturers
+								.map { m => DbAircraftManufacturer(m.id).full
+									.getOrElse { FullAircraftManufacturer(m, Vector()) } }
+							val chosenManufacturers = unassignedNames
+								.map { name => name -> findBestMatch(name, manufacturersWithNames) }.toMap
 							
-							// Inserts new names for the manufacturers based on assignments, but avoids duplicates
-							val namesByManufacturers = matchingManufacturers.toVector.groupMap { _._2 } { _._1 }
-							namesByManufacturers.foreach { case (manufacturer, names) =>
-								insertUniqueNames(manufacturer.id, names)
-							}
+							// Inserts new names for those manufacturers also
+							// Avoids duplicates, even though there shouldn't be any at this point
+							nameInsertBuffer ++= chosenManufacturers.flatMap { case (name, manufacturer) =>
+								if (manufacturer.names.exists { _ ~== name })
+									None
+								else
+									Some(manufacturer.id -> name)
+							}.toSeq
 							
-							// Case: All names were successful assigned
-							if (manufacturerNames.size == matchingManufacturers.size)
-							{
-								// Assigns the rows based on manufacturer names
-								rows.map { row => row -> matchingManufacturers(row.manufacturerName) }
-							}
-							// Case: Some names couldn't be assigned
-							else
-							{
-								// Assigns the names to the manufacturer with most resemblance
-								val unassignedNames = manufacturerNames -- matchingManufacturers.keySet
-								val manufacturersWithNames = distinctManufacturers
-									.map { m => DbAircraftManufacturer(m.id).full
-										.getOrElse { FullAircraftManufacturer(m, Vector()) } }
-								val chosenManufacturers = unassignedNames
-									.map { name => name -> findBestMatch(name, manufacturersWithNames) }.toMap
-								
-								// Inserts new names for those manufacturers also
-								// Avoids duplicates, even though there shouldn't be any at this point
-								nameInsertBuffer ++= chosenManufacturers.flatMap { case (name, manufacturer) =>
-									if (manufacturer.names.exists { _ ~== name })
-										None
-									else
-										Some(manufacturer.id -> name)
-								}.toSeq
-								
-								val allMatchesMap = matchingManufacturers ++
-									chosenManufacturers.view.mapValues { _.manufacturer }
-								rows.map { row => row -> allMatchesMap(row.manufacturerName) }
-							}
+							val allMatchesMap = matchingManufacturers ++
+								chosenManufacturers.view.mapValues { _.manufacturer }
+							rows.map { row => row -> allMatchesMap(row.manufacturerName) }
 						}
 					}
-					
-					// Handles each model code separately
-					rowsWithManufacturer.groupBy { _._1.modelCode }.flatMap { case (modelCode, rows) =>
-						// Groups the rows based on A/C category information
-						rows.groupBy { case (row, _) => (row.cateGoryId, row.typeId, row.engineTypeId,
-							row.numberOfEngines, row.weightClassId) }
-							.map { case ((categoryId, typeId, engineTypeId, numberOfEngines, weightClassId), rows) =>
-								// Creates a new model row for this group and a single model variant row for each row
-								// The inserts themselves are delayed
-								// Parses min and max weight categories based on document enumeration (see ardata.pdf)
-								// TODO: Handle cases where id is none of these (if present)
-								val minWeightCategory = weightClassId match
-								{
-									case 1 | 4 => Light
-									case 2 => LightPlus
-									case 3 => MediumPlus
-								}
-								val maxWeightCategory = weightClassId match
-								{
-									case 1 | 4 => Light
-									case 2 => Medium
-									case 3 => Super
-								}
-								// Parses aircraft category from document enumeration (see ardata.pdf for details)
-								val category = typeId match
-								{
-									case "1" | "7" => Some(if (numberOfEngines > 0) PoweredGlider else NonPoweredGlider)
-									case "2" => Some(Balloon)
-									case "3" => Some(Airship)
-									case "4" | "5" => Some(Airplane)
-									case "6" => Some(Helicopter)
-									case "8" => Some(PoweredGlider)
-									case "9" => Some(Gyroplane)
-									case "H" => Some(HybridAirship)
-									case _ => None
-								}
-								// Parses engine type based on document enumeration (see ardata)
-								val specificEngineType = engineTypeId match
-								{
-									case 2 => Some(TurboProp)
-									case 3 => Some(TurboShaft)
-									case 4 => Some(TurboJet)
-									case 5 => Some(TurboFan)
-									case 6 => Some(RamJet)
-									case 7 => Some(TwoCycle)
-									case 8 => Some(FourCycle)
-									case 10 => Some(Electric)
-									case 11 => Some(Rotary)
-									case _ => None
-								}
-								val genericEngineType = specificEngineType.map { _.genericType }.orElse {
-									engineTypeId match
-									{
-										case 1 => Some(Piston)
-										case _ => None
-									}
-								}
-								val modelData = AircraftModelData(categoryId, minWeightCategory.id, maxWeightCategory.id,
-									Some(manufacturerCode + modelCode), None, None, category.map { _.id },
-									category.map { _.wingType.id }, Some(numberOfEngines),
-									genericEngineType.map { _.id }, specificEngineType.map { _.id })
-								val variantRows = rows.map { case (row, manufacturer) =>
-									VariantInsertInfo(manufacturer.id, row.name, row.code, row.numberOfSeats,
-										row.cruisingSpeed)
-								}
-								modelData -> variantRows
+				}
+				
+				// Handles each model code separately
+				rowsWithManufacturer.groupBy { _._1.modelCode }.flatMap { case (modelCode, rows) =>
+					// Groups the rows based on A/C category information
+					rows.groupBy { case (row, _) => (row.cateGoryId, row.typeId, row.engineTypeId,
+						row.numberOfEngines, row.weightClassId) }
+						.map { case ((categoryId, typeId, engineTypeId, numberOfEngines, weightClassId), rows) =>
+							// Creates a new model row for this group and a single model variant row for each row
+							// The inserts themselves are delayed
+							// Parses min and max weight categories based on document enumeration (see ardata.pdf)
+							// TODO: Handle cases where id is none of these (if present)
+							val minWeightCategory = weightClassId match
+							{
+								case 1 | 4 => Light
+								case 2 => LightPlus
+								case 3 => MediumPlus
 							}
-					}
-				}
-				// Inserts new model & model variant data in bulks
-				.foreachGroup(maxInsertSize) { rows =>
-					// First inserts the models to acquire model ids
-					val models = AircraftModelModel.insert(rows.map { _._1 })
-					// Then inserts the model variants
-					val variantData = rows.zip(models).flatMap { case ((_, variantRows), model) =>
-						variantRows.map { row =>
-							AircraftModelVariantData(model.id, row.manufacturerId, row.name, Some(row.code),
-								numberOfSeats = Some(row.numberOfSeats), cruisingSpeed = row.cruisingSpeed)
+							val maxWeightCategory = weightClassId match
+							{
+								case 1 | 4 => Light
+								case 2 => Medium
+								case 3 => Super
+							}
+							// Parses aircraft category from document enumeration (see ardata.pdf for details)
+							val category = typeId match
+							{
+								case "1" | "7" => Some(if (numberOfEngines > 0) PoweredGlider else NonPoweredGlider)
+								case "2" => Some(Balloon)
+								case "3" => Some(Airship)
+								case "4" | "5" => Some(Airplane)
+								case "6" => Some(Helicopter)
+								case "8" => Some(PoweredGlider)
+								case "9" => Some(Gyroplane)
+								case "H" => Some(HybridAirship)
+								case _ => None
+							}
+							// Parses engine type based on document enumeration (see ardata)
+							val specificEngineType = engineTypeId match
+							{
+								case 2 => Some(TurboProp)
+								case 3 => Some(TurboShaft)
+								case 4 => Some(TurboJet)
+								case 5 => Some(TurboFan)
+								case 6 => Some(RamJet)
+								case 7 => Some(TwoCycle)
+								case 8 => Some(FourCycle)
+								case 10 => Some(Electric)
+								case 11 => Some(Rotary)
+								case _ => None
+							}
+							val genericEngineType = specificEngineType.map { _.genericType }.orElse {
+								engineTypeId match
+								{
+									case 1 => Some(Piston)
+									case _ => None
+								}
+							}
+							val modelData = AircraftModelData(categoryId, minWeightCategory.id, maxWeightCategory.id,
+								Some(manufacturerCode + modelCode), None, None, category.map { _.id },
+								category.map { _.wingType.id }, Some(numberOfEngines),
+								genericEngineType.map { _.id }, specificEngineType.map { _.id })
+							val variantRows = rows.map { case (row, manufacturer) =>
+								VariantInsertInfo(manufacturer.id, row.name, row.code, row.numberOfSeats,
+									row.cruisingSpeed)
+							}.distinct // Removes duplicate rows
+							modelData -> variantRows
 						}
-					}
-					AircraftModelVariantModel.insert(variantData)
 				}
+			}
+			// Inserts new model & model variant data in bulks
+			.foreachGroup(maxInsertSize) { rows =>
+				println(s"Inserts ${rows.size} new aircraft models")
+				// First inserts the models to acquire model ids
+				val models = AircraftModelModel.insert(rows.map { _._1 })
+				// Then inserts the model variants
+				val variantData = rows.zip(models).flatMap { case ((_, variantRows), model) =>
+					variantRows.map { row =>
+						AircraftModelVariantData(model.id, row.manufacturerId, row.name, Some(row.code),
+							numberOfSeats = Some(row.numberOfSeats), cruisingSpeed = row.cruisingSpeed)
+					}
+				}
+				println(s"Inserts ${variantData.size} aircraft model variants")
+				AircraftModelVariantModel.insert(variantData)
+			}
+			
+			// Makes sure all names are inserted in the end
+			nameInsertBuffer.flush()
 		}
 	}
 	
@@ -278,9 +295,9 @@ object ImportActRef
 	
 	private object VariantRow extends FromModelFactoryWithSchema[VariantRow]
 	{
-		override val schema = ModelDeclaration("MODEL" -> StringType, "CODE" -> StringType, "MRF" -> StringType,
-			"TYPE-ACFT" -> IntType,
-			"TYPE-ENG" -> IntType, "AC-CAT" -> IntType, "NO-ENG" -> IntType, "AC-WEIGHT" -> IntType,
+		override val schema = ModelDeclaration("MODEL" -> StringType, "CODE" -> StringType, "MFR" -> StringType,
+			"TYPE-ACFT" -> StringType,
+			"TYPE-ENG" -> IntType, "AC-CAT" -> IntType, "NO-ENG" -> IntType, "AC-WEIGHT" -> StringType,
 			"NO-SEATS" -> IntType)
 		
 		// Weight class is given as "CLASS 1 | CLASS 2 etc."
@@ -300,5 +317,74 @@ object ImportActRef
 		def manufacturerCode = code.take(3)
 		// The 4th and 5th show aircraft model
 		def modelCode = code.slice(3, 5)
+	}
+	
+	// Groups rows based on manufacturer code (3 first characters of the variant code)
+	// Collects up to X distinct manufacturer names to a single group
+	// If the limit is reached, treats the rows differently (as individual manufacturers)
+	private class GroupingRowIterator(source: PollingIterator[VariantRow])
+		extends Iterator[(String, Set[String], Vector[VariantRow])]
+	{
+		// ATTRIBUTES   ----------------------------
+		
+		private var cachedSource: Iterator[(String, Set[String], Vector[VariantRow])] = Iterator.empty
+		
+		
+		// IMPLEMENTED  ----------------------------
+		
+		override def hasNext = cachedSource.hasNext || source.hasNext
+		
+		override def next() =
+		{
+			// Either continues with the cached data or collects a new set of data
+			// Case: There are cached results left
+			if (cachedSource.hasNext)
+				cachedSource.next()
+			else
+			{
+				val (manufacturerCode, result) = collectNext()
+				result match
+				{
+					// Case: Single manufacturer group => Returns the whole group
+					case Right((names, rows)) => (manufacturerCode, names, rows)
+					// Case: Individual manufactures => Returns the first item and caches the rest
+					case Left(data) =>
+						val dataIterator = data.iterator
+							.map { case (manufacturerName, rows) => (manufacturerCode, Set(manufacturerName), rows) }
+						cachedSource = dataIterator
+						dataIterator.next()
+				}
+			}
+		}
+		
+		
+		// OTHER    -------------------------------
+		
+		private def collectNext() =
+		{
+			val manufacturerCode = source.poll.manufacturerCode
+			var names = Set[String]()
+			val rowsBuilder = new VectorBuilder[VariantRow]()
+			
+			// Collects new items while
+			// a) They belong to the same manufacturer group
+			// b) Number of distinct manufacturers stays within a limit
+			while (source.hasNext && names.size < 20 && source.poll.manufacturerCode == manufacturerCode)
+			{
+				val row = source.next()
+				rowsBuilder += row
+				names += row.manufacturerName
+			}
+			
+			// The result format varies based on whether the maximum limit of manufacturers was met
+			val result =
+			{
+				if (names.size == 20)
+					Left(rowsBuilder.result().groupBy { _.manufacturerName })
+				else
+					Right(names -> rowsBuilder.result())
+			}
+			manufacturerCode -> result
+		}
 	}
 }

@@ -130,7 +130,7 @@ INSERT INTO generic_engine_type (id, name, is_airbreathing, is_rotation_based) V
 	(2, 'Airbreathing Jet', TRUE, FALSE),
 	(3, 'Piston', FALSE, TRUE),
 	(4, 'Other Propelling', FALSE, TRUE),
-	(5, 'Other Propulsion', FALSE; FALSE);
+	(5, 'Other Propulsion', FALSE, FALSE);
 
 CREATE TABLE specific_engine_type(
 	id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
@@ -174,12 +174,13 @@ INSERT INTO specific_engine_type (id, generic_type_id, name) VALUES
 -- Determines where an aircraft can land
 CREATE TABLE aircraft_environment_category(
 	id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	name VARCHAR(16) NOT NULL,
 	can_land_in_ground BOOLEAN NOT NULL,
 	can_land_in_water BOOLEAN NOT NULL
 
 )Engine=InnoDB DEFAULT CHARACTER SET utf8
                DEFAULT COLLATE utf8_general_ci;
-INSERT INTO aircraft_environment_category (id, can_land_in_ground, can_land_in_water) VALUES
+INSERT INTO aircraft_environment_category (id, name, can_land_in_ground, can_land_in_water) VALUES
 	(1, 'Land', TRUE, FALSE),
 	(2, 'Sea', FALSE, TRUE),
 	(3, 'Amphibian', TRUE, TRUE);
@@ -221,7 +222,7 @@ CREATE TABLE aircraft_power_use(
 -- Fully Powered (1): E.g. Standard Airplane or a Helicopter
 -- Partly Powered (2): E.g. Powered Glider or a Gyroplane
 -- Non-powered (3): E.g. Glider or a balloon
-INSERT INTO aicraft_power_use (id, name, is_powered) VALUES
+INSERT INTO aircraft_power_use (id, name, is_powered) VALUES
 	(1, 'Fully Powered', TRUE),
 	(2, 'Partly Powered', TRUE),
 	(3, 'Non-powered', FALSE);
@@ -232,7 +233,16 @@ CREATE TABLE aircraft_category(
 	name VARCHAR(32) NOT NULL,
 	lift_method_id INT NOT NULL,
 	wing_type_id INT NOT NULL,
-	power_use_id INT NOT NULL
+	power_use_id INT NOT NULL,
+
+	CONSTRAINT ac_alm_lift_method_reference_fk FOREIGN KEY ac_alm_lift_method_reference_idx (lift_method_id)
+	    REFERENCES aircraft_lift_method(id) ON DELETE CASCADE,
+
+	CONSTRAINT ac_awt_wing_type_reference_fk FOREIGN KEY ac_awt_wing_type_reference_idx (wing_type_id)
+	    REFERENCES aircraft_wing_type(id) ON DELETE CASCADE,
+
+	CONSTRAINT ac_apu_power_use_reference_fk FOREIGN KEY ac_apu_power_use_reference_idx (power_use_id)
+	    REFERENCES aircraft_power_use(id) ON DELETE CASCADE
 
 )Engine=InnoDB DEFAULT CHARACTER SET utf8
                DEFAULT COLLATE utf8_general_ci;
@@ -258,7 +268,7 @@ INSERT INTO aircraft_category (id, name, lift_method_id, wing_type_id, power_use
 -- These values are meant to be used as min/max pairs
 -- The maximum values are exclusive
 CREATE TABLE aircraft_weight_category(
-	id NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
 	code VARCHAR(2) NOT NULL,
 	name VARCHAR(16) NOT NULL,
 	icao_code VARCHAR(1) NOT NULL,
@@ -340,7 +350,7 @@ CREATE TABLE aircraft_approach_speed_group(
 
     INDEX apsg_code_idx (code)
 
-))Engine=InnoDB DEFAULT CHARACTER SET utf8
+)Engine=InnoDB DEFAULT CHARACTER SET utf8
                 DEFAULT COLLATE utf8_general_ci;
 INSERT INTO aircraft_approach_speed_group (id, code, min_approach_speed_knots, max_approach_speed_knots) VALUES
     (1, 'A', 0, 90),
@@ -528,6 +538,7 @@ CREATE TABLE carrier(
 -- SOURCES: manufacturers.csv (BST), Order_3660.1D_Aircraft_Type_Designators (manufacturer part), ACFTREF
 -- Lists aircraft manufacturers
 -- alt_code is from ACTREF
+-- TODO: Consider adding manufacturer groups as DB entities
 CREATE TABLE aircraft_manufacturer(
 	id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
 	icao_code VARCHAR(32),
